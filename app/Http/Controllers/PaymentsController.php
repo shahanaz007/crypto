@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Hexters\CoinPayment\CoinPayment;
-
+use Auth;
 
 class PaymentsController extends Controller
 {
@@ -15,7 +15,7 @@ class PaymentsController extends Controller
      */
     public function index()
     {
-        //
+        return CoinPayment::getstatusbytxnid("CPFE1W4PB5Y24KTPNZVZQ5TQVN");
     }
 
     /**
@@ -31,8 +31,8 @@ class PaymentsController extends Controller
   $transaction['order_id'] = uniqid(); // invoice number
   $transaction['amountTotal'] = (FLOAT) 1.0 * $tokens;
   $transaction['note'] = 'Transaction note';
-  $transaction['buyer_name'] = 'Jhone Due';
-  $transaction['buyer_email'] = 'buyer@mail.com';
+  $transaction['buyer_name'] = Auth::user()->name;
+  $transaction['buyer_email'] = Auth::user()->email;
   $transaction['redirect_url'] = url('/home'); // When Transaction was comleted
   $transaction['cancel_url'] = url('/home'); // When user click cancel link
 
