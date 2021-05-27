@@ -66,6 +66,7 @@ class CoinpaymentListener implements ShouldQueue
          *  $this->transaction['transaction_type']
          *  // out: new / old
          */
+        return redirect('/home');
         return 0;
        // return $this->transaction['status'];
 
