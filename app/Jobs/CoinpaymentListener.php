@@ -7,6 +7,9 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Hexters\CoinPayment\Entities\CoinpaymentTransaction;
+use App\Models\User;
+use App\Models\Order;
 
 class CoinpaymentListener implements ShouldQueue
 {
@@ -66,7 +69,28 @@ class CoinpaymentListener implements ShouldQueue
          *  $this->transaction['transaction_type']
          *  // out: new / old
          */
-        return redirect('/home');
+        $txn_id = $this->transaction['txn_id']
+        $transactions = CoinpaymentTransaction::where('txn_id', $txn_id)->first();
+
+        if($transactions)
+        {
+            $order = Order::where('order_id',$transactions->order_id)->first();
+            if($order)
+            {   
+                $token = $order->tokens;
+                $user= User::find($token->user_id);
+
+                $available = $user->available_tokens;
+                $new_tokens = $available + $token;
+
+                $user->available_tokens = $new_tokens;
+                $user->save();
+
+            }
+
+        }
+
+        
         return 0;
        // return $this->transaction['status'];
 

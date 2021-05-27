@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Hexters\CoinPayment\CoinPayment;
+use App\Models\Order;
 use Auth;
 
 class PaymentsController extends Controller
@@ -26,7 +27,8 @@ class PaymentsController extends Controller
     public function create_order(Request $request)
     {
 
-        $tokens = $request->tokens;
+  $tokens = $request->tokens;
+
 
   $transaction['order_id'] = uniqid(); // invoice number
   $transaction['amountTotal'] = (FLOAT) 1.0 * $tokens;
@@ -48,7 +50,11 @@ class PaymentsController extends Controller
     'itemSubtotalAmount' => (FLOAT) 1.0 * $tokens // USD
   ];
 
-
+  $order = new Order;
+  $order->order_id =  $transaction['order_id'];
+  $order->user_id = Auth::user()->id;
+  $order->tokens = $tokens;
+  $order->save();
 
 
 
@@ -58,6 +64,7 @@ class PaymentsController extends Controller
   //   ]
   // ];
 
+  // return $transaction;
   return redirect(CoinPayment::generatelink($transaction));
     }
 
