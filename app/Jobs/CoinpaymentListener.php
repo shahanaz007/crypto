@@ -69,7 +69,7 @@ class CoinpaymentListener implements ShouldQueue
          *  $this->transaction['transaction_type']
          *  // out: new / old
          */
-        $txn_id = $this->transaction['txn_id']
+        $txn_id = $this->transaction['txn_id'];
         $transactions = CoinpaymentTransaction::where('txn_id', $txn_id)->first();
 
         if($transactions)
