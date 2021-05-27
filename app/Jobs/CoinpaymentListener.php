@@ -70,6 +70,9 @@ class CoinpaymentListener implements ShouldQueue
          *  // out: new / old
          */
         $txn_id = $this->transaction['txn_id'];
+        $status = $this->transaction['status'];
+
+        if($status == 100){
         $transactions = CoinpaymentTransaction::where('txn_id', $txn_id)->first();
 
         if($transactions)
@@ -78,7 +81,7 @@ class CoinpaymentListener implements ShouldQueue
             if($order)
             {   
                 $token = $order->tokens;
-                $user= User::find($token->user_id);
+                $user= User::find($order->user_id);
 
                 $available = $user->available_tokens;
                 $new_tokens = $available + $token;
@@ -88,6 +91,7 @@ class CoinpaymentListener implements ShouldQueue
 
             }
 
+        } 
         }
 
         
