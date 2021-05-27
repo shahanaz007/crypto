@@ -22,3 +22,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('/payment','PaymentsController');
+Route::post('/create_order','PaymentsController@create_order');

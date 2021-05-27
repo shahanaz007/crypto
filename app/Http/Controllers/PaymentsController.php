@@ -23,15 +23,18 @@ class PaymentsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create_order(Request $request)
     {
-          $transaction['order_id'] = uniqid(); // invoice number
-  $transaction['amountTotal'] = (FLOAT) 37.5;
+
+        $tokens = $request->tokens;
+
+  $transaction['order_id'] = uniqid(); // invoice number
+  $transaction['amountTotal'] = (FLOAT) 1.0 * $tokens;
   $transaction['note'] = 'Transaction note';
   $transaction['buyer_name'] = 'Jhone Due';
   $transaction['buyer_email'] = 'buyer@mail.com';
-  $transaction['redirect_url'] = url('/back_to_tarnsaction'); // When Transaction was comleted
-  $transaction['cancel_url'] = url('/back_to_tarnsaction'); // When user click cancel link
+  $transaction['redirect_url'] = url('/home'); // When Transaction was comleted
+  $transaction['cancel_url'] = url('/home'); // When user click cancel link
 
 
   /*
@@ -39,39 +42,23 @@ class PaymentsController extends Controller
   *   @example first item
   */
   $transaction['items'][] = [
-    'itemDescription' => 'Product one',
-    'itemPrice' => (FLOAT) 7.5, // USD
-    'itemQty' => (INT) 1,
-    'itemSubtotalAmount' => (FLOAT) 7.5 // USD
+    'itemDescription' => 'Tokens',
+    'itemPrice' => (FLOAT) 1.0 * $tokens, // USD
+    'itemQty' => (INT) $tokens,
+    'itemSubtotalAmount' => (FLOAT) 1.0 * $tokens // USD
   ];
 
-  /*
-  *   @example second item
-  */
-  $transaction['items'][] = [
-    'itemDescription' => 'Product two',
-    'itemPrice' => (FLOAT) 10, // USD
-    'itemQty' => (INT) 1,
-    'itemSubtotalAmount' => (FLOAT) 10 // USD
-  ];
 
-  /*
-  *   @example third item
-  */
-  $transaction['items'][] = [
-    'itemDescription' => 'Product Three',
-    'itemPrice' => (FLOAT) 10, // USD
-    'itemQty' => (INT) 2,
-    'itemSubtotalAmount' => (FLOAT) 20 // USD
-  ];
 
-  $transaction['payload'] = [
-    'foo' => [
-        'bar' => 'baz'
-    ]
-  ];
 
-  return CoinPayment::generatelink($transaction);
+
+  // $transaction['payload'] = [
+  //   'foo' => [
+  //       'bar' => 'baz'
+  //   ]
+  // ];
+
+  return redirect(CoinPayment::generatelink($transaction));
     }
 
     /**
