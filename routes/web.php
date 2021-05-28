@@ -29,4 +29,5 @@ Route::post('/create_order','PaymentsController@create_order');
 Route::resource('/withdraw','WithdrawalsController');
 Route::post('/get_rate_of','WithdrawalsController@get_rate_of');
 
+Route::resource('/transfer','TransfersController');
 
