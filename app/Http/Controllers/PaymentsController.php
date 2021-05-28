@@ -16,7 +16,12 @@ class PaymentsController extends Controller
      */
     public function index()
     {
-        return CoinPayment::getstatusbytxnid("CPFE1W4PB5Y24KTPNZVZQ5TQVN");
+        // return CoinPayment::getstatusbytxnid("CPFE1W4PB5Y24KTPNZVZQ5TQVN");
+        $payments = CoinPayment::gettransactions()
+                                // ->where('status', 0)
+                                ->paginate(10);
+        // print_r($payments) ;
+        return view('payment.index',compact('payments'));
     }
 
     /**

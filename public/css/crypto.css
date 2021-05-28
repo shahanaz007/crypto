@@ -2,6 +2,6 @@
 	padding: 10px;
 }
 .img_hover img:hover {
-		cursor: pointer;
+		/*cursor: pointer;*/
 		width: 120px;
 }
