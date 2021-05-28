@@ -23,3 +23,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('/payment','PaymentsController');
 Route::post('/create_order','PaymentsController@create_order');
+// Route::get('/withdraw','PaymentsController@withdraw');
+
+
+Route::resource('/withdraw','WithdrawalsController');
+Route::post('/get_rate_of','WithdrawalsController@get_rate_of');
+
+

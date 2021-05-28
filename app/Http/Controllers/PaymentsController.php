@@ -128,4 +128,22 @@ class PaymentsController extends Controller
     {
         //
     }
+
+    public function withdraw()
+    // public function withdraw(Request $request)
+    {
+        // $amount= $request->amount;
+$amount = 1;
+  // $transaction['order_id'] = uniqid(); // invoice number
+  $transaction['amount'] = $amount;
+  $transaction['note'] = 'Transaction note';
+  $transaction['currency'] = 'LTCT';
+  $transaction['address'] = 'mjseCa7E67fN75pFXDH6X7dFuLtzrCrueR';
+  // $transaction['redirect_url'] = url('/home'); // When Transaction was comleted
+  // $transaction['cancel_url'] = url('/home'); // When user click cancel link
+
+
+  return CoinPayment::createWithdrawal($transaction);
+    }
+
 }

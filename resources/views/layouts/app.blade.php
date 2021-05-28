@@ -59,6 +59,10 @@
                                     <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
                                 </li>
 
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('withdraw.create') }}">{{ __('Withdraw') }}</a>
+                                </li>
+
                             <li class="nav-item">
                                     <a class="nav-link" href="{{ route('payment.index') }}">{{ __('History') }}</a>
                                 </li>
