@@ -66,35 +66,49 @@ class WithdrawalsController extends Controller
         {
             return redirect('/home')->with('status','You dont have that much tokens in your account');
         }
+
+
+        $wd =new Withdrawal;
+        $wd->user_id = Auth::user()->id;
+        $wd->w_id = uniqid();
+        $wd->amount = $amount;
+        $wd->currency_code = $currency;
+        $wd->address = $address;
+        $wd->status = 0;
+        $wd->save();
+
+
+        return redirect('/home')->with('status','Success. Withdrawal Requested Successfully !');
+
       // $transaction['order_id'] = uniqid(); // invoice number
-      $transaction['amount'] = $amount;
-      $transaction['note'] = 'Transaction note';
-      $transaction['currency'] = $currency;
-      $transaction['address'] = $address;
+      // $transaction['amount'] = $amount;
+      // $transaction['note'] = 'Transaction note';
+      // $transaction['currency'] = $currency;
+      // $transaction['address'] = $address;
       // $transaction['redirect_url'] = url('/home'); // When Transaction was comleted
       // $transaction['cancel_url'] = url('/home'); // When user click cancel link
 
 
-      $result = CoinPayment::createWithdrawal($transaction);
+      // $result = CoinPayment::createWithdrawal($transaction);
 
-      if($result['error'] == 'ok' && $result['result']['id'])
-      {
+      // if($result['error'] == 'ok' && $result['result']['id'])
+      // {
         
-        $wd =new Withdrawal;
-        $wd->user_id = Auth::user()->id;
-        $wd->w_id = $result['result']['id'];
-        $wd->amount = $result['result']['amount'];
-        $wd->currency_code = $currency;
-        $wd->status = $result['result']['status'];
-        $wd->save();
+      //   $wd =new Withdrawal;
+      //   $wd->user_id = Auth::user()->id;
+      //   $wd->w_id = $result['result']['id'];
+      //   $wd->amount = $result['result']['amount'];
+      //   $wd->currency_code = $currency;
+      //   $wd->status = $result['result']['status'];
+      //   $wd->save();
 
-        User::withdraw($request->tokens);
+      //   User::withdraw($request->tokens);
 
-        return redirect('/home')->with('status','Success. Withdrawal may take some time to reflect on your address');
+      //   return redirect('/home')->with('status','Success. Withdrawal may take some time to reflect on your address');
 
-      }else{
-        return $result;
-      }
+      // }else{
+      //   return $result;
+      // }
 
     }
 

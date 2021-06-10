@@ -32,3 +32,7 @@ Route::post('/get_rate_of','WithdrawalsController@get_rate_of');
 
 Route::resource('/transfer','TransfersController');
 
+//admin to view withdraw_request 10-06-2021
+Route::get('/withdraw_request/index','AdminController@withdraw_request_index');
+//admin to change the status of withdraw_request 10-06-2021
+Route::get('/withdraw_request/change_status/{id}','AdminController@change_status');

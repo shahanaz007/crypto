@@ -49,4 +49,10 @@ class User extends Authenticatable
         $usr->save();
         return 200;
     }
+
+    public function withdrawal()
+    {
+        return $this->hasMany('App\Models\withdrawal');
+    }
+    
 }

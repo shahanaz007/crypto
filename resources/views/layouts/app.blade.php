@@ -55,9 +55,20 @@
                             @endif
                         @else
 
-                                 <li class="nav-item">
+                            <li class="nav-item">
                                     <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
                                 </li>
+
+                            <?php
+                                $type= 'admin?';
+                                
+                            ?>
+                            @if(Auth::user()->$type)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{URL::to('/withdraw_request/index')}}">{{ __('Withdraw Request') }}</a>
+                                </li>
+                            @else
+                                
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('payment.create') }}">{{ __('Deposit') }}</a>
                                 </li>
@@ -73,7 +84,7 @@
                                     <a class="nav-link" href="{{ route('payment.index') }}">{{ __('History') }}</a>
                                 </li>
 
-
+                        @endif        
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
