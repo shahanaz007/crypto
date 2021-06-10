@@ -14,8 +14,8 @@
                         </div>
                     @endif
 
-                    <center>Available Tokens <br>
-                        <h3>{{ Auth::user()->available_tokens }}</h3>
+                    <center>Available Balance <br>
+                        <h3>${{ Auth::user()->available_tokens }}</h3>
 
                         <button class="btn btn-info" onclick="$('#buy_tokens').toggle()"> <i class="fa fa-shopping-cart"> </i> Buy Tokens</button>
                     </center>

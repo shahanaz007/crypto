@@ -19,6 +19,7 @@
                    		<th>Amount</th>
                    		<th>Recieved Amount</th>
                    		<th>Status</th>
+                        <th></th>
                    	</tr>
                    	</thead>
                    	<tbody>
@@ -32,6 +33,11 @@
                    		<td>{{$payment->amountf}}</td>
                    		<td>{{$payment->receivedf}}</td>
                    		<td>{{$payment->status_text}}</td>
+                        <td>
+                            @if($payment->status == '0')
+                              <a href="{{url('check_for_update',$payment->txn_id)}}">  <button class="btn btn-info">Check For Update</button></a>
+                            @endif
+                        </td>
                    	</tr>
                    	<?php $cnt++; ?>
                    		@endforeach

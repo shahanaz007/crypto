@@ -29,6 +29,20 @@ class PaymentsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function create()
+    {   
+        $coins = CoinPayment::getRates();
+
+         
+         $usd_rate = $coins['result']['USD']['rate_btc'];
+
+         
+         $coins = $coins['result'];
+        return view('payment.deposit',compact('coins'));
+    }
+
+
     public function create_order(Request $request)
     {
 
@@ -133,7 +147,7 @@ class PaymentsController extends Controller
     // public function withdraw(Request $request)
     {
         // $amount= $request->amount;
-$amount = 1;
+  $amount = 1;
   // $transaction['order_id'] = uniqid(); // invoice number
   $transaction['amount'] = $amount;
   $transaction['note'] = 'Transaction note';
@@ -144,6 +158,30 @@ $amount = 1;
 
 
   return CoinPayment::createWithdrawal($transaction);
+    }
+
+    public function check_for_update($txn_id){
+        CoinPayment::getstatusbytxnid($txn_id);
+        return redirect()->back();
+    }
+
+
+    public function get_rate_of_currency(Request $request)
+    {
+        
+        $currency = $request->currency;
+        $coins = CoinPayment::getRates();
+
+         
+         $usd_rate = $coins['result']['USD']['rate_btc'];
+
+         $rate['usd_rate'] = $usd_rate;
+         $rate['currency_rate'] = $coins['result'][$currency]['rate_btc'];
+         
+         
+
+         return $rate;
+
     }
 
 }

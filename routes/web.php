@@ -23,7 +23,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('/payment','PaymentsController');
 Route::post('/create_order','PaymentsController@create_order');
-// Route::get('/withdraw','PaymentsController@withdraw');
+Route::get('/check_for_update/{id}','PaymentsController@check_for_update');
+Route::post('/get_rate_of_currency','PaymentsController@get_rate_of_currency');
 
 
 Route::resource('/withdraw','WithdrawalsController');

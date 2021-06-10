@@ -58,6 +58,9 @@
                                  <li class="nav-item">
                                     <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('payment.create') }}">{{ __('Deposit') }}</a>
+                                </li>
 
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('withdraw.create') }}">{{ __('Withdraw') }}</a>
