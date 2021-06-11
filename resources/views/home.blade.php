@@ -14,11 +14,38 @@
                         </div>
                     @endif
 
-                    <center>Available Balance <br>
-                        <h3>${{ Auth::user()->available_tokens }}</h3>
+                    <!-- <center>Available Balance <br> -->
+                        <!-- <h3>${{ Auth::user()->available_tokens }}</h3> -->
 
-                        <button class="btn btn-info" onclick="$('#buy_tokens').toggle()"> <i class="fa fa-shopping-cart"> </i> Buy Tokens</button>
+                      <!--   <button class="btn btn-info" onclick="$('#buy_tokens').toggle()"> <i class="fa fa-shopping-cart"> </i> Buy Tokens</button> -->
                     </center>
+
+                    <div class="card-body row">
+                   
+                   <div class="col-md-3 ">
+                        <center>
+                            <img width="50px" src="{{asset('assets/img/bc_logo.png')}}">
+                        </center>
+                    </div>
+
+                    <div class="col-md-3 ">
+                        <center>
+                            <img width="50px" src="{{asset('assets/img/eth_logo.png')}}">
+                        </center>
+                    </div>
+
+                    <div class="col-md-3 ">
+                        <center>
+                            <img width="50px" src="{{asset('assets/img/usdt_logo.png')}}">
+                        </center>
+                    </div>
+
+                    <div class="col-md-3 ">
+                        <center>
+                            <img width="50px" src="{{asset('assets/img/tron_logo.png')}}">
+                        </center>
+                    </div>
+                </div>
 
 
                 </div>
