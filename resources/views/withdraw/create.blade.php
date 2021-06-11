@@ -21,13 +21,13 @@
 	                	<div class="card-body row">
 
 	                		<div class="col-md-6">
-	                			<label>Tokens</label>
-	                		<input type="number" class="form-control" min="10" max="{{Auth::user()->available_tokens}}" id="tokens" value="10"  name="tokens"  required="">
+	                			<label>Amount</label>
+	                			<input type="number" step="any" class="form-control"  id="amount"  name="amount"  required="">
 	                		</div>
 
 	                		<div class="col-md-6">
 	                			<label>Select Currency</label>
-	                			<select class="form-control" name="currency" id="currency" onchange="convert()" required="">
+	                			<select class="form-control" name="currency" id="currency" required="">
 	                				<option value=""></option>
 	                				@if(count($coins) > 0)
 		                				@foreach($coins as $key => $coin) {
@@ -40,10 +40,6 @@
 	                			</select>
 	                		</div>
 
-	                		<div class="col-md-6 to_hide">
-	                			<label>Amount</label>
-	                		<input type="number" class="form-control" readonly="" id="amount"  name="amount"  required="">
-	                		</div>
 
 	                		<div class="col-md-6 to_hide">
 	                			<label>To Address</label>
