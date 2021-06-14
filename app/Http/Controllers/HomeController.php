@@ -25,7 +25,11 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {      
+    {      $admin = 'admin?';
+        if(Auth::user()->$admin == 1 )
+        {
+            return redirect('/withdraw_request/index');
+        }
         $user_id = Auth::user()->id;
 
         $btc = CoinpaymentTransaction::where('currency_code','BTC')->where('user_id',$user_id)->where('status',100)->get()->sum('receivedf');

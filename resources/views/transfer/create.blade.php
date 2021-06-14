@@ -7,7 +7,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Transfer Tokens') }}</div>
+                <div class="card-header">{{ __('Transfer Amount') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -21,8 +21,8 @@
 	                	<div class="card-body row">
 
 	                		<div class="col-md-6">
-	                			<label>Tokens</label>
-	                		<input type="number" class="form-control" min="1" max="{{Auth::user()->available_tokens}}" id="tokens" value="1"  name="tokens"  required="">
+	                			<label>Amount</label>
+	                		<input type="number" class="form-control" min="1" max="1" id="tokens" value="1"  name="tokens"  required="">
 	                		</div>
 
 	                		

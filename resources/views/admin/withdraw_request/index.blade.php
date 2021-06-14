@@ -44,6 +44,10 @@
                    	</tr>
                    	<?php $slno++; ?>
                    		@endforeach
+                        @else
+                        <tr> 
+                            <td colspan="8"><center> -- No New Requests -- </center></td>
+                        </tr>
                    		@endif
                    	</tbody>
 
