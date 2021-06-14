@@ -8,14 +8,25 @@ use App\Models\Withdrawal;
 class AdminController extends Controller
 {
     public function withdraw_request_index(){
-    	$withdraw_requests = Withdrawal::paginate(10);
+    	$withdraw_requests = Withdrawal::where('status','0')->paginate(10);
     	return view('admin.withdraw_request.index',compact('withdraw_requests'));
     }
     public function change_status($id){
 
     	$withdraw_requests = Withdrawal::find($id);
-    	$withdraw_requests->status = 1;
+    	$withdraw_requests->status = 100;
     	$withdraw_requests->save();	
     	return redirect()->back();
     }
+
+
+    public function reject($id){
+
+        $withdraw_requests = Withdrawal::find($id);
+        $withdraw_requests->status = -1;
+        $withdraw_requests->save(); 
+        return redirect()->back();
+    }
+
+
 }

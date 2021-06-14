@@ -13,37 +13,53 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    @if (session('error'))
+                        <div class="alert alert-danger" role="alert">
+                            {{ session('error') }}
+                        </div>
+                    @endif
 
                     <!-- <center>Available Balance <br> -->
                         <!-- <h3>${{ Auth::user()->available_tokens }}</h3> -->
 
                       <!--   <button class="btn btn-info" onclick="$('#buy_tokens').toggle()"> <i class="fa fa-shopping-cart"> </i> Buy Tokens</button> -->
-                    </center>
+                   
 
                     <div class="card-body row">
                    
                    <div class="col-md-3 ">
-                        <center>
+                        
                             <img width="50px" src="{{asset('assets/img/bc_logo.png')}}">
-                        </center>
+                            0.00000000
+                        
                     </div>
 
                     <div class="col-md-3 ">
-                        <center>
+                        
                             <img width="50px" src="{{asset('assets/img/eth_logo.png')}}">
-                        </center>
+                            0.00000000
+                        
                     </div>
 
                     <div class="col-md-3 ">
-                        <center>
+                       
                             <img width="50px" src="{{asset('assets/img/usdt_logo.png')}}">
-                        </center>
+                            0.00000000
+                       
                     </div>
 
                     <div class="col-md-3 ">
-                        <center>
+                        
                             <img width="50px" src="{{asset('assets/img/tron_logo.png')}}">
-                        </center>
+                            0.00000000
+                        
+                    </div>
+
+                    <div class="col-md-3 ">
+                      <br>  
+                            <img width="50px" src="{{asset('assets/img/lite.png')}}">
+                            {{$ltct}}
+                        
                     </div>
                 </div>
 
@@ -54,6 +70,65 @@
     </div>
 </div>
 
+
+
+<!-- pendings starts -->
+@if(count($pendings) > 0) 
+<div class="container" style="padding-top: 15px;">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-header">{{ __('Pending Payments') }}</div>
+
+                <div class="card-body">
+                   
+                   <table class="table  table-striped">
+                    <thead>
+                        <tr>
+                        <th>#</th>
+                        <th>Txn Id</th>
+                        <th>Coin</th>
+                        <th>Amount</th>
+                        <th>Recieved Amount</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <?php $cnt=1; ?>
+                        @foreach($pendings as $payment)
+                    <tr>
+                        <td>{{$cnt}}</td>
+                        <td>{{$payment->txn_id}}</td>
+                        <td>{{$payment->coin}}</td>
+                        <td>{{$payment->amountf}}</td>
+                        <td>{{$payment->receivedf}}</td>
+                        <td>{{$payment->status_text}}</td>
+                        <td>
+                            @if($payment->status == '0')
+                              <a href="{{url('check_for_update',$payment->txn_id)}}">  <button class="btn btn-info">Check</button></a>
+                            @endif
+                        </td>
+                    </tr>
+                    <?php $cnt++; ?>
+                        @endforeach
+                        
+                    </tbody>
+
+                   </table>
+                   <div class="d-flex justify-content-center">
+                   {!! $pendings->links("pagination::bootstrap-4") !!}
+                   <?php //echo $pendings->render(); ?>
+               </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endif
+<!-- pendings ends -->
 
 
 <div class="container" id="buy_tokens" style="display: none;padding-top: 5%;">

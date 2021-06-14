@@ -72,25 +72,31 @@ class CoinpaymentListener implements ShouldQueue
         $txn_id = $this->transaction['txn_id'];
         $status = $this->transaction['status'];
 
+        $received = $this->transaction['received'];
+        $receivedf = $this->transaction['receivedf'];
+
         if($status == 100){
         $transactions = CoinpaymentTransaction::where('txn_id', $txn_id)->first();
 
         if($transactions)
         {
-            $order = Order::where('order_id',$transactions->order_id)->first();
-            if($order)
-            {   
-                $token = $order->tokens;
-                $user= User::find($order->user_id);
+            // $order = Order::where('order_id',$transactions->order_id)->first();
+            // if($order)
+            // {   
+            //     $token = $order->tokens;
+            //     $user= User::find($order->user_id);
 
-                $available = $user->available_tokens;
-                $new_tokens = $available + $token;
+            //     $available = $user->available_tokens;
+            //     $new_tokens = $available + $token;
 
-                $user->available_tokens = $new_tokens;
-                $user->save();
+            //     $user->available_tokens = $new_tokens;
+            //     $user->save();
 
-            }
+            // }
 
+            // $transactions->received = $received; 
+            // $transactions->receivedf = $receivedf; 
+            // $transactions->save();
         } 
         }
 

@@ -16,7 +16,7 @@
                         </div>
                     @endif
 
-                    <form action="{{route('withdraw.store')}}" method="POST"> 
+                    <form action="{{url('/deposit2')}}" method="POST"> 
                     @csrf
 	                	<div class="card-body row">
 
@@ -27,7 +27,7 @@
 
 	                		<div class="col-md-6">
 	                			<label>Select Currency</label>
-	                			<select class="form-control" name="currency" id="currency" onchange="convert()" required="">
+	                			<select class="form-control" name="currency" id="currency" onchange="" required="">
 	                				<option value=""></option>
 	                				@if(count($coins) > 0)
 		                				@foreach($coins as $key => $coin) {
@@ -40,10 +40,10 @@
 	                			</select>
 	                		</div>
 
-	                		<div class="col-md-6 to_hide">
+	                		<!-- <div class="col-md-6 to_hide">
 	                			<label>Amount in $</label>
 	                		<input type="number" class="form-control" readonly="" id="amount_usd"  name="amount"  required="">
-	                		</div>
+	                		</div> -->
 
 	                		<!-- <div class="col-md-6 to_hide">
 	                			<label>To Address</label>

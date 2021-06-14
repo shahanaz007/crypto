@@ -70,7 +70,42 @@
                             @else
                                 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('payment.create') }}">{{ __('Deposit') }}</a>
+                                    <a class="nav-link" href="{{ route('payment.create') }}">{{ __('Deposit1') }}</a>
+                                </li>
+
+                                <!-- <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('payment.create') }}">{{ __('Deposit2') }}</a>
+                                </li> -->
+
+                                <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Deposit2
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ url('deposit/BTC') }}">
+                                        {{ __('BTC') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ url('deposit/ETH') }}">
+                                        {{ __('ETH') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ url('deposit/USDT.BEP2') }}">
+                                        {{ __('USDT.BEP2') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ url('deposit/TRX') }}">
+                                        {{ __('TRX') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ url('deposit/LTCT') }}">
+                                        {{ __('LTCT') }}
+                                    </a>
+
+                                    
+                                </div>
+                            </li>
+
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('/convert') }}">{{ __('Convert Coin') }}</a>
                                 </li>
 
                                 <li class="nav-item">

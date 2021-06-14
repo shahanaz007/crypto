@@ -10,6 +10,7 @@ class CoinpaymentTransaction extends Model {
 
     protected $fillable = [
         'order_id',
+        'user_id',
         'buyer_name',
         'buyer_email',
         'address',

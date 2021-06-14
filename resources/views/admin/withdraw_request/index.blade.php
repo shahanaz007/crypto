@@ -20,7 +20,7 @@
                    		<th>Currency Code</th>
                       <th>Address</th>
                    		<th>Status</th>
-                      <th></th>
+                      <th>Action</th>
                    	</tr>
                    	</thead>
                    	<tbody>
@@ -36,7 +36,9 @@
                    		<td>{{$withdraw_request->address}}</td>
                    		<td>{{$withdraw_request->status}}</td>
                       <td> @if($withdraw_request->status == '0')
-                              <a href="{{url('withdraw_request/change_status',$withdraw_request->id)}}">  <button class="btn btn-info">Update</button></a>
+                              <a href="{{url('withdraw_request/change_status',$withdraw_request->id)}}">  <button class="btn btn-success">Completed</button></a>
+
+                              <a href="{{url('withdraw_request/reject',$withdraw_request->id)}}">  <button class="btn btn-danger">_Rejected_</button></a>
                             @endif
                       </td>  
                    	</tr>

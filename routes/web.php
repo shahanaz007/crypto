@@ -24,7 +24,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('/payment','PaymentsController');
 Route::post('/create_order','PaymentsController@create_order');
 Route::get('/check_for_update/{id}','PaymentsController@check_for_update');
+Route::get('/check_for_status/{id}','PaymentsController@check_for_status');
+Route::get('/convert','PaymentsController@convert');
+
+
 Route::post('/get_rate_of_currency','PaymentsController@get_rate_of_currency');
+Route::get('/deposit/{id}','PaymentsController@deposit');
+Route::post('/deposit2','PaymentsController@deposit2');
 
 
 Route::resource('/withdraw','WithdrawalsController');
@@ -36,3 +42,4 @@ Route::resource('/transfer','TransfersController');
 Route::get('/withdraw_request/index','AdminController@withdraw_request_index');
 //admin to change the status of withdraw_request 10-06-2021
 Route::get('/withdraw_request/change_status/{id}','AdminController@change_status');
+Route::get('/withdraw_request/reject/{id}','AdminController@reject');
