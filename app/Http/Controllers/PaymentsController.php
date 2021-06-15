@@ -204,14 +204,7 @@ class PaymentsController extends Controller
 
     public function deposit($currency)
     {
-  // $transaction['order_id'] = uniqid(); // invoice number
-  // $transaction['amountTotal'] = (FLOAT) 1.0 * $tokens;
-  // $transaction['note'] = 'Transaction note';
-  // $transaction['buyer_name'] = Auth::user()->name;
-  // $transaction['buyer_email'] = Auth::user()->email;
-  // $transaction['redirect_url'] = url('/home'); // When Transaction was comleted
-  // $transaction['cancel_url'] = url('/home'); // When user click cancel link
-// $currency = 'BTC';
+ 
         $deposit =  $this->api_call('get_callback_address', [
             'currency' => $currency
         ]);

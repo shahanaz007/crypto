@@ -70,6 +70,10 @@
                             @else
                                 
                                 <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('coinaddress.index') }}">{{ __('Addresses') }}</a>
+                                </li>
+
+                                <li class="nav-item">
                                     <a class="nav-link" href="{{ route('payment.create') }}">{{ __('Deposit1') }}</a>
                                 </li>
 

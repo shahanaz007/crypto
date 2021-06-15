@@ -55,4 +55,8 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\withdrawal');
     }
     
+    public function coinaddresses()
+    {
+        return $this->hasMany(CoinAddress::class, 'user_id', 'id');
+    }
 }
