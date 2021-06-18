@@ -9,7 +9,7 @@
             @foreach($coinaddresses as $coinaddress)    
                 <div class="col-md-3" style="padding-bottom: 20px;">
                     <div class="card">
-                        <div class="card-header">{{ $coinaddress->currency_code }}</div>
+                        <div class="card-header"><b>{{ $coinaddress->currency_code }}</b></div>
 
                         <div class="card-body">
                          <center>
@@ -17,7 +17,7 @@
                              <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data={{$coinaddress->address}}"> <br>
                              Send To Address : {{ $coinaddress->address }}
                              <hr>
-                             Currency : {{ $coinaddress->currency_code }}
+                             Currency :<b> {{ $coinaddress->currency_code }}</b>
                          </center>  
                            
 

@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Hexters\CoinPayment\Traits\ApiCallTrait;
-use App\Models\CoinAddress;
+use Hexters\CoinPayment\Entities\CoinpaymentTransaction;
+use App\Models\{CoinAddress,User};
+use Exception;
 use Auth;
+
 class CoinAddressesController extends Controller
 {   
     use ApiCallTrait;
@@ -137,5 +140,73 @@ class CoinAddressesController extends Controller
     public function destroy($id)
     {
         //
+    }
+ 
+
+    public function ipn(Request $request)
+    {   
+        $address = $request->address;
+        $coin_address = CoinAddress::where('address',$address)->first();
+
+        if($coin_address && $coin_address->user)
+        {
+
+        $user = $coin_address->user;
+        // return $user;
+        $info = $this->api_call('get_tx_info', ['txid' => $request->txn_id]);
+            if($info['error'] != 'ok'){
+                throw new Exception($info['error']);
+            }
+
+
+          $transaction['order_id']  = uniqid(); // invoice number
+          $transaction['user_id']   = $coin_address->user->id;
+          $transaction['amount']    = (FLOAT) $request->amount;
+          $transaction['note']      = 'Transaction note';
+
+          $transaction['buyer_name']    = $coin_address->user->name;
+          $transaction['buyer_email']   = $coin_address->user->email;
+          $transaction['redirect_url']  = url('/home'); // When Transaction was comleted
+          $transaction['cancel_url']    = url('/home'); // When user click cancel link
+          $transaction['currency_code'] = $request->currency;
+          $transaction['coin']          = $request->currency;
+
+          $pay = array_merge($request->toArray(),  $info['result'], [
+                'user_id'  => $coin_address->user->id,  
+                'order_id' => uniqid(),
+                'amount_total_fiat' => $request->fiat_amount,
+                'payload' => $request->payload,
+                'buyer_name' => $coin_address->user->name,
+                'buyer_email' => $coin_address->user->email,
+                'currency_code' => $request->currency,
+                'redirect_url' => url('/home'),
+                'cancel_url' => url('/home'),
+                'checkout_url' => url('/home'),
+            ]);
+       $transaction =  CoinpaymentTransaction::create($pay);
+
+        // return $transaction;
+        
+        }
+        else{
+                throw new Exception('The deposit address '.$address.' not found / stored for any user');
+        }
+
+        
+    }
+
+
+    public function test(Request $request){
+
+        $user= User::find($request->user_id);
+
+        return $user->debit($request);
+
+        // $info = $this->api_call('get_tx_info', ['txid' => 'CPFE1W4PB5Y24KTPNZVZQ5TQVN']);
+        //     if($info['error'] != 'ok'){
+        //         throw new Exception($info['error']);
+        //     }
+
+        //     return $info;
     }
 }

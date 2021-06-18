@@ -6,6 +6,9 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Http\Request;
+use Hexters\CoinPayment\Entities\CoinpaymentTransaction;
+
 use Auth;
 class User extends Authenticatable
 {
@@ -58,5 +61,53 @@ class User extends Authenticatable
     public function coinaddresses()
     {
         return $this->hasMany(CoinAddress::class, 'user_id', 'id');
+    }
+
+    public function balance($user_id,$currency){
+
+        $credit = CoinpaymentTransaction::where('currency_code',$currency)->where('user_id',$user_id)->where('status',100)->get()->sum('receivedf');
+        $debit = Withdrawal::where('currency_code',$currency)->where('user_id',$user_id)->where('status',100)->get()->sum('amount');
+        $balance = $credit - $debit;
+
+        return $balance;
+    }
+
+    // for debit from wallet 
+    public function debit(Request $request){
+
+        $balance = $this->balance($this->id,$request->currency);
+        $requested_amount = $request->amount;
+
+        if($balance >= $requested_amount )
+        {
+            try
+            {
+                $wd =new Withdrawal;
+                $wd->user_id = $this->id;
+                $wd->w_id = uniqid();
+                $wd->amount = $request->amount;
+                $wd->currency_code = $request->currency;
+                $wd->address = $request->address;
+                $wd->status = 100;
+                if($wd->save())
+                {   
+                    
+                    return "withdrawed Amount. New balance=".$this->balance($this->id,$request->currency);
+                }
+            }
+            catch(\Exception $e)
+            {
+                return  $e;
+            }
+            
+
+            
+        }
+        else
+        {
+            return "No more balance. available_bal =".$balance;
+        }
+        
+
     }
 }

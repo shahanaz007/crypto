@@ -9,6 +9,7 @@ use Hexters\CoinPayment\Helpers\CoinPaymentHelper;
 use Hexters\CoinPayment\Entities\CoinpaymentTransaction;
 use App\Models\Order;
 use Auth;
+use Exception;
 
 class PaymentsController extends Controller
 {   
