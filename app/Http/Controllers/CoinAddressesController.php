@@ -146,6 +146,52 @@ class CoinAddressesController extends Controller
 
     public function ipn(Request $request)
     {   
+            /*
+        $txn_id = $_POST['txn_id'];
+        $item_name = $_POST['item_name'];
+        $item_number = $_POST['item_number'];
+        $amount1 = floatval($_POST['amount1']);
+        $amount2 = floatval($_POST['amount2']);
+        $currency1 = $_POST['currency1'];
+        $currency2 = $_POST['currency2'];
+        $status = intval($_POST['status']);
+        $status_text = $_POST['status_text'];
+    */
+    $cp_merchant_id   = config('coinpayment.ipn.config.coinpayment_merchant_id');
+    $cp_ipn_secret    = config('coinpayment.ipn.config.coinpayment_ipn_secret');
+    $cp_debug_email   = config('coinpayment.ipn.config.coinpayment_ipn_debug_email');
+    
+    /* Filtering */
+    if(!empty($req->merchant) && $req->merchant != trim($cp_merchant_id)){
+        if(!empty($cp_debug_email)) {
+            \Mail::to($cp_debug_email)->send(new SendEmail([
+                
+                'message' => 'No or incorrect Merchant ID passed'
+            ]));
+        }
+        return response('No or incorrect Merchant ID passed', 401);
+    }
+    $request = file_get_contents('php://input');
+    if ($request === FALSE || empty($request)) {
+        if(!empty($cp_debug_email)) {
+            \Mail::to($cp_debug_email)->send(new SendEmail([
+                
+                'message' => 'Error reading POST data'
+            ]));
+        }
+        return response('Error reading POST data', 401);
+    }
+    $hmac = hash_hmac("sha512", $request, trim($cp_ipn_secret));
+    if (!hash_equals($hmac, $_SERVER['HTTP_HMAC'])) {
+        if(!empty($cp_debug_email)) {
+            \Mail::to($cp_debug_email)->send(new SendEmail([
+                'message' => 'HMAC signature does not match'
+            ]));
+        }
+        return response('HMAC signature does not match', 401);
+    }
+
+
         $address = $request->address;
         $coin_address = CoinAddress::where('address',$address)->first();
 
@@ -154,10 +200,10 @@ class CoinAddressesController extends Controller
 
         $user = $coin_address->user;
         // return $user;
-        $info = $this->api_call('get_tx_info', ['txid' => $request->txn_id]);
-            if($info['error'] != 'ok'){
-                throw new Exception($info['error']);
-            }
+        // $info = $this->api_call('get_tx_info', ['txid' => $request->txn_id]);
+        //     if($info['error'] != 'ok'){
+        //         throw new Exception($info['error']);
+        //     }
 
 
           $transaction['order_id']  = uniqid(); // invoice number
@@ -172,7 +218,7 @@ class CoinAddressesController extends Controller
           $transaction['currency_code'] = $request->currency;
           $transaction['coin']          = $request->currency;
 
-          $pay = array_merge($request->toArray(),  $info['result'], [
+          $pay = array_merge($request->toArray(), [
                 'user_id'  => $coin_address->user->id,  
                 'order_id' => uniqid(),
                 'amount_total_fiat' => $request->fiat_amount,
@@ -180,6 +226,7 @@ class CoinAddressesController extends Controller
                 'buyer_name' => $coin_address->user->name,
                 'buyer_email' => $coin_address->user->email,
                 'currency_code' => $request->currency,
+                'receivedf'     => $request->amount,
                 'redirect_url' => url('/home'),
                 'cancel_url' => url('/home'),
                 'checkout_url' => url('/home'),
@@ -199,15 +246,15 @@ class CoinAddressesController extends Controller
 
     public function test(Request $request){
 
-        $user= User::find($request->user_id);
+        // $user= User::find($request->user_id);
 
-        return $user->debit($request);
+        // return $user->debit($request);
 
-        // $info = $this->api_call('get_tx_info', ['txid' => 'CPFE1W4PB5Y24KTPNZVZQ5TQVN']);
-        //     if($info['error'] != 'ok'){
-        //         throw new Exception($info['error']);
-        //     }
+        $info = $this->api_call('get_tx_info', ['txid' => 'CPFE1W4PB5Y24KTPNZVZQ5TQVN']);
+            if($info['error'] != 'ok'){
+                throw new Exception($info['error']);
+            }
 
-        //     return $info;
+            return $info;
     }
 }

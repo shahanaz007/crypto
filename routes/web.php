@@ -39,7 +39,7 @@ Route::post('/get_rate_of','WithdrawalsController@get_rate_of');
 Route::resource('/transfer','TransfersController');
 
 Route::resource('/coinaddress','CoinAddressesController');
-Route::post('/test','CoinAddressesController@test');
+Route::any('/test','CoinAddressesController@test');
 Route::post('/coinaddress_ipn','CoinAddressesController@ipn');
 
 
