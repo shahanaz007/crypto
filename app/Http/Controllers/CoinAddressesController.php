@@ -50,7 +50,8 @@ class CoinAddressesController extends Controller
             {
 
                 $deposit =  $this->api_call('get_callback_address', [
-                    'currency' => $currency
+                    'currency' => $currency,
+                    'ipn_url' =>url('/coinaddress_ipn')
             ]);
 
             $transaction['user_id']          = Auth::user()->id;
