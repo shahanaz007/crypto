@@ -192,6 +192,19 @@ return config('coinpayment.ipn.config.coinpayment_merchant_id');
         return response('HMAC signature does not match', 401);
     }
 
+    $transactions = CoinpaymentTransaction::where('txn_id', $req->txn_id)->first();
+
+    if($transactions){
+
+            try {
+                $transactions->update($req->toArray());
+            } catch (\Exception $e) {
+                \Mail::to($cp_debug_email)->send(new SendEmail([
+                    'message' => date('Y-m-d H:i:s ') . $e->getMessage()
+                ]));
+            }
+    }
+    else{
 
         $address = $req->address;
         $coin_address = CoinAddress::where('address',$address)->first();
@@ -244,6 +257,8 @@ return config('coinpayment.ipn.config.coinpayment_merchant_id');
                 // throw new Exception('The deposit address '.$address.' not found / stored for any user');
         }
 
+    }
+
         
     }
 
@@ -254,7 +269,7 @@ return config('coinpayment.ipn.config.coinpayment_merchant_id');
 
         // return $user->debit($request);
 
-        $info = $this->api_call('get_tx_info', ['txid' => 'CPFE1W4PB5Y24KTPNZVZQ5TQVN']);
+        $info = $this->api_call('get_tx_info', ['txid' => 'e891ffe39ddfc4fb9946cff50b8683a29d76d34343589077e9ec9b0b78b9c26e']);
             if($info['error'] != 'ok'){
                 throw new Exception($info['error']);
             }
