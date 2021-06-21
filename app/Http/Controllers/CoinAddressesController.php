@@ -22,7 +22,7 @@ class CoinAddressesController extends Controller
     public function index()
     {
         //  $currencies = ['BTC','ETH','TRX','USDT.BEP2','LTCT'];
-return config('coinpayment.ipn.config.coinpayment_merchant_id');
+
         // foreach($currencies as $currency)
         // {
         //     echo $currency.'<br>';
