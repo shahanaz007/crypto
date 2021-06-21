@@ -237,8 +237,11 @@ class CoinAddressesController extends Controller
         // return $transaction;
         
         }
-        else{
-                throw new Exception('The deposit address '.$address.' not found / stored for any user');
+        else{   
+                \Mail::to($cp_debug_email)->send(new SendEmail([
+                    'message' => 'The deposit address '.$address.' not found / stored for any user'
+                ]));
+                // throw new Exception('The deposit address '.$address.' not found / stored for any user');
         }
 
         
