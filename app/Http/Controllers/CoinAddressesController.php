@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Hexters\CoinPayment\Traits\ApiCallTrait;
 use Hexters\CoinPayment\Entities\CoinpaymentTransaction;
+use Hexters\CoinPayment\Emails\IPNErrorMail as SendEmail;
 use App\Models\{CoinAddress,User};
 use Exception;
 use Auth;
