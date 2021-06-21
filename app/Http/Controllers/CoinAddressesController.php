@@ -22,7 +22,7 @@ class CoinAddressesController extends Controller
     public function index()
     {
         //  $currencies = ['BTC','ETH','TRX','USDT.BEP2','LTCT'];
-
+return config('coinpayment.ipn.config.coinpayment_merchant_id');
         // foreach($currencies as $currency)
         // {
         //     echo $currency.'<br>';
@@ -145,7 +145,7 @@ class CoinAddressesController extends Controller
     }
  
 
-    public function ipn(Request $request)
+    public function ipn(Request $req)
     {   
             /*
         $txn_id = $_POST['txn_id'];
@@ -193,7 +193,7 @@ class CoinAddressesController extends Controller
     }
 
 
-        $address = $request->address;
+        $address = $req->address;
         $coin_address = CoinAddress::where('address',$address)->first();
 
         if($coin_address && $coin_address->user)
@@ -209,25 +209,25 @@ class CoinAddressesController extends Controller
 
           $transaction['order_id']  = uniqid(); // invoice number
           $transaction['user_id']   = $coin_address->user->id;
-          $transaction['amount']    = (FLOAT) $request->amount;
+          $transaction['amount']    = (FLOAT) $req->amount;
           $transaction['note']      = 'Transaction note';
 
           $transaction['buyer_name']    = $coin_address->user->name;
           $transaction['buyer_email']   = $coin_address->user->email;
           $transaction['redirect_url']  = url('/home'); // When Transaction was comleted
           $transaction['cancel_url']    = url('/home'); // When user click cancel link
-          $transaction['currency_code'] = $request->currency;
-          $transaction['coin']          = $request->currency;
+          $transaction['currency_code'] = $req->currency;
+          $transaction['coin']          = $req->currency;
 
-          $pay = array_merge($request->toArray(), [
+          $pay = array_merge($req->toArray(), [
                 'user_id'  => $coin_address->user->id,  
                 'order_id' => uniqid(),
-                'amount_total_fiat' => $request->fiat_amount,
-                'payload' => $request->payload,
+                'amount_total_fiat' => $req->fiat_amount,
+                'payload' => $req->payload,
                 'buyer_name' => $coin_address->user->name,
                 'buyer_email' => $coin_address->user->email,
-                'currency_code' => $request->currency,
-                'receivedf'     => $request->amount,
+                'currency_code' => $req->currency,
+                'receivedf'     => $req->amount,
                 'redirect_url' => url('/home'),
                 'cancel_url' => url('/home'),
                 'checkout_url' => url('/home'),
