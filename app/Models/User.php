@@ -110,4 +110,9 @@ class User extends Authenticatable
         
 
     }
+
+    public function merchant()
+    {
+        return $this->hasMany('App\Models\MerchantRequest');
+    }
 }

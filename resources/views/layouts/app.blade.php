@@ -67,6 +67,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{URL::to('/withdraw_request/index')}}">{{ __('Withdraw Request') }}</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{URL::to('/merchant_request/index')}}">{{ __('Merchant Request') }}</a>
+                                </li>
                             @else
                                 
                                 <li class="nav-item">
@@ -111,6 +114,11 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('/convert') }}">{{ __('Convert Coin') }}</a>
                                 </li>
+                                @if(Auth::user()->merchant != 1)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('/merchant_request') }}">{{ __('Merchant Request') }}</a>
+                                </li>
+                                @endif
 
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('withdraw.create') }}">{{ __('Withdraw') }}</a>
@@ -119,7 +127,7 @@
                                     <a class="nav-link" href="{{ route('transfer.create') }}">{{ __('Transfer') }}</a>
                                 </li>
 
-                            <li class="nav-item">
+                                <li class="nav-item">
                                     <a class="nav-link" href="{{ route('payment.index') }}">{{ __('History') }}</a>
                                 </li>
 

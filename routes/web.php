@@ -51,3 +51,13 @@ Route::get('/withdraw_request/reject/{id}','AdminController@reject');
 
 
 Route::resource('/gateway','GatewayController');
+
+//merchant request 01-07-2021
+Route::get('/merchant_request','MerchantsController@merchant_request');
+//store merchant request 01-07-2021
+Route::post('/merchant_request/store','MerchantsController@merchant_request_store');
+//admin to view merchant request 01-07-2021
+Route::get('/merchant_request/index','Admin\MerchantsController@merchant_request_index');
+//admin to change the status of merchant_request 01-07-2021
+Route::get('/merchant_request/change_status/{id}','Admin\MerchantsController@change_status');
+Route::get('/merchant_request/reject/{id}','Admin\MerchantsController@reject');
