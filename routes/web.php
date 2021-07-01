@@ -48,3 +48,6 @@ Route::get('/withdraw_request/index','AdminController@withdraw_request_index');
 //admin to change the status of withdraw_request 10-06-2021
 Route::get('/withdraw_request/change_status/{id}','AdminController@change_status');
 Route::get('/withdraw_request/reject/{id}','AdminController@reject');
+
+
+Route::resource('/gateway','GatewayController');

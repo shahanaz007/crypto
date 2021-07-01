@@ -26,4 +26,14 @@ class Common
 
     }
 
+     public static function transfer_currency($transfer)
+    {
+        $from   = $transfer['from_id'];
+        $to     = $transfer['to_id'];
+        $currency_code = $transfer['currency_code'];
+        $amount     = $transfer['amount'];
+
+
+    }
+
 }

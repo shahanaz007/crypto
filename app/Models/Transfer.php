@@ -26,4 +26,10 @@ class Transfer extends Model
         }
         return 401;
     }
+
+    public static function transfer_currency($transfer)
+    {
+
+    }
+
 }
