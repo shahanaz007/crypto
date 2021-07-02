@@ -82,8 +82,11 @@ Route::get('/coupon_category/disable/{id}','Admin\CouponCategoriesController@cou
 Route::get('/coupon_category/enable/{id}','Admin\CouponCategoriesController@coupon_category_enable');
 
 //admin to view coupons  02-07-2021
-Route::get('/coupon/index','Admin\CouponsController@coupon_index');
+Route::get('/admin_coupon/index','Admin\CouponsController@coupon_index');
 //admin to add coupon  02-07-2021
-Route::get('coupon/add','Admin\CouponsController@coupon_add');
+Route::get('/admin_coupon/add','Admin\CouponsController@coupon_add');
 //store coupon category 02-07-2021
-Route::post('/coupon/store','Admin\CouponsController@coupon_store');
+Route::post('/admin_coupon/store','Admin\CouponsController@coupon_store');
+
+
+Route::resource('/coupon','CouponsController');

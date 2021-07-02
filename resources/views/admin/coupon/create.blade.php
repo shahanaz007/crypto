@@ -26,17 +26,16 @@
                                     <option value=""></option>
                                     @if(count($categories) > 0)
                                         @foreach($categories as $key => $category) 
-                                                <option><?php print($key); ?></option>
-                                            @endif
+                                            <option>{{$category->category_name}}</option>
                                         @endforeach
                                     @endif
                                     
                                 </select>
                             </div>
 
-	                		<div class="col-md-8">
-	                			<label>Category Name</label>
-	                			<input type="text" class="form-control"  id="category_name_id"  name="category_name"  required="">
+	                		<div class="col-md-6">
+	                			<label>Code</label>
+	                			<input type="text" class="form-control"  id="code_id"  name="code"  required="">
 	                		</div>
 
 	                	</div>

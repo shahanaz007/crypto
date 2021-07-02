@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Coupon;
+use App\Models\{Coupon,CouponCategory};
 
 class CouponsController extends Controller
 {
@@ -18,7 +18,8 @@ class CouponsController extends Controller
     //function to add coupon  02-07-2021
     public function coupon_add()
     {
-    	return view('admin.coupon.create');
+    	$categories = CouponCategory::where('disabled','=',0)->get();
+    	return view('admin.coupon.create',compact('categories'));
     }
 
     //function to store coupon  02-07-2021
