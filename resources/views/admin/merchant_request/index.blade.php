@@ -32,6 +32,8 @@
                  		<td>{{$merchant_request->company_email}}</td>
                  		<td>{{$merchant_request->status}}</td>
                     <td> @if($merchant_request->status == '0')
+                            <a href="{{url('merchant_request/view',$merchant_request->id)}}">  <button class="btn btn-success">_View_</button></a>
+
                             <a href="{{url('merchant_request/change_status',$merchant_request->id)}}">  <button class="btn btn-success">Approve</button></a>
 
                             <a href="{{url('merchant_request/reject',$merchant_request->id)}}">  <button class="btn btn-danger">_Reject_</button></a>

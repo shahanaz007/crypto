@@ -52,6 +52,7 @@ Route::get('/withdraw_request/reject/{id}','AdminController@reject');
 
 Route::resource('/gateway','GatewayController');
 
+
 //merchant request 01-07-2021
 Route::get('/merchant_request','MerchantsController@merchant_request');
 //store merchant request 01-07-2021
@@ -61,6 +62,9 @@ Route::get('/merchant_request/index','Admin\MerchantsController@merchant_request
 //admin to change the status of merchant_request 01-07-2021
 Route::get('/merchant_request/change_status/{id}','Admin\MerchantsController@change_status');
 Route::get('/merchant_request/reject/{id}','Admin\MerchantsController@reject');
+//admin to view the merchant_request 02-07-2021
+Route::get('/merchant_request/view/{id}','Admin\MerchantsController@view');
+
 
 //admin to view coupon category 02-07-2021
 Route::get('/coupon_category/index','Admin\CouponCategoriesController@coupon_category_index');

@@ -23,7 +23,7 @@ class MerchantsController extends Controller
     	$user    		= User::find($user_id);
     	$user->merchant = 1;
     	$user->save();
-    	return redirect()->back();
+    	return redirect('merchant_request/index');
     }
 
 
@@ -31,6 +31,12 @@ class MerchantsController extends Controller
         $merchant_requests = MerchantRequest::find($id);
         $merchant_requests->status = -1;
         $merchant_requests->save(); 
-        return redirect()->back();
+        return redirect('merchant_request/index');
+    }
+    //function to view the request 02-07-2021
+    public function view($id){
+        $merchant_requests         = MerchantRequest::find($id);
+        // return $merchant_requests;
+        return view('admin.merchant_request.view',compact('merchant_requests'));
     }
 }
