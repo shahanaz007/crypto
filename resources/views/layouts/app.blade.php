@@ -73,6 +73,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{URL::to('/coupon_category/index')}}">{{ __('Coupon Category') }}</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{URL::to('/coupon/index')}}">{{ __('Coupons') }}</a>
+                                </li>
                             @else
                                 
                                 <li class="nav-item">

@@ -7,7 +7,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Coupon Category Form') }}</div>
+                <div class="card-header">{{ __('Coupon Form') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -16,9 +16,23 @@
                         </div>
                     @endif
 
-                    <form action="{{url('/coupon_category/store')}}" method="POST"> 
+                    <form action="{{url('/coupon/store')}}" method="POST"> 
                     @csrf
 	                	<div class="card-body row">
+
+                            <div class="col-md-6">
+                                <label>Select Category</label>
+                                <select class="form-control" name="category" id="category_id" required="">
+                                    <option value=""></option>
+                                    @if(count($categories) > 0)
+                                        @foreach($categories as $key => $category) 
+                                                <option><?php print($key); ?></option>
+                                            @endif
+                                        @endforeach
+                                    @endif
+                                    
+                                </select>
+                            </div>
 
 	                		<div class="col-md-8">
 	                			<label>Category Name</label>
