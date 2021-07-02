@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class CouponCategory extends Model
 {
     use HasFactory;
+
+    public function coupon()
+    {
+        return $this->hasMany('App\Models\Coupon');
+    }
 }

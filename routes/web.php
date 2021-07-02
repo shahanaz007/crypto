@@ -87,6 +87,10 @@ Route::get('/admin_coupon/index','Admin\CouponsController@coupon_index');
 Route::get('/admin_coupon/add','Admin\CouponsController@coupon_add');
 //store coupon category 02-07-2021
 Route::post('/admin_coupon/store','Admin\CouponsController@coupon_store');
+//view edit coupon  page 02-07-2021
+Route::get('/admin_coupon/edit/{id}','Admin\CouponsController@coupon_edit');
+//update coupon  page 02-07-2021
+Route::post('/admin_coupon/update/{id}','Admin\CouponsController@coupon_update');
 
 
 Route::resource('/coupon','CouponsController');

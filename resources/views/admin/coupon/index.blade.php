@@ -8,7 +8,7 @@
       <div class="card">
         <div class="card-header">{{ __('Coupons') }}</div>
         <div class="card-body">
-          <h4 style="text-align: right;"><a href="{{url('coupon/add')}}">  <button class="btn btn-success">Add New</button></a></h4>
+          <h4 style="text-align: right;"><a href="{{url('admin_coupon/add')}}">  <button class="btn btn-success">Add New</button></a></h4>
           <table class="table  table-striped">
            	<thead>
            		<tr>
@@ -17,6 +17,7 @@
                 <th>Code</th>
                 <th>Point</th>
                 <th>Currency Code</th>
+                <th>Expiry Date</th>
                 <th>Action</th>
            	  </tr>
            	</thead>
@@ -26,13 +27,13 @@
              		@foreach($coupons as $coupon)
                	  <tr>
                  		<td>{{$slno}}</td>
-                    <td>{{$coupon->category->category_name}}</td>
+                    <td>{{$coupon->coupon_category->category_name}}</td>
                     <td>{{$coupon->code}}</td>
                     <td>{{$coupon->point}}</td>
-                    <td>{{$coupon->currency_code}}</td>
+                    <td>{{$coupon->Currency_code}}</td>
                     <td>{{$coupon->expiry_date}}</td>
                     <td>
-                      <a href="{{url('coupon/edit',$coupon->id)}}">  <button class="btn btn-success">Edit</button></a>
+                      <a href="{{url('admin_coupon/edit',$coupon->id)}}">  <button class="btn btn-success">Edit</button></a>
                     </td>  
                	  </tr>
                	  <?php $slno++; ?>
