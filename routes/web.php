@@ -61,3 +61,18 @@ Route::get('/merchant_request/index','Admin\MerchantsController@merchant_request
 //admin to change the status of merchant_request 01-07-2021
 Route::get('/merchant_request/change_status/{id}','Admin\MerchantsController@change_status');
 Route::get('/merchant_request/reject/{id}','Admin\MerchantsController@reject');
+
+//admin to view coupon category 02-07-2021
+Route::get('/coupon_category/index','Admin\CouponCategoriesController@coupon_category_index');
+//admin to add coupon category 02-07-2021
+Route::get('coupon_category/add','Admin\CouponCategoriesController@coupon_category_add');
+//store coupon category 02-07-2021
+Route::post('/coupon_category/store','Admin\CouponCategoriesController@coupon_category_store');
+//view edit coupon category page 02-07-2021
+Route::get('/coupon_category/edit/{id}','Admin\CouponCategoriesController@coupon_category_edit');
+//update coupon category page 02-07-2021
+Route::post('/coupon_category/update/{id}','Admin\CouponCategoriesController@coupon_category_update');
+//disable coupon category 02-07-2021
+Route::get('/coupon_category/disable/{id}','Admin\CouponCategoriesController@coupon_category_disable');
+//disable coupon category 02-07-2021
+Route::get('/coupon_category/enable/{id}','Admin\CouponCategoriesController@coupon_category_enable');

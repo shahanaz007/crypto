@@ -1,0 +1,79 @@
+@extends('layouts.app')
+
+@section('content')
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Coupon Category Form') }}</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    <form action="{{url('/coupon_category/store')}}" method="POST"> 
+                    @csrf
+	                	<div class="card-body row">
+
+	                		<div class="col-md-8">
+	                			<label>Category Name</label>
+	                			<input type="text" class="form-control"  id="category_name_id"  name="category_name"  required="">
+	                		</div>
+
+	                	</div>
+
+	                		<div class="row">
+							    <div class="col-lg-12">
+							        <button class="btn btn-secondary float-right">Submit</button>
+							    </div>
+							</div>
+						
+	                		
+                	</form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="application/javascript"> 
+		
+	function convert(){
+		$('.to_hide').toggle();
+		tokens = $('#tokens').val();
+		currency = $('#currency').val();
+		 $.ajax({
+            method: "POST",
+            url: "{{url('/get_rate_of')}}",
+            data: {
+                'currency': currency,
+                'tokens': tokens,
+                
+                '_token': '{{csrf_token()}}'
+            },
+            success: function(data) {
+            	usd_rate = data.usd_rate;
+            	currency_rate = data.currency_rate;
+
+            	btc_amount = tokens * usd_rate;
+            	converted_amount = btc_amount /  currency_rate;
+               	converted_amount = converted_amount.toFixed(8);
+
+               	$('#amount').val(converted_amount);
+               	// alert(converted_amount);
+               	$('.to_hide').toggle();
+            }
+
+        });
+
+	}
+</script>
+
+@endsection

@@ -70,6 +70,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{URL::to('/merchant_request/index')}}">{{ __('Merchant Request') }}</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{URL::to('/coupon_category/index')}}">{{ __('Coupon Category') }}</a>
+                                </li>
                             @else
                                 
                                 <li class="nav-item">
