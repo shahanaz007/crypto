@@ -162,6 +162,18 @@
         </nav>
 
         <main class="py-4">
+                        
+
+                        @if (session('status'))
+                        <div class="container col-md-8 justify-content-center alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    @if (session('error'))
+                        <div class="container col-md-8 justify-content-center alert alert-danger" role="alert">
+                            {{ session('error') }}
+                        </div>
+                    @endif
             @yield('content')
         </main>
     </div>
