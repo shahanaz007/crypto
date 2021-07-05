@@ -125,7 +125,9 @@
                                     <a class="nav-link" href="{{ url('/merchant_request') }}">{{ __('Merchant Request') }}</a>
                                 </li>
                                 @endif
-
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('coupon_purchase.index') }}">{{ __('Coupon Purchase') }}</a>
+                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('withdraw.create') }}">{{ __('Withdraw') }}</a>
                                 </li>
