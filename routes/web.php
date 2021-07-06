@@ -92,8 +92,17 @@ Route::get('/admin_coupon/edit/{id}','Admin\CouponsController@coupon_edit');
 //update coupon  page 02-07-2021
 Route::post('/admin_coupon/update/{id}','Admin\CouponsController@coupon_update');
 
-//user to view coupons for purchase  05-07-2021
+
+//user  coupons for purchase  05-07-2021
 Route::resource('/coupon_purchase','CouponPurchaseController');
+
+
+//admin for locations  06-07-2021
+Route::resource('/location','Admin\LocationsController');
+
+
+//admin for brands  06-07-2021
+Route::resource('/brand','Admin\BrandsController');
 
 
 

@@ -7,7 +7,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Coupon Category Edit Form') }}</div>
+                <div class="card-header">{{ __('Locations Edit Form') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -16,13 +16,14 @@
                         </div>
                     @endif
 
-                    <form action="{{url('/coupon_category/update/'.$coupon_categories->id)}}" method="POST"> 
+                    <form action="{{route('location.update',$locations->id)}}" method="POST"> 
+                    @method('put')
                     @csrf
 	                	<div class="card-body row">
 
 	                		<div class="col-md-8">
-	                			<label>Category Name</label>
-	                			<input type="text" class="form-control"  id="category_name_id"  name="category_name"  value="{{$coupon_categories->category_name}}">
+	                			<label>Name</label>
+	                			<input type="text" class="form-control"  id="name_id"  name="name"  value="{{$locations->name}}">
 	                		</div>
 
 	                	</div>
