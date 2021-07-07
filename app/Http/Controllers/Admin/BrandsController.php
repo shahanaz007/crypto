@@ -89,7 +89,28 @@ class BrandsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $name = $request->name;
+
+        $path ='';
+        if($request->has('logo')) {
+            $image_path = '/uploads/images/brands/'. Str::random(20) .'.'.$request->logo->extension();
+            $file = $request->logo;
+            $filename = $file->getClientOriginalName();
+            $img = \Image::make($file);
+            $img->resize(230, 230)->save(public_path($image_path));
+           
+
+        }
+        else{
+            $image_path = $request->old_logo;
+           
+        }
+
+        $brands       = Brand::find($id);
+        $brands->name = $name;
+        $brands->logo = ($request->has('logo'))?$image_path:null;
+        $brands->save();
+        return redirect('brand')->with('status','Brand Updated successfully');
     }
 
     /**
