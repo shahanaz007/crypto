@@ -41,11 +41,6 @@
                 <div class="woo_product_caption center" >
                   
                   <div class="woo_rate" style="margin-top: 10px;">
-                    <!-- <i class="fa fa-star filled"></i>
-                    <i class="fa fa-star filled"></i>
-                    <i class="fa fa-star filled"></i>
-                    <i class="fa fa-star filled"></i>
-                    <i class="fa fa-star"></i> -->
                   </div>
                   
                   <div class="woo_title" >
@@ -68,7 +63,7 @@
                 <div class="col-md-6">
                    <div class="woo-add text-right but-ri">
                   
-                  <a href=""><button type="submit" class="btn btn-success select-btn">Purchase 
+                  <a href="{{route('coupon_purchase.show',$coupon->id)}}"><button type="submit" class="btn btn-success select-btn">Purchase 
                       <!-- <i class="ti-shopping-cart-full"></i> -->
                      </button></a>
                  

@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Carbon\Carbon;
-use App\Models\{Coupon,CouponCategory};
+use App\Models\{Coupon,CouponCategory,CouponPurchase};
+use Auth;
 
 class CouponPurchaseController extends Controller
 {
@@ -43,7 +44,26 @@ class CouponPurchaseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $user_id   = Auth::user()->id;
+        $coupon_id = $request->coupon_id;
+        $currency  = $request->currency;
+        $amount    = $request->amount;
+
+        $coupon       = Coupon::find($coupon_id); 
+        $coupon->used = 1;
+        $coupon->save();
+
+        $details              = new CouponPurchase;
+        $details->user_id     = $user_id;
+        $details->coupon_id   = $coupon_id;
+        $details->currency    = $currency;
+        $details->amount      = $amount;
+        $details->paid_amount = 0;
+        $details->save();
+        // return redirect('brand')->with('status','Brand Added successfully');
+        return redirect('coupon_purchase')->with('status','Coupon Purchased Successfully');
+
     }
 
     /**
@@ -54,7 +74,9 @@ class CouponPurchaseController extends Controller
      */
     public function show($id)
     {
-        //
+        $details = Coupon::find($id);
+        // return $details;
+        return view('coupon_purchase.purchase',compact('details'));
     }
 
     /**
