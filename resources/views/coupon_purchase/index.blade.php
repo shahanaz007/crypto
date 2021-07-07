@@ -1,97 +1,77 @@
 @extends('layouts.app')
-
 @section('content')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
 
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+.rounded {
+    border-radius: 12px !important;
+    box-shadow: 0px 0px 6px 0px darkgrey;
+}
+</style>
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-10">
-      <div class="card">
-        <div class="card-header">{{ __('Coupons') }}</div>
-        <div class="card-body">
-          <section class="sctn mt-3" style="padding: 0px 0 50px;">
-        <div class="container">
-        
-            <div class="container">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="label">
-                    @if(count($categories) > 0)
-                    <ul class="d-flex" style="justify-content: center;">
-                      <a href="{{route('coupon_purchase.index')}}"><h5>All</h5></a>&nbsp;&nbsp;&nbsp;
-                      @foreach($categories as $category)
-                        <a href=""><h5 >{{$category->category_name}} </h5></a>&nbsp;&nbsp;&nbsp;
-                      @endforeach
-                    </ul> 
-                    @endif
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-          
-          <div class="row">
-        
-              @foreach($coupons as $coupon)
-            <!-- Single Item -->
-            <div class="col-lg-4 col-md-6 col-sm-6">
-              <div class="woo_product_grid">
-               
-                       
 
-                <div class="woo_product_caption center" >
-                  
-                  <div class="woo_rate" style="margin-top: 10px;">
-                    <!-- <i class="fa fa-star filled"></i>
-                    <i class="fa fa-star filled"></i>
-                    <i class="fa fa-star filled"></i>
-                    <i class="fa fa-star filled"></i>
-                    <i class="fa fa-star"></i> -->
-                  </div>
-                  
-                  <div class="woo_title" >
-                    <h4 class="woo_pro_title"><a href="detail-1.html" style="font-weight:bold"></a></h4>
-                  </div>
-                </div>
-                             <div class="woo_description">
-                     <p class="p-1">Category : {{$coupon->coupon_category->category_name}}</p>
-                     <p class="p-1">Point    : {{$coupon->point}}</p>
-                     <p class="p-1">Expiry : {{$coupon->expiry_date}}</p>
+<div class="row pb-2">
 
-                    <hr>
-                   </div>
-                   <div class="row spacepad">
-                     <div class="col-md-6 amut">
-                      <div class="woo_price">
-                        
-                  </div>
-                </div>
-                <div class="col-md-6">
-                   <div class="woo-add text-right but-ri">
-                  
-                  <a href=""><button type="submit" class="btn btn-success select-btn">Purchase 
-                      <!-- <i class="ti-shopping-cart-full"></i> -->
-                     </button></a>
-                 
-                  </div>
-              </div>
-                   </div>
+<div class="col-md-6" style="top: 10px;">
 
-              
-                
-              </div>
-            </div>
-            @endforeach
-            
-          </div>
-        </div>
-  </section>
-          <div class="d-flex justify-content-center">
-            {!! $coupons->links("pagination::bootstrap-4") !!}
-          </div>
-        </div>
-      </div>
-    </div>
+<h4>Coupons</h4>
+</div>
+<div class="col-md-3">
+<div class="row">
+<div class="col-md-5 float-right pr-0" style="top: 10px;">
+<h6 class="text-right" >Location : &nbsp;</h6>
+</div>
+<div class="col-md-7 pl-0">
+<select class="form-select form-select-sm form-control" aria-label=".form-select-sm example" >
+  <option selected>Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>
+</div>
+</div>
+</div>
+<div class="col-md-3">
+<div class="form-group has-search">
+    <span class="fa fa-search form-control-feedback"></i></span>
+    <input type="text" class="form-control" placeholder="Search">
   </div>
 </div>
+</div>
+<div class="row">
+
+    @if(count($coupons) > 0)
+    @foreach($coupons as $coupon)
+	<div class="col-md-4">
+	<figure class="figure">
+  <img src="/fish.png" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure." width="100%">
+  <h5 class="text-center">TaTa Clik</h5>
+</figure>
+	</div>
+@endforeach
+@endif
+
+	
+	
+	
+	
+</div>
+</div>
+
+
 
 @endsection
