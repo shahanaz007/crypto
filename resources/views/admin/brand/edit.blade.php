@@ -17,6 +17,7 @@
                     @endif
 
                     <form action="{{route('brand.update',$brands->id)}}" method="POST" enctype="multipart/form-data"> 
+                    @method('put')
                     @csrf
                         <div class="card-body row">
 
@@ -26,7 +27,10 @@
                             </div>
                             <div class="col-md-6">
                                 <label>Logo</label>
-                                <input class="form-control" name="logo" value="" type="file" placeholder="Upload Logo">
+                                <input class="form-control" name="logo"  type="file" placeholder="Upload Logo">
+                                <input type="hidden" name="old_logo" value="{{$brands->logo}}">
+                                <img src="{{$brands->logo}}" width="75">
+
                             </div>
 
                         </div>
