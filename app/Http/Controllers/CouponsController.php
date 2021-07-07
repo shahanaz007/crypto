@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\{CouponPurchase};
+use Auth;
+
 
 class CouponsController extends Controller
 {
@@ -13,7 +16,13 @@ class CouponsController extends Controller
      */
     public function index()
     {
-        //
+        $user_id    = Auth::user()->id;        
+
+        $coupons    = CouponPurchase::join('coupons','coupon_purchases.coupon_id','coupons.id')
+                    ->where('coupon_purchases.user_id','=',$user_id)
+                    ->where('coupon_purchases.status','=',1)
+                    ->get();
+        return view('my_coupons.index',compact('coupons'));            
     }
 
     /**

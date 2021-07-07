@@ -96,14 +96,11 @@ Route::post('/admin_coupon/update/{id}','Admin\CouponsController@coupon_update')
 //user  coupons for purchase  05-07-2021
 Route::resource('/coupon_purchase','CouponPurchaseController');
 
-
 //admin for locations  06-07-2021
 Route::resource('/location','Admin\LocationsController');
-
 
 //admin for brands  06-07-2021
 Route::resource('/brand','Admin\BrandsController');
 
-
-
-Route::resource('/coupon','CouponsController');
+//user for my coupons 07-07-2021
+Route::resource('/my_coupons','CouponsController');

@@ -135,6 +135,9 @@
                                     <a class="nav-link" href="{{ route('coupon_purchase.index') }}">{{ __('Coupon Purchase') }}</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('my_coupons.index') }}">{{ __('My Coupons') }}</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" href="{{ route('withdraw.create') }}">{{ __('Withdraw') }}</a>
                                 </li>
                                 <li class="nav-item">

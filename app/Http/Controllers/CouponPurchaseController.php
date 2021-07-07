@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Carbon\Carbon;
-use App\Models\{Coupon,CouponCategory,CouponPurchase};
+use App\Models\{Coupon,CouponCategory,CouponPurchase,Location};
 use Auth;
 
 class CouponPurchaseController extends Controller
@@ -22,8 +22,9 @@ class CouponPurchaseController extends Controller
         $coupons = Coupon::where('used','=',0)
         ->where('status','=',1)
         ->where('expiry_date','>=',$today)->paginate(10);
-        $categories = CouponCategory::where('disabled','=',0)->get();
-        return view('coupon_purchase.index',compact('coupons','categories'));
+        // $categories = CouponCategory::where('disabled','=',0)->get();
+        $locations = Location::where('active','=',1)->get();
+        return view('coupon_purchase.index',compact('coupons','locations'));
     }
 
     /**
@@ -60,6 +61,7 @@ class CouponPurchaseController extends Controller
         $details->currency    = $currency;
         $details->amount      = $amount;
         $details->paid_amount = 0;
+        $details->status      = 1;
         $details->save();
         // return redirect('brand')->with('status','Brand Added successfully');
         return redirect('coupon_purchase')->with('status','Coupon Purchased Successfully');

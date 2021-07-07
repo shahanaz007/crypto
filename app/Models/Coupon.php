@@ -20,4 +20,9 @@ class Coupon extends Model
     public function brand() {
         return $this->belongsTo('App\Models\Brand','brand_id');
     }
+
+    public function coupon_purchase()
+    {
+        return $this->hasMany('App\Models\CouponPurchase');
+    }
 }
