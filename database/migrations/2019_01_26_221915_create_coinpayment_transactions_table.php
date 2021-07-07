@@ -19,7 +19,7 @@ class CreateCoinpaymentTransactionsTable extends Migration
             $table->string('txn_id')->unique()->nullable();
             
             $table->string('order_id')->unique()->nullable();
-            $table->bigInteger('user_id')
+            $table->bigInteger('user_id');
             $table->string('buyer_name')->nullable();
             $table->string('buyer_email')->nullable();
             $table->string('currency_code')->nullable();
