@@ -60,8 +60,8 @@
     @foreach($coupons as $coupon)
 	<div class="col-md-4">
 	<figure class="figure">
-  <img src="/fish.png" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure." width="100%">
-  <h5 class="text-center">TaTa Clik</h5>
+  <a href="{{route('coupon_purchase.show',$coupon->id)}}"><img src="{{$coupon->brand->logo}}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure." width="100%"></a>
+  <h5 class="text-center">{{$coupon->brand->name}}</h5>
 </figure>
 	</div>
 @endforeach
