@@ -31,6 +31,28 @@
                                     @endif
                                 </select>
                             </div>
+                            <div class="col-md-6">
+                                <label>Select Location</label>
+                                <select class="form-control" name="location_id" id="location_id" required="">
+                                    <option value=""></option>
+                                    @if(count($locations) > 0)
+                                        @foreach($locations as $key => $location) 
+                                            <option value="{{$location->id}}">{{$location->name}}</option>
+                                        @endforeach
+                                    @endif
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Select Brand</label>
+                                <select class="form-control" name="brand_id" id="brand_id" required="">
+                                    <option value=""></option>
+                                    @if(count($brands) > 0)
+                                        @foreach($brands as $key => $brand) 
+                                            <option value="{{$brand->id}}">{{$brand->name}}</option>
+                                        @endforeach
+                                    @endif
+                                </select>
+                            </div>
 
 	                		<div class="col-md-6">
 	                			<label>Code</label>

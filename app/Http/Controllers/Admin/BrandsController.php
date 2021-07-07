@@ -76,7 +76,8 @@ class BrandsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $brands    = Brand::find($id);
+        return view('admin.brand.edit',compact('brands'));
     }
 
     /**

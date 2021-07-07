@@ -14,6 +14,8 @@
            		<tr>
              		<th>#</th>
              		<th>Category Name</th>
+                <th>Location</th>
+                <th>Brand</th>
                 <th>Code</th>
                 <th>Point</th>
                 <th>Currency Code</th>
@@ -28,6 +30,8 @@
                	  <tr>
                  		<td>{{$slno}}</td>
                     <td>{{$coupon->coupon_category->category_name}}</td>
+                    <td>{{$coupon->location->name}}</td>
+                    <td>{{$coupon->brand->name}}</td>
                     <td>{{$coupon->code}}</td>
                     <td>{{$coupon->point}}</td>
                     <td>{{$coupon->Currency_code}}</td>
