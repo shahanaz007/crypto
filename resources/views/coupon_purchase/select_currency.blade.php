@@ -1,6 +1,6 @@
 				<p><b>Currency :</b> 
 							<select class="form-control" name="currency" id="currency_id" required="">
-								<option value="">Select Currency</option>
+								<option value="">- Select Currency - </option>
 							@if(count($rates) > 0)
 							@foreach($rates as $rate)
 										

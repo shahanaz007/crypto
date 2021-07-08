@@ -30,19 +30,19 @@
 				<h1 class="text-center" > {{$details->brand->name}}</h1>
 				<div class="details">
 					<input type="hidden" name="coupon_id" value="{{$details->id}}" >
-					<input type="hidden" name="amount" value="{{$details->point}}" >
+					<!-- <input type="hidden" name="amount" value="{{$details->point}}" > -->
 
 					<table>
 						<tr>
-							<td><b>Location :</b></td><td>{{$details->location->name}}</td>
+							<td><b>Region </b></td><td> : {{$details->location->name}}</td>
 						</tr>
 
 						<tr>
-							<td><b>Category :</b></td><td>{{$details->coupon_category->category_name}}</td>
+							<td><b>Category </b></td><td> : {{$details->coupon_category->category_name}}</td>
 						</tr>
 
 						<tr>
-							<td><b>Expiry :</b></td><td>{{$details->expiry_date}}</td>
+							<td><b>Expiry </b></td><td> : {{$details->expiry_date}}</td>
 						</tr>
 
 						
@@ -62,7 +62,8 @@
 
 						<div class="col-md-6">
 							<p><b>Amount :</b>
-								<select class="form-control" name="currency" id="currency_id" required="" onchange="get_amount(this.value)">
+								<select class="form-control" name="amount" id="currency_id" required="" onchange="get_amount(this.value)">
+										<option value="">- Select Amount of Coupon -</option>
 	                            <option value="10">10$</option>
 	                        	<option value="20">20$</option>
 	                        	<option value="30">30$</option>
@@ -77,7 +78,7 @@
 						<div class="col-md-6" id="select_currency">
 							<p><b>Currency :</b> 
 							<select class="form-control" name="currency" id="currency_id" required="">
-										<option value="">Select Currency</option>
+										<option value="" disabled="disabled">- Select Currency -</option>
 	                            <option value="BTC">BTC</option>
 	                        	<option value="ETH">ETH</option>
 	                        	<option value="TRX">TRX</option>

@@ -15,9 +15,9 @@ class CouponPurchaseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($reg_id=null)
     {
-              
+
         $today = Carbon::now();
         $today = $today->toDateString();
         $coupons = Coupon::where('used','=',0)
@@ -52,9 +52,31 @@ class CouponPurchaseController extends Controller
         $currency  = $request->currency;
         $amount    = $request->amount;
 
-        $coupon       = Coupon::find($coupon_id); 
-        $coupon->used = 1;
-        $coupon->save();
+        // starts
+        $coins = CoinPayment::getRates();
+        $usd_rate = $coins['result']['USD']['rate_btc'];
+        $currency_rate = $coins['result'][$currency]['rate_btc'];
+        $btc_amount = $amount * $usd_rate;
+
+        $converted_amount = $btc_amount /  $currency_rate;
+        $converted_amount = round($converted_amount,8);
+        
+        if(Auth::user()->balance($currency) < $converted_amount){
+            return redirect()->back()->with('error','Insufficient Balance on Wallet');
+        }
+
+        $debited = Auth::user()->debit_user($currency, $converted_amount);
+        if($debited['code'] != 200)
+        {
+            return redirect()->back()->with($debited['status'],$debited['message']);
+        }
+        
+        // return $debited;
+
+        // $coupon       = Coupon::find($coupon_id); 
+        // $coupon->used = 1;
+        // $coupon->save();
+
 
         $details              = new CouponPurchase;
         $details->user_id     = $user_id;
@@ -64,7 +86,7 @@ class CouponPurchaseController extends Controller
         $details->paid_amount = 0;
         $details->status      = 1;
         $details->save();
-        // return redirect('brand')->with('status','Brand Added successfully');
+
         return redirect('coupon_purchase')->with('status','Coupon Purchased Successfully');
 
     }

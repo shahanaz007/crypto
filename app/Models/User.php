@@ -63,8 +63,12 @@ class User extends Authenticatable
         return $this->hasMany(CoinAddress::class, 'user_id', 'id');
     }
 
-    public function balance($user_id,$currency){
-
+    public function balance($currency,$user_id = NULL){
+        if(!$user_id)
+        {
+            $user_id = $this->id;
+        }
+        
         $credit = CoinpaymentTransaction::where('currency_code',$currency)->where('user_id',$user_id)->where('status',100)->get()->sum('receivedf');
         $debit = Withdrawal::where('currency_code',$currency)->where('user_id',$user_id)->where('status',100)->get()->sum('amount');
         $balance = $credit - $debit;
@@ -75,7 +79,7 @@ class User extends Authenticatable
     // for debit from wallet 
     public function debit(Request $request){
 
-        $balance = $this->balance($this->id,$request->currency);
+        $balance = $this->balance($request->currency);
         $requested_amount = $request->amount;
 
         if($balance >= $requested_amount )
@@ -92,7 +96,7 @@ class User extends Authenticatable
                 if($wd->save())
                 {   
                     
-                    return "withdrawed Amount. New balance=".$this->balance($this->id,$request->currency);
+                    return "withdrawed Amount. New balance=".$balance;
                 }
             }
             catch(\Exception $e)
@@ -106,6 +110,53 @@ class User extends Authenticatable
         else
         {
             return "No more balance. available_bal =".$balance;
+        }
+        
+
+    }
+
+
+        // for debit from wallet 
+    public function debit_user($currency, $amount){
+
+        $balance = $this->balance($currency);
+        $requested_amount = $amount;
+
+        if($balance >= $requested_amount )
+        {
+            try
+            {
+                $wd =new Withdrawal;
+                $wd->user_id = $this->id;
+                $wd->w_id = uniqid();
+                $wd->amount = $amount;
+                $wd->currency_code = $currency;
+                // $wd->address = $request->address;
+                $wd->status = 100;
+                if($wd->save())
+                {  
+
+                    $result['status'] = 'success';
+                    $result['message'] = "withdrawed Amount. New balance=".$balance; 
+                    $result['code'] = 200;
+                    return $result;
+                }
+            }
+            catch(\Exception $e)
+            {
+                $result['status'] = 'error';
+                $result['message'] = $e;
+                $result['code'] = 500;
+                return  $result;
+            }
+            
+        }
+        else
+        {   
+            $result['status'] = 'error';
+            $result['message'] = "No more balance. available_bal =".$balance;
+            $result['code'] = 406;
+            return $result;
         }
         
 
