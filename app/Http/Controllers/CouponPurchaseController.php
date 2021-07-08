@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Hexters\CoinPayment\CoinPayment;
 use App\Models\{Coupon,CouponCategory,CouponPurchase,Location};
 use Auth;
 
@@ -16,7 +17,7 @@ class CouponPurchaseController extends Controller
      */
     public function index()
     {
-        
+              
         $today = Carbon::now();
         $today = $today->toDateString();
         $coupons = Coupon::where('used','=',0)
@@ -113,5 +114,40 @@ class CouponPurchaseController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function select_currency(Request $request)
+    {
+        $coins = CoinPayment::getRates();
+        $rates = [];
+        $amount =  $request->amount;
+         $usd_rate = $coins['result']['USD']['rate_btc'];
+         $all_coin_rates = $coins['result'];
+
+
+         foreach($all_coin_rates as $key => $rate)
+         {
+            if($rate['accepted'] == 1)
+            {   
+                $coin = $key;
+                $btc_rate = $rate['rate_btc'];
+
+                
+                $currency_rate = $btc_rate;
+
+                $btc_amount = $amount * $usd_rate;
+                $converted_amount = $btc_amount /  $currency_rate;
+
+                $rates[] = 
+                [
+                    'coin' => $coin,
+                    'rate' => $converted_amount,
+                    'btc_rate' => $btc_rate
+                ];
+            }
+         }
+
+         return view('coupon_purchase.select_currency',compact('rates'));
     }
 }

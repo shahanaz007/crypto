@@ -15,6 +15,7 @@ class AddMerchantToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
              $table->integer('merchant')->after('remember_token')->default('0');
+             $table->integer('admin?')->after('remember_token')->default('0');
         });
     }
 

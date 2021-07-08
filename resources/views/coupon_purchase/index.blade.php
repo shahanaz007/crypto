@@ -29,48 +29,48 @@
 
 <div class="row pb-2">
 
-<div class="col-md-6" style="top: 10px;">
-
-
-<h4>Coupons</h4>
+    <div class="col-md-6" style="top: 10px;">
+        <h4>Coupons</h4>
+    </div>
+    <div class="col-md-3">
+        <div class="row">
+            <div class="col-md-5 float-right pr-0" style="top: 10px;">
+                <h6 class="text-right" >Region : &nbsp;</h6>
+            </div>
+            <div class="col-md-7 pl-0">
+              <select class="form-select form-select-sm form-control" aria-label=".form-select-sm example" >
+                <option selected>--Select--</option>
+                @if(count($locations) > 0)
+                @foreach($locations as $location)
+                  <option value="{{$location->id}}">{{$location->name}}</option>
+                @endforeach
+                @endif  
+              </select>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group has-search">
+            <span class="fa fa-search form-control-feedback"></span>
+            <input type="text" class="form-control" placeholder="Search">
+        </div>
+    </div>
 </div>
-<div class="col-md-3">
-<div class="row">
-<div class="col-md-5 float-right pr-0" style="top: 10px;">
-<h6 class="text-right" >Location : &nbsp;</h6>
-</div>
-<div class="col-md-7 pl-0">
-  <select class="form-select form-select-sm form-control" aria-label=".form-select-sm example" >
-    <option selected>--Select--</option>
-    @if(count($locations) > 0)
-    @foreach($locations as $location)
-      <option value="{{$location->id}}">{{$location->name}}</option>
-    @endforeach
-    @endif  
-  </select>
-</div>
-</div>
-</div>
-<div class="col-md-3">
-<div class="form-group has-search">
-    <span class="fa fa-search form-control-feedback"></i></span>
-    <input type="text" class="form-control" placeholder="Search">
-  </div>
-</div>
-</div>
-<div class="row">
-  @if(count($coupons) > 0)
-  @foreach($coupons as $coupon)
-  	<div class="col-md-4">
-    	<figure class="figure">
-        <a href="{{route('coupon_purchase.show',$coupon->id)}}"><img src="{{$coupon->brand->logo}}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure." width="100%"></a>
-        <h5 class="text-center">{{$coupon->brand->name}}</h5>
-      </figure>
-  	</div>
-  @endforeach
-  @endif
-	
-</div>
+    <div class="row ">
+      @if(count($coupons) > 0)
+      @foreach($coupons as $coupon)
+      	<div class="col-md-4" style="padding:10px">
+            <center>
+            	<figure class="figure">
+                <a href="{{route('coupon_purchase.show',$coupon->id)}}"><img src="{{$coupon->brand->logo}}" class="figure-img img-fluid rounded" alt="Brand Logo" width="100%"></a>
+                <h5 class="text-center">{{$coupon->brand->name}}</h5>
+              </figure>
+            </center>
+      	</div>
+      @endforeach
+      @endif
+    	
+    </div>
 </div>
 
 
