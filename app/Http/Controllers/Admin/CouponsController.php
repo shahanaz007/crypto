@@ -34,6 +34,7 @@ class CouponsController extends Controller
     	$point         = $request->point;
     	$expiry_date   = $request->expiry_date;
     	$currency_code = $request->currency_code;
+        $remarks       = $request->remark;
 
     	$coupon                = new Coupon;
     	$coupon->category_id   = $category_id;
@@ -43,7 +44,8 @@ class CouponsController extends Controller
     	$coupon->point         = $point;
     	$coupon->expiry_date   = $expiry_date;
     	$coupon->currency_code = $currency_code;
-    	$coupon->save();
+        $coupon->remarks       = $remarks;
+    	$coupon->save();$coupon->remarks       = $remarks;
     	return redirect('/admin_coupon/index')->with('status','Coupon Added Successfully');
     }	
 
@@ -66,6 +68,7 @@ class CouponsController extends Controller
     	$point         = $request->point;
     	$expiry_date   = $request->expiry_date;
     	$currency_code = $request->currency_code;
+        $remarks       = $request->remark;
 
     	$coupon	   		       = Coupon::find($id);
     	$coupon->category_id   = $category_id;
@@ -75,6 +78,7 @@ class CouponsController extends Controller
     	$coupon->point         = $point;
     	$coupon->expiry_date   = $expiry_date;
     	$coupon->currency_code = $currency_code;
+        $coupon->remarks       = $remarks;
     	$coupon->save();
     	return redirect('/admin_coupon/index')->with('status','Coupon Updated Successfully');
     }

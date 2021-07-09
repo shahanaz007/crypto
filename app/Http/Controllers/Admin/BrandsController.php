@@ -108,7 +108,7 @@ class BrandsController extends Controller
 
         $brands       = Brand::find($id);
         $brands->name = $name;
-        $brands->logo = ($request->has('logo'))?$image_path:null;
+        $brands->logo = $image_path;
         $brands->save();
         return redirect('brand')->with('status','Brand Updated successfully');
     }

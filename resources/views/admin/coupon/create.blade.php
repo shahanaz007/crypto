@@ -70,21 +70,22 @@
                                 <label>Currency Code</label>
                                 <input type="text" class="form-control"  id="currency_code_id"  name="currency_code"  required="">
                             </div>
-
                             <div class="col-md-6">
+                                <label>Remark</label>
+                                <input type="text" class="form-control"  id="remark_id"  name="remark"  required="">
+                            </div>
+                            <!-- <div class="col-md-6">
                                 <label> .</label>
                                 <button class="form-control btn btn-success">Submit</button>
-                            </div>
+                            </div> -->
+
 
 	                	</div>
-
-	                		<!-- <div class="row">
-							    <div class="col-lg-12">
-							        <button class="btn btn-secondary float-right">Submit</button>
-							    </div>
-							</div> -->
-						
-	                		
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <button class="btn btn-success float-right">Submit</button>
+                            </div>
+                        </div>
                 	</form>
 
                 </div>

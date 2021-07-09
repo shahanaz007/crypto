@@ -70,6 +70,10 @@
                                 <label>Currency Code</label>
                                 <input type="text" class="form-control"  id="currency_code_id"  name="currency_code" value="{{$coupons->Currency_code}}" required="">
                             </div>
+                            <div class="col-md-6">
+                                <label>Remark</label>
+                                <input type="text" class="form-control"  id="remark_id"  name="remark" value="{{$coupons->remarks}}" required="">
+                            </div>
 
 	                	</div>
 
