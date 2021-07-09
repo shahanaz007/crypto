@@ -14,7 +14,7 @@ class AddRemarksToCouponsTable extends Migration
     public function up()
     {
         Schema::table('coupons', function (Blueprint $table) {
-            $table->string('remarks')->after('expiry_date');
+            $table->string('remarks')->after('expiry_date')->nullable();
         });
     }
 

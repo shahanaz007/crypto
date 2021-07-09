@@ -66,13 +66,14 @@
                                 <label>Expiry Date</label>
                                 <input type="date"  class="form-control"  id="expiry_date_id"  name="expiry_date"  required="">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <label>Currency Code</label>
                                 <input type="text" class="form-control"  id="currency_code_id"  name="currency_code"  required="">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <label>Remark</label>
-                                <input type="text" class="form-control"  id="remark_id"  name="remark"  required="">
+                                <textarea class="form-control"  id="remark_id"  name="remark"></textarea> 
+                                <!-- <input type="text" class="form-control"  id="remark_id"  name="remark" > -->
                             </div>
                             <!-- <div class="col-md-6">
                                 <label> .</label>
