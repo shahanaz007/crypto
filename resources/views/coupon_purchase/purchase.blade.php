@@ -13,7 +13,7 @@
 				</div> -->
 		<form action="{{route('coupon_purchase.store')}}" method="POST"> 
                     @csrf
-		<div class="row" style="padding:10px">
+		<div class="row" style="padding:20px">
 
 			<div class="col-md-6">
 				<div class="row" >
@@ -27,7 +27,7 @@
 				
 			</div>
 
-			<div class="col-md-6" style="padding:10px">
+			<div class="col-md-6" >
 				<h1 class="text-center" > {{$details->brand->name}}</h1>
 				<div class="details">
 
