@@ -16,11 +16,12 @@
 		<div class="row" style="padding:10px">
 
 			<div class="col-md-6">
-				<div class="row" style="padding:10px">
+				<div class="row" >
 				    <div class="col-lg-12">
 				        <!-- <a href="{{route('coupon_purchase.index')}}"><button class="btn btn-secondary float-right">Back</button></a> -->
-				    
+				    <center>
 				    	<img src="{{asset($details->brand->logo)}}" alt="" width="70%">
+				    	</center>
 				    </div>
 				</div>
 				
@@ -29,6 +30,11 @@
 			<div class="col-md-6" style="padding:10px">
 				<h1 class="text-center" > {{$details->brand->name}}</h1>
 				<div class="details">
+
+
+					<p>
+						{{$details->remarks}}
+					</p>
 					<input type="hidden" name="coupon_id" value="{{$details->id}}" >
 					<!-- <input type="hidden" name="amount" value="{{$details->point}}" > -->
 
