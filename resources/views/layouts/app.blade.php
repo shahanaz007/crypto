@@ -89,14 +89,14 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('payment.create') }}">{{ __('Deposit1') }}</a>
+                                    <a class="nav-link" href="{{ route('payment.create') }}">{{ __('Deposit') }}</a>
                                 </li>
 
                                 <!-- <li class="nav-item">
                                     <a class="nav-link" href="{{ route('payment.create') }}">{{ __('Deposit2') }}</a>
                                 </li> -->
 
-                                <li class="nav-item dropdown">
+                               <!--  <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     Deposit2
                                 </a>
@@ -120,12 +120,14 @@
 
                                     
                                 </div>
-                            </li>
+                            </li> -->
 
 
-                                <li class="nav-item">
+                               <!--  <li class="nav-item">
                                     <a class="nav-link" href="{{ url('/convert') }}">{{ __('Convert Coin') }}</a>
-                                </li>
+                                </li> -->
+
+
                                 @if(Auth::user()->merchant != 1)
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('/merchant_request') }}">{{ __('Merchant Request') }}</a>

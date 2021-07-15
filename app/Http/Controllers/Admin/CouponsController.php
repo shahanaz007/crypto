@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\{Coupon,CouponCategory,Location,Brand};
+use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Support\Str;
 
 class CouponsController extends Controller
 {
@@ -27,10 +29,22 @@ class CouponsController extends Controller
     //function to store coupon  02-07-2021
     public function coupon_store(Request $request)
     {
+        $path ='';
+        if($request->has('code')) {
+            $image_path = '/uploads/images/coupon/'. Str::random(20) .'.'.$request->code->extension();
+            // --------- [ Resize Image ] ---------------
+            $file = $request->code;
+            $filename = $file->getClientOriginalName();
+            $img = \Image::make($file);
+            $img->resize(230, 230)->save(public_path($image_path));
+        }
+        // coupon image ends
     	$category_id   = $request->category_id;
         $location_id   = $request->location_id;
         $brand_id      = $request->brand_id;
-    	$code          = $request->code;
+    	// $code          = $request->code;
+
+        $code          = ($request->has('code'))?$image_path:null;
     	$point         = $request->point;
     	$expiry_date   = $request->expiry_date;
     	$currency_code = $request->currency_code;
@@ -41,7 +55,7 @@ class CouponsController extends Controller
         $coupon->location_id   = $location_id;
         $coupon->brand_id      = $brand_id;
     	$coupon->code          = $code;
-    	$coupon->point         = $point;
+    	$coupon->point         = $point; 
     	$coupon->expiry_date   = $expiry_date;
     	$coupon->currency_code = $currency_code;
         $coupon->remarks       = $remarks;

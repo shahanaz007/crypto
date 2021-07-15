@@ -62,7 +62,7 @@
       	<div class="col-md-4" style="padding:10px">
             <center>
             	<figure class="figure">
-                <a href="{{route('coupon_purchase.show',$coupon->id)}}"><img src="{{asset($coupon->brand->logo)}}" class="figure-img img-fluid rounded" alt="Brand Logo" width="100%"></a>
+                <a href="{{route('coupon_purchase.show',$coupon->brand_id)}}"><img src="{{asset($coupon->brand->logo)}}" class="figure-img img-fluid rounded" alt="Brand Logo" width="100%"></a>
                 <h5 class="text-center">{{$coupon->brand->name}}</h5>
               </figure>
             </center>

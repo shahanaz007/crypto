@@ -1,5 +1,55 @@
 @extends('layouts.app')
+<style type="text/css">
+	
 
+
+	input[type=radio] {
+  position: absolute;
+  visibility: hidden;
+  display: none;
+}
+
+label {
+  color: #332f35;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 5px 20px;
+  margin-bottom: 0 !important;
+}
+
+input[type=radio]:checked + label{
+  color: #332f35;
+  background: #8c8c8c;
+  
+}
+
+label + input[type=radio] + label {
+  border-left: solid 2px #8c8c8c;
+  margin-left: -7px;
+}
+.radio-group {
+  border: solid 2px #8c8c8c;
+  display: inline-block;
+  /*margin: 20px;*/
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+</style>
 @section('content')
 
 <div class="container">
@@ -21,6 +71,19 @@
 				        <!-- <a href="{{route('coupon_purchase.index')}}"><button class="btn btn-secondary float-right">Back</button></a> -->
 				    <center>
 				    	<img src="{{asset($details->brand->logo)}}" alt="" width="70%">
+				    			    <br>	
+				    	
+						<div class="radio-group">
+							<?php $cnt=1; ?>
+						@if(count($coupons) > 0 )	
+				    	@foreach($coupons as $coupon)
+				    		
+				    		<input type="radio" id="{{$coupon->point}}$" value="{{$coupon->point}}" onclick="get_amount(this.value)" name="amount" required="" @if($cnt == 1) checked="checked" @endif ><label for="{{$coupon->point}}$">{{$coupon->point}}$</label>
+				    		<?php $cnt++; ?>
+				    	@endforeach
+				    	@endif
+				    	</div>
+
 				    	</center>
 				    </div>
 				</div>
@@ -35,7 +98,7 @@
 					<p>
 						{{$details->remarks}}
 					</p>
-					<input type="hidden" name="coupon_id" value="{{$details->id}}" >
+					<input type="hidden" name="brand_id" value="{{$details->brand_id}}" >
 					<!-- <input type="hidden" name="amount" value="{{$details->point}}" > -->
 
 					<table>
@@ -66,8 +129,8 @@
 					</p> -->
 					<div class="row" style="padding-top:10px">
 
-						<div class="col-md-6">
-							<p><b>Amount :</b>
+						<div class="col-md-6" >
+							<!-- <p><b>Amount :</b>
 								<select class="form-control" name="amount" id="currency_id" required="" onchange="get_amount(this.value)">
 										<option value="">- Select Amount of Coupon -</option>
 	                            <option value="10">10$</option>
@@ -76,7 +139,23 @@
 	                        	<option value="40">40$</option>
 	                        	<option value="50">50$</option>
 	                     </select>
-							 </p>
+							 </p> -->
+
+							 <p><b>Quantity:</b><br>
+						<button class="btn btn-info" onclick="event.preventDefault();decrement()">-</button>
+						<input class="form-control" style="text-align: center;width: 150px;display: inline-block;height: calc(1.6em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;"
+    	 id=qty value="1"  name="quantity"  type=number min=1 max=100 style="text-align: center;">
+						<button class="btn btn-info" onclick="event.preventDefault();increment()">+</button>
+					</p>
 						</div>
 
 					
@@ -111,14 +190,23 @@
 	</div>
 </div>
 <script>
+
    function increment() {
-      document.getElementById('demoInput').stepUp();
+      document.getElementById('qty').stepUp();
+      get_amount();
    }
    function decrement() {
-      document.getElementById('demoInput').stepDown();
+      document.getElementById('qty').stepDown();
+      get_amount();
    }
 
-   function get_amount(amount){
+   function get_amount(){
+   	var amount = $("input[name='amount']:checked").val();
+   	
+   	qty  = $('#qty').val();
+   	amount = amount * qty;
+
+   	// alert(amount);
    	img_src = "{{asset('/loading.gif')}}";
    	img = '<img style="padding-top:10px" src="'+img_src+'">';
    	$('#select_currency').html(img);
@@ -141,5 +229,7 @@
 
         });
    }
+
+	
 </script>
 @endsection

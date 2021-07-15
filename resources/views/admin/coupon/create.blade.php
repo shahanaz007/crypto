@@ -16,7 +16,7 @@
                         </div>
                     @endif
 
-                    <form action="{{url('/admin_coupon/store')}}" method="POST"> 
+                    <form action="{{url('/admin_coupon/store')}}" method="POST"  enctype="multipart/form-data"> 
                     @csrf
 	                	<div class="card-body row">
 
@@ -56,7 +56,7 @@
 
 	                		<div class="col-md-6">
 	                			<label>Code</label>
-	                			<input type="text" class="form-control"  id="code_id"  name="code"  required="">
+	                			<input type="file" class="form-control"  id="code_id"  name="code"  required="">
 	                		</div>
                             <div class="col-md-6">
                                 <label>Point</label>

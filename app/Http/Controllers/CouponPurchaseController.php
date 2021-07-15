@@ -20,9 +20,11 @@ class CouponPurchaseController extends Controller
 
         $today = Carbon::now();
         $today = $today->toDateString();
-        $coupons = Coupon::where('used','=',0)
+        $coupons = Coupon::select('brand_id')->where('used','=',0)
         ->where('status','=',1)
-        ->where('expiry_date','>=',$today)->paginate(10);
+        ->where('expiry_date','>=',$today)
+        ->groupBy('brand_id')
+        ->paginate(10);
         // $categories = CouponCategory::where('disabled','=',0)->get();
         $locations = Location::where('active','=',1)->get();
         return view('coupon_purchase.index',compact('coupons','locations'));
@@ -45,12 +47,27 @@ class CouponPurchaseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
         
         $user_id   = Auth::user()->id;
         $coupon_id = $request->coupon_id;
+        $brand_id = $request->brand_id;
         $currency  = $request->currency;
-        $amount    = $request->amount;
+        $quantity  = $request->quantity;
+        $amount    = $request->amount * $request->quantity;
+
+        // checks coupon stock
+        $today = Carbon::now();
+        $today = $today->toDateString();
+        $coupons = Coupon::select('id')->where('used','=',0)
+        ->where('status','=',1)
+        ->where('expiry_date','>=',$today)
+        ->where('brand_id',$brand_id)
+        ->get()->take($quantity);
+
+        if(count($coupons) < $quantity){
+            return redirect()->back()->with('error','Requested Quanity is greater than available quantity');
+        }
 
         // starts
         $coins = CoinPayment::getRates();
@@ -65,6 +82,8 @@ class CouponPurchaseController extends Controller
             return redirect()->back()->with('error','Insufficient Balance on Wallet');
         }
 
+        
+        
         $debited = Auth::user()->debit_user($currency, $converted_amount);
         if($debited['code'] != 200)
         {
@@ -77,16 +96,17 @@ class CouponPurchaseController extends Controller
         // $coupon->used = 1;
         // $coupon->save();
 
-
+        foreach($coupons as $coupon)
+        {
         $details              = new CouponPurchase;
         $details->user_id     = $user_id;
-        $details->coupon_id   = $coupon_id;
+        $details->coupon_id   = $coupon->id;
         $details->currency    = $currency;
         $details->amount      = $amount;
-        $details->paid_amount = 0;
+        $details->paid_amount = $converted_amount;
         $details->status      = 1;
         $details->save();
-
+        }
         return redirect('coupon_purchase')->with('status','Coupon Purchased Successfully');
 
     }
@@ -97,11 +117,26 @@ class CouponPurchaseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($brand_id)
     {
-        $details = Coupon::find($id);
-        // return $details;
-        return view('coupon_purchase.purchase',compact('details'));
+        
+       
+        $today = Carbon::now();
+        $today = $today->toDateString();
+
+        $coupons = Coupon::select('point')->where('used','=',0)
+        ->where('status','=',1)
+        ->where('expiry_date','>=',$today)
+        ->where('brand_id',$brand_id)
+        ->groupBy('point')
+        ->get();
+        
+        $details = Coupon::where('status','=',1)
+        ->where('expiry_date','>=',$today)
+        ->where('brand_id',$brand_id)
+        ->first();
+
+        return view('coupon_purchase.purchase',compact('details','coupons'));
     }
 
     /**
