@@ -118,8 +118,16 @@ class CouponsController extends Controller
                             ->select('brand_id',DB::raw('count(id) as coupons'))
                             ->groupBy('brand_id')
                             ->get();
-                            return $coupons;
-        return view('admin.coupon.index',compact('coupons'));
+                            // return $coupons;
+        return view('admin.coupon.group',compact('coupons'));
 
     }
+    //list brand wise coupons 20-07-2021
+
+     public function brand_coupon($id){
+        $coupons = Coupon::where('used','=',0)
+                    ->where('brand_id',$id)
+                    ->paginate(10);
+        return view('admin.coupon.index',compact('coupons'));
+     }
 }
