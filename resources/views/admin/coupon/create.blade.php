@@ -1,5 +1,9 @@
 @extends('layouts.app')
-
+<style type="text/css">
+    .col-md-6, .col-md-12 {
+        margin-top: 10px;
+    }
+</style>
 @section('content')
 
 
@@ -21,7 +25,7 @@
 	                	<div class="card-body row">
 
                             <div class="col-md-6">
-                                <label>Select Category</label>
+                                <label>{{ __('Select Category') }}</label>
                                 <select class="form-control" name="category_id" id="category_id" required="">
                                     <option value=""></option>
                                     @if(count($categories) > 0)
@@ -32,7 +36,7 @@
                                 </select>
                             </div>
                             <div class="col-md-6">
-                                <label>Select Location</label>
+                                <label>{{ __('Select Location') }}</label>
                                 <select class="form-control" name="location_id" id="location_id" required="">
                                     <option value=""></option>
                                     @if(count($locations) > 0)
@@ -53,23 +57,27 @@
                                     @endif
                                 </select>
                             </div>
-
-	                		<div class="col-md-6">
-	                			<label>Code</label>
-	                			<input type="file" class="form-control"  id="code_id"  name="code"  required="">
-	                		</div>
+                            <div class="col-md-6">
+                                <label>Expiry Date</label>
+                                <input type="date"  class="form-control"  id="expiry_date_id"  name="expiry_date"  required="">
+                            </div>
+	                		
                             <div class="col-md-6">
                                 <label>Point</label>
                                 <input type="number" step="any" class="form-control"  id="point_id"  name="point"  required="">
                             </div>
                             <div class="col-md-6">
-                                <label>Expiry Date</label>
-                                <input type="date"  class="form-control"  id="expiry_date_id"  name="expiry_date"  required="">
-                            </div>
-                            <div class="col-md-12">
                                 <label>Currency Code</label>
-                                <input type="text" class="form-control"  id="currency_code_id"  name="currency_code"  required="">
+                                <select class="form-control"  id="currency_code_id"  name="currency_code"  required="">
+                                    <option>USD</option>
+                                </select>
                             </div>
+                            
+                            <div class="col-md-6">
+                                <label>Select Images/Codes</label>
+                                <input type="file" class="form-control"  id="code_id"  name="code[]"  required="" multiple>
+                            </div>
+                            
                             <div class="col-md-12">
                                 <label>Remark</label>
                                 <textarea class="form-control"  id="remark_id"  name="remark"></textarea> 
