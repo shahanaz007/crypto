@@ -110,3 +110,9 @@ Route::resource('/brand','Admin\BrandsController');
 
 //user for my coupons 07-07-2021
 Route::resource('/my_coupons','CouponsController');
+
+//Hotel Bookings  24-07-2021
+Route::resource('/hotels','HotelBookingsController');
+
+//flight Bookings  24-07-2021
+Route::resource('/flights','FlightBookingsController');

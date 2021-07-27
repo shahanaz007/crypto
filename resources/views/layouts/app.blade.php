@@ -83,14 +83,42 @@
                                     <a class="nav-link" href="{{URL::to('/admin_coupon/index')}}">{{ __('Coupons') }}</a>
                                 </li>
                             @else
-                                
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('coinaddress.index') }}">{{ __('Addresses') }}</a>
-                                </li>
+                                    
+                             <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Wallet
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('payment.create') }}">{{ __('Deposit') }}</a>
+
+                                    <a class="dropdown-item" href="{{route('withdraw.create') }}">
+                                    {{ __('Withdraw') }}</a>
+
+                                    <a class="dropdown-item" href="{{ route('transfer.create') }}">{{ __('Transfer') }}</a>
+
+                                    <a class="dropdown-item" href="{{ route('coinaddress.index') }}">{{ __('Deposit Addresses') }}</a>
+
+                                                                       
+                                </div>
+                            </li>
+
+
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('payment.create') }}">{{ __('Deposit') }}</a>
+                                    <a class="nav-link" href="{{ route('hotels.index') }}">{{ __('Hotels') }}</a>
                                 </li>
+
+                                <!-- <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('coinaddress.index') }}">{{ __('Addresses') }}</a>
+                                </li> -->
+
+                                <!-- <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('payment.create') }}">{{ __('Deposit') }}</a>
+                                </li> -->
+
+
+
 
                                 <!-- <li class="nav-item">
                                     <a class="nav-link" href="{{ route('payment.create') }}">{{ __('Deposit2') }}</a>
@@ -139,12 +167,15 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('my_coupons.index') }}">{{ __('My Coupons') }}</a>
                                 </li>
-                                <li class="nav-item">
+
+
+                                <!-- <li class="nav-item">
                                     <a class="nav-link" href="{{ route('withdraw.create') }}">{{ __('Withdraw') }}</a>
-                                </li>
-                                <li class="nav-item">
+                                </li> -->
+                                <!-- <li class="nav-item">
                                     <a class="nav-link" href="{{ route('transfer.create') }}">{{ __('Transfer') }}</a>
-                                </li>
+                                </li> -->
+
 
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('payment.index') }}">{{ __('History') }}</a>
