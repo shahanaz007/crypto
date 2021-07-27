@@ -13,6 +13,8 @@ class HotelBookingsController extends Controller
      */
     public function index()
     {   
+
+        return view('hotels.index');
         $curl = curl_init();
 
 curl_setopt_array($curl, [
