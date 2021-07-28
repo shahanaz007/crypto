@@ -113,6 +113,9 @@ Route::resource('/my_coupons','CouponsController');
 
 //Hotel Bookings  24-07-2021
 Route::resource('/hotels','HotelBookingsController');
+//hotel serach 28-07-2021
+Route::post('/hotels/search','HotelBookingsController@search_result');
+
 
 //flight Bookings  24-07-2021
 Route::resource('/flights','FlightBookingsController');

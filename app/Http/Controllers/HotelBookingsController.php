@@ -52,6 +52,7 @@ return $response;
 
     public function search_result(Request $request)
     {
+        
         return view('hotels.hotels');
     }
 
