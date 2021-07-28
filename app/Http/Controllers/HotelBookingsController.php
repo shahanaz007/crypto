@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Http\Client\RequestException;
 
 class HotelBookingsController extends Controller
 {
@@ -14,42 +16,27 @@ class HotelBookingsController extends Controller
     public function index()
     {   
 
-        return view('hotels.index');
-        $curl = curl_init();
 
-curl_setopt_array($curl, [
-    CURLOPT_URL => "https://hotels4.p.rapidapi.com/locations/search?query=new%20york&locale=en_US",
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_FOLLOWLOCATION => true,
-    // CURLOPT_ENCODING => "application/json",
-    CURLOPT_MAXREDIRS => 10,
-    CURLOPT_TIMEOUT => 30,
-    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-    CURLOPT_CUSTOMREQUEST => "GET",
-    CURLOPT_HTTPHEADER => [
-        "x-rapidapi-host: hotels4.p.rapidapi.com",
-        "x-rapidapi-key: 0b2d75c28emsh0bb015245e9dca8p1dc609jsn81f76a683863",
-        'Content-Type: application/json'
-    ],
+       
+
+//      $response = Http::asForm()->post('https://test.api.amadeus.com/v1/security/oauth2/token', [
+//     'grant_type' => 'client_credentials',
+//     'client_id' => 'rDAvvTNr46GHfvsKsWwHsSMrQT7NOTZA',
+//     'client_secret' => 'XUKwmhn2Ft05D10G',
+// ]);
+
+        $response = Http::withToken('ABWhqtbRJGUsXGkySQZG4mlCiPPy')->get('https://test.api.amadeus.com/v2//shopping/hotel-offers', [
+            'cityCode' => 'LON',
+            'checkInDate' => '2021-08-01',
+            'checkOutDate' => '2021-08-02'
+            
+    
 ]);
 
-// curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-//     'Content-Type: application/json'
-//     ));
+return $response;
 
-$response = curl_exec($curl);
-$err = curl_error($curl);
 
-curl_close($curl);
 
-if ($err) {
-    echo "cURL Error #:" . $err;
-} else {
-    
-    // $tmp = explode(",",strval($response));
-
-    return $response[0];
-}
         return view('hotels.index');
     }
 
