@@ -103,7 +103,7 @@ input[type="number"] {
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header"><h4>Find deals on hotels, homes and much more...</h4>
+                <div class="card-header"><h4>Find deals on hotels and much more...</h4>
 				From cosy country homes to funky city flats
 
 			</div>

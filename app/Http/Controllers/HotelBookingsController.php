@@ -25,15 +25,15 @@ class HotelBookingsController extends Controller
 //     'client_secret' => 'XUKwmhn2Ft05D10G',
 // ]);
 
-        $response = Http::withToken('ABWhqtbRJGUsXGkySQZG4mlCiPPy')->get('https://test.api.amadeus.com/v2//shopping/hotel-offers', [
-            'cityCode' => 'LON',
-            'checkInDate' => '2021-08-01',
-            'checkOutDate' => '2021-08-02'
+//         $response = Http::withToken('ABWhqtbRJGUsXGkySQZG4mlCiPPy')->get('https://test.api.amadeus.com/v2//shopping/hotel-offers', [
+//             'cityCode' => 'LON',
+//             'checkInDate' => '2021-08-01',
+//             'checkOutDate' => '2021-08-02'
             
     
-]);
+// ]);
 
-return $response;
+// return $response;
 
 
 
