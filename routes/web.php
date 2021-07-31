@@ -119,3 +119,14 @@ Route::post('/hotels/search','HotelBookingsController@search_result');
 
 //flight Bookings  24-07-2021
 Route::resource('/flights','FlightBookingsController');
+
+//KYC   31-07-2021
+Route::resource('/kyc','KycController');
+//Admin KYC   31-07-2021
+Route::resource('/admin_kyc','Admin\KycController');
+//Admin approve KYC request  31-07-2021
+Route::get('/admin_kyc/approve/{id}','Admin\KycController@approve');
+//Admin reject KYC request  31-07-2021
+Route::get('/admin_kyc/reject/{id}','Admin\KycController@reject');
+
+// Route::get('/admin_kyc/reject/{id}','Admin\KycController@reject');

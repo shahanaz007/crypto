@@ -166,4 +166,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\MerchantRequest');
     }
+
+    public function kyc()
+    {
+        return $this->hasMany('App\Models\kyc');
+    }
 }

@@ -95,7 +95,7 @@
                                     <a class="dropdown-item" href="{{route('withdraw.create') }}">
                                     {{ __('Withdraw') }}</a>
 
-                                    <a class="dropdown-item" href="{{ route('transfer.create') }}">{{ __('Transfer') }}</a>
+                                    <!-- <a class="dropdown-item" href="{{ route('transfer.create') }}">{{ __('Transfer') }}</a> -->
 
                                     <a class="dropdown-item" href="{{ route('coinaddress.index') }}">{{ __('Deposit Addresses') }}</a>
 
@@ -156,11 +156,7 @@
                                 </li> -->
 
 
-                                @if(Auth::user()->merchant != 1)
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('/merchant_request') }}">{{ __('Merchant Request') }}</a>
-                                </li>
-                                @endif
+                                
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('coupon_purchase.index') }}">{{ __('Coupon Purchase') }}</a>
                                 </li>
@@ -188,6 +184,14 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    @if(Auth::user()->$type)
+                                        <a class="dropdown-item" href="{{ route('admin_kyc.index') }}">{{ __('KYC ') }}</a>
+                                    @elseif(Auth::user()->kyc_approved != 1)
+                                        <a class="dropdown-item" href="{{ route('kyc.index') }}">{{ __('KYC ') }}</a>
+                                    @endif
+                                    @if(Auth::user()->merchant != 1)
+                                        <a class="dropdown-item" href="{{ url('/merchant_request') }}">{{ __('Merchant Request') }}</a>
+                                    @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
