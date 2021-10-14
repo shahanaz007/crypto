@@ -134,3 +134,13 @@ Route::get('/admin_kyc/reject/{id}','Admin\KycController@reject');
 
 //user tocken purchase   14-10-2021
 Route::resource('/token_purchase','TokenPurchasesController');
+
+
+//admin to view tocken purchase reports  14-10-2021
+Route::resource('/purchase_report','Admin\TokenPurchasesController');
+
+//admin to view  referral reports  14-10-2021
+Route::resource('/referral_report','Admin\ReferralController');
+
+//admin to view  rewards reports  14-10-2021
+Route::resource('rewards_report','Admin\RewardsController');
