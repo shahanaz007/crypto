@@ -67,11 +67,13 @@ class RegisterController extends Controller
     {
 
         if($data['referral_code']){
-            $user = User::where('myrefercode',$data['referral_code'])->first();
+            $user    = User::where('myrefercode',$data['referral_code'])->first();
             $referby = $user->id;
+            $level   = $user->level+1;
         }
         else{
             $referby = null;
+            $level   = 0;
         }
         return User::create([
             'name' => $data['name'],
@@ -79,6 +81,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'myrefercode' => Str::random(6),
             'referby' => $referby,
+            'level' => $level,
             
         ]);
     }
