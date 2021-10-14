@@ -174,4 +174,14 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\kyc');
     }
+
+    public function token_purchase()
+    {
+        return $this->hasMany('App\Models\Tokenpurchase');
+    }
+
+    public function reward()
+    {
+        return $this->hasMany('App\Models\Reward');
+    }
 }

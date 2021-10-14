@@ -82,6 +82,18 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{URL::to('/admin_coupon/index')}}">{{ __('Coupons') }}</a>
                                 </li>
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        Reports
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('purchase_report.index') }}">{{ __('Purchases') }}</a>
+                                        <a class="dropdown-item" href="{{route('referral_report.index') }}">
+                                        {{ __('Referral') }}</a>
+                                        <a class="dropdown-item" href="{{ route('rewards_report.index') }}">{{ __('Rewards') }}</a>               
+                                    </div>
+                                </li>
+
                             @else
                                     
                              <li class="nav-item dropdown">

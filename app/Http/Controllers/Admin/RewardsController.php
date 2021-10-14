@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\{CoinAddress,Tokenpurchase,User,Reward,tokens_usdt_wallet};
-use Carbon\Carbon;
-use Auth;
+use App\Models\{Reward};
 
-class TokenPurchasesController extends Controller
+class RewardsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,8 @@ class TokenPurchasesController extends Controller
      */
     public function index()
     {
-        $coins = CoinAddress::get();
-        return view('token_purchase.create',compact('coins'));
+        $rewards = Reward::paginate(10);
+        return view('admin.reports.rewards_report',compact('rewards'));
     }
 
     /**
@@ -27,7 +26,7 @@ class TokenPurchasesController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -38,31 +37,7 @@ class TokenPurchasesController extends Controller
      */
     public function store(Request $request)
     {
-        $user_id               = Auth::user()->id;
-        if($request->no_of_tokens < 100){
-            return redirect('token_purchase')->with('status','Purchase minimum 100 tokens');
-        }
-        else{
-            $tokens                = new Tokenpurchase;
-            $tokens->user_id       = $user_id;
-            $tokens->no_of_tockens = $request->no_of_tokens;
-            $tokens->coin          = $request->coin;
-            $tokens->date          = Carbon::now()->format('Y-m-d');
-            $tokens->save();
-        }    
-        $user = User::where('id',$user_id)->first();
-        if($user->referby){
-            $refferedby =  User::find($user->referby);
-            if($refferedby)
-            {   
-                $amount = 1;
-                $date   = Carbon::now()->format('Y-m-d');
-
-                Reward::get_reward($user->referby,$amount,$date);
-                tokens_usdt_wallet::credit($user->referby,$amount);
-            }
-        }
-        return redirect('token_purchase')->with('status','Tokens Purchased Successfully');
+        //
     }
 
     /**
