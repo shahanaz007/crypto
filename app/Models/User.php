@@ -184,4 +184,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\Reward');
     }
+
+    public function referral()
+    {
+        return $this->hasMany('App\Models\Referral');
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\{Referral};
 
 class ReferralController extends Controller
 {
@@ -14,7 +15,8 @@ class ReferralController extends Controller
      */
     public function index()
     {
-        //
+        $referrals = Referral::paginate(10);
+        return view('admin.reports.referral_report',compact('referrals'));
     }
 
     /**
