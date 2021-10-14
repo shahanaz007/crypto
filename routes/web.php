@@ -130,3 +130,7 @@ Route::get('/admin_kyc/approve/{id}','Admin\KycController@approve');
 Route::get('/admin_kyc/reject/{id}','Admin\KycController@reject');
 
 // Route::get('/admin_kyc/reject/{id}','Admin\KycController@reject');
+
+
+//user tocken purchase   14-10-2021
+Route::resource('/token_purchase','TokenPurchasesController');

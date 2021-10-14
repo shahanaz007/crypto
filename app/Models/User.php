@@ -24,7 +24,8 @@ class User extends Authenticatable
         'email',
         'password',
         'myrefercode',
-        'referby'
+        'referby',
+        'level'
     ];
 
     /**

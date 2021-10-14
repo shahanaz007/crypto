@@ -165,9 +165,9 @@
                                 </li>
 
 
-                                <!-- <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('withdraw.create') }}">{{ __('Withdraw') }}</a>
-                                </li> -->
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('token_purchase.index') }}">{{ __('Token Purchase') }}</a>
+                                </li>
                                 <!-- <li class="nav-item">
                                     <a class="nav-link" href="{{ route('transfer.create') }}">{{ __('Transfer') }}</a>
                                 </li> -->
