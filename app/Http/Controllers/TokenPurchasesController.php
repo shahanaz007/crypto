@@ -49,8 +49,10 @@ class TokenPurchasesController extends Controller
             $tokens->coin          = $request->coin;
             $tokens->date          = Carbon::now()->format('Y-m-d');
             $tokens->save();
+            tokens_usdt_wallet::credit($user_id,$request->no_of_tokens);
+
         }    
-        $user = User::where('id',$user_id)->first();
+        $user = User::find($user_id);
         if($user->referby){
             $refferedby =  User::find($user->referby);
             if($refferedby)

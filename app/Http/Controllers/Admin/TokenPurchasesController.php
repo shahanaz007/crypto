@@ -13,9 +13,24 @@ class TokenPurchasesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $tokens = Tokenpurchase::paginate(10);
+
+        $tokens = Tokenpurchase::where('status',1);
+
+        if($request->from_date){
+            $from_date =  $request->from_date;
+        
+            $tokens = $tokens->where('date','>=',$from_date);
+        }
+        
+        if($request->to_date){
+            $to_date   =  $request->to_date;
+        
+            $tokens = $tokens->where('date','<=',$to_date);
+        }
+
+        $tokens = $tokens->paginate(10);
         return view('admin.reports.purchase_reports',compact('tokens'));
     }
 
