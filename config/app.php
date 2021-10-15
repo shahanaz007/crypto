@@ -134,6 +134,15 @@ return [
     |
     */
 
+    // user variables starts
+     'silver_start' => 100,
+     'silver_end' => 499,
+
+     'gold_start' => 500,
+     
+     
+    // user variables ends
+
     'providers' => [
 
         /*
