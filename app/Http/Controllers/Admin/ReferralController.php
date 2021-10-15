@@ -15,7 +15,21 @@ class ReferralController extends Controller
      */
     public function index(Request $request)
     {
-        $referrals = Referral::paginate(10);
+        $referrals = Referral::where('created_at','!=',null);
+
+        if($request->from_date){
+            $from_date =  $request->from_date.' 00:00:00';
+        
+            $referrals = $referrals->where('created_at','>=',$from_date);
+        }
+        
+        if($request->to_date){
+            $to_date   =  $request->to_date.' 23:59:59';
+        
+            $referrals = $referrals->where('created_at','<=',$to_date);
+        }
+
+        $referrals = $referrals->paginate(10);
         return view('admin.reports.referral_report',compact('referrals'));
     }
 
