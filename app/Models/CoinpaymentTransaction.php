@@ -1,7 +1,7 @@
 <?php
 
-namespace Hexters\CoinPayment\Entities;
-
+// namespace Hexters\CoinPayment\Entities;
+namespace App\Models;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 use Hexters\CoinPayment\Exceptions\CoinPaymentException;

@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use Hexters\CoinPayment\CoinPayment;
 use Hexters\CoinPayment\Traits\ApiCallTrait;
 use Hexters\CoinPayment\Helpers\CoinPaymentHelper;
-use Hexters\CoinPayment\Entities\CoinpaymentTransaction;
+// use Hexters\CoinPayment\Entities\CoinpaymentTransaction;
+use App\Models\CoinpaymentTransaction;
 use App\Models\Order;
 use Auth;
 use Exception;
@@ -41,6 +42,11 @@ class PaymentsController extends Controller
         $coins = CoinPayment::getRates();
 
          
+         if($coins['error'] != "ok")
+         {
+            return redirect()->back()->with('error',$coins['error']);
+         }
+
          $usd_rate = $coins['result']['USD']['rate_btc'];
 
          
@@ -263,6 +269,7 @@ $currency = 'BTC';
                 'cancel_url' => $request->cancel_url,
                 'checkout_url' => $request->checkout_url,
             ]);
+        // return $pay;
        $transaction =  CoinpaymentTransaction::create($pay);
         // return $transaction;
         return view('payment.deposit2',compact('transaction'));
