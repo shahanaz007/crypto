@@ -19,7 +19,7 @@
                     <label>To Date</label>
                     <input type="date" name="to_date" class="form-control">
                   </div>
-                  <div class="col-md-4 pr-0">
+                  <div class="col-md-4 pr-0" style="padding-top: 30px;">
                     <button class="btn btn-success" type="submit">Search  <i class="mdi mdi-account-search menu-icon"></i></button>
                    <!--  <a href="{{url('coupon_category/add')}}">  <button class="btn btn-success">Add New</button></a> -->
                   </div>
@@ -27,7 +27,8 @@
               </div>
             </div>
           </form> 
-          <table class="table  table-striped">
+
+          <table class="table  table-striped" style="margin-top:9%">
            	<thead>
            		<tr>
            		<th>#</th>
