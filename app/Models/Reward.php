@@ -10,11 +10,11 @@ class Reward extends Model
     use HasFactory;
 
 
-    public static function get_reward($user_id,$amount,$date)
+    public static function get_reward($user_id,$amount,$date,$coin)
     {   
     	$rewards          = new Reward;
         $rewards->user_id = $user_id;
-        $rewards->coin    = "USDT";
+        $rewards->coin    = $coin;
         $rewards->amount  = $amount;
         $rewards->date    = $date;
         $rewards->remarks = "referral reward";

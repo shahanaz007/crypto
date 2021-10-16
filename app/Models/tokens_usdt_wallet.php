@@ -9,21 +9,21 @@ class tokens_usdt_wallet extends Model
 {
     use HasFactory;
 
-    public static function credit($user_id,$amount)
+    public static function credit($user_id,$amount,$coin)
     {   
     	$wallet           = new tokens_usdt_wallet;
         $wallet->user_id  = $user_id;
-        $wallet->coin     = "usdt";
+        $wallet->coin     = $coin;
         $wallet->credit   = $amount;
         $wallet->save();
 
     }
     
-    public static function debit($user_id,$amount)
+    public static function debit($user_id,$amount,$coin)
     {   
     	$wallet           = new tokens_usdt_wallet;
         $wallet->user_id  = $user_id;
-        $wallet->coin     = "usdt";
+        $wallet->coin     = $coin;
         $wallet->debit    = $amount;
         $wallet->save();
         

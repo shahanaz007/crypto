@@ -49,7 +49,9 @@ class TokenPurchasesController extends Controller
             $tokens->coin          = $request->coin;
             $tokens->date          = Carbon::now()->format('Y-m-d');
             $tokens->save();
-            tokens_usdt_wallet::credit($user_id,$request->no_of_tokens);
+
+            $coin = "token";
+            tokens_usdt_wallet::credit($user_id,$request->no_of_tokens,$coin);
 
         }    
         $user = User::find($user_id);
@@ -58,10 +60,11 @@ class TokenPurchasesController extends Controller
             if($refferedby)
             {   
                 $amount = 1;
+                $coin   = "usdt";
                 $date   = Carbon::now()->format('Y-m-d');
 
-                Reward::get_reward($user->referby,$amount,$date);
-                tokens_usdt_wallet::credit($user->referby,$amount);
+                Reward::get_reward($user->referby,$amount,$date,$coin);
+                tokens_usdt_wallet::credit($user->referby,$amount,$coin);
             }
         }
         return redirect('token_purchase')->with('status','Tokens Purchased Successfully');

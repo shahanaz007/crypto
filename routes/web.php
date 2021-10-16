@@ -144,3 +144,6 @@ Route::resource('/referral_report','Admin\ReferralController');
 
 //admin to view  rewards reports  14-10-2021
 Route::resource('rewards_report','Admin\RewardsController');
+
+//user to view  token wallets details  16-10-2021
+Route::resource('token_wallet','TokensUsdtWalletController');

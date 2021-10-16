@@ -114,12 +114,14 @@
                                                                        
                                 </div>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('token_wallet.index') }}">{{ __('Token Wallet') }}</a>
+                            </li>
 
 
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('hotels.index') }}">{{ __('Hotels') }}</a>
-                                </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('hotels.index') }}">{{ __('Hotels') }}</a>
+                            </li>
 
                                 <!-- <li class="nav-item">
                                     <a class="nav-link" href="{{ route('coinaddress.index') }}">{{ __('Addresses') }}</a>
@@ -168,26 +170,26 @@
                                 </li> -->
 
 
-                                
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('coupon_purchase.index') }}">{{ __('Coupon Purchase') }}</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('my_coupons.index') }}">{{ __('My Coupons') }}</a>
-                                </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('coupon_purchase.index') }}">{{ __('Coupon Purchase') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('my_coupons.index') }}">{{ __('My Coupons') }}</a>
+                            </li>
 
 
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('token_purchase.index') }}">{{ __('Token Purchase') }}</a>
-                                </li>
-                                <!-- <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('transfer.create') }}">{{ __('Transfer') }}</a>
-                                </li> -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('token_purchase.index') }}">{{ __('Token Purchase') }}</a>
+                            </li>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="{{ route('transfer.create') }}">{{ __('Transfer') }}</a>
+                            </li> -->
 
 
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('payment.index') }}">{{ __('History') }}</a>
-                                </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('payment.index') }}">{{ __('History') }}</a>
+                            </li>
 
                         @endif        
                             <li class="nav-item dropdown">
