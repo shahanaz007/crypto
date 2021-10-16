@@ -65,6 +65,9 @@
                             ?>
                             @if(Auth::user()->$type)
                                 <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('users.index') }}">{{ __('Users') }}</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" href="{{URL::to('/withdraw_request/index')}}">{{ __('Withdraw Request') }}</a>
                                 </li>
                                 <li class="nav-item">
