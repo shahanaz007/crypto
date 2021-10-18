@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\{User};
+use App\Models\{User,CoinAddress};
 
 class UsersController extends Controller
 {
@@ -96,7 +96,7 @@ class UsersController extends Controller
     //Admin to view add token or usdt page  16-10-2021
     public function addTokenUsdt($id)
     {
-        $id = $id;
+        $id    = $id;
         return view('admin.users.add_token',compact('id'));
     }
 }

@@ -40,7 +40,7 @@ class TokenPurchasesController extends Controller
     {
         $user_id               = Auth::user()->id;
         if($request->no_of_tokens < 100){
-            return redirect('token_purchase')->with('status','Purchase minimum 100 tokens');
+            return redirect('token_purchase')->with('error','Purchase minimum 100 tokens');
         }
         else{
             $tokens                = new Tokenpurchase;

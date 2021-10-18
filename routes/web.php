@@ -152,3 +152,6 @@ Route::resource('token_wallet','TokensUsdtWalletController');
 Route::resource('users','Admin\UsersController');
 //Admin to view add token or usdt page 16-10-2021
 Route::get('users/add_token/{id}','Admin\UsersController@addTokenUsdt');
+
+//admin to view  users  16-10-2021
+Route::resource('add_tokens','Admin\TokensUsdtWalletController');

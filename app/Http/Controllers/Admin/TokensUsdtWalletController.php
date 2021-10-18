@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\{tokens_usdt_wallet};
 
 class TokensUsdtWalletController extends Controller
 {
@@ -35,7 +36,8 @@ class TokensUsdtWalletController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        tokens_usdt_wallet::credit($request->user_id,$request->no_of_tokens,$request->coin,$request->remark);
+        return redirect('users')->with('status','Tokens Credited Successfully');
     }
 
     /**

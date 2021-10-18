@@ -5,43 +5,36 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Add Token/Usdt') }}</div>
-
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    <form action="{{route('brand.store')}}" method="POST" enctype="multipart/form-data"> 
+                    <form action="{{ route('add_tokens.store') }}" method="POST"> 
                     @csrf
                         <div class="card-body row">
-
+                            <input type="hidden" name="user_id" value="{{$id}}">
                             <div class="col-md-6">
-                                <label>Name</label>
-                                <input type="text" class="form-control"  id="name_id"  name="name"  required="" placeholder="Brand Name">
+                                <label>Number of Tokens</label>
+                                <input type="number" class="form-control" step="any" id="no_of_tokens_id" value="0"  name="no_of_tokens"  required="">
                             </div>
                             <div class="col-md-6">
-                                <label>Logo</label>
-                                <input class="form-control" name="logo" value="" type="file" placeholder="Upload Logo">
+                                <label>Select Coin</label>
+                                <select class="form-control" name="coin" id="coin_id" onchange="" required="">
+                                    <option value=""></option>
+                                        <option value="token">Token</option>
+                                        <option value="usdt">USDT</option>
+                                </select>
                             </div>
-
-                        </div>
-
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <button class="btn btn-secondary float-right">Submit</button>
-                                </div>
+                            <div class="col-md-6">
+                                <label>Remark</label>
+                                <input type="text" class="form-control"  id="remark_id"   name="remark"  required="">
                             </div>
-                        
-                            
+                            <div class="col-md-6 to_hide" >
+                                <label> </label>
+                                <input type="submit" class="form-control btn btn-info" value="Purchase">
+                            </div>
+                        </div>  
                     </form>
-
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
 @endsection
