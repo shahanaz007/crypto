@@ -31,9 +31,12 @@
                             <a href="{{url('users/add_token',$user->id)}}">
                                 <button class="btn btn-secondary " style="margin-left: 400px;">Add token/usdt </button>
                             </a>
-                            <a href="{{ url('users/debit_token') }}">   
+                            <a href="{{ url('view_sales',$user->id) }}">   
+                                <button class="btn btn-secondary float-right">View Sales</button>
+                            </a>   
+                            <!-- <a href="{{ url('users/debit_token') }}">   
                                 <button class="btn btn-secondary float-right">Debit token/usdt</button>
-                            </a>    
+                            </a>    --> 
                         </div>
                     </div>
                 </div>

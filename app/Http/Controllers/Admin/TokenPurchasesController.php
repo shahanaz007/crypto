@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\{Tokenpurchase};
+use Carbon\Carbon;
 
 class TokenPurchasesController extends Controller
 {
@@ -98,5 +99,14 @@ class TokenPurchasesController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    //admin to view sales of user  18-10-2021
+    public function total_sales_of_user($id){
+
+        $now   = Carbon::now();
+        $month =  $now->month;
+        $total_token  = Tokenpurchase::where('user_id',$id)->whereMonth('created_at', $month)->get()->sum('no_of_tockens');
+        return view('admin.users.total_sales',compact('total_token'));        
     }
 }
