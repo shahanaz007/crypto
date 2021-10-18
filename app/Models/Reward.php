@@ -11,6 +11,10 @@ class Reward extends Model
 {
     use HasFactory;
 
+    public function __construct()
+    {
+        // $_this = new self();
+    }
 
     public static function get_reward($user_id,$amount,$date,$coin)
     {   
@@ -47,15 +51,15 @@ class Reward extends Model
     }
 
     public static function give_rewards_for_referees_of($user_id,$amount)
-    {
+    {  
         $user = User::find($user_id);
         $purchased_amount = $amount;
-
-        $rewarding_levels = $this->get_levels($amount);
+        $_this = new self();
+        $rewarding_levels = $_this->get_levels($amount); 
         if($rewarding_levels > 0)
-        {   
+        {    
             $tmp_user_id = $user->referby;
-
+            
             // giving rewards based on refer levels 
             for($i=1; $i<=$rewarding_levels; $i++) {
                 if($tmp_user_id)
@@ -66,7 +70,7 @@ class Reward extends Model
                     $remarks  = "Reward for sales";
 
                     // give reward for this referee
-                    $this->give_reward_for($tmp_user->id,$reward,$coin,$remarks);
+                    $_this->give_reward_for($tmp_user->id,$reward,$coin,$remarks);
 
                     //for taking next level referee
                     $tmp_user_id = $tmp_user->referby;
@@ -87,7 +91,7 @@ class Reward extends Model
 
         $rewarding_levels = 0;
         
-        if($amount >= $silver_start &&  $amount <= $silver_start){
+        if($amount >= $silver_start &&  $amount <= $silver_ends){
             $rewarding_levels = config('app.silver_reward_levels');
         }
         elseif($amount >= $gold_amount)
