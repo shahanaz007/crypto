@@ -140,6 +140,24 @@ return [
 
      'gold_start' => 500,
      
+     'silver_reward_levels' => 5,
+     'gold_reward_levels' => 10,
+
+     'reward_for_level1'  => 10,
+     'reward_for_level2'  => 5,
+     'reward_for_level3'  => 4,
+     'reward_for_level4'  => 3,
+     'reward_for_level5'  => 2,
+     'reward_for_level6'  => 2,
+     'reward_for_level7'  => 1,
+     'reward_for_level8'  => 1,
+     'reward_for_level9'  => 1,
+     'reward_for_level10' => 1,
+     
+     'reward_coin_for_token_purchase' => "usdt",
+     'reward_coin_for_stake' => "token",
+
+     
      
     // user variables ends
 
