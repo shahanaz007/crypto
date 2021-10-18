@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.default')
 <style type="text/css">
 	
 
@@ -51,7 +51,7 @@ input[type=number] {
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 </style>
 @section('content')
-
+<section class="pt-130 pb-50">
 <div class="container">
 	<div class="card">
 		<!-- <div class="row">
@@ -189,6 +189,7 @@ input[type=number] {
 			
 	</div>
 </div>
+</section>
 <script>
 
    function increment() {

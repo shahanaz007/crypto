@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.default')
 
 @section('content')
 
 @if(count($coinaddresses) > 0)
-    
+    <section class="pt-130 pb-50">
         <div class="container">
             <div class="row justify-content-center">
             @foreach($coinaddresses as $coinaddress)    
@@ -48,7 +48,9 @@
                         </div>
                     </div>
             </div>
-    </div> 
+    </div>
+    </div>
+</section>
 
 @endif
 <script type="text/javascript"></script>

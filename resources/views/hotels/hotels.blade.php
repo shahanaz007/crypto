@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.default')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 <style>
@@ -60,7 +60,7 @@
 }
 </style>
 @section('content')
-
+<section class="pt-130 pb-50">
 <div class="container">
 <div class="card">
 <div class="row">
@@ -167,6 +167,7 @@
 
 
 </div>
+</section>
 
 <script>
    function increment() {

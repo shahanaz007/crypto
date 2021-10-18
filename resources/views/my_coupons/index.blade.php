@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.default')
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
@@ -90,7 +90,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 </style>
 @section('content')
-
+<section class="pt-130 pb-50">
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-10">
@@ -139,7 +139,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
     </div>
   </div>
 </div>
-
+</section>
 <div id="myModal" class="modal">
   <span id="close" style="" class="close" onclick="closefn()">&times;</span>
   <img class="modal-content" id="img01">

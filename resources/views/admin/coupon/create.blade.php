@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.default')
 <style type="text/css">
     .col-md-6, .col-md-12 {
         margin-top: 10px;
@@ -6,7 +6,7 @@
 </style>
 @section('content')
 
-
+<section class="pt-130 pb-50">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -102,6 +102,7 @@
         </div>
     </div>
 </div>
+</section>
 
 
 @endsection
