@@ -17,7 +17,6 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
 Auth::routes();
 
@@ -159,3 +158,6 @@ Route::get('users/add_token/{id}','Admin\UsersController@addTokenUsdt');
 
 //admin to view  users  16-10-2021
 Route::resource('add_tokens','Admin\TokensUsdtWalletController');
+
+Route::view('dashboard','dashboard');
+ Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
