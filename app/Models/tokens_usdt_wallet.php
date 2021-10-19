@@ -20,12 +20,13 @@ class tokens_usdt_wallet extends Model
 
     }
     
-    public static function debit($user_id,$amount,$coin)
+    public static function debit($user_id,$amount,$coin,$remarks = null)
     {   
     	$wallet           = new tokens_usdt_wallet;
         $wallet->user_id  = $user_id;
         $wallet->coin     = $coin;
         $wallet->debit    = $amount;
+        $wallet->remarks  = $remarks;
         $wallet->save();
         
     }
