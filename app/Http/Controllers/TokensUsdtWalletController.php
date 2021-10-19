@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 Use Auth;
-use App\Models\{tokens_usdt_wallet};
+use App\Models\{tokens_usdt_wallet,TokenWithdrawal};
 
 
 class TokensUsdtWalletController extends Controller
@@ -39,7 +39,7 @@ class TokensUsdtWalletController extends Controller
      */
     public function create()
     {
-        //
+        return view('token_wallet.withdraw_request');
     }
 
     /**
@@ -50,7 +50,27 @@ class TokensUsdtWalletController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $amount = $request->amount;
+        $currency = $request->currency;
+        $address = $request->address;
+
+        // if($amount > Auth::user()->available_tokens)
+        // {
+        //     return redirect('/home')->with('status','You dont have that much tokens in your account');
+        // }
+
+
+        $wd =new TokenWithdrawal;
+        $wd->user_id = Auth::user()->id;
+        $wd->w_id = uniqid();
+        $wd->amount = $amount;
+        $wd->currency_code = $currency;
+        $wd->address = $address;
+        $wd->status = 0;
+        $wd->save();
+
+
+        return redirect('/home')->with('status','Success. Withdrawal Requested Successfully !');
     }
 
     /**

@@ -117,11 +117,19 @@
                                                                        
                                 </div>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('token_wallet.index') }}">{{ __('Token Wallet') }}</a>
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Token Wallet
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="nav-link" href="{{ route('token_wallet.index') }}">{{ __('Token Wallet') }}</a>
+
+                                    <a class="nav-link" href="{{route('token_wallet.create') }}">
+                                    {{ __('Withdraw Request') }}</a>
+
+                                </div>
                             </li>
-
-
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('hotels.index') }}">{{ __('Hotels') }}</a>
                             </li>
