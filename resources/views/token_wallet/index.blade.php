@@ -8,7 +8,7 @@
         <div class="card-header">{{ __('Token Wallet') }}</div>
         <div class="card-body">
           <h5 class="card-title float-right ">Total Tokens: {{$token_balance}} </h5>
-          <h5 class="card-title float-right " style="margin-right: 40px;">Total Usdt: {{$usdt_balance}}</h5>
+          <h5 class="card-title float-right ">Total Usdt: {{$usdt_balance}}</h5>
           <table class="table  table-striped">
            	<thead>
            		<tr>

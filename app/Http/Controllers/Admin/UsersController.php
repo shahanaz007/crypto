@@ -33,7 +33,10 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        $new_users = collect(new User);
+        $user = User::first();
+        $new_users->push($user);
+        return $new_users;
     }
 
     /**

@@ -49,9 +49,15 @@
         $type= 'admin?';                      
         ?>	
     	@if(Auth::check())
-      @if(Auth::user()->$type)			
+      	@if(Auth::user()->$type)	
+      		<li class="nav-item">
+                <a class="nav-link" href="{{ route('users.index') }}">{{ __('Users') }}</a>
+            </li>		
 				<li>
 					<a href="{{URL::to('/withdraw_request/index')}}">{{ __('Withdraw Request') }}</a>
+				</li>
+				<li>
+					<a href="{{URL::to('/withdraw_request/index')}}">{{ __('Token Withdraw Request') }}</a>
 				</li>
 				<li>
 					<a href="{{URL::to('/merchant_request/index')}}">{{ __('Merchant Request') }}</a>
@@ -86,10 +92,24 @@
 						<li><a href="{{ route('coinaddress.index') }}">{{ __('Deposit Addresses') }}</a></li>
 					</ul>
 				</li>
+				<li class="dropdown">
+					<a href="#">Token Wallet</a>
+					<ul class="dropdown-menu">
+						<li><a href="{{ route('token_wallet.index') }}">{{ __('Token Wallet') }}</a></li>
+						<li><a href="{{route('token_wallet.create') }}">{{ __('Withdraw Request') }}</a></li>
+					</ul>
+				</li>
+				<!-- <li class="dropdown">
+                    <a href="#">Token Wallet</a>
+                    <ul class="dropdown-menu">
+                    	<li><a href="{{ route('token_wallet.index') }}">{{ __('Token Wallet') }}</a></li>
+						<li><a href="{{route('token_wallet.create') }}">{{ __('Withdraw Request') }}</a></
+                    </ul>
+                </li> -->
 
 				<li class="nav-item">
-          <a class="nav-link" href="{{ route('hotels.index') }}">{{ __('Hotels') }}</a>
-        </li>
+		          <a class="nav-link" href="{{ route('hotels.index') }}">{{ __('Hotels') }}</a>
+		        </li>
 
         <li class="nav-item">
           <a class="nav-link" href="{{ route('coupon_purchase.index') }}">{{ __('Coupon Purchase') }}</a>
