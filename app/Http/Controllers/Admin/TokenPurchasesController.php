@@ -106,7 +106,9 @@ class TokenPurchasesController extends Controller
 
         $now   = Carbon::now();
         $month =  $now->month;
-        $total_token  = Tokenpurchase::where('user_id',$id)->whereMonth('created_at', $month)->get()->sum('no_of_tockens');
+        // $total_token  = Tokenpurchase::where('user_id',$id)->whereMonth('created_at', $month)->get()->sum('no_of_tockens');
+
+        $total_token  = Tokenpurchase::get_total_sales_of_user($id);
         return view('admin.users.total_sales',compact('total_token'));        
     }
 }
