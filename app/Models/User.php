@@ -61,6 +61,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\withdrawal');
     }
     
+    public function token_withdrawal()
+    {
+        return $this->hasMany('App\Models\TokenWithdrawal');
+    }
+
     public function coinaddresses()
     {
         return $this->hasMany(CoinAddress::class, 'user_id', 'id');

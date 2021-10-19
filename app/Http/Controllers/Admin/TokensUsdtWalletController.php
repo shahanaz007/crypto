@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\{tokens_usdt_wallet};
+use App\Models\{tokens_usdt_wallet,TokenWithdrawal};
 
 class TokensUsdtWalletController extends Controller
 {
@@ -15,7 +15,8 @@ class TokensUsdtWalletController extends Controller
      */
     public function index()
     {
-        //
+        $withdraw_requests = TokenWithdrawal::where('status','0')->paginate(10);
+        return view('admin.token_withdraw_request.index',compact('withdraw_requests'));
     }
 
     /**
@@ -83,5 +84,22 @@ class TokensUsdtWalletController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function change_status($id){
+
+        $withdraw_requests = TokenWithdrawal::find($id);
+        $withdraw_requests->status = 100;
+        $withdraw_requests->save(); 
+        return redirect()->back();
+    }
+
+
+    public function reject($id){
+
+        $withdraw_requests = TokenWithdrawal::find($id);
+        $withdraw_requests->status = -1;
+        $withdraw_requests->save(); 
+        return redirect()->back();
     }
 }

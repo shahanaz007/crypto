@@ -57,7 +57,7 @@
 					<a href="{{URL::to('/withdraw_request/index')}}">{{ __('Withdraw Request') }}</a>
 				</li>
 				<li>
-					<a href="{{URL::to('/withdraw_request/index')}}">{{ __('Token Withdraw Request') }}</a>
+					<a href="{{ route('add_tokens.index') }}">{{ __('Token Withdraw Request') }}</a>
 				</li>
 				<li>
 					<a href="{{URL::to('/merchant_request/index')}}">{{ __('Merchant Request') }}</a>
