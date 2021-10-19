@@ -67,6 +67,9 @@
         </div>
     </div>
 </div> -->
+<div style="text-align: center;color:white;font-size:50px;">
+ {{$refercode}}
+</div>
 
 @include('include.dashboard_coins')
 

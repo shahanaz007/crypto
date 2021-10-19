@@ -19,6 +19,7 @@
              		<th>#</th>
              		<th>Number of Tokens</th>
                 <th>Date</th>
+                <th>Action</th>
            	  </tr>
            	</thead>
            	<tbody>
@@ -29,6 +30,11 @@
                  		<td>{{$slno}}</td>
                     <td>{{$stake_token->no_of_tokens}}</td>
                     <td>{{$stake_token->date}}</td>
+                    <td> 
+                      @if($stake_token->status == 1)
+                        <a href="{{url('stake_tokens/unstake',$stake_token->id)}}">  <button class="btn btn-success">Unstake</button></a>
+                      @endif
+                    </td>  
                	  </tr>
                	  <?php $slno++; ?>
              		@endforeach
