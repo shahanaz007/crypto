@@ -166,4 +166,5 @@ Route::get('/token_withdraw_request/reject/{id}','Admin\TokensUsdtWalletControll
 Route::resource('stake_tokens','StakeTokensController');
 
 Route::view('dashboard','dashboard');
+Route::view('defaut','layouts.admin_default');
  Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
