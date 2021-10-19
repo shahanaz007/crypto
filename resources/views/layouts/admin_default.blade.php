@@ -44,13 +44,13 @@
     <a href="index.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
 	  <b class="logo-mini">
-		  <span class="light-logo"><img src="../images/logo-light.png" alt="logo"></span>
-		  <span class="dark-logo"><img src="../images/logo-dark.png" alt="logo"></span>
+		  <span class="light-logo"><img src="{{asset('assets/back-end/images/logo-light.png')}}" alt="logo"></span>
+		  <span class="dark-logo"><img src="{{asset('assets/back-end/images/logo-dark.png')}}" alt="logo"></span>
 	  </b>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg">
-		  <img src="../images/logo-light-text.png" alt="logo" class="light-logo">
-	  	  <img src="../images/logo-dark-text.png" alt="logo" class="dark-logo">
+		  <img src="{{asset('assets/back-end/images/logo-light-text.png')}}" alt="logo" class="light-logo">
+	  	  <img src="{{asset('assets/back-end/images/logo-dark-text.png')}}" alt="logo" class="dark-logo">
 	  </span>
     </a>
     <!-- Header Navbar -->
@@ -83,7 +83,7 @@
                   <li><!-- start message -->
                     <a href="#">
                       <div class="pull-left">
-                        <img src="../images/user2-160x160.jpg" class="rounded-circle" alt="User Image">
+                        <img src="{{asset('assets/back-end/images/user2-160x160.jpg')}}" class="rounded-circle" alt="User Image">
                       </div>
                       <div class="mail-contnet">
                          <h4>
@@ -98,7 +98,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="../images/user3-128x128.jpg" class="rounded-circle" alt="User Image">
+                        <img src="{{asset('assets/back-end/images/user3-128x128.jpg')}}" class="rounded-circle" alt="User Image">
                       </div>
                       <div class="mail-contnet">
                          <h4>
@@ -112,7 +112,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="../images/user4-128x128.jpg" class="rounded-circle" alt="User Image">
+                        <img src="{{asset('assets/back-end/images/user4-128x128.jpg')}}" class="rounded-circle" alt="User Image">
                       </div>
                       <div class="mail-contnet">
                          <h4>
@@ -126,7 +126,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="../images/user3-128x128.jpg" class="rounded-circle" alt="User Image">
+                        <img src="{{asset('assets/back-end/images/user3-128x128.jpg')}}" class="rounded-circle" alt="User Image">
                       </div>
                       <div class="mail-contnet">
                          <h4>
@@ -140,7 +140,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="../images/user4-128x128.jpg" class="rounded-circle" alt="User Image">
+                        <img src="{{asset('assets/back-end/images/user4-128x128.jpg')}}" class="rounded-circle" alt="User Image">
                       </div>
                       <div class="mail-contnet">
                          <h4>
@@ -316,12 +316,12 @@
 		  <!-- User Account -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="../images/user5-128x128.jpg" class="user-image rounded-circle" alt="User Image">
+              <img src="{{asset('assets/back-end/images/user5-128x128.jpg')}}" class="user-image rounded-circle" alt="User Image">
             </a>
             <ul class="dropdown-menu scale-up">
               <!-- User image -->
               <li class="user-header">
-                <img src="../images/user5-128x128.jpg" class="float-left rounded-circle" alt="User Image">
+                <img src="{{asset('assets/back-end/images/user5-128x128.jpg')}}" class="float-left rounded-circle" alt="User Image">
 
                 <p>
                   Romi Roy
@@ -376,7 +376,7 @@
 			</a>
 		</div>
         <div class="image">
-          <img src="../images/user2-160x160.jpg" class="rounded-circle" alt="User Image">
+          <img src="{{asset('assets/back-end/images/user2-160x160.jpg')}}" class="rounded-circle" alt="User Image">
         </div>
         <div class="info">
           <p>Admin Template</p>
@@ -950,7 +950,7 @@
 			<div class="col-lg-6 col-12">
 				<div class="box">
 				  <div class="media bb-1 border-fade">
-					<img class="avatar avatar-lg" src="../images/avatar/3.jpg" alt="...">
+					<img class="avatar avatar-lg" src="{{asset('assets/back-end/images/avatar/3.jpg')}}" alt="...">
 					<div class="media-body">
 					  <p>
 						<strong>Denial Webar</strong>
@@ -979,7 +979,7 @@
 					  <div class="media-list media-list-divided bg-lighter">
 						<div class="media">
 						  <a class="avatar" href="#">
-							<img src="../images/avatar/6.jpg" alt="...">
+							<img src="{{asset('assets/back-end/images/avatar/6.jpg')}}" alt="...">
 						  </a>
 						  <div class="media-body">
 							<p>
@@ -990,7 +990,7 @@
 
 							<div class="media px-0 mt-20">
 							  <a class="avatar" href="#">
-								<img src="../images/avatar/8.jpg" alt="...">
+								<img src="{{asset('assets/back-end/images/avatar/8.jpg')}}" alt="...">
 							  </a>
 							  <div class="media-body">
 								<p>
@@ -1006,7 +1006,7 @@
 
 						<div class="media">
 						  <a class="avatar" href="#">
-							<img src="../images/avatar/9.jpg" alt="...">
+							<img src="{{asset('assets/back-end/images/avatar/9.jpg')}}" alt="...">
 						  </a>
 						  <div class="media-body">
 							<p>
@@ -1019,7 +1019,7 @@
 					  </div>
 				  </div>
 					  <form class="publisher bt-1 border-fade bg-white">
-						<img class="avatar avatar-sm" src="../images/avatar/4.jpg" alt="...">
+						<img class="avatar avatar-sm" src="{{asset('assets/back-end/images/avatar/4.jpg')}}" alt="...">
 						<input class="publisher-input" type="text" placeholder="Add Your Comment">
 						<a class="publisher-btn" href="#"><i class="fa fa-smile-o"></i></a>
 						<span class="publisher-btn file-group">
@@ -1032,7 +1032,7 @@
 			<div class="col-lg-6 col-12">
 				<div class="box">
 				  <div class="media bb-1 border-fade">
-					<img class="avatar avatar-lg" src="../images/avatar/5.jpg" alt="...">
+					<img class="avatar avatar-lg" src="{{asset('assets/back-end/images/avatar/5.jpg')}}" alt="...">
 					<div class="media-body">
 					  <p>
 						<strong>Ronit Roy</strong>
@@ -1048,11 +1048,11 @@
 
 					  <div class="row gap-1" data-provide="photoswipe">
 						<a class="col-6" href="#">
-						  <img src="../images/gallery/thumb/12.jpg" alt="...">
+						  <img src="{{asset('assets/back-end/images/gallery/thumb/12.jpg')}}" alt="...">
 						</a>
 
 						<a class="col-6" href="#">
-						  <img src="../images/gallery/thumb/10.jpg" alt="...">
+						  <img src="{{asset('assets/back-end/images/gallery/thumb/10.jpg')}}" alt="...">
 						</a>
 					  </div>
 
@@ -1073,7 +1073,7 @@
 					  <div class="media-list media-list-divided bg-lighter">
 						<div class="media">
 						  <a class="avatar" href="#">
-							<img src="../images/avatar/7.jpg" alt="...">
+							<img src="{{asset('assets/back-end/images/avatar/7.jpg')}}" alt="...">
 						  </a>
 						  <div class="media-body">
 							<p>
@@ -1087,7 +1087,7 @@
 				  </div>
 
 					  <form class="publisher bg-transparent bt-1 border-fade">
-						<img class="avatar avatar-sm" src="../images/avatar/5.jpg" alt="...">
+						<img class="avatar avatar-sm" src="{{asset('assets/back-end/images/avatar/5.jpg')}}" alt="...">
 						<input class="publisher-input" type="text" placeholder="Add Comment">
 						<a class="publisher-btn" href="#"><i class="fa fa-smile-o"></i></a>
 						<span class="publisher-btn file-group">
