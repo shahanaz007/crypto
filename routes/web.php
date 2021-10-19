@@ -168,4 +168,5 @@ Route::resource('stake_tokens','StakeTokensController');
 Route::get('stake_tokens/unstake/{id}','StakeTokensController@unstake');
 
 Route::view('dashboard','dashboard');
+Route::view('defaut','layouts.admin_default');
  Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
