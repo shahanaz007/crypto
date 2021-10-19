@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="{{asset('assets/front-end/images/favicon.ico')}}">
 
-    <title>Crypto Currency HTML Template</title>
+    <title>Crypto Currency </title>
     
 	<!-- Vendors Style-->
 	<link rel="stylesheet" href="{{asset('assets/front-end/css/vendors_css.css')}}">
@@ -103,9 +103,9 @@
 		          <a class="nav-link" href="{{ route('stake_tokens.index') }}">{{ __('Stake Tokens') }}</a>
 		        </li>
 
-				<li class="nav-item">
+				<!-- <li class="nav-item">
 		          <a class="nav-link" href="{{ route('hotels.index') }}">{{ __('Hotels') }}</a>
-		        </li>
+		        </li> -->
 
         <li class="nav-item">
           <a class="nav-link" href="{{ route('coupon_purchase.index') }}">{{ __('Coupon Purchase') }}</a>
