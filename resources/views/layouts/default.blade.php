@@ -57,7 +57,7 @@
 					<a href="{{URL::to('/withdraw_request/index')}}">{{ __('Withdraw Request') }}</a>
 				</li>
 				<li>
-					<a href="{{URL::to('/withdraw_request/index')}}">{{ __('Token Withdraw Request') }}</a>
+					<a href="{{ route('add_tokens.index') }}">{{ __('Token Withdraw Request') }}</a>
 				</li>
 				<li>
 					<a href="{{URL::to('/merchant_request/index')}}">{{ __('Merchant Request') }}</a>
@@ -99,13 +99,9 @@
 						<li><a href="{{route('token_wallet.create') }}">{{ __('Withdraw Request') }}</a></li>
 					</ul>
 				</li>
-				<!-- <li class="dropdown">
-                    <a href="#">Token Wallet</a>
-                    <ul class="dropdown-menu">
-                    	<li><a href="{{ route('token_wallet.index') }}">{{ __('Token Wallet') }}</a></li>
-						<li><a href="{{route('token_wallet.create') }}">{{ __('Withdraw Request') }}</a></
-                    </ul>
-                </li> -->
+				<li class="nav-item">
+		          <a class="nav-link" href="{{ route('stake_tokens.index') }}">{{ __('Stake Tokens') }}</a>
+		        </li>
 
 				<!-- <li class="nav-item">
 		          <a class="nav-link" href="{{ route('hotels.index') }}">{{ __('Hotels') }}</a>

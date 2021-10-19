@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\{tokens_usdt_wallet,TokenWithdrawal};
+use App\Models\{StakeTokens};
+use Auth;
+use Carbon\Carbon;
 
-class TokensUsdtWalletController extends Controller
+class StakeTokensController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,9 @@ class TokensUsdtWalletController extends Controller
      */
     public function index()
     {
-        $withdraw_requests = TokenWithdrawal::where('status','0')->paginate(10);
-        return view('admin.token_withdraw_request.index',compact('withdraw_requests'));
+        $stake_tokens = StakeTokens::paginate(10);
+        return view('stake_tokens.index',compact('stake_tokens'));
+
     }
 
     /**
@@ -26,7 +28,7 @@ class TokensUsdtWalletController extends Controller
      */
     public function create()
     {
-        //
+        return view('stake_tokens.create');
     }
 
     /**
@@ -37,8 +39,14 @@ class TokensUsdtWalletController extends Controller
      */
     public function store(Request $request)
     {
-        tokens_usdt_wallet::credit($request->user_id,$request->no_of_tokens,$request->coin,$request->remark);
-        return redirect('users')->with('status','Tokens Credited Successfully');
+        $user_id = Auth::user()->id;
+
+        $stake_tokens               = new StakeTokens;
+        $stake_tokens->user_id      = $user_id;
+        $stake_tokens->no_of_tokens = $request->no_of_tokens;
+        $stake_tokens->date         = Carbon::now()->format('Y-m-d');
+        $stake_tokens->save();
+        return redirect('stake_tokens')->with('status','Stake Tokens Successfully');
     }
 
     /**
@@ -84,22 +92,5 @@ class TokensUsdtWalletController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function change_status($id){
-
-        $withdraw_requests = TokenWithdrawal::find($id);
-        $withdraw_requests->status = 100;
-        $withdraw_requests->save(); 
-        return redirect()->back();
-    }
-
-
-    public function reject($id){
-
-        $withdraw_requests = TokenWithdrawal::find($id);
-        $withdraw_requests->status = -1;
-        $withdraw_requests->save(); 
-        return redirect()->back();
     }
 }
