@@ -164,6 +164,8 @@ Route::get('/token_withdraw_request/reject/{id}','Admin\TokensUsdtWalletControll
 
 //user to stake tokens  19-10-2021
 Route::resource('stake_tokens','StakeTokensController');
+//user to unstake token 19-10-2021
+Route::get('stake_tokens/unstake/{id}','StakeTokensController@unstake');
 
 Route::view('dashboard','dashboard');
  Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);

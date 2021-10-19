@@ -57,7 +57,10 @@ class StakeTokensController extends Controller
      */
     public function show($id)
     {
-        //
+        $tokens         = StakeTokens::find($id);
+        $tokens->status = 0;
+        $tokens->save();
+        return redirect('stake_tokens')->with('status','UnStake Token Successfully');
     }
 
     /**
@@ -92,5 +95,13 @@ class StakeTokensController extends Controller
     public function destroy($id)
     {
         //
+    }
+    //unstake token by user 19-10-2021
+    public function unstake($id)
+    {
+        $tokens         = StakeTokens::find($id);
+        $tokens->status = 0;
+        $tokens->save();
+        return redirect('stake_tokens')->with('status','UnStake Token Successfully');
     }
 }

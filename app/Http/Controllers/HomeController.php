@@ -31,6 +31,7 @@ class HomeController extends Controller
             return redirect('/withdraw_request/index');
         }
         $user_id = Auth::user()->id;
+        $refercode = Auth::user()->myrefercode;
 
         $btc = CoinpaymentTransaction::where('currency_code','BTC')->where('user_id',$user_id)->where('status',100)->get()->sum('receivedf');
         $w_btc = Withdrawal::where('currency_code','BTC')->where('user_id',$user_id)->where('status',100)->get()->sum('amount');
@@ -54,7 +55,7 @@ class HomeController extends Controller
 
         $pendings = CoinpaymentTransaction::where('status',0)->where('txn_id','!=','')->where('user_id',$user_id)->orderBy('id','DESC')->paginate(5);
 
-        return view('home',compact('btc','eth','usdt','trx','ltct','pendings'));
+        return view('home',compact('btc','eth','usdt','trx','ltct','pendings','refercode'));
     }
 
 
