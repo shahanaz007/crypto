@@ -158,9 +158,12 @@ Route::get('users/add_token/{id}','Admin\UsersController@addTokenUsdt');
 
 //admin to add tokens  16-10-2021
 Route::resource('add_tokens','Admin\TokensUsdtWalletController');
-//admin to change the status of withdraw_request 10-06-2021
+//admin to change the status of withdraw_request 19-10-2021
 Route::get('/token_withdraw_request/change_status/{id}','Admin\TokensUsdtWalletController@change_status');
 Route::get('/token_withdraw_request/reject/{id}','Admin\TokensUsdtWalletController@reject');
+
+//user to stake tokens  19-10-2021
+Route::resource('stake_tokens','StakeTokensController');
 
 Route::view('dashboard','dashboard');
  Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
