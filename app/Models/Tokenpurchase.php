@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Model\User;
+use App\Models\User;
 class Tokenpurchase extends Model
 {
     use HasFactory;
@@ -23,18 +23,22 @@ class Tokenpurchase extends Model
         $sale = Tokenpurchase::where('user_id',$tmp_user_id)->get()->sum('no_of_tockens');
         $total_sales += $sale;
         $users=User::where('referby',$tmp_user_id)->get();
+        $new_users = collect(new User);
         do{
-            $new_users = collect(new User);
+            
 
-            foreach($users as $user){
-               $resp =  $_this->childs_sales($user->id);
-               $total_sales += $resp['sale'];
+            if(count($users) > 0)
+            {
+                foreach($users as $user){ 
+                   $resp =  $_this->childs_sales($user->id); 
+                   $total_sales += $resp['sales'];
 
-               $add_users = $resp['users'];
-               $new_users->push($add_users);
+                   $add_users = $resp['users'];
+                   $new_users->push($add_users);
+                }
             }
-        
-            $users = $new_users;
+            // dd($new_users);
+            $users = $new_users->all();;
         }
         while(count($users) > 0);
     }
@@ -45,19 +49,23 @@ class Tokenpurchase extends Model
         $resp = [];
         $new_users = collect(new User);
             $tmp_users=User::where('referby',$user_id)->get();
-
-            foreach($tmp_users as $tmp_user)
+            if(count($tmp_users) > 0)
             {
-                $sale = Tokenpurchase::where('user_id',$tmp_user->id)->get()->sum('no_of_tockens');
-                $total_sales += $sale;
-                $new_users->push($tmp_user);
+                foreach($tmp_users as $tmp_user)
+                {
+                    $sale = Tokenpurchase::where('user_id',$tmp_user->id)->get()->sum('no_of_tockens');
+
+                    $total_sales += $sale;
+                    $new_users->push($tmp_user);dd($tmp_user);
+                }
+
             }
-
-            $resp[
+            $resp = [
                 'sales' => $total_sales,
-                'users' => $new_users
-            ]
-
+                'users' => $new_users,
+            ];
+            
+  
         return $resp;
         
     }
