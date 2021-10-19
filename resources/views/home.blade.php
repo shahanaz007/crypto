@@ -1,8 +1,8 @@
 @extends('layouts.default')
 
 @section('content')
-<section class="pt-130 pb-50">
-<div class="container">
+<section class="pt-130 pb-50" style="min-height:850px">
+<!-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -20,10 +20,7 @@
                         </div>
                     @endif
 
-                    <!-- <center>Available Balance <br> -->
-                        <!-- <h3>${{ Auth::user()->available_tokens }}</h3> -->
-
-                      <!--   <button class="btn btn-info" onclick="$('#buy_tokens').toggle()"> <i class="fa fa-shopping-cart"> </i> Buy Tokens</button> -->
+                    
                    
 
                     <div class="card-body row">
@@ -69,8 +66,9 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
+@include('include.dashboard_coins')
 
 
 <!-- pendings starts -->
