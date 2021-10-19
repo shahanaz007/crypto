@@ -91,6 +91,12 @@ class TokensUsdtWalletController extends Controller
         $withdraw_requests = TokenWithdrawal::find($id);
         $withdraw_requests->status = 100;
         $withdraw_requests->save(); 
+
+        $user_id      = $withdraw_requests->user_id;
+        $no_of_tokens = $withdraw_requests->amount;
+        $coin         = $withdraw_requests->currency_code;
+        $remarks      = "Withdraw request";
+        tokens_usdt_wallet::debit($user_id,$no_of_tokens,$coin,$remarks);
         return redirect()->back();
     }
 
