@@ -116,4 +116,26 @@ class TokenPurchasesController extends Controller
     {
         //
     }
+
+    public function my_legs()
+    {
+        $user_id = Auth::user()->id;
+        $legs = User::where('referby',$user_id)->get();
+        $datas = [];
+
+        foreach($legs as $leg)
+        {
+            $name = $leg->name;
+            $business_volume = Tokenpurchase::get_total_sales_of_user($leg->id);
+
+            $datas[] = [
+                'name'=>$name,
+                'business_volume' => $business_volume,
+            ];
+
+        }
+
+        return view('token_purchase.my_legs',compact('datas'));
+        // return $datas;
+    }
 }

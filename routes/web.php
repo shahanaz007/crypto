@@ -135,6 +135,8 @@ Route::get('/admin_kyc/reject/{id}','Admin\KycController@reject');
 
 //user tocken purchase   14-10-2021
 Route::resource('/token_purchase','TokenPurchasesController');
+// user :: show legs and business volumes 
+Route::get('/my_legs','TokenPurchasesController@my_legs');
 
 
 //admin to view token purchase reports  14-10-2021
