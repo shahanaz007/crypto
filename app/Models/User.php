@@ -194,4 +194,21 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\Referral');
     }
+
+
+    public function usd_balance()
+    {   
+     try
+     {
+        $recieved_usd = CoinpaymentTransaction::where('user_id',$this->id)->where('status',100)->get()->sum('received_usd');
+        $w_usd = Withdrawal::where('currency_code','USD')->where('user_id',$this->id)->where('status',100)->get()->sum('amount');
+        $usd = $recieved_usd - $w_usd;
+
+        return $usd;
+      }
+      catch(Exception $e)
+      {
+        return $e->getMessage();
+      }  
+    }
 }

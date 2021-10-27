@@ -9,6 +9,7 @@ use Hexters\CoinPayment\Emails\IPNErrorMail as SendEmail;
 use App\Models\{CoinAddress,User};
 use Exception;
 use Auth;
+use App\Common\Common;
 
 class CoinAddressesController extends Controller
 {   
@@ -268,6 +269,11 @@ class CoinAddressesController extends Controller
         // $user= User::find($request->user_id);
 
         // return $user->debit($request);
+
+        $amount = 1;
+        $currency = "TRX";
+        $usd = Common::convert_to_usd($amount,$currency);
+        return $usd;
 
         $info = $this->api_call('get_tx_info', ['txid' => 'e891ffe39ddfc4fb9946cff50b8683a29d76d34343589077e9ec9b0b78b9c26e']);
             if($info['error'] != 'ok'){

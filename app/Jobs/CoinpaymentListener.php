@@ -10,7 +10,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Hexters\CoinPayment\Entities\CoinpaymentTransaction;
 use App\Models\User;
 use App\Models\Order;
-
+use App\common\Common;
 class CoinpaymentListener implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
@@ -97,6 +97,14 @@ class CoinpaymentListener implements ShouldQueue
             // $transactions->received = $received; 
             // $transactions->receivedf = $receivedf; 
             // $transactions->save();
+            $currency = $transactions->currency_code;
+            $amount   = $receivedf;
+
+            $usd_amount = Common::convert_to_usd($amount,$currency);
+
+            $transactions->received_usd = $usd_amount;
+            $transactions->save();
+
         } 
         }
 

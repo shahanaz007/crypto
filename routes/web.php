@@ -19,8 +19,12 @@ use Illuminate\Support\Facades\Route;
 
 
 Auth::routes();
+Route::get('/register/{code}','Auth\RegisterController@withReferral');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home','HomeController@user_home')->name('home');
+Route::get('/','HomeController@user_home');
+
 
 Route::resource('/payment','PaymentsController');
 Route::post('/create_order','PaymentsController@create_order');
@@ -171,4 +175,4 @@ Route::get('stake_tokens/unstake/{id}','StakeTokensController@unstake');
 
 Route::view('dashboard','dashboard');
 Route::view('admin_dashboard','admin.dashboard');
- Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+// Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);

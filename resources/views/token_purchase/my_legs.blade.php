@@ -4,6 +4,7 @@
 <section class="pt-130 pb-50" style="min-height:850px">
 
 
+ 
 <div class="row col-md-12 justify-content-center" style="margin: auto;width:85%">
 
     @if(count($datas) > 0)

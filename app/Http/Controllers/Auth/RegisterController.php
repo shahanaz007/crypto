@@ -96,4 +96,18 @@ class RegisterController extends Controller
         } 
         return $user;
     }
+
+
+
+    public function withReferral($referral)
+    {
+        $user    = User::where('myrefercode',$referral)->first();
+        if($user){
+            
+            return view('auth.register',compact('referral'));
+        }
+        else{
+            return "invalid Referal Link";
+        }
+    }
 }

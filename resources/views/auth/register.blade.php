@@ -64,7 +64,7 @@
                             <label for="referral_code" class="col-md-4 col-form-label text-md-right">{{ __('Referral Code') }}</label>
 
                             <div class="col-md-6">
-                                <input id="referral_code_id" type="text" class="form-control" name="referral_code" >
+                                <input id="referral_code_id" type="text" class="form-control" name="referral_code" value="{{$referral}}" readonly="">
                             </div>
                         </div>
                         <div class="form-group row mb-0">

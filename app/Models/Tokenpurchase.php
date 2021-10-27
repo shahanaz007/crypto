@@ -84,4 +84,22 @@ class Tokenpurchase extends Model
         return $resp;
         
     }
+
+
+    public static function get_eligible_sales_volume($sales_volume)
+    {
+        $sales_levels = config('app.total_sales_levels'); 
+        $eligible_sales_volume = 0; 
+        
+        for($i = 1;$i<=$sales_levels; $i++)
+        {   
+            $sales_volume_level = config('app.sales_level'.$i); 
+            if($sales_volume >= $sales_volume_level)
+            {
+                $eligible_sales_volume = config('app.eligible_volume_level'.$i); 
+            }
+        }
+
+        return $eligible_sales_volume;
+    }
 }

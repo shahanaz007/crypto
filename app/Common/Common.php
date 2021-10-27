@@ -36,4 +36,22 @@ class Common
 
     }
 
+    public static function convert_to_usd($amount,$currency)
+    {
+        $currency = $currency;
+        $coins    = CoinPayment::getRates();
+
+        $usd_rate          = $coins['result']['USD']['rate_btc'];
+        $currency_btc_rate = $coins['result'][$currency]['rate_btc'];
+
+        // calculating ,converting to btc
+        $btc_amount       = $amount * $currency_btc_rate;
+
+        // converting to USD
+        $converted_usd  = $btc_amount /  $usd_rate;
+
+        return $converted_usd;
+        
+    }
+
 }

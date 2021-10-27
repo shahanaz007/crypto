@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="{{asset('assets/front-end/images/favicon.ico')}}">
 
-    <title>Crypto Currency </title>
+    <title>Swiz </title>
     
 	<!-- Vendors Style-->
 	<link rel="stylesheet" href="{{asset('assets/front-end/css/vendors_css.css')}}">
@@ -23,9 +23,9 @@
 	
 	<header>
 		<nav hidden class="nav-white nav-transparent dark-overlay">
-			<div class="nav-header">
+			<div class="nav-header" style="width: 8%;background: #ffe4c400;">
 				<a href="index.html" class="brand">
-					<img src="{{asset('assets/front-end/images/logo-light-text2.png')}}" alt=""/>
+					<img src="{{asset('assets/img/swiz.png')}}" alt="swiz logo" style="width:50%" />
 				</a>
 				<button class="toggle-bar">
 					<span class="ti-menu"></span>

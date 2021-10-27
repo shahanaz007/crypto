@@ -157,8 +157,25 @@ return [
      'reward_coin_for_token_purchase' => "usdt",
      'reward_coin_for_stake' => "token",
 
+     // sales levels
+     'total_sales_levels' => 4,
+
+     'sales_level1' =>150,
+     'eligible_volume_level1' =>50,
+
+     // 'sales_level1' =>100000,
+     // 'eligible_volume_level1' =>50000,
+
+     'sales_level2' =>500000,
+     'eligible_volume_level2' =>250000,
      
+     'sales_level3' =>1000000,
+     'eligible_volume_level3' =>400000,
      
+     'sales_level4' =>2500000,
+     'eligible_volume_level4' =>1000000,
+     
+
     // user variables ends
 
     'providers' => [

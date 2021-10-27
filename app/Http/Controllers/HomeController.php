@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Hexters\CoinPayment\Entities\CoinpaymentTransaction;
-use App\Models\Withdrawal;
+use App\Models\{Withdrawal,Tokenpurchase,User,Reward,tokens_usdt_wallet};
 use Auth;
 
 class HomeController extends Controller
@@ -64,5 +64,38 @@ class HomeController extends Controller
         foreach ($object as $obj) {
             // $sum = $sum + $obj->
         }
+    }
+
+
+        public function user_home()
+    {   
+     try{
+        $user_id = Auth::user()->id;
+        $legs = User::where('referby',$user_id)->get();
+        $datas = [];
+
+        foreach($legs as $leg)
+        {
+            $name = $leg->name;
+            $business_volume = Tokenpurchase::get_total_sales_of_user($leg->id);
+            $eligible_sales_volume = Tokenpurchase::get_eligible_sales_volume($business_volume);
+            $datas[] = [
+                'name'=>$name,
+                'business_volume' => $business_volume,
+                'eligible_sales_volume' => $eligible_sales_volume,
+            ];
+
+        }
+
+        // $bal = Auth::user()->usd_balance();
+        
+        return view('user_home',compact('datas'));
+        // return $datas;
+
+    }catch(Exception $exception)
+    {
+        return $exception->getMessage();
+    }
+
     }
 }
