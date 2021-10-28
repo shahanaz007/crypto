@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="{{asset('assets/back-end/images/favicon.ico')}}">
 
-    <title>Crypto Admin - Dashboard</title>
+    <title>Crypto Admin</title>
     
 	<!-- Bootstrap 4.0-->
 	<link rel="stylesheet" href="{{asset('assets/back-end/assets/vendor_components/bootstrap/dist/css/bootstrap.css')}}">

@@ -1,8 +1,9 @@
-@extends('layouts.default')
+@extends('layouts.admin_default')
 
 @section('content')
 
-<section class="pt-130 pb-50">
+<div class="content-wrapper">
+<section class="content">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -50,6 +51,7 @@
     </div>
 </div>
 </section>
+</div>
 
 
 @endsection

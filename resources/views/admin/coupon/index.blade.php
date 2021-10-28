@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.admin_default')
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 
@@ -89,7 +89,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 </style>
 @section('content')
-<section class="pt-130 pb-50">
+<div class="content-wrapper">
+<section class="content">
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-12">
@@ -147,6 +148,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   </div>
 </div>
 </section>
+</div>
 
 <div id="myModal" class="modal">
   <span id="close" style="" class="close" onclick="closefn()">&times;</span>
