@@ -246,6 +246,7 @@
 		</nav>
 	</header>
 	<div id="particles-js" class="overflow-hidden z-0"></div>
+	@include('include.messages')
 	@yield('content')
 	
 	<footer class="footer_three">

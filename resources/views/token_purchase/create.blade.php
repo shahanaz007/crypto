@@ -1,6 +1,7 @@
 @extends('layouts.default')
 @section('content')
 <section class="pt-130 pb-50">
+	
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -17,12 +18,8 @@
 	                		<div class="col-md-6">
 	                			<label>Select Coin</label>
 	                			<select class="form-control" name="coin" id="coin_id" onchange="" required="">
-	                				<option value=""></option>
-	                				@if(count($coins) > 0)
-		                				@foreach($coins as $key => $coin) {
-		                					<option value="{{$coin->currency_code}}">{{$coin->currency_code}}</option>
-		                				@endforeach
-	                				@endif
+	                				<option value="USD">USD</option>
+	                				
 	                			</select>
 	                		</div>
 	                		<div class="col-md-6 to_hide" >
