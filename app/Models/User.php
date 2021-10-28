@@ -77,8 +77,8 @@ class User extends Authenticatable
             $user_id = $this->id;
         }
         
-        $credit = CoinpaymentTransaction::where('currency_code',$currency)->where('user_id',$user_id)->where('status',100)->get()->sum('receivedf');
-        $debit = Withdrawal::where('currency_code',$currency)->where('user_id',$user_id)->where('status',100)->get()->sum('amount');
+        $credit = CoinpaymentTransaction::where('user_id',$user_id)->where('status',100)->get()->sum('received_usd');
+        $debit = Withdrawal::where('currency_code',"USD")->where('user_id',$user_id)->where('status',100)->get()->sum('amount');
         $balance = $credit - $debit;
 
         return $balance;

@@ -174,6 +174,9 @@ return [
      
      'sales_level4' =>2500000,
      'eligible_volume_level4' =>1000000,
+
+     //token price set for test
+     'token_price' =>1,
      
 
     // user variables ends

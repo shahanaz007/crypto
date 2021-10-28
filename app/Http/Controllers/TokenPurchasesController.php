@@ -42,6 +42,16 @@ class TokenPurchasesController extends Controller
         if($request->no_of_tokens < 100){
             return redirect('token_purchase')->with('error','Purchase minimum 100 tokens');
         }
+
+        $token_price         = config('app.token_price');
+        $total_token_price   = $request->no_of_tokens * $token_price;
+
+        $wallet_amount = Auth::user()->usd_balance();
+
+        if($total_token_price > $wallet_amount){
+            return redirect('token_purchase')->with('error','Insufficient Wallet Amount for Token Purchase');
+        }
+
         else{
             $tokens                = new Tokenpurchase;
             $tokens->user_id       = $user_id;
@@ -51,7 +61,18 @@ class TokenPurchasesController extends Controller
             $tokens->save();
 
             $coin = "token";
+
+            $wd                = new Withdrawal;
+            $wd->user_id       = $user_id;
+            $wd->w_id          = uniqid();
+            $wd->amount        = $total_token_price;
+            $wd->currency_code = 'USD';
+            $wd->status        = 100;
+            $wd->save();
+
             tokens_usdt_wallet::credit($user_id,$request->no_of_tokens,$coin);
+
+
 
         }    
         $user = User::find($user_id);
