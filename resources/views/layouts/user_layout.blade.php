@@ -68,7 +68,7 @@
 		<nav hidden class="nav-white nav-transparent">
 			<div class="nav-header">
 				<a href="index.html" class="brand">
-					<img src="{{asset('assets/img/swiz.png')}}" alt="" style="width:40%"/>
+					<img src="{{asset('assets/img/swiz.png')}}" alt="" style="width:44%"/>
 				</a>
 				<button class="toggle-bar">
 					<span class="ti-menu"></span>
@@ -166,9 +166,9 @@
 					<ul class="dropdown-menu">
 						@if(Auth::user()->$type)
 						<li>
-							<a href="{{ route('admin_kyc.index') }}">{{ __('KYC ') }}</a>
+							<a href="{{ route('admin_kyc.index') }}" >{{ __('KYC ') }}</a>
               @elseif(Auth::user()->kyc_approved != 1)
-              <a href="{{ route('kyc.index') }}">{{ __('KYC ') }}</a>
+              <a href="{{ route('kyc.index') }}" style="color: #172b4c;">{{ __('KYC ') }}</a>
 						</li>
 						@endif
 						@if(Auth::user()->merchant != 1)
