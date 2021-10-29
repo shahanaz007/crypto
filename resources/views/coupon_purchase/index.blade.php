@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.user_layout')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
 .has-search .form-control {
@@ -22,7 +22,21 @@
 }
 </style>
 @section('content')
-
+<section class="bg-img pt-150" data-overlay="7" style="background-image: url(../images/front-end-img/background/bg-8.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center">                       
+                        <h2 class="page-title text-white">Coupon Purchase</h2>
+                        <ol class="breadcrumb bg-transparent justify-content-center">
+                            <li class="breadcrumb-item"><a href="#" class="text-white-50"><i class="mdi mdi-home-outline"></i></a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Coupon Purchase</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 <section class="pt-130 pb-50">
 <div class="container">
 
