@@ -22,6 +22,9 @@
      		padding: 0px;
      		margin: -8px;
      	}
+     	.top-bar .core-nav.nav-core-sticky.on-scroll {
+     		box-shadow: 0px 0px 5px 0px;
+     	}
      </style>
   </head>
 
