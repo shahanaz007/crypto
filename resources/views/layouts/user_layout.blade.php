@@ -68,7 +68,7 @@
 		<nav hidden class="nav-white nav-transparent">
 			<div class="nav-header">
 				<a href="index.html" class="brand">
-					<img src="{{asset('assets/img/swiz.png')}}" alt="" style="width:50%"/>
+					<img src="{{asset('assets/img/swiz.png')}}" alt="" style="width:40%"/>
 				</a>
 				<button class="toggle-bar">
 					<span class="ti-menu"></span>
@@ -186,25 +186,25 @@
 					<a href="contact_us.html">Contact</a>
 				</li> -->
 			</ul>
-			@else
-			<ul class="attributes">
+			<!-- @else -->
+			<!-- <ul class="attributes">
 				<li class="d-md-block d-none"><a href="#" class="px-10 pt-15 pb-10"><div class="btn btn-primary py-5">Register Now</div></a></li>
 				<li><a href="#" class="toggle-search-fullscreen"><span class="ti-search"></span></a></li>
 				
-			</ul>
+			</ul> -->
 			@endif
-			<ul class="attributes">
+			<!-- <ul class="attributes">
 				<li class="d-md-block d-none"><a href="#" class="px-10 pt-15 pb-10"><div class="btn btn-primary py-5">Register Now</div></a></li>
 				<li><a href="#" class="toggle-search-fullscreen"><span class="ti-search"></span></a></li>
 				
 			</ul>
-
-			<div class="wrap-search-fullscreen">
+ -->
+			<!-- <div class="wrap-search-fullscreen">
 				<div class="container">
 					<button class="close-search"><span class="ti-close"></span></button>
 					<input type="text" placeholder="Search..." />
 				</div>
-			</div>
+			</div> -->
 		</nav>
 	</header>
 	

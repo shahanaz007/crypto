@@ -120,19 +120,18 @@
 					<a href="contact_us.html">Contact</a>
 				</li> -->
 			</ul>
-			@else
-			<ul class="attributes">
+			<!-- <ul class="attributes">
 				<li class="d-md-block d-none"><a href="#" class="px-10 pt-15 pb-10"><div class="btn btn-primary py-5">Register Now</div></a></li>
 				<li><a href="#" class="toggle-search-fullscreen"><span class="ti-search"></span></a></li>
 				
-			</ul>
+			</ul> -->
 			@endif
 
-			<div class="wrap-search-fullscreen">
+			<!-- <div class="wrap-search-fullscreen">
 				<div class="container">
 					<button class="close-search"><span class="ti-close"></span></button>
 					<input type="text" placeholder="Search..." />
 				</div>
-			</div>
+			</div> -->
 		</nav>
 	</header>
