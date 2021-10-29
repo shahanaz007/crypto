@@ -211,4 +211,11 @@ class User extends Authenticatable
         return $e->getMessage();
       }  
     }
+
+    public function stake()
+    {
+        $user_id = Auth::user()->id;
+        $tokens  = StakeTokens::where('user_id',$user_id)->where('status',1)->get()->sum('no_of_tokens');
+        return $tokens;
+    }
 }
