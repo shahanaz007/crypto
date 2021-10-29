@@ -178,3 +178,6 @@ Route::view('userlayout','user_dashboard');
 
 Route::view('admin_dashboard','admin.dashboard');
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+
+//chippy test
+Route::resource('testing','TestController');

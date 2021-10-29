@@ -34,7 +34,10 @@
                     </div>          
                 </div>
     @endforeach  
-    @endif          
+    @endif    
+    <div style="text-align: center;color:white;font-size:40px; padding-bottom: 20px;">
+        Token Balance {{Auth::user()->token_balace()}} 
+    </div>      
     <div style="text-align: center;color:white;font-size:40px; padding-bottom: 20px;">
         Staked Tokens {{Auth::user()->stake()}} 
     </div>
