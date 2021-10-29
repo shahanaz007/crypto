@@ -179,10 +179,7 @@ input[type=number] {
 							<p><b>Currency :</b> 
 							<select class="form-control" name="currency" id="currency_id" required="">
 										<option value="" disabled="disabled">- Select Currency -</option>
-	                            <option value="BTC">BTC</option>
-	                        	<option value="ETH">ETH</option>
-	                        	<option value="TRX">TRX</option>
-	                        	<option value="LTCT">LTCT</option>
+	                            <option value="USD">USD</option>
 	                        </select>
 
 	                  </p>      
@@ -209,11 +206,11 @@ input[type=number] {
 
    function increment() {
       document.getElementById('qty').stepUp();
-      get_amount();
+      // get_amount();
    }
    function decrement() {
       document.getElementById('qty').stepDown();
-      get_amount();
+      // get_amount();
    }
 
    function get_amount(){

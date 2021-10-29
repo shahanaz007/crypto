@@ -35,7 +35,9 @@
                 </div>
     @endforeach  
     @endif          
-
+    <div style="text-align: center;color:white;font-size:40px; padding-bottom: 20px;">
+        Staked Tokens {{Auth::user()->stake()}} 
+    </div>
 </div>
 
 

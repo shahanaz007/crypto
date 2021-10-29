@@ -69,22 +69,13 @@ class CouponPurchaseController extends Controller
             return redirect()->back()->with('error','Requested Quanity is greater than available quantity');
         }
 
-        // starts
-        $coins = CoinPayment::getRates();
-        $usd_rate = $coins['result']['USD']['rate_btc'];
-        $currency_rate = $coins['result'][$currency]['rate_btc'];
-        $btc_amount = $amount * $usd_rate;
-
-        $converted_amount = $btc_amount /  $currency_rate;
-        $converted_amount = round($converted_amount,8);
+        $wallet_amount = Auth::user()->usd_balance();
         
-        if(Auth::user()->balance($currency) < $converted_amount){
+        if($amount > $wallet_amount){
             return redirect()->back()->with('error','Insufficient Balance on Wallet');
         }
-
         
-        
-        $debited = Auth::user()->debit_user($currency, $converted_amount);
+        $debited = Auth::user()->debit_user($currency, $amount);
         if($debited['code'] != 200)
         {
             return redirect()->back()->with($debited['status'],$debited['message']);
