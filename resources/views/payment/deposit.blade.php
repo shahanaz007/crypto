@@ -36,13 +36,13 @@
 	                	<div class="card-body row">
 
 	                		<div class="col-md-6">
-	                			<label>Amount</label>
-	                		<input type="number" class="form-control" step="any" id="amount" value="0.00"  name="amount"  required="">
+	                			<label>Amount in $</label>
+	                		<input type="number" class="form-control" step="any" id="amount_in_dollar" value="0.00"  name="amount_in_dollar" onchange="convert()"  required="">
 	                		</div>
 
 	                		<div class="col-md-6">
 	                			<label>Select Currency</label>
-	                			<select class="form-control" name="currency" id="currency" onchange="" required="">
+	                			<select class="form-control" name="currency" id="currency" onchange="convert()" required="">
 	                				<option value=""></option>
 	                				@if(count($coins) > 0)
 		                				@foreach($coins as $key => $coin) {
@@ -53,6 +53,11 @@
 	                				@endif
 	                				
 	                			</select>
+	                		</div>
+
+	                		<div class="col-md-6">
+	                			<label>Amount</label>
+	                		<input type="number" class="form-control" step="any" id="amount" value="0.00"  name="amount"  required="" readonly="">
 	                		</div>
 
 	                		<!-- <div class="col-md-6 to_hide">
@@ -67,11 +72,11 @@
 
 	                		<div class="col-md-6 to_hide" >
 	                			<label> </label>
-	                		<input type="submit" class="form-control btn btn-info" value="Deposit Now">
+	                		<input type="submit" id="submit_btn" class="form-control btn btn-info" value="Deposit Now">
 	                		</div>
 
-	                		<div class="col-md-12 to_hide" style="display: none;">
-	                			<label class="form-control" style="color: blue;">Please wait.. it may take a few seconds to load the Rates</label>
+	                		<div class="col-md-12 to_hide" id="notes" style="display: none;">
+	                			<label  class="form-control" style="color: blue;">Please wait.. it may take a few seconds to load the Rates</label>
 	                		
 	                		</div>
 	                	</div>	
@@ -86,10 +91,18 @@
 
 <script type="application/javascript"> 
 		
-	function convert(){
-		$('.to_hide').toggle();
+	function convert(){ 
+		$('#notes').show();
+		$('#submit_btn').hide();
+
 		amount = $('#amount').val();
 		currency = $('#currency').val();
+		amount_in_dollar = $('#amount_in_dollar').val();
+
+		if(currency == null)
+		{
+			return 0;
+		}
 		 $.ajax({
             method: "POST",
             url: "{{url('/get_rate_of_currency')}}",
@@ -100,16 +113,21 @@
                 '_token': '{{csrf_token()}}'
             },
             success: function(data) {
+            	console.log(data);
             	usd_rate = data.usd_rate;
             	currency_rate = data.currency_rate;
 
-            	btc_amount = tokens * usd_rate;
+            	btc_amount = amount_in_dollar * usd_rate;
             	converted_amount = btc_amount /  currency_rate;
                	converted_amount = converted_amount.toFixed(8);
 
                	$('#amount').val(converted_amount);
                	// alert(converted_amount);
-               	$('.to_hide').toggle();
+               	if(converted_amount > 0)
+               	{
+               	$('#notes').hide();
+               	$('#submit_btn').show();
+               }
             }
 
         });

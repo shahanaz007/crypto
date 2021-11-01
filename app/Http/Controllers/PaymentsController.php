@@ -203,7 +203,7 @@ class PaymentsController extends Controller
          $rate['usd_rate'] = $usd_rate;
          $rate['currency_rate'] = $coins['result'][$currency]['rate_btc'];
          
-         
+         // dd($coins);
 
          return $rate;
 
