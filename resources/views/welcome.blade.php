@@ -1,127 +1,1046 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.web')
+@section('content')
 
-        <title>Laravel</title>
+<!-- <div class="outer-top-ts top-banner">
+    <div class="container">
+        <img class="img-responsive" src="{{asset('web/assets/images/banners/top-banner.png')}}" alt="">
+    </div>
+</div> -->
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}}
-        </style>
 
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
+<div class="container">
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
 
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8  sm:pt-0">
-                  <center> <h1> Crypto Wallet </h1> </center>
-                </div>
+<div class="slider-section">
 
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-
-                                 <center>
-                                    <img width="100px" src="{{asset('assets/img/bc_logo.png')}}">
-                                </center>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                           
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                  <center>
-                                    <img width="100px" src="{{asset('assets/img/eth_logo.png')}}">
-                                </center>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                     <center>
-                                    <img width="100px" src="{{asset('assets/img/usdt_logo.png')}}">
-                                </center>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                     <center>
-                                    <img width="100px" src="{{asset('assets/img/tron_logo.png')}}">
-                                </center>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
-                            </a>
-
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </div>
-                </div>
+  <div class="col-xs-12 col-sm-12 col-md-12 homebanner-holder"> 
+  <div id="hero">
+      <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
+        <div class="item" style="background-image: url({{asset('web/assets/images/sliders/03.jpg')}});">
+          <div class="container-fluid">
+            <div class="caption bg-color vertical-center text-left">
+              <div class="slider-header fadeInDown-1">Top Brands</div>
+              <div class="big-text fadeInDown-1"> New Collections </div>
+              <div class="excerpt fadeInDown-2 hidden-xs"> <span>Lorem ipsum dolor sit amet, consectetur adipisicing.</span> </div>
+              <div class="button-holder fadeInDown-3"> <a href="index.php?page=single-product" class="btn-lg btn btn-uppercase btn-primary shop-now-button">Shop Now</a> </div>
             </div>
+            <!-- /.caption --> 
+          </div>
+          <!-- /.container-fluid --> 
         </div>
-    </body>
-</html>
+        <!-- /.item -->
+        
+        <div class="item" style="background-image: url({{asset('web/assets/images/sliders/01.jpg')}});">
+          <div class="container-fluid">
+            <div class="caption bg-color vertical-center text-left">
+              <div class="slider-header fadeInDown-1">Spring 2019</div>
+              <div class="big-text fadeInDown-1"> Women Fashion </div>
+              <div class="excerpt fadeInDown-2 hidden-xs"> <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur.</span> </div>
+              <div class="button-holder fadeInDown-3"> <a href="index.php?page=single-product" class="btn-lg btn btn-uppercase btn-primary shop-now-button">Shop Now</a> </div>
+            </div>
+            <!-- /.caption --> 
+          </div>
+          <!-- /.container-fluid --> 
+        </div>
+        <!-- /.item --> 
+        
+      </div>
+      <!-- /.owl-carousel --> 
+    </div>
+  </div>
+</div>
+
+ </div>    
+
+
+
+
+   <div class="container">
+      <div class="row">
+      <!-- ============================================== CONTENT ============================================== -->
+      <div class="col-xs-12 col-sm-12 col-md-12"> 
+       
+        
+          <!-- ============================================== STORES SECTION ============================================== -->
+        <section class="section featured-section wow fadeInUp">
+        <h2>Stores For You</h2>
+        <div class="featured-product">
+          <div class="owl-carousel homepage-owl-carousel custom-carousel owl-theme outer-top-xs">
+            <div class="item item-carousel">
+              <div class="products">
+                <div class="product">
+                  <div class="product-image">
+                    <div class="image"> 
+                          <a href="#">
+                             <img src="{{asset('web/assets/images/brands/store-3.png')}}" alt=""> 
+                             </a>
+                          
+                          </div>
+                    <!-- /.image -->
+                                        
+                  </div>
+                  <div class="product-info">
+                    <h3 class="name"><a href="#">Baseball</a></h3>
+                      </div>
+
+                </div>
+                <!-- /.product --> 
+                
+              </div>
+              <!-- /.products --> 
+            </div>
+            <!-- /.item -->
+            <div class="item item-carousel">
+              <div class="products">
+                
+               <div class="product">
+                  <div class="product-image">
+                    <div class="image"> 
+                          <a href="#">
+                             <img src="{{asset('web/assets/images/brands/store-10.png')}}" alt=""> 
+                             </a>
+                          
+                          </div>
+                    <!-- /.image -->
+                                        
+                  </div>
+                  <div class="product-info">
+                    <h3 class="name"><a href="#">Flipmart</a></h3>
+                      </div>
+
+                </div>
+                
+              </div>
+              <!-- /.products --> 
+            </div>
+            <div class="item item-carousel">
+              <div class="products">
+                <div class="product">
+                  <div class="product-image">
+                    <div class="image"> 
+                          <a href="#">
+                             <img src="{{asset('web/assets/images/brands/store-14.png')}}" alt=""> 
+                             </a>
+                          
+                          </div>
+                    <!-- /.image -->
+                                        
+                  </div>
+                  <div class="product-info">
+                    <h3 class="name"><a href="#">Amazon</a></h3>
+                      </div>
+
+                </div>
+                <!-- /.product --> 
+                
+              </div>
+              <!-- /.products --> 
+            </div>
+            <div class="item item-carousel">
+              <div class="products">
+                <div class="product">
+                  <div class="product-image">
+                    <div class="image"> 
+                          <a href="#">
+                             <img src="{{asset('web/assets/images/brands/store-6.png')}}" alt=""> 
+                             </a>
+                          
+                          </div>
+                    <!-- /.image -->
+                                        
+                  </div>
+                  <div class="product-info">
+                    <h3 class="name"><a href="#">Babywise</a></h3>
+                      </div>
+
+                </div>
+                <!-- /.product --> 
+                
+              </div>
+              <!-- /.products --> 
+            </div>
+            <div class="item item-carousel">
+              <div class="products">
+                <div class="product">
+                  <div class="product-image">
+                    <div class="image"> 
+                          <a href="#">
+                             <img src="{{asset('web/assets/images/brands/store-5.png')}}" alt=""> 
+                              </a>
+                          
+                          </div>
+                    <!-- /.image -->
+                                        
+                  </div>
+                  <div class="product-info">
+                    <h3 class="name"><a href="#">Electromax</a></h3>
+                      </div>
+
+                </div>
+                <!-- /.product --> 
+                
+              </div>
+              <!-- /.products --> 
+            </div>
+            <div class="item item-carousel">
+              <div class="products">
+                <div class="product">
+                  <div class="product-image">
+                    <div class="image"> 
+                          <a href="#">
+                             <img src="{{asset('web/assets/images/brands/store-7.png')}}" alt=""> 
+                             </a>
+                          
+                          </div>
+                    <!-- /.image -->
+                                        
+                  </div>
+                  <div class="product-info">
+                    <h3 class="name"><a href="#">Beautycart</a></h3>
+                      </div>
+
+                </div>
+                <!-- /.product --> 
+                
+              </div>
+              <!-- /.products --> 
+            </div>
+            <div class="item item-carousel">
+              <div class="products">
+                <div class="product">
+                  <div class="product-image">
+                    <div class="image"> 
+                          <a href="#">
+                             <img src="{{asset('web/assets/images/brands/store-8.png')}}" alt=""> 
+                             </a>
+                          
+                          </div>
+                    <!-- /.image -->
+                                        
+                  </div>
+                  <div class="product-info">
+                    <h3 class="name"><a href="#">Furnicor</a></h3>
+                      </div>
+
+                </div>
+                <!-- /.product --> 
+                
+              </div>
+              <!-- /.products --> 
+            </div>
+            <!-- /.item -->
+            
+            <div class="item item-carousel">
+              <div class="products">
+                <div class="product">
+                  <div class="product-image">
+                    <div class="image"> 
+                          <a href="#">
+                             <img src="{{asset('web/assets/images/brands/store-9.png')}}" alt=""> 
+                             </a>
+                          
+                          </div>
+                    <!-- /.image -->
+                                        
+                  </div>
+                  <div class="product-info">
+                    <h3 class="name"><a href="#">Harrier</a></h3>
+                      </div>
+
+                </div>
+                <!-- /.product --> 
+                
+              </div>
+              <!-- /.products --> 
+            </div>
+            <!-- /.item -->
+            
+            <div class="item item-carousel">
+              <div class="products">
+              <div class="product">
+                  <div class="product-image">
+                    <div class="image"> 
+                          <a href="#">
+                             <img src="{{asset('web/assets/images/brands/store-2.png')}}" alt=""> 
+                             </a>
+                          
+                          </div>
+                    <!-- /.image -->
+                                        
+                  </div>
+                  <div class="product-info">
+                    <h3 class="name"><a href="#">Petscare</a></h3>
+                      </div>
+
+                </div>
+                
+                <!-- /.product --> 
+                
+              </div>
+              <!-- /.products --> 
+            </div>
+            <!-- /.item -->
+            
+            <div class="item item-carousel">
+              <div class="products">
+                <div class="product">
+                  <div class="product-image">
+                    <div class="image"> 
+                          <a href="#">
+                             <img src="{{asset('web/assets/images/brands/store-11.png')}}" alt=""> 
+                             </a>
+                          
+                          </div>
+                    <!-- /.image -->
+                                        
+                  </div>
+                  <div class="product-info">
+                    <h3 class="name"><a href="#">Totaltoys</a></h3>
+                      </div>
+
+                </div>
+                <!-- /.product --> 
+                
+              </div>
+              <!-- /.products --> 
+            </div>
+            <!-- /.item -->
+            
+            <div class="item item-carousel">
+              <div class="products">
+                <div class="product">
+                  <div class="product-image">
+                    <div class="image"> 
+                          <a href="#">
+                             <img src="{{asset('web/assets/images/brands/store-12.png')}}" alt=""> 
+                             </a>
+                          
+                          </div>
+                    <!-- /.image -->
+                                        
+                  </div>
+                  <div class="product-info">
+                    <h3 class="name"><a href="#">Organatic</a></h3>
+                      </div>
+
+                </div>
+                <!-- /.product --> 
+                
+              </div>
+              <!-- /.products --> 
+            </div>
+            <!-- /.item --> 
+          </div>
+
+          <!-- /.home-owl-carousel --> 
+          </div>
+        </section>
+        <!-- /.section --> 
+        <!-- ============================================== stores : END ============================================== -->
+        
+        
+         <!-- ============================================== WIDE PRODUCTS ============================================== -->
+        <div class="wide-banners wow fadeInUp outer-bottom-bs">
+          <div class="row">
+            <div class="col-md-6 col-sm-6">
+              <div class="wide-banner cnt-strip">
+                <div class="image"> <img class="img-responsive" src="{{asset('web/assets/images/banners/home-banner1.jpg')}}" alt=""> </div>
+              </div>
+              <!-- /.wide-banner --> 
+            </div>
+            
+            <div class="col-md-6 col-sm-6">
+              <div class="wide-banner cnt-strip">
+                <div class="image"> <img class="img-responsive" src="{{asset('web/assets/images/banners/home-banner3.jpg')}}" alt=""> </div>
+              </div>
+              <!-- /.wide-banner --> 
+            </div>
+            </div>
+
+        </div>
+        <!-- /.wide-banners --> 
+        
+        <!-- ============================================== WIDE PRODUCTS : END ============================================== --> 
+        
+
+      
+       
+       
+        <!-- ============================================== WIDE PRODUCTS ============================================== -->
+        <div class="wide-banners wow fadeInUp outer-bottom-bs">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="cnt-strip">
+                <div class="image1"> <img class="img-responsive" src="{{asset('web/assets/images/banners/home-banner.jpg')}}" alt=""> </div>
+                <div class="strip strip-text">
+                  <div class="strip-inner">
+                    <h2 class="text-right">Amazing Sunglasses<br>
+                      <span class="shopping-needs">Get 40% off on selected items</span></h2>
+                  </div>
+                </div>
+                <div class="new-label">
+                  <div class="text">NEW</div>
+                </div>
+                <!-- /.new-label --> 
+              </div>
+              <!-- /.wide-banner --> 
+            </div>
+            <!-- /.col --> 
+            
+            
+          </div>
+          <!-- /.row --> 
+        </div>
+        <!-- /.wide-banners --> 
+        <!-- ============================================== WIDE PRODUCTS : END ============================================== --> 
+        </div>
+        </div>
+        </div>
+        
+    
+<!-- ============================================== Coupons  ============================================== -->
+        <section class="section coupons-section">
+        <div class="container">
+          <h3 class="section-title">Latest Coupons</h3>
+          
+          <div class="coupons-deals">
+          <div class="owl-carousel home-owl-carousel1 custom-carousel owl-theme outer-top-xs">
+            <div class="item item-carousel">
+              <div class="products">
+                <div class="product">
+                  <div class="product-image">
+                    <div class="image"> 
+                     <img class="img-responsive" src="{{asset('web/assets/images/coupons/img1.jpg')}}" alt="">
+                    <div class="brand">Flipmart</div>
+                           <h3 class="name"><a href="#">Flat 40% off on hotel bookings in 10 cities</a></h3>
+                          
+                          </div>
+                    <!-- /.image -->
+                    
+                 
+                  </div>
+                  <!-- /.product-image -->
+                  
+                  <div class="product-info text-left">
+                 <div class="discount">25% <span>OFF</span></div>
+                 <div class="show-code"><a href="#" data-toggle="modal" data-target="#myModal">Show Code</a></div>
+                  <p class="exp-date"><i class="fa fa-clock-o"></i> Expires on 2019-11-16</p>  
+                  </div>
+          
+                </div>
+                <!-- /.product --> 
+                
+              </div>
+              <!-- /.products --> 
+              
+              <div class="products">
+                <div class="product">
+                  <div class="product-image">
+                    <div class="image"> 
+                     <img class="img-responsive" src="{{asset('web/assets/images/coupons/img2.jpg')}}" alt="">
+                    <div class="brand">Marazzo</div>
+                           <h3 class="name"><a href="#">Get 15% off on shopping above $ 2000 at Vanitywagon</a></h3>
+                          
+                          </div>
+                    <!-- /.image -->
+                    
+                 
+                  </div>
+                  <!-- /.product-image -->
+                  
+                  <div class="product-info text-left">
+                 <div class="discount">15% <span>OFF</span></div>
+                 <div class="show-code"><a href="#" data-toggle="modal" data-target="#myModal">Show Code</a></div>
+                  <p class="exp-date"><i class="fa fa-clock-o"></i> Expires on 2019-11-16</p>  
+                  </div>
+          
+                </div>
+                <!-- /.product --> 
+                
+              </div>
+            </div>
+            <!-- /.item -->
+            
+            
+            <div class="item item-carousel">
+              <div class="products">
+                <div class="product">
+                  <div class="product-image">
+                    <div class="image"> 
+                     <img class="img-responsive" src="{{asset('web/assets/images/coupons/img3.jpg')}}" alt="">
+                    <div class="brand">Qualis</div>
+                           <h3 class="name"><a href="#"> Monsoon Sale: Upto 10% Off on Domestic Flight Bookings </a></h3>
+                          
+                          </div>
+                    <!-- /.image -->
+                    
+                 
+                  </div>
+                  <!-- /.product-image -->
+                  
+                  <div class="product-info text-left">
+                 <div class="discount">10% <span>OFF</span></div>
+                 <div class="show-code"><a href="#" data-toggle="modal" data-target="#myModal">Show Code</a></div>
+                  <p class="exp-date"><i class="fa fa-clock-o"></i> Expires on 2019-11-16</p>  
+                  </div>
+          
+                </div>
+                <!-- /.product --> 
+                
+              </div>
+              <!-- /.products --> 
+              
+              <div class="products">
+                <div class="product">
+                  <div class="product-image">
+                    <div class="image"> 
+                     <img class="img-responsive" src="{{asset('web/assets/images/coupons/img4.jpg')}}" alt="">
+                    <div class="brand">Harrier</div>
+                           <h3 class="name"><a href="#">Flat 90% off on night dinner hotel bookings</a></h3>
+                          
+                          </div>
+                    <!-- /.image -->
+                    
+                 
+                  </div>
+                  <!-- /.product-image -->
+                  
+                  <div class="product-info text-left">
+                 <div class="discount">90% <span>OFF</span></div>
+                 <div class="show-code"><a href="#" data-toggle="modal" data-target="#myModal">Show Code</a></div>
+                  <p class="exp-date"><i class="fa fa-clock-o"></i> Expires on 2019-11-16</p>  
+                  </div>
+          
+                </div>
+                <!-- /.product --> 
+                
+              </div>
+            </div>
+            <!-- /.item -->
+            
+            <div class="item item-carousel">
+              <div class="products">
+                <div class="product">
+                  <div class="product-image">
+                    <div class="image"> 
+                     <img class="img-responsive" src="{{asset('web/assets/images/coupons/img1.jpg')}}" alt="">
+                    <div class="brand">Flipmart</div>
+                           <h3 class="name"><a href="#">Flat 40% off on hotel bookings in 10 cities</a></h3>
+                          
+                          </div>
+                    <!-- /.image -->
+                    
+                 
+                  </div>
+                  <!-- /.product-image -->
+                  
+                  <div class="product-info text-left">
+                 <div class="discount">25% <span>OFF</span></div>
+                 <div class="show-code"><a href="#"  data-toggle="modal" data-target="#myModal">Show Code</a></div>
+                  <p class="exp-date"><i class="fa fa-clock-o"></i> Expires on 2019-11-16</p>  
+                  </div>
+          
+                </div>
+                <!-- /.product --> 
+                
+              </div>
+              <!-- /.products --> 
+              <div class="products">
+                <div class="product">
+                  <div class="product-image">
+                    <div class="image"> 
+                     <img class="img-responsive" src="{{asset('web/assets/images/coupons/img1.jpg')}}" alt="">
+                    <div class="brand">Flipmart</div>
+                           <h3 class="name"><a href="#">Flat 40% off on hotel bookings in 10 cities</a></h3>
+                          
+                          </div>
+                    <!-- /.image -->
+                    
+                 
+                  </div>
+                  <!-- /.product-image -->
+                  
+                  <div class="product-info text-left">
+                 <div class="discount">25% <span>OFF</span></div>
+                 <div class="show-code"><a href="#" data-toggle="modal" data-target="#myModal">Show Code</a></div>
+                 
+                  <p class="exp-date"><i class="fa fa-clock-o"></i> Expires on 2019-11-16</p>  
+                  </div>
+          
+                </div>
+                <!-- /.product --> 
+                
+              </div>
+              <!-- /.home-owl-carousel --> 
+          
+
+
+            </div>
+            <!-- /.item -->
+            
+            
+
+          </div>
+          
+          </div>
+          
+         </div>
+        <!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+
+      <div class="modal-body">
+       <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <div>
+     <img class="img-responsive" src="{{asset('web/assets/images/coupons/img1.jpg')}}" alt="">
+      <h3 class="mb-20">Flat 40% off hotel bookings in 10 cities</h3>
+      <div class="coupon-content">Not applicable to ICANN fees, taxes, transfers,or gift cards. Cannot be used in conjunction with any other offer, sale, discount or promotion. 
+<span style="color: #ed6663; display:block; margin-top:10px;"><a style="color: #ed6663; text-decoration:underline" href="#">Visit our Store</a></span>
+</div>
+
+</div>
+
+
+
+        <div><h6 class="color-mid">Click below to get your coupon code</h6>
+        <div class="copy-coupon-wrap">
+        <input type="text" value="X132-17GT-OL57" id="X132-17GT-OL571" class="coupon-code">
+</div></div>
+      </div>
+      
+      <div class="modal-footer">
+      <h4>Subscribe to Mail</h4>
+      <p>Get our Daily email newsletter with Special Services, Updates, Offers and more!</p>
+      <form id="mc4wp-form-2" class="mc4wp-form mc4wp-form-1257" method="post" data-id="1257" data-name="dealdots">
+      <div class="mc4wp-form-fields">
+      <div id="container_form_news">
+<div id="container_form_news2">
+<input type="email" id="newsletter1" name="EMAIL" placeholder="Your email address" required>
+<button type="submit" class="button subscribe"><span>Subscribe</span></button>
+</div>
+</div></div>
+</form>
+      </div>
+     
+    </div>
+
+  </div>
+</div>
+        </section>
+        <!-- /.section --> 
+        <!-- ============================================== FEATURED PRODUCTS : END ============================================== --> 
+          <div class="container">  
+          <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12"> 
+        <!-- ============================================== BLOG SLIDER ============================================== -->
+        <section class="section blog-section outer-bottom-xs wow fadeInUp">
+          <h3 class="section-title">Latest form Blog</h3>
+          <div class="latest-blog">
+          <div class="blog-slider-container outer-top-xs">
+            <div class="owl-carousel blog-slider custom-carousel">
+              <div class="item">
+                <div class="blog-post">
+                  <div class="blog-post-image">
+                    <div class="image"> <a href="blog.html"><img src="{{asset('web/assets/images/blog-post/blog_big_01.jpg')}}" alt=""></a> </div>
+                  </div>
+                  <!-- /.blog-post-image -->
+                  
+                  <div class="blog-post-info text-left">
+                    <h3 class="name"><a href="#">Voluptatem accusantium doloremque laudantium</a></h3>
+                    <span class="info">By Jone Doe &nbsp;|&nbsp; 21 March 2019 </span>
+                    <p class="text">Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                   </div>
+                  <!-- /.blog-post-info --> 
+                  
+                </div>
+                <!-- /.blog-post --> 
+              </div>
+              <!-- /.item -->
+              
+              <div class="item">
+                <div class="blog-post">
+                  <div class="blog-post-image">
+                    <div class="image"> <a href="blog.html"><img src="{{asset('web/assets/images/blog-post/blog_big_02.jpg')}}" alt=""></a> </div>
+                  </div>
+                  <!-- /.blog-post-image -->
+                  
+                  <div class="blog-post-info text-left">
+                    <h3 class="name"><a href="#">Dolorem eum fugiat quo voluptas nulla pariatur</a></h3>
+                    <span class="info">By Saraha Smith &nbsp;|&nbsp; 21 March 2019 </span>
+                    <p class="text">Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                   </div>
+                  <!-- /.blog-post-info --> 
+                  
+                </div>
+                <!-- /.blog-post --> 
+              </div>
+              <!-- /.item --> 
+              
+              <!-- /.item -->
+              
+              <div class="item">
+                <div class="blog-post">
+                  <div class="blog-post-image">
+                    <div class="image"> <a href="blog.html"><img src="{{asset('web/assets/images/blog-post/blog_big_03.jpg')}}" alt=""></a> </div>
+                  </div>
+                  <!-- /.blog-post-image -->
+                  
+                  <div class="blog-post-info text-left">
+                    <h3 class="name"><a href="#">Dolorem eum fugiat quo voluptas nulla pariatur</a></h3>
+                    <span class="info">By Saraha Smith &nbsp;|&nbsp; 21 March 2019 </span>
+                    <p class="text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium</p>
+                    </div>
+                  <!-- /.blog-post-info --> 
+                  
+                </div>
+                <!-- /.blog-post --> 
+              </div>
+              <!-- /.item -->
+              
+              <div class="item">
+                <div class="blog-post">
+                  <div class="blog-post-image">
+                    <div class="image"> <a href="blog.html"><img src="{{asset('web/assets/images/blog-post/blog_big_01.jpg')}}" alt=""></a> </div>
+                  </div>
+                  <!-- /.blog-post-image -->
+                  
+                  <div class="blog-post-info text-left">
+                    <h3 class="name"><a href="#">Dolorem eum fugiat quo voluptas nulla pariatur</a></h3>
+                    <span class="info">By Saraha Smith &nbsp;|&nbsp; 21 March 2019 </span>
+                    <p class="text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium</p>
+                    </div>
+                  <!-- /.blog-post-info --> 
+                  
+                </div>
+                <!-- /.blog-post --> 
+              </div>
+              <!-- /.item -->
+              
+              <div class="item">
+                <div class="blog-post">
+                  <div class="blog-post-image">
+                    <div class="image"> <a href="blog.html"><img src="{{asset('web/assets/images/blog-post/blog_big_02.jpg')}}" alt=""></a> </div>
+                  </div>
+                  <!-- /.blog-post-image -->
+                  
+                  <div class="blog-post-info text-left">
+                    <h3 class="name"><a href="#">Dolorem eum fugiat quo voluptas nulla pariatur</a></h3>
+                    <span class="info">By Saraha Smith &nbsp;|&nbsp; 21 March 2019 </span>
+                    <p class="text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium</p>
+                  </div>
+                  <!-- /.blog-post-info --> 
+                  
+                </div>
+                <!-- /.blog-post --> 
+              </div>
+              <!-- /.item --> 
+              
+            </div>
+            <!-- /.owl-carousel --> 
+          </div>
+          <!-- /.blog-slider-container --> 
+          </div>
+        </section>
+        <!-- /.section --> 
+        <!-- ============================================== BLOG SLIDER : END ============================================== --> 
+        
+        <!-- ============================================== FEATURED PRODUCTS ============================================== -->
+        <section class="section wow fadeInUp">
+          <h3 class="section-title">Flash Deals</h3>
+          <div class="box-timer"><h5>Ends On:</h5>
+              <div class="countbox_1 timer-grid"></div>
+            </div>
+          <div class="new-arriavls">
+          <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs">
+            <div class="item item-carousel">
+              <div class="products">
+                <div class="product">
+                  <div class="product-image">
+                    <div class="image"> 
+                          <a href="deals-detail.html">
+                             <img src="{{asset('web/assets/images/products/p10.jpg')}}" alt=""> 
+                           </a>
+                          
+                          </div>
+                    <!-- /.image -->
+                    
+                 
+                  </div>
+                  <!-- /.product-image -->
+                  
+                  <div class="product-info text-left">
+                   <div class="brand">Flipmart</div>
+                    <h3 class="name"><a href="deals-detail.html">The Crash Bad Instant Folding long Twin Bed</a></h3>
+                    <div class="rating rateit-small"></div>
+                    <div class="description"></div>
+                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                    <!-- /.product-price --> 
+                    
+                  </div>
+                  <!-- /.product-info -->
+                  <div class="cart clearfix animate-effect">
+                    <div class="action">
+                      <ul class="list-unstyled">
+                        <li class="add-cart-button btn-group">
+                          <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
+                          <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                        </li>                        <li class="lnk wishlist"> <a class="add-to-cart" href="#" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
+                        <li class="lnk"> <a class="add-to-cart" href="#" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
+                      </ul>
+                    </div>
+                    <!-- /.action --> 
+                  </div>
+                  <!-- /.cart --> 
+                </div>
+                <!-- /.product --> 
+                
+              </div>
+              <!-- /.products --> 
+            </div>
+            <!-- /.item -->
+            
+            <div class="item item-carousel">
+              <div class="products">
+                <div class="product">
+                  <div class="product-image">
+                    <div class="image"> 
+                          <a href="deals-detail.html">
+                             <img src="{{asset('web/assets/images/products/p8.jpg')}}" alt=""> 
+                          </a>
+                          
+                          </div>
+                    <!-- /.image -->
+ 
+                  </div>
+                  <!-- /.product-image -->
+                  
+                  <div class="product-info text-left">
+                  <div class="brand">Qualis</div>
+                    <h3 class="name"><a href="deals-detail.html">Hampton Bay LED Light Ceiling Exhaust Fan</a></h3>
+                    <div class="rating rateit-small"></div>
+                    <div class="description"></div>
+                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                    <!-- /.product-price --> 
+                    
+                  </div>
+                  <!-- /.product-info -->
+                  <div class="cart clearfix animate-effect">
+                    <div class="action">
+                      <ul class="list-unstyled">
+                        <li class="add-cart-button btn-group">
+                          <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
+                          <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                        </li>                        <li class="lnk wishlist"> <a class="add-to-cart" href="#" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
+                        <li class="lnk"> <a class="add-to-cart" href="#" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
+                      </ul>
+                    </div>
+                    <!-- /.action --> 
+                  </div>
+                  <!-- /.cart --> 
+                </div>
+                <!-- /.product --> 
+                
+              </div>
+              <!-- /.products --> 
+            </div>
+            <!-- /.item -->
+            
+            <div class="item item-carousel">
+              <div class="products">
+                <div class="product">
+                  <div class="product-image">
+                    <div class="image"> 
+                          <a href="deals-detail.html">
+                             <img src="{{asset('web/assets/images/products/p7.jpg')}}" alt=""> 
+                          </a>
+                          
+                          </div>
+                    <!-- /.image -->
+
+                  </div>
+                  <!-- /.product-image -->
+                  
+                  <div class="product-info text-left">
+                  <div class="brand">Harrier</div>
+                    <h3 class="name"><a href="deals-detail.html">Timberland Men’s Thorton Waterproof Boots</a></h3>
+                    <div class="rating rateit-small"></div>
+                    <div class="description"></div>
+                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                    <!-- /.product-price --> 
+                    
+                  </div>
+                  <!-- /.product-info -->
+                  <div class="cart clearfix animate-effect">
+                    <div class="action">
+                      <ul class="list-unstyled">
+                        <li class="add-cart-button btn-group">
+                          <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
+                          <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                        </li>                        <li class="lnk wishlist"> <a class="add-to-cart" href="#" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
+                        <li class="lnk"> <a class="add-to-cart" href="#" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
+                      </ul>
+                    </div>
+                    <!-- /.action --> 
+                  </div>
+                  <!-- /.cart --> 
+                </div>
+                <!-- /.product --> 
+                
+              </div>
+              <!-- /.products --> 
+            </div>
+            <!-- /.item -->
+            
+            <div class="item item-carousel">
+              <div class="products">
+                <div class="product">
+                  <div class="product-image">
+                    <div class="image"> 
+                          <a href="deals-detail.html">
+                             <img src="{{asset('web/assets/images/products/p15.jpg')}}" alt=""> 
+                             </a>
+                          
+                          </div>
+                    <!-- /.image -->
+
+                  </div>
+                  <!-- /.product-image -->
+                  
+                  <div class="product-info text-left">
+                  <div class="brand">Marazzo</div>
+                    <h3 class="name"><a href="deals-detail.html">Buying a TV Is Easy When You Know These Terms</a></h3>
+                    <div class="rating rateit-small"></div>
+                    <div class="description"></div>
+                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                    <!-- /.product-price --> 
+                    
+                  </div>
+                  <!-- /.product-info -->
+                  <div class="cart clearfix animate-effect">
+                    <div class="action">
+                      <ul class="list-unstyled">
+                        <li class="add-cart-button btn-group">
+                          <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
+                          <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                        </li>                        <li class="lnk wishlist"> <a class="add-to-cart" href="#" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
+                        <li class="lnk"> <a class="add-to-cart" href="#" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
+                      </ul>
+                    </div>
+                    <!-- /.action --> 
+                  </div>
+                  <!-- /.cart --> 
+                </div>
+                <!-- /.product --> 
+                
+              </div>
+              <!-- /.products --> 
+            </div>
+            <!-- /.item -->
+            
+            <div class="item item-carousel">
+              <div class="products">
+                <div class="product">
+                  <div class="product-image">
+                    <div class="image"> 
+                          <a href="deals-detail.html">
+                             <img src="{{asset('web/assets/images/products/p7.jpg')}}" alt=""> 
+                          </a>
+                          
+                          </div>
+                    <!-- /.image -->
+
+                  </div>
+                  <!-- /.product-image -->
+                  
+                  <div class="product-info text-left">
+                  <div class="brand">Altima</div>
+                    <h3 class="name"><a href="deals-detail.html">New and Refurbished Lenovo Laptops</a></h3>
+                    <div class="rating rateit-small"></div>
+                    <div class="description"></div>
+                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                    <!-- /.product-price --> 
+                    
+                  </div>
+                  <!-- /.product-info -->
+                  <div class="cart clearfix animate-effect">
+                    <div class="action">
+                      <ul class="list-unstyled">
+                        <li class="add-cart-button btn-group">
+                          <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
+                          <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                        </li>                        <li class="lnk wishlist"> <a class="add-to-cart" href="#" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
+                        <li class="lnk"> <a class="add-to-cart" href="#" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
+                      </ul>
+                    </div>
+                    <!-- /.action --> 
+                  </div>
+                  <!-- /.cart --> 
+                </div>
+                <!-- /.product --> 
+                
+              </div>
+              <!-- /.products --> 
+            </div>
+            <!-- /.item -->
+            
+            <div class="item item-carousel">
+              <div class="products">
+                <div class="product">
+                  <div class="product-image">
+                    <div class="image"> 
+                          <a href="deals-detail.html">
+                             <img src="{{asset('web/assets/images/products/p9.jpg')}}" alt=""> 
+                          </a>
+                          
+                          </div>
+                    <!-- /.image -->
+
+                  </div>
+                  <!-- /.product-image -->
+                  
+                  <div class="product-info text-left">
+                  <div class="brand">Nexus</div>
+                    <h3 class="name"><a href="deals-detail.html">Hampton Bay LED Light Ceiling Exhaust Fan</a></h3>
+                    <div class="rating rateit-small"></div>
+                    <div class="description"></div>
+                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                    <!-- /.product-price --> 
+                    
+                  </div>
+                  <!-- /.product-info -->
+                  <div class="cart clearfix animate-effect">
+                    <div class="action">
+                      <ul class="list-unstyled">
+                        <li class="add-cart-button btn-group">
+                          <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
+                          <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                        </li>                        <li class="lnk wishlist"> <a class="add-to-cart" href="#" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
+                        <li class="lnk"> <a class="add-to-cart" href="#" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
+                      </ul>
+                    </div>
+                    <!-- /.action --> 
+                  </div>
+                  <!-- /.cart --> 
+                </div>
+                <!-- /.product --> 
+                
+              </div>
+              <!-- /.products --> 
+            </div>
+            <!-- /.item --> 
+          </div>
+          <!-- /.home-owl-carousel --> 
+          </div>
+        </section>
+        <!-- /.section --> 
+        <!-- ============================================== FEATURED PRODUCTS : END ============================================== --> 
+        </div>
+       </div> 
+       </div>
+
+
+@endsection
