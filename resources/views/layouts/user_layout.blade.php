@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="{{asset('assets/front-end/images/favicon.ico')}}">
 
-    <title>Crypto Currency</title>
+    <title>Swiz</title>
     
 	<!-- Vendors Style-->
 	<link rel="stylesheet" href="{{asset('assets/front-end/css/vendors_css.css')}}">
@@ -71,7 +71,7 @@
 		<nav hidden class="nav-white nav-transparent" style="top: 10px !important;">
 			<div class="nav-header">
 				<a href="index.html" class="brand">
-					<img src="{{asset('assets/img/swiz.png')}}" alt="" style="width:69%"/>
+					<img src="{{asset('assets/img/swiz.png')}}" alt="" style="width:68%"/>
 				</a>
 				<button class="toggle-bar">
 					<span class="ti-menu"></span>
@@ -155,7 +155,7 @@
 				</li> -->
 
 				<li class="nav-item">
-		           <a class="nav-link" href="{{ route('user.index') }}">{{ __('My List') }}</a>
+		           <a class="nav-link" href="{{ route('user.index') }}">{{ __('My Referrals') }}</a>
 		        </li>
 		        <li class="nav-item">
 		           <a class="nav-link" href="{{ route('token_purchase.index') }}">{{ __('Token Purchase') }}</a>
