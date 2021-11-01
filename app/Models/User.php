@@ -276,7 +276,7 @@ class User extends Authenticatable
 
 
         return $total_users;
-        
+        }
 
     public function usdt_balance()
     {
