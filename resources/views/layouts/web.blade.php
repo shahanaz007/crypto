@@ -8,7 +8,7 @@
 <meta name="author" content="">
 <meta name="keywords" content="MediaCenter, Template, eCommerce">
 <meta name="robots" content="all">
-<title>DealDots premium HTML5 & CSS3 Template</title>
+<title>Swiz</title>
 
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet" href="{{asset('web/assets/css/bootstrap.min.css')}}">
@@ -83,7 +83,7 @@
       <div class="row">
         <div class="col-xs-12 col-lg-2 col-sm-12 col-md-3 logo-holder"> 
           <!-- ============================================================= LOGO ============================================================= -->
-          <div class="logo"> <a href="home.html"> <img src="{{asset('assets/img/swiz.png')}}" alt="logo" width="100px"> </a> </div>
+          <div class="logo"> <a href="home.html"> <img src="{{asset('assets/img/swiz.png')}}" alt="logo" width="130px"> </a> </div>
           <!-- /.logo --> 
           <!-- ============================================================= LOGO : END ============================================================= --> </div>
         <!-- /.logo-holder -->

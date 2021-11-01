@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="{{asset('assets/front-end/images/favicon.ico')}}">
 
-    <title>Crypto Currency</title>
+    <title>Swiz</title>
     
 	<!-- Vendors Style-->
 	<link rel="stylesheet" href="{{asset('assets/front-end/css/vendors_css.css')}}">
