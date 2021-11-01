@@ -15,7 +15,7 @@
 			</div>
 		</div>
 	</section>
-<section class="pt-130 pb-50">
+<section class="pt-100 pb-50">
 	
 <div class="container">
     <div class="row justify-content-center">

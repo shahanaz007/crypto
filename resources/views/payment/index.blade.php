@@ -16,12 +16,12 @@
       </div>
     </div>
   </section>
-<section class="pt-130 pb-50">
+<section class="pt-100 pb-50">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">{{ __('Payment History') }}</div>
+                <!-- <div class="card-header">{{ __('Payment History') }}</div> -->
 
                 <div class="card-body">
                    

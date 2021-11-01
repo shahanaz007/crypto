@@ -85,7 +85,7 @@
 					</ul>
 				</li> -->
 				<li class="nav-item">
-		           <a class="nav-link" href="{{ route('user.index') }}">{{ __('My List') }}</a>
+		           <a class="nav-link" href="{{ route('user.index') }}">{{ __('My Referrals') }}</a>
 		        </li>
 		        <li class="nav-item">
 		           <a class="nav-link" href="{{ route('token_purchase.index') }}">{{ __('Token Purchase') }}</a>
