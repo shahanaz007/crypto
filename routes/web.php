@@ -179,5 +179,9 @@ Route::view('userlayout','user_dashboard');
 Route::view('admin_dashboard','admin.dashboard');
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
+
+//user to manage referres  01-11-2021
+Route::resource('user','UsersController');
+
 //chippy test
 Route::resource('testing','TestController');
