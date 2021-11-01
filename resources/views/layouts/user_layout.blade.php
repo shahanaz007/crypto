@@ -70,7 +70,7 @@
 
 		<nav hidden class="nav-white nav-transparent" style="top: 10px !important;">
 			<div class="nav-header">
-				<a href="index.html" class="brand">
+				<a href="{{url('/')}}" class="brand">
 					<img src="{{asset('assets/img/swiz.png')}}" alt="" style="width:68%"/>
 				</a>
 				<button class="toggle-bar">

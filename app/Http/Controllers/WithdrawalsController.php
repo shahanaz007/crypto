@@ -34,7 +34,7 @@ class WithdrawalsController extends Controller
          
          $coins = $coins['result'];
 
-         return $coins['USD'];
+         // return $coins['USD'];
          // print_r($coins['result']['USD']); echo '<br><br>';
 
 

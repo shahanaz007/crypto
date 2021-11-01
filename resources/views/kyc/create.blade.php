@@ -16,12 +16,12 @@
             </div>
         </div>
     </section>
-<section class="pt-130 pb-50">
+<section class="pt-100 pb-50">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('KYC Request Form') }}</div>
+                <div class="card-header">{{ __('KYC Form') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))

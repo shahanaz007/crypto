@@ -76,7 +76,12 @@
 	                		</div>
 
 	                		<div class="col-md-12 to_hide" id="notes" style="display: none;">
-	                			<label  class="form-control" style="color: blue;">Please wait.. it may take a few seconds to load the Rates</label>
+	                			<center><label  class="form-control" style="color: blue;">Please wait.. it may take a few seconds to load the Rates</label></center>
+	                		
+	                		</div>
+
+	                		<div class="col-md-12 "  >
+	                			<center><label  class="form-control" style="color: red;">Rates are Approximate</label></center>
 	                		
 	                		</div>
 	                	</div>	

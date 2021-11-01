@@ -42,7 +42,7 @@
         <div class="cnt-account">
           <ul class="list-unstyled">
             @if (Auth::user())
-              <li><a href="#"><i class="fa fa-user"></i>&nbsp; My Account</a></li>
+              <li><a href="{{url('/home')}}"><i class="fa fa-user"></i>&nbsp; My Account</a></li>
             @else
               <li><a href="{{url('login')}}"><i class="fa fa-lock"></i>&nbsp;Login</a></li>
             @endif
@@ -85,7 +85,7 @@
       <div class="row">
         <div class="col-xs-12 col-lg-2 col-sm-12 col-md-3 logo-holder"> 
           <!-- ============================================================= LOGO ============================================================= -->
-          <div class="logo"> <a href="home.html"> <img src="{{asset('assets/img/swiz.png')}}" alt="logo" width="130px"> </a> </div>
+          <div class="logo"> <a href="{{ url('/') }}"> <img src="{{asset('assets/img/swiz.png')}}" alt="logo" width="130px"> </a> </div>
           <!-- /.logo --> 
           <!-- ============================================================= LOGO : END ============================================================= --> </div>
         <!-- /.logo-holder -->
@@ -114,7 +114,14 @@
           <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
             <div class="nav-outer">
               <ul class="nav navbar-nav">
-                <li class="dropdown"> <a href="#"  class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Deals</a> 
+
+                <li><a href="{{url('/')}}">Home</a></li>
+                <li><a href="{{url('/about')}}">About</a></li>
+                <li><a href="#">Coupons</a></li>
+                <li><a href="{{url('/faq')}}">FAQ</a></li>
+                <li><a href="{{url('/terms')}}">Terms</a></li>
+
+               <!--  <li class="dropdown"> <a href="#"  class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Deals</a> 
                  <ul class="dropdown-menu pages">
                     <li>
                       <div class="yamm-content">
@@ -130,8 +137,8 @@
                               </li>
                               </ul>
                 
-                </li>
-                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Coupons</a> 
+                </li> -->
+               <!--  <li class="dropdown"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Coupons</a> 
                 <ul class="dropdown-menu pages">
                     <li>
                       <div class="yamm-content">
@@ -146,8 +153,8 @@
                               </div>
                               </li>
                               </ul>
-                </li>
-                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Stores</a> 
+                </li> -->
+               <!--  <li class="dropdown"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Stores</a> 
                 <ul class="dropdown-menu pages">
                     <li>
                       <div class="yamm-content">
@@ -162,8 +169,8 @@
                               </div>
                               </li>
                               </ul>
-                </li>
-                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Pages</a>
+                </li> -->
+                <!-- <li class="dropdown"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Pages</a>
                   <ul class="dropdown-menu pages">
                     <li>
                       <div class="yamm-content">
@@ -190,7 +197,7 @@
                       </div>
                     </li>
                   </ul>
-                </li>
+                </li> -->
             
               </ul>
               <!-- /.navbar-nav -->
@@ -323,7 +330,7 @@
       </div>
     </div>
   </div>
-  <div class="copyright-bar white-bg">
+ <!--  <div class="copyright-bar white-bg">
     <div class="container">
       <div class="col-xs-12 col-sm-7 col-md-12 col-lg-7 del-info">
         We have our very own fleet of delivery vans. Your order will be packed with care at our warehouse and delivered right to your door by our friendly DealDots team.
@@ -342,7 +349,7 @@
         <!-- /.payment-methods --> 
       </div>
     </div>
-  </div>
+  </div> -->
   <div class="copyright-bar">
     <div class="container">
       <div class="col-xs-12 col-sm-12 no-padding social">
@@ -356,7 +363,7 @@
           <li class="youtube"><a target="_blank" rel="nofollow" href="#" title="Youtube"></a></li>
         </ul>
       </div>
-      <div class="col-xs-12 col-sm-12 no-padding copyright">&copy; 2019 ThemesGround. All Rights Reserved. </div>
+      <div class="col-xs-12 col-sm-12 no-padding copyright">&copy; {{date("Y")}} Swiz. All Rights Reserved. </div>
       
     </div>
   </div>

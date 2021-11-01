@@ -13,17 +13,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/w', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/faq', function () {
+    return view('faq');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+Route::get('/terms', function () {
+    return view('terms');
+});
 
 Auth::routes();
 Route::get('/register/{code}','Auth\RegisterController@withReferral');
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home','HomeController@user_home')->name('home');
-Route::get('/','HomeController@user_home');
+// Route::get('/','HomeController@user_home');
 
 
 Route::resource('/payment','PaymentsController');

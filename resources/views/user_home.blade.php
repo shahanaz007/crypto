@@ -18,7 +18,7 @@
              <!-- <img width="50px" src="{{asset('assets/img/user.png')}}"> -->
                 
                 <center><h3>Wallet Balance</h3></center>
-                <center><h4>  $ {{Auth::user()->usd_balance()}}  </h4></center>
+                <center><h3>  $ {{Auth::user()->usd_balance()}}  </h3></center>
               <!-- <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/symbols/BTCUSD/?exchange=BITSTAMP" rel="noopener" target="_blank"><span class="blue-text">BTCUSD Rates</span></a> by TradingView</div> -->
               
         </div>
@@ -34,7 +34,7 @@
                  <!-- <img width="50px" src="{{asset('assets/img/user.png')}}"> -->
                     
                     <center><h3>Token Balance</h3></center>
-                    <center><h4> {{Auth::user()->token_balance()}} </h4></center>
+                    <center><h3> {{Auth::user()->token_balance()}} </h3></center>
                   <!-- <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/symbols/BTCUSD/?exchange=BITSTAMP" rel="noopener" target="_blank"><span class="blue-text">BTCUSD Rates</span></a> by TradingView</div> -->
                   
             </div>
@@ -50,7 +50,7 @@
                  <!-- <img width="50px" src="{{asset('assets/img/user.png')}}"> -->
                     
                     <center><h3>Staked Tokens</h3></center>
-                    <center><h4> {{Auth::user()->stake()}}  </h4></center>
+                    <center><h3> {{Auth::user()->stake()}}  </h3></center>
                   <!-- <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/symbols/BTCUSD/?exchange=BITSTAMP" rel="noopener" target="_blank"><span class="blue-text">BTCUSD Rates</span></a> by TradingView</div> -->
                   
             </div>
@@ -66,7 +66,7 @@
                  <!-- <img width="50px" src="{{asset('assets/img/user.png')}}"> -->
                     
                     <center><h3>USDT Balance</h3></center>
-                    <center><h4> {{Auth::user()->usdt_balance()}}  </h4></center>
+                    <center><h3> {{Auth::user()->usdt_balance()}}  </h3></center>
                   <!-- <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/symbols/BTCUSD/?exchange=BITSTAMP" rel="noopener" target="_blank"><span class="blue-text">BTCUSD Rates</span></a> by TradingView</div> -->
                   
             </div>

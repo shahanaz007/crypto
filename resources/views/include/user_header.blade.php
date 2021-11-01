@@ -1,7 +1,7 @@
  	<header>
 		<nav hidden class="nav-white nav-transparent dark-overlay">
 			<div class="nav-header" style="width: 8%;background: #ffe4c400;">
-				<a href="index.html" class="brand">
+				<a href="{{url('/')}}" class="brand">
 					<img src="{{asset('assets/img/swiz.png')}}" alt="swiz logo" style="width:80%" />
 				</a>
 				<button class="toggle-bar">
