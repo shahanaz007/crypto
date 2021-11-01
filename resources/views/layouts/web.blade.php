@@ -41,11 +41,15 @@
       <div class="header-top-inner">
         <div class="cnt-account">
           <ul class="list-unstyled">
-            <li><a href="#"><i class="icon fa fa-user"></i>My Account</a></li>
-            <li><a href="#"><i class="icon fa fa-heart"></i>Wishlist</a></li>
+            @if (Auth::user())
+              <li><a href="#"><i class="fa fa-user"></i>&nbsp; My Account</a></li>
+            @else
+              <li><a href="{{url('login')}}"><i class="fa fa-lock"></i>&nbsp;Login</a></li>
+            @endif
+            <!-- <li><a href="#"><i class="icon fa fa-heart"></i>Wishlist</a></li>
             <li><a href="#"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
             <li><a href="#"><i class="icon fa fa-check"></i>Checkout</a></li>
-            <li><a href="sign-in.html"><i class="icon fa fa-lock"></i>Become a Vendor</a></li>
+            <li><a href="sign-in.html"><i class="icon fa fa-lock"></i>Become a Vendor</a></li> -->
           </ul>
         </div>
         <!-- /.cnt-account -->
@@ -55,17 +59,15 @@
             <li class="dropdown dropdown-small"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><span class="value">USD </span><b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="#">USD</a></li>
-                <li><a href="#">INR</a></li>
-                <li><a href="#">GBP</a></li>
               </ul>
             </li>
-            <li class="dropdown dropdown-small"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><span class="value">English </span><b class="caret"></b></a>
+            <!-- <li class="dropdown dropdown-small"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><span class="value">English </span><b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="#">English</a></li>
                 <li><a href="#">French</a></li>
                 <li><a href="#">German</a></li>
               </ul>
-            </li>
+            </li> -->
           </ul>
           <!-- /.list-unstyled --> 
         </div>
@@ -202,47 +204,7 @@
         <!-- /.nav-bg-class --> 
       </div>
       <!-- /.navbar-default --> 
-      <div class="top-cart-row"> 
-          <!-- ============================================================= SHOPPING CART DROPDOWN ============================================================= -->
-          
-          <div class="dropdown dropdown-cart"> <a href="#" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
-            <div class="items-cart-inner">
-              <div class="basket"> <i class="glyphicon glyphicon-shopping-cart"></i> </div>
-              <div class="basket-item-count"><span class="count">2</span></div>
-              <div class="total-price-basket"> <span class="lbl">My Cart</span>  </div>
-            </div>
-            </a>
-            <ul class="dropdown-menu">
-              <li>
-                <div class="cart-item product-summary">
-                  <div class="row">
-                    <div class="col-xs-4">
-                      <div class="image"> <a href="deals-detail.html"><img src="{{asset('web/assets/images/cart.jpg')}}" alt=""></a> </div>
-                    </div>
-                    <div class="col-xs-7">
-                      <h3 class="name"><a href="#">New and Refurbished Lenovo Laptops</a></h3>
-                      <div class="price">$600.00</div>
-                    </div>
-                    <div class="col-xs-1 action"> <a href="#"><i class="fa fa-trash"></i></a> </div>
-                  </div>
-                </div>
-                <!-- /.cart-item -->
-                <div class="clearfix"></div>
-                <hr>
-                <div class="clearfix cart-total">
-                  <div class="pull-right"> <span class="text">Sub Total :</span><span class="price">$600.00</span> </div>
-                  <div class="clearfix"></div>
-                   <a href="shopping-cart.html" class="btn btn-upper btn-primary btn-block m-t-20">View Cart</a>
-                  <a href="checkout.html" class="btn btn-upper btn-primary btn-block m-t-20 btn-check">Checkout</a> </div>
-                <!-- /.cart-total--> 
-                
-              </li>
-            </ul>
-            <!-- /.dropdown-menu--> 
-          </div>
-          <!-- /.dropdown-cart --> 
-          
-          <!-- ============================================================= SHOPPING CART DROPDOWN : END============================================================= --> </div>
+     
     </div>
     <!-- /.container-class --> 
     
