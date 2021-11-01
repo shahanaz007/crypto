@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{StakeTokens};
-use Auth;
-use Carbon\Carbon;
+use App\Jobs\StakeReward;
 
-class StakeTokensController extends Controller
+class TestController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +14,8 @@ class StakeTokensController extends Controller
      */
     public function index()
     {
-        $user_id      = Auth::user()->id;
-        $stake_tokens = StakeTokens::where('user_id',$user_id)->paginate(10);
-        return view('stake_tokens.index',compact('stake_tokens'));
-
+        
+        dispatch(new \App\Jobs\StakeReward());
     }
 
     /**
@@ -29,7 +25,7 @@ class StakeTokensController extends Controller
      */
     public function create()
     {
-        return view('stake_tokens.create');
+        //
     }
 
     /**
@@ -40,14 +36,7 @@ class StakeTokensController extends Controller
      */
     public function store(Request $request)
     {
-        $user_id = Auth::user()->id;
-
-        $stake_tokens               = new StakeTokens;
-        $stake_tokens->user_id      = $user_id;
-        $stake_tokens->no_of_tokens = $request->no_of_tokens;
-        $stake_tokens->date         = Carbon::now()->format('Y-m-d');
-        $stake_tokens->save();
-        return redirect('stake_tokens')->with('status','Stake Tokens Successfully');
+        //
     }
 
     /**
@@ -58,10 +47,7 @@ class StakeTokensController extends Controller
      */
     public function show($id)
     {
-        $tokens         = StakeTokens::find($id);
-        $tokens->status = 0;
-        $tokens->save();
-        return redirect('stake_tokens')->with('status','UnStake Token Successfully');
+        //
     }
 
     /**
@@ -96,13 +82,5 @@ class StakeTokensController extends Controller
     public function destroy($id)
     {
         //
-    }
-    //unstake token by user 19-10-2021
-    public function unstake($id)
-    {
-        $tokens         = StakeTokens::find($id);
-        $tokens->status = 0;
-        $tokens->save();
-        return redirect('stake_tokens')->with('status','UnStake Token Successfully');
     }
 }

@@ -218,4 +218,14 @@ class User extends Authenticatable
         $tokens  = StakeTokens::where('user_id',$user_id)->where('status',1)->get()->sum('no_of_tokens');
         return $tokens;
     }
+
+    public function token_balace()
+    {
+        $user_id  = Auth::user()->id;
+        $purchase = Tokenpurchase::where('user_id',$user_id)->get()->sum('no_of_tockens');
+        $withdraw = TokenWithdrawal::where('user_id',$user_id)->where('status',100)->get()->sum('amount');
+        $balance  = $purchase - $withdraw;
+        return $balance;
+
+    }
 }

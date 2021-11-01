@@ -153,9 +153,14 @@
 						<li><a href="{{ route('my_coupons.index') }}">{{ __('My Coupons') }}</a></li>
 					</ul>
 				</li>
+
+				<li class="nav-item">
+		           <a class="nav-link" href="{{ route('user.index') }}">{{ __('My List') }}</a>
+		        </li>
 		        <li class="nav-item">
 		           <a class="nav-link" href="{{ route('token_purchase.index') }}">{{ __('Token Purchase') }}</a>
 		        </li>
+		        
 
 		        <li class="nav-item">
 		           <a class="nav-link" href="{{ route('payment.index') }}">{{ __('History') }}</a>

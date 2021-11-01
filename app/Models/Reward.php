@@ -48,6 +48,7 @@ class Reward extends Model
 
         // store reward on wallet
         tokens_usdt_wallet::credit($user_id,$amount,$coin,$remarks);
+        return 200;
     }
 
     public static function give_rewards_for_referees_of($user_id,$amount)

@@ -1,0 +1,59 @@
+@extends('layouts.user_layout')
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+@section('content')
+<section class="bg-img pt-150" data-overlay="7" style="background-image: url(../images/front-end-img/background/bg-8.jpg);">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center">           
+            <h2 class="page-title text-white">My Lists</h2>
+            <ol class="breadcrumb bg-transparent justify-content-center">
+              <li class="breadcrumb-item"><a href="#" class="text-white-50"><i class="mdi mdi-home-outline"></i></a></li>
+              <li class="breadcrumb-item text-white active" aria-current="page">My Lists</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<section class="pt-130 pb-50">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="card">
+        <div class="card-header">{{ __('My Lists') }}</div>
+        <div class="card-body">
+          
+          <table class="table  table-striped">
+           	<thead>
+           		<tr>
+             		<th>#</th>
+             		<th>User Name</th>
+	              <th>Level</th>
+           	  </tr>
+           	</thead>
+           	<tbody>
+           		@if(count($users) > 0) 
+             		<?php $slno=1; ?>
+             		@foreach($users as $user)
+               	  <tr>
+                   	<td>{{$slno}}</td>
+                    <td>{{$user->name}}</td>
+                    <td>{{$user->level}}</td>
+               	  </tr>
+               	  <?php $slno++; ?>
+             		@endforeach
+              @endif
+           	</tbody>
+          </table>
+          <div class="d-flex justify-content-center">
+            {!! $users->links("pagination::bootstrap-4") !!}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+@endsection
