@@ -219,7 +219,7 @@ class User extends Authenticatable
         return $tokens;
     }
 
-    public function token_balace()
+    public function token_balance()
     {
         $user_id  = Auth::user()->id;
         $purchase = Tokenpurchase::where('user_id',$user_id)->get()->sum('no_of_tockens');
@@ -228,6 +228,7 @@ class User extends Authenticatable
         return $balance;
 
     }
+
 
 
     public function users_list()
@@ -276,5 +277,13 @@ class User extends Authenticatable
 
         return $total_users;
         
+
+    public function usdt_balance()
+    {
+        $user_id = Auth::user()->id;
+        $credit  = tokens_usdt_wallet::where('user_id',$user_id)->where('coin','usdt')->get()->sum('credit');
+        $debit   = tokens_usdt_wallet::where('user_id',$user_id)->where('coin','usdt')->get()->sum('debit');
+        $balance = $credit - $debit;
+        return $balance;
     }
 }
