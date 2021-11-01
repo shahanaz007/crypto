@@ -83,7 +83,7 @@
       <div class="row">
         <div class="col-xs-12 col-lg-2 col-sm-12 col-md-3 logo-holder"> 
           <!-- ============================================================= LOGO ============================================================= -->
-          <div class="logo"> <a href="home.html"> <img src="{{asset('assets/img/swiz.png')}}" alt="logo" width="70px"> </a> </div>
+          <div class="logo"> <a href="home.html"> <img src="{{asset('assets/img/swiz.png')}}" alt="logo" width="100px"> </a> </div>
           <!-- /.logo --> 
           <!-- ============================================================= LOGO : END ============================================================= --> </div>
         <!-- /.logo-holder -->

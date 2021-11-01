@@ -1,6 +1,6 @@
 @extends('layouts.user_layout')
 @section('content')
-<section class="bg-img pt-150" data-overlay="7" style="background-image: url(../images/front-end-img/background/bg-8.jpg);">
+<section class="bg-img pt-100" data-overlay="7" style="background-image: url(../images/front-end-img/background/bg-8.jpg);">
     <div class="container">
       <div class="row">
         <div class="col-12">

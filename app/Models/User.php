@@ -228,4 +228,53 @@ class User extends Authenticatable
         return $balance;
 
     }
+
+
+    public function users_list()
+    {
+        $user_id  = Auth::user()->id;
+        $total_users = User::where('referby',$user_id)->get();
+        
+        // $total_users = User::where('created_at','dummy')->get();
+        // $total_users->push($users);
+        $users = $total_users;
+
+        do
+        {   
+            $new_users = User::where('created_at','dummy')->get();
+            if(count($users) > 0)
+            {
+                foreach ($users as $user) {
+
+                    $tmp_users = User::where('referby',$user->id)->get();
+                    if(count($tmp_users) > 0)
+                    {
+                        $total_users->push($tmp_users);
+
+                        foreach ($tmp_users as $tmp_user) 
+                        {
+
+                            $tmp = User::where('referby',$tmp_user->id)->get();
+                            if(count($tmp) > 0)
+                            {
+                               $new_users->push($tmp); 
+                               $total_users->push($tmp);
+                            }
+                                
+                        }
+                    }
+                    
+
+
+                }
+            }
+            
+            $users = $new_users; 
+
+        }while(count($users) > 0);
+
+
+        return $total_users;
+        
+    }
 }

@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 @section('content')
-<section class="bg-img pt-150" data-overlay="7" style="background-image: url(../images/front-end-img/background/bg-8.jpg);">
+<section class="bg-img pt-100" data-overlay="7" style="background-image: url(../images/front-end-img/background/bg-8.jpg);">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -48,7 +48,7 @@
            	</tbody>
           </table>
           <div class="d-flex justify-content-center">
-            {!! $users->links("pagination::bootstrap-4") !!}
+            
           </div>
         </div>
       </div>

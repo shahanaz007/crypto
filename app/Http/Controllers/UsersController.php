@@ -16,7 +16,11 @@ class UsersController extends Controller
     public function index()
     {
         $user_id = Auth::user()->id;
-        $users   = User::where('referby',$user_id)->paginate(10);
+        // $users   = User::where('referby',$user_id)->paginate(10);
+
+        $users   = Auth::user()->users_list();
+        
+        // return $users;
         return view('my_list.index',compact('users'));
     }
 

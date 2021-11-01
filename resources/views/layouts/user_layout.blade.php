@@ -19,8 +19,8 @@
 	  
      <style type="text/css">
      	nav .brand {
-     		padding: 0px;
-     		margin: -8px;
+     		/*padding: 0px;*/
+     		/*margin: -8px;*/
      	}
      	.top-bar .core-nav.nav-core-sticky.on-scroll {
      		box-shadow: 0px 0px 5px 0px;
@@ -68,10 +68,10 @@
 		  </div>
 		</div> -->
 
-		<nav hidden class="nav-white nav-transparent">
+		<nav hidden class="nav-white nav-transparent" style="top: 10px !important;">
 			<div class="nav-header">
 				<a href="index.html" class="brand">
-					<img src="{{asset('assets/img/swiz.png')}}" alt="" style="width:44%"/>
+					<img src="{{asset('assets/img/swiz.png')}}" alt="" style="width:69%"/>
 				</a>
 				<button class="toggle-bar">
 					<span class="ti-menu"></span>
