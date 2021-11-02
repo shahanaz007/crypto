@@ -1,11 +1,12 @@
-@extends('layouts.app')
+@extends('layouts.web')
 
 @section('content')
+<div class="body-content outer-top-ts">
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+        <div class="col-md-8 sign-in-page" style=" margin:0 auto;float: none;">
+            <div class="card sign-in">
+                <div class="card-header"><h4>{{ __('Verify Your Email Address') }}</h4></div>
 
                 <div class="card-body">
                     @if (session('resent'))
@@ -24,5 +25,6 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection

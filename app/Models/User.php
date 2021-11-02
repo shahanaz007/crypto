@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Hexters\CoinPayment\Entities\CoinpaymentTransaction;
 
 use Auth;
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasFactory, Notifiable;
 
