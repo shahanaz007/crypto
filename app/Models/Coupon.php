@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use AmrShawky\LaravelCurrency\Facade\Currency;
 
 class Coupon extends Model
 {
@@ -25,4 +26,18 @@ class Coupon extends Model
     {
         return $this->hasMany('App\Models\CouponPurchase');
     }
+
+    public function convert($from,$to, $amount)
+    {
+        $response = Currency::convert()
+        ->from($from)
+        ->to($to)
+        ->amount($amount)
+        ->round(2)
+        ->get();
+
+         
+         return $response;
+    }
+
 }

@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Hexters\CoinPayment\CoinPayment;
 use App\Models\{Coupon,CouponCategory,CouponPurchase,Location};
 use Auth;
+use Cookie;
 
 class CouponPurchaseController extends Controller
 {
@@ -15,7 +16,7 @@ class CouponPurchaseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($reg_id=null)
+    public function index(Request $request)
     {
 
         $today = Carbon::now();
@@ -23,8 +24,25 @@ class CouponPurchaseController extends Controller
         $coupons = Coupon::select('brand_id')->where('used','=',0)
         ->where('status','=',1)
         ->where('expiry_date','>=',$today)
-        ->groupBy('brand_id')
-        ->paginate(10);
+        ->groupBy('brand_id');
+
+        if($request->region)
+        {  
+            $region =  $request->region;
+            $coupons = $coupons->where('location_id',$region);
+            Cookie::queue('region_id', $region);
+        }
+        $coupons = $coupons->paginate(10);
+
+
+
+        // $today = Carbon::now();
+        // $today = $today->toDateString();
+        // $coupons = Coupon::select('brand_id')->where('used','=',0)
+        // ->where('status','=',1)
+        // ->where('expiry_date','>=',$today)
+        // ->groupBy('brand_id')
+        // ->paginate(10);
         // $categories = CouponCategory::where('disabled','=',0)->get();
         $locations = Location::where('active','=',1)->get();
         return view('coupon_purchase.index',compact('coupons','locations'));
@@ -115,7 +133,7 @@ class CouponPurchaseController extends Controller
         $today = Carbon::now();
         $today = $today->toDateString();
 
-        $coupons = Coupon::select('point')->where('used','=',0)
+        $coupons = Coupon::select('point','currency_code')->where('used','=',0)
         ->where('status','=',1)
         ->where('expiry_date','>=',$today)
         ->where('brand_id',$brand_id)

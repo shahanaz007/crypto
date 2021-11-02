@@ -92,8 +92,13 @@ input[type=number] {
 							<?php $cnt=1; ?>
 						@if(count($coupons) > 0 )	
 				    	@foreach($coupons as $coupon)
-				    		
-				    		<input type="radio" id="{{$coupon->point}}$" value="{{$coupon->point}}" onclick="get_amount(this.value)" name="amount" required="" @if($cnt == 1) checked="checked" @endif ><label for="{{$coupon->point}}$">{{$coupon->point}}$</label>
+				    		<?php
+				    			$point = $coupon->point;
+				    			$from  = $coupon->currency_code;
+				    			$to    = Cookie::get('currency');
+
+				    		?>
+				    		<input type="radio" id="{{$coupon->point}}$" value="{{$coupon->point}}" name="amount" required="" @if($cnt == 1) checked="checked" @endif ><label for="{{$coupon->point}}$">{{$coupon->convert($from,$to,$point).' '.Cookie::get('currency')}}</label>
 				    		<?php $cnt++; ?>
 				    	@endforeach
 				    	@endif
@@ -175,7 +180,7 @@ input[type=number] {
 
 					
 
-						<div class="col-md-6" id="select_currency">
+						<!-- <div class="col-md-6" id="select_currency">
 							<p><b>Currency :</b> 
 							<select class="form-control" name="currency" id="currency_id" required="">
 										<option value="" disabled="disabled">- Select Currency -</option>
@@ -183,7 +188,7 @@ input[type=number] {
 	                        </select>
 
 	                  </p>      
-						</div>
+						</div> -->
 						
 
 
