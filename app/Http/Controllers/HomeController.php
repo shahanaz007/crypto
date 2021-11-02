@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Hexters\CoinPayment\Entities\CoinpaymentTransaction;
-use App\Models\{Withdrawal,Tokenpurchase,User,Reward,tokens_usdt_wallet};
+use App\Models\{Withdrawal,Tokenpurchase,User,Reward,tokens_usdt_wallet,Coupon};
 use Auth;
 
 class HomeController extends Controller
@@ -97,5 +97,11 @@ class HomeController extends Controller
         return $exception->getMessage();
     }
 
+    }
+
+    public function welcome(){
+
+        $coupons = Coupon::where('used','=',0)->get();
+        return view('welcome',compact('coupons'));
     }
 }
