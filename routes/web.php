@@ -28,11 +28,12 @@ Route::get('/faq', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+Route::post("contactus",'UsersController@contactus');
 Route::get('/terms', function () {
     return view('terms');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 Route::get('/register/{code}','Auth\RegisterController@withReferral');
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

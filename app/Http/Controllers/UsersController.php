@@ -89,4 +89,30 @@ class UsersController extends Controller
     {
         //
     }
+
+    public function contactus(Request $request){
+        // return $request;
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'title' => 'required',
+            'comment'=> 'required',
+            
+        ]);
+        $name       = $request->name;
+        $email      = $request->email;
+        $title      = $request->title;
+        $comment    = $request->comment;
+        
+        $data=[
+            'name'=>$name,
+            'email' =>$email,
+            'title' =>$title,
+            'comment' =>$comment,
+        ];
+        \Mail::to('info@swiz.com')->send(new \App\Mail\ContactMail($data));
+        // dd("Email is Sent, please check your inbox.");
+        return redirect('contact')->with('message','Message Sent Successfully. We Will Connect You Soon. Thank You..');
+
+}
 }

@@ -18,42 +18,65 @@
 	<div class="col-md-12 contact-title">
 		<h4>Contact Form</h4>
 	</div>
+	 @if (session('message'))
+	 <div class="col-md-12">
+				<div class="alert alert-info" role="alert">
+					{{ session('message') }}
+				</div>
+			</div>
+		    @endif
 	<div class="col-md-4 ">
-		<form class="register-form" role="form">
+		<form class="register-form" role="form" action="{{url('contactus')}}" method="POST">
+			{{csrf_field()}}
+            {{method_field('POST')}}
+           
 			<div class="form-group">
 		    <label class="info-title" for="exampleInputName">Your Name <span>*</span></label>
-		    <input type="email" class="form-control text-input" id="exampleInputName" placeholder="">
+		    <input type="text" class="form-control text-input" name="name" required="" id="exampleInputName" placeholder="">
+		     @if ($errors->has('name'))
+                <span class="text-danger">{{ $errors->first('name') }}</span>
+             @endif
 		  </div>
-		</form>
+		
 	</div>
 	<div class="col-md-4">
-		<form class="register-form" role="form">
+		
 			<div class="form-group">
 		    <label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>
-		    <input type="email" class="form-control text-input" id="exampleInputEmail1" placeholder="">
+		    <input type="email" class="form-control text-input" name="email" id="exampleInputEmail1" placeholder="" required="">
+		     @if ($errors->has('email'))
+                <span class="text-danger">{{ $errors->first('email') }}</span>
+             @endif
 		  </div>
-		</form>
+		
 	</div>
 	<div class="col-md-4">
-		<form class="register-form" role="form">
+		
 			<div class="form-group">
 		    <label class="info-title" for="exampleInputTitle">Title <span>*</span></label>
-		    <input type="email" class="form-control text-input" id="exampleInputTitle" placeholder="Title">
+		    <input type="text" class="form-control text-input" name="title" id="exampleInputTitle" placeholder="Title" required="">
+		     @if ($errors->has('title'))
+                <span class="text-danger">{{ $errors->first('title') }}</span>
+             @endif
 		  </div>
-		</form>
+		
 	</div>
 	<div class="col-md-12">
-		<form class="register-form" role="form">
+		
 			<div class="form-group">
 		    <label class="info-title" for="exampleInputComments">Your Comments <span>*</span></label>
-		    <textarea class="form-control unicase-form-control" id="exampleInputComments"></textarea>
+		    <textarea class="form-control unicase-form-control" required="" name="comment" id="exampleInputComments"></textarea>
+		    @if ($errors->has('comment'))
+                <span class="text-danger">{{ $errors->first('comment') }}</span>
+             @endif
 		  </div>
-		</form>
+		
 	</div>
 	<div class="col-md-12 outer-bottom-small m-t-20">
 		<button type="submit" class="btn-upper btn btn-primary checkout-page-button">Send Message</button>
 	</div>
 </div>
+</form>
 <div class="col-md-4 contact-info">
 	<div class="contact-title">
 		<h4>Information</h4>
