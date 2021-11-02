@@ -30,6 +30,17 @@
 <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,700,700italic,800' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<style type="text/css">
+  .main-header {
+    background: white;
+  }
+  .main-header .navbar-default .navbar-collapse .navbar-nav > li > a {
+    color: black;
+  }
+  .top-bar {
+    background: #ec3237;
+  }
+</style>
 </head>
 <body class="cnt-home">
 <!-- ============================================== HEADER ============================================== -->
@@ -102,11 +113,11 @@
           <!-- /.contact-row --> 
           <!-- ============================================================= SEARCH AREA ============================================================= -->
           <div class="search-area">
-            <form>
+            <!-- <form>
               <div class="control-group">
                   <input class="search-field" placeholder="Search here..." />
                 <a class="search-button" href="#" ></a> </div>
-            </form>
+            </form> -->
           </div>
           <!-- /.search-area --> 
           <!-- ============================================================= SEARCH AREA : END ============================================================= --> </div>
