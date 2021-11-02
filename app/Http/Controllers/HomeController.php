@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Hexters\CoinPayment\Entities\CoinpaymentTransaction;
 use App\Models\{Withdrawal,Tokenpurchase,User,Reward,tokens_usdt_wallet,Coupon};
 use Auth;
+use Cookie;
 
 class HomeController extends Controller
 {
@@ -69,6 +70,7 @@ class HomeController extends Controller
 
         public function user_home()
     {   
+        
      try{
         $user_id = Auth::user()->id;
         $legs = User::where('referby',$user_id)->get();
@@ -100,6 +102,16 @@ class HomeController extends Controller
     }
 
     public function welcome(){
+
+        if (Cookie::get('region_id') == null){
+            $region = Coupon::select('location_id')->where('used','=',0)->first();
+            Cookie::queue('region_id', $region);
+        }
+
+        if (Cookie::get('currency') == null){
+            Cookie::queue('currency', 'USD');
+        }
+        
 
         $coupons = Coupon::where('used','=',0)->get();
         return view('welcome',compact('coupons'));
