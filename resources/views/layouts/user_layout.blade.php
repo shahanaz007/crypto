@@ -69,9 +69,9 @@
 		</div> -->
 
 		<nav hidden class="nav-white nav-transparent" style="top: 10px !important;">
-			<div class="nav-header">
+			<div class="nav-header" style="height: 60px;">
 				<a href="{{url('/')}}" class="brand">
-					<img src="{{asset('assets/img/swiz.png')}}" alt="" style="width:68%"/>
+					<img src="{{asset('assets/img/swiz_small.png')}}" alt="" style="width:68%"/>
 				</a>
 				<button class="toggle-bar">
 					<span class="ti-menu"></span>

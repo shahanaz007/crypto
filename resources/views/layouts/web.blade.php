@@ -85,7 +85,7 @@
       <div class="row">
         <div class="col-xs-12 col-lg-2 col-sm-12 col-md-3 logo-holder"> 
           <!-- ============================================================= LOGO ============================================================= -->
-          <div class="logo"> <a href="{{ url('/') }}"> <img src="{{asset('assets/img/swiz.png')}}" alt="logo" width="130px"> </a> </div>
+          <div class="logo"> <a href="{{ url('/') }}"> <img src="{{asset('assets/img/swiz_small.png')}}" alt="logo" width="130px"> </a> </div>
           <!-- /.logo --> 
           <!-- ============================================================= LOGO : END ============================================================= --> </div>
         <!-- /.logo-holder -->
@@ -120,6 +120,7 @@
                 <li><a href="#">Coupons</a></li>
                 <li><a href="{{url('/faq')}}">FAQ</a></li>
                 <li><a href="{{url('/terms')}}">Terms</a></li>
+                <li><a href="{{url('/contact')}}">Contact</a></li>
 
                <!--  <li class="dropdown"> <a href="#"  class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Deals</a> 
                  <ul class="dropdown-menu pages">
