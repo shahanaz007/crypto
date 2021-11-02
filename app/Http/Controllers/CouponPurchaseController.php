@@ -52,34 +52,31 @@ class CouponPurchaseController extends Controller
         $user_id   = Auth::user()->id;
         $coupon_id = $request->coupon_id;
         $brand_id = $request->brand_id;
-        $currency  = $request->currency;
+        // $currency  = $request->currency;
         $quantity  = $request->quantity;
-        $amount    = $request->amount * $request->quantity;
+
+
+        $currency = 'USD';
+        
+
+        // return $request->amount;
 
         // checks coupon stock
         $today = Carbon::now();
         $today = $today->toDateString();
-        $coupons = Coupon::select('id')->where('used','=',0)
+        $coupons = Coupon::select('id','currency_code','point')->where('used','=',0)
         ->where('status','=',1)
         ->where('expiry_date','>=',$today)
         ->where('brand_id',$brand_id)
+        ->where('point',$request->amount)        
         ->get()->take($quantity);
 
         if(count($coupons) < $quantity){
             return redirect()->back()->with('error','Requested Quanity is greater than available quantity');
         }
 
-        $wallet_amount = Auth::user()->usd_balance();
+
         
-        if($amount > $wallet_amount){
-            return redirect()->back()->with('error','Insufficient Balance on Wallet');
-        }
-        
-        $debited = Auth::user()->debit_user($currency, $amount);
-        if($debited['code'] != 200)
-        {
-            return redirect()->back()->with($debited['status'],$debited['message']);
-        }
         
         // return $debited;
 
@@ -89,14 +86,47 @@ class CouponPurchaseController extends Controller
 
         foreach($coupons as $coupon)
         {
+
+            // $amount    = $request->amount * $request->quantity;
+        $amount    =  $coupon->point;   
+       
+
+        $from      = $coupon->currency_code;
+        $to        = 'USD';
+        $amount    = $coupon->convert($from,$to, $amount);
+
+        $wallet_amount = Auth::user()->usd_balance();
+        
+        if($amount > $wallet_amount){
+            return redirect()->back()->with('error','Insufficient Balance on Wallet');
+        }
+        
+        $debited = Auth::user()->debit_user($currency, $amount);
+
+
+        if($debited['code'] != 200)
+        {   return $debited;
+            return redirect()->back()->with($debited['status'],$debited['message']);
+        }
+
+
+            //amount ends
+        $tmp_coupon = Coupon::find($coupon->id); 
+        $coupon->used = 1;
+        $coupon->save();
+
+
         $details              = new CouponPurchase;
         $details->user_id     = $user_id;
         $details->coupon_id   = $coupon->id;
         $details->currency    = $currency;
         $details->amount      = $amount;
-        $details->paid_amount = $converted_amount;
+        $details->paid_amount = $amount;
         $details->status      = 1;
         $details->save();
+
+
+
         }
         return redirect('coupon_purchase')->with('status','Coupon Purchased Successfully');
 
