@@ -120,6 +120,7 @@
                 <li><a href="#">Coupons</a></li>
                 <li><a href="{{url('/faq')}}">FAQ</a></li>
                 <li><a href="{{url('/terms')}}">Terms</a></li>
+                <li><a href="{{url('/contact')}}">Contact</a></li>
 
                <!--  <li class="dropdown"> <a href="#"  class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Deals</a> 
                  <ul class="dropdown-menu pages">
