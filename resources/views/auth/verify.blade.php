@@ -1,6 +1,7 @@
 @extends('layouts.web')
 
 @section('content')
+<div class="body-content outer-top-ts">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8 sign-in-page" style=" margin:0 auto;float: none;">
@@ -24,5 +25,6 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection
