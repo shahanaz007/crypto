@@ -39,20 +39,22 @@
     </section>
 <section class="pt-130 pb-50">
 <div class="container">
-
+<form action="{{url('coupons_purchase_region')}}" method="POST"> 
+        @csrf
 
 <div class="row pb-2">
 
     <div class="col-md-6" style="top: 10px;">
         <h4>Coupons</h4>
     </div>
+    
     <div class="col-md-3">
         <div class="row">
             <div class="col-md-5 float-right pr-0" style="top: 10px;">
                 <h6 class="text-right" >Region : &nbsp;</h6>
             </div>
             <div class="col-md-7 pl-0">
-              <select class="form-select form-select-sm form-control" aria-label=".form-select-sm example" >
+              <select class="form-select form-select-sm form-control" aria-label=".form-select-sm example"  onchange="this.form.submit()" id="region_id" name="region">
                 <option selected>--Select--</option>
                 @if(count($locations) > 0)
                 @foreach($locations as $location)
@@ -63,6 +65,7 @@
             </div>
         </div>
     </div>
+    
     <div class="col-md-3">
         <div class="form-group has-search">
             <span class="fa fa-search form-control-feedback"></span>
@@ -85,8 +88,14 @@
       @endif
     	
     </div>
+
 </div>
 </section>
+</form>
+<script>
+    function selectRegion() {
+      var region  = $('#region_id').val();
 
-
+    }
+</script>
 @endsection
