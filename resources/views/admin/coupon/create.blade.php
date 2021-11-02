@@ -70,7 +70,9 @@
                             <div class="col-md-6">
                                 <label>Currency Code</label>
                                 <select class="form-control"  id="currency_code_id"  name="currency_code"  required="">
-                                    <option>USD</option>
+                                    @foreach($currencies as $currency)
+                                        <option>{{$currency->currency_code}}</option>
+                                    @endforeach    
                                 </select>
                             </div>
                             

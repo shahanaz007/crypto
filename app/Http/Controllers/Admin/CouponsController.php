@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\{Coupon,CouponCategory,Location,Brand};
+use App\Models\{Coupon,CouponCategory,Location,Brand,Currency};
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Str;
 use DB;
@@ -23,7 +23,8 @@ class CouponsController extends Controller
     	$categories = CouponCategory::where('disabled','=',0)->get();
         $locations  = Location::where('active','=',1)->get();
         $brands     = Brand::where('active','=',1)->get();
-    	return view('admin.coupon.create',compact('categories','locations','brands'));
+        $currencies = Currency::where('status',1)->get();
+    	return view('admin.coupon.create',compact('categories','locations','brands','currencies'));
     }
 
     //function to store coupon  02-07-2021
