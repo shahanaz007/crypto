@@ -50,7 +50,10 @@
                                 </li>
                                 <li>
                                     <a href="{{URL::to('/admin_coupon/index')}}">{{ __('Coupons') }}</a>
-                                </li>			
+                                </li>	
+                                <li >
+                                    <a  href="{{ route('currency.index') }}">{{ __('Currencies') }}</a>
+                                </li>		
 				<li class="dropdown">
 					<a href="#">Reports</a>
 					<ul class="dropdown-menu">
@@ -66,7 +69,7 @@
 					<ul class="dropdown-menu">
 						<li><a href="{{ route('payment.create') }}">{{ __('Deposit') }}</a></li>
 						<li><a href="{{route('withdraw.create') }}">{{ __('Withdraw') }}</a></li>
-						<li><a href="{{ route('coinaddress.index') }}">{{ __('Deposit Addresses') }}</a></li>
+						<!-- <li><a href="{{ route('coinaddress.index') }}">{{ __('Deposit Addresses') }}</a></li> -->
 					</ul>
 				</li>
 				<li class="dropdown">

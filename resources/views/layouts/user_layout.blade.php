@@ -135,7 +135,7 @@
 					<ul class="dropdown-menu">
 						<li><a href="{{ route('payment.create') }}">{{ __('Deposit') }}</a></li>
 						<li><a href="{{route('withdraw.create') }}">{{ __('Withdraw') }}</a></li>
-						<li><a href="{{ route('coinaddress.index') }}">{{ __('Deposit Addresses') }}</a></li>
+						<!-- <li><a href="{{ route('coinaddress.index') }}">{{ __('Deposit Addresses') }}</a></li> -->
 					</ul>
 				</li>
 				<li class="dropdown">

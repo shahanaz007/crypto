@@ -95,6 +95,15 @@
             </span>
           </a>
         </li>
+        <li>
+          <a href="{{ route('currency.index') }}">
+            <i class="icon-refresh"></i> <span>{{ __('Currencies') }}</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+        </li>
+
         <li class="treeview">
           <a href="#">
             <i class="icon-chart"></i>
