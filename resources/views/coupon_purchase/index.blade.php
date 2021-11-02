@@ -55,10 +55,10 @@
             </div>
             <div class="col-md-7 pl-0">
               <select class="form-select form-select-sm form-control" aria-label=".form-select-sm example"  onchange="this.form.submit()" id="region_id" name="region">
-                <option selected>--Select--</option>
+                <option value="">--Select--</option>
                 @if(count($locations) > 0)
                 @foreach($locations as $location)
-                  <option value="{{$location->id}}">{{$location->name}}</option>
+                  <option value="{{$location->id}}" <?php if(Cookie::get('region_id') == $location->id) echo "selected"; ?>>{{$location->name}}</option>
                 @endforeach
                 @endif  
               </select>
