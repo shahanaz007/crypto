@@ -53,13 +53,21 @@
           </ul>
         </div>
         <!-- /.cnt-account -->
-        
+        <?PHP
+          $currencies = App\Models\Currency::All();
+        ?>
         <div class="cnt-block">
           <ul class="list-unstyled list-inline">
-            <li class="dropdown dropdown-small"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><span class="value">USD </span><b class="caret"></b></a>
+            <li class="dropdown dropdown-small"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><span class="value">
+          {{ Cookie::get('currency') }}  </span><b class="caret"></b></a>
+              @if(count($currencies) > 0)
               <ul class="dropdown-menu">
-                <li><a href="#">USD</a></li>
+                @foreach($currencies as $currency)
+                  <li><a href="{{url('/setcurrency',$currency->currency_code)}}">{{$currency->currency_code}}</a></li>
+                @endforeach
+
               </ul>
+              @endif
             </li>
             <!-- <li class="dropdown dropdown-small"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><span class="value">English </span><b class="caret"></b></a>
               <ul class="dropdown-menu">

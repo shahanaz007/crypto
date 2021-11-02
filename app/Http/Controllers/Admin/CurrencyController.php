@@ -4,27 +4,20 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\{User,CoinAddress};
-use Cookie;
+use App\Models\{Currency};
 
-class UsersController extends Controller
+
+class CurrencyController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $users = User::where('admin?',0);
-
-        if($request->key)
-        {  
-            $key   =  $request->key;
-            $users = $users->where('email','LIKE','%'.$key.'%');
-        }
-        $users  = $users->paginate(10);
-        return view('admin.users.index',compact('users'));
+        $currencies = Currency::where('status',1)->paginate(10);
+        return view('admin.currency.index',compact('currencies'));
     }
 
     /**
@@ -34,10 +27,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        $new_users = collect(new User);
-        $user = User::first();
-        $new_users->push($user);
-        return $new_users;
+        return view('admin.currency.create');
     }
 
     /**
@@ -48,7 +38,14 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $currency_name =  $request->currency_name;
+        $currency_code =  $request->currency_code;
+
+        $currency               = new Currency;
+        $currency->currency_name = $currency_name;
+        $currency->currency_code = $currency_code;
+        $currency->save();
+        return redirect('currency')->with('status','Currency Added successfully');
     }
 
     /**
@@ -59,8 +56,7 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
-        return view('admin.users.view',compact('user'));
+
     }
 
     /**
@@ -71,7 +67,8 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $currency         = Currency::find($id);
+        return view('admin.currency.edit',compact('currency'));
     }
 
     /**
@@ -83,7 +80,14 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $currency_name =  $request->currency_name;
+        $currency_code =  $request->currency_code;
+
+        $currency                = Currency::find($id);
+        $currency->currency_name = $currency_name;
+        $currency->currency_code = $currency_code;
+        $currency->save();
+        return redirect('currency')->with('status','Currency Updated successfully');
     }
 
     /**
@@ -95,18 +99,5 @@ class UsersController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    //Admin to view add token or usdt page  16-10-2021
-    public function addTokenUsdt($id)
-    {
-        $id    = $id;
-        return view('admin.users.add_token',compact('id'));
-    }
-
-    public function setCookie($code)
-    {
-        Cookie::queue('currency', $code, 99999);
-        return redirect()->back();
     }
 }

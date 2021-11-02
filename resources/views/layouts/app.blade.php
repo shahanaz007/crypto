@@ -112,7 +112,7 @@
 
                                     <!-- <a class="dropdown-item" href="{{ route('transfer.create') }}">{{ __('Transfer') }}</a> -->
 
-                                    <a class="dropdown-item" href="{{ route('coinaddress.index') }}">{{ __('Deposit Addresses') }}</a>
+                                    <!-- <a class="dropdown-item" href="{{ route('coinaddress.index') }}">{{ __('Deposit Addresses') }}</a> -->
 
                                                                        
                                 </div>

@@ -198,5 +198,10 @@ Route::view('admin_dashboard','admin.dashboard');
 //user to manage referres  01-11-2021
 Route::resource('user','UsersController');
 
+Route::get('/setcurrency/{code}','Admin\UsersController@setCookie');
+
+//admin for currencies  02-11-2021
+Route::resource('/currency','Admin\CurrencyController');
+
 //chippy test
 Route::resource('testing','TestController');
