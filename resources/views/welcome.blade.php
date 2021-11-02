@@ -425,7 +425,7 @@
                   
                   <div class="product-info text-left">
                  <div class="discount">{{$coupon->point}} <span>{{$coupon->Currency_code}}</span></div>
-                 <div class="show-code"><a href="#" >Buy</a></div>
+                 <div class="show-code"><a href="{{route('coupon_purchase.show',$coupon->brand_id)}}" >Buy</a></div>
                   <p class="exp-date"><i class="fa fa-clock-o"></i> Expires on {{date('d-m-Y ', strtotime($coupon->expiry_date))}}</p>  
                   </div>
           
