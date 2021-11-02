@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\{User,CoinAddress};
+use Cookie;
 
 class UsersController extends Controller
 {
@@ -101,5 +102,11 @@ class UsersController extends Controller
     {
         $id    = $id;
         return view('admin.users.add_token',compact('id'));
+    }
+
+    public function setCookie($code)
+    {
+        Cookie::queue('currency', $code, 99999);
+        return redirect()->back();
     }
 }
