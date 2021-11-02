@@ -178,7 +178,7 @@ class CouponPurchaseController extends Controller
         ->where('brand_id',$brand_id)
         ->where('location_id',$region)
         ->first();
-
+        
         return view('coupon_purchase.purchase',compact('details','coupons'));
     }
 
