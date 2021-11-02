@@ -499,7 +499,7 @@
           <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12"> 
         <!-- ============================================== BLOG SLIDER ============================================== -->
-        <section class="section blog-section outer-bottom-xs wow fadeInUp">
+       <!--  <section class="section blog-section outer-bottom-xs wow fadeInUp">
           <h3 class="section-title">Latest Opportunity</h3>
           <div class="latest-blog">
           <div class="blog-slider-container outer-top-xs">
@@ -508,105 +508,105 @@
                 <div class="blog-post">
                   <div class="blog-post-image">
                     <div class="image"> <a href="blog.html"><img src="{{asset('web/assets/images/blog-post/blog_big_01.jpg')}}" alt=""></a> </div>
-                  </div>
+                  </div> -->
                   <!-- /.blog-post-image -->
                   
-                  <div class="blog-post-info text-left">
+                  <!-- <div class="blog-post-info text-left">
                     <h3 class="name"><a href="#">Voluptatem accusantium doloremque laudantium</a></h3>
                     <span class="info">By Jone Doe &nbsp;|&nbsp; 21 March 2019 </span>
                     <p class="text">Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-                   </div>
+                   </div> -->
                   <!-- /.blog-post-info --> 
                   
-                </div>
+                <!-- </div> -->
                 <!-- /.blog-post --> 
-              </div>
+              <!-- </div> -->
               <!-- /.item -->
               
-              <div class="item">
+              <!-- <div class="item">
                 <div class="blog-post">
                   <div class="blog-post-image">
                     <div class="image"> <a href="blog.html"><img src="{{asset('web/assets/images/blog-post/blog_big_02.jpg')}}" alt=""></a> </div>
-                  </div>
+                  </div> -->
                   <!-- /.blog-post-image -->
                   
-                  <div class="blog-post-info text-left">
+                  <!-- <div class="blog-post-info text-left">
                     <h3 class="name"><a href="#">Dolorem eum fugiat quo voluptas nulla pariatur</a></h3>
                     <span class="info">By Saraha Smith &nbsp;|&nbsp; 21 March 2019 </span>
                     <p class="text">Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-                   </div>
+                   </div> -->
                   <!-- /.blog-post-info --> 
                   
-                </div>
+                <!-- </div> -->
                 <!-- /.blog-post --> 
-              </div>
+              <!-- </div> -->
               <!-- /.item --> 
               
               <!-- /.item -->
               
-              <div class="item">
+              <!-- <div class="item">
                 <div class="blog-post">
                   <div class="blog-post-image">
                     <div class="image"> <a href="blog.html"><img src="{{asset('web/assets/images/blog-post/blog_big_03.jpg')}}" alt=""></a> </div>
-                  </div>
+                  </div> -->
                   <!-- /.blog-post-image -->
                   
-                  <div class="blog-post-info text-left">
+                 <!--  <div class="blog-post-info text-left">
                     <h3 class="name"><a href="#">Dolorem eum fugiat quo voluptas nulla pariatur</a></h3>
                     <span class="info">By Saraha Smith &nbsp;|&nbsp; 21 March 2019 </span>
                     <p class="text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium</p>
-                    </div>
+                    </div> -->
                   <!-- /.blog-post-info --> 
                   
-                </div>
+                <!-- </div> -->
                 <!-- /.blog-post --> 
-              </div>
+              <!-- </div> -->
               <!-- /.item -->
               
-              <div class="item">
+              <!-- <div class="item">
                 <div class="blog-post">
                   <div class="blog-post-image">
                     <div class="image"> <a href="blog.html"><img src="{{asset('web/assets/images/blog-post/blog_big_01.jpg')}}" alt=""></a> </div>
-                  </div>
+                  </div> -->
                   <!-- /.blog-post-image -->
                   
-                  <div class="blog-post-info text-left">
+                  <!-- <div class="blog-post-info text-left">
                     <h3 class="name"><a href="#">Dolorem eum fugiat quo voluptas nulla pariatur</a></h3>
                     <span class="info">By Saraha Smith &nbsp;|&nbsp; 21 March 2019 </span>
                     <p class="text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium</p>
-                    </div>
+                    </div> -->
                   <!-- /.blog-post-info --> 
                   
-                </div>
+                <!-- </div> -->
                 <!-- /.blog-post --> 
-              </div>
+              <!-- </div> -->
               <!-- /.item -->
               
-              <div class="item">
+             <!--  <div class="item">
                 <div class="blog-post">
                   <div class="blog-post-image">
                     <div class="image"> <a href="blog.html"><img src="{{asset('web/assets/images/blog-post/blog_big_02.jpg')}}" alt=""></a> </div>
-                  </div>
+                  </div> -->
                   <!-- /.blog-post-image -->
-                  
+                  <!-- 
                   <div class="blog-post-info text-left">
                     <h3 class="name"><a href="#">Dolorem eum fugiat quo voluptas nulla pariatur</a></h3>
                     <span class="info">By Saraha Smith &nbsp;|&nbsp; 21 March 2019 </span>
                     <p class="text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium</p>
-                  </div>
+                  </div> -->
                   <!-- /.blog-post-info --> 
                   
-                </div>
+                <!-- </div> -->
                 <!-- /.blog-post --> 
-              </div>
+              <!-- </div> -->
               <!-- /.item --> 
               
-            </div>
+            <!-- </div> -->
             <!-- /.owl-carousel --> 
-          </div>
+          <!-- </div> -->
           <!-- /.blog-slider-container --> 
-          </div>
-        </section>
+          <!-- </div> -->
+        <!-- </section> -->
         <!-- /.section --> 
         <!-- ============================================== BLOG SLIDER : END ============================================== --> 
         
