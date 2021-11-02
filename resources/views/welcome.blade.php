@@ -63,7 +63,7 @@
        
         
           <!-- ============================================== STORES SECTION ============================================== -->
-        <section class="section featured-section wow fadeInUp">
+        <!-- <section class="section featured-section wow fadeInUp">
         <h2>Stores For You</h2>
         <div class="featured-product">
           <div class="owl-carousel homepage-owl-carousel custom-carousel owl-theme outer-top-xs">
@@ -76,22 +76,22 @@
                              <img src="{{asset('web/assets/images/brands/store-3.png')}}" alt=""> 
                              </a>
                           
-                          </div>
+                          </div> -->
                     <!-- /.image -->
                                         
-                  </div>
+                 <!--  </div>
                   <div class="product-info">
                     <h3 class="name"><a href="#">Baseball</a></h3>
                       </div>
 
-                </div>
+                </div> -->
                 <!-- /.product --> 
                 
-              </div>
+              <!-- </div> -->
               <!-- /.products --> 
-            </div>
+            <!-- </div> -->
             <!-- /.item -->
-            <div class="item item-carousel">
+           <!--  <div class="item item-carousel">
               <div class="products">
                 
                <div class="product">
@@ -101,19 +101,19 @@
                              <img src="{{asset('web/assets/images/brands/store-10.png')}}" alt=""> 
                              </a>
                           
-                          </div>
+                          </div> -->
                     <!-- /.image -->
                                         
-                  </div>
+                  <!-- </div>
                   <div class="product-info">
                     <h3 class="name"><a href="#">Flipmart</a></h3>
                       </div>
 
                 </div>
                 
-              </div>
+              </div> -->
               <!-- /.products --> 
-            </div>
+            <!-- </div>
             <div class="item item-carousel">
               <div class="products">
                 <div class="product">
@@ -123,21 +123,21 @@
                              <img src="{{asset('web/assets/images/brands/store-14.png')}}" alt=""> 
                              </a>
                           
-                          </div>
+                          </div> -->
                     <!-- /.image -->
                                         
-                  </div>
+                  <!-- </div>
                   <div class="product-info">
                     <h3 class="name"><a href="#">Amazon</a></h3>
                       </div>
 
-                </div>
+                </div> -->
                 <!-- /.product --> 
                 
-              </div>
+              <!-- </div> -->
               <!-- /.products --> 
-            </div>
-            <div class="item item-carousel">
+            <!-- </div> -->
+            <!-- <div class="item item-carousel">
               <div class="products">
                 <div class="product">
                   <div class="product-image">
@@ -146,21 +146,21 @@
                              <img src="{{asset('web/assets/images/brands/store-6.png')}}" alt=""> 
                              </a>
                           
-                          </div>
+                          </div> -->
                     <!-- /.image -->
                                         
-                  </div>
+                 <!--  </div>
                   <div class="product-info">
                     <h3 class="name"><a href="#">Babywise</a></h3>
                       </div>
 
-                </div>
+                </div> -->
                 <!-- /.product --> 
                 
-              </div>
+              <!-- </div> -->
               <!-- /.products --> 
-            </div>
-            <div class="item item-carousel">
+            <!-- </div> -->
+            <!-- <div class="item item-carousel">
               <div class="products">
                 <div class="product">
                   <div class="product-image">
@@ -169,20 +169,20 @@
                              <img src="{{asset('web/assets/images/brands/store-5.png')}}" alt=""> 
                               </a>
                           
-                          </div>
+                          </div> -->
                     <!-- /.image -->
                                         
-                  </div>
+                  <!-- </div>
                   <div class="product-info">
                     <h3 class="name"><a href="#">Electromax</a></h3>
                       </div>
 
-                </div>
+                </div> -->
                 <!-- /.product --> 
                 
-              </div>
+              <!-- </div> -->
               <!-- /.products --> 
-            </div>
+            <!-- </div>
             <div class="item item-carousel">
               <div class="products">
                 <div class="product">
@@ -192,20 +192,20 @@
                              <img src="{{asset('web/assets/images/brands/store-7.png')}}" alt=""> 
                              </a>
                           
-                          </div>
+                          </div> -->
                     <!-- /.image -->
                                         
-                  </div>
+                  <!-- </div>
                   <div class="product-info">
                     <h3 class="name"><a href="#">Beautycart</a></h3>
                       </div>
 
-                </div>
+                </div> -->
                 <!-- /.product --> 
                 
-              </div>
+              <!-- </div> -->
               <!-- /.products --> 
-            </div>
+           <!--  </div>
             <div class="item item-carousel">
               <div class="products">
                 <div class="product">
@@ -215,23 +215,23 @@
                              <img src="{{asset('web/assets/images/brands/store-8.png')}}" alt=""> 
                              </a>
                           
-                          </div>
+                          </div> -->
                     <!-- /.image -->
                                         
-                  </div>
+                  <!-- </div>
                   <div class="product-info">
                     <h3 class="name"><a href="#">Furnicor</a></h3>
                       </div>
 
-                </div>
+                </div> -->
                 <!-- /.product --> 
                 
-              </div>
+              <!-- </div> -->
               <!-- /.products --> 
-            </div>
+            <!-- </div> -->
             <!-- /.item -->
             
-            <div class="item item-carousel">
+            <!-- <div class="item item-carousel">
               <div class="products">
                 <div class="product">
                   <div class="product-image">
@@ -240,23 +240,23 @@
                              <img src="{{asset('web/assets/images/brands/store-9.png')}}" alt=""> 
                              </a>
                           
-                          </div>
+                          </div> -->
                     <!-- /.image -->
                                         
-                  </div>
+                 <!--  </div>
                   <div class="product-info">
                     <h3 class="name"><a href="#">Harrier</a></h3>
                       </div>
 
-                </div>
+                </div> -->
                 <!-- /.product --> 
                 
-              </div>
+              <!-- </div> -->
               <!-- /.products --> 
-            </div>
+            <!-- </div> -->
             <!-- /.item -->
             
-            <div class="item item-carousel">
+            <!-- <div class="item item-carousel">
               <div class="products">
               <div class="product">
                   <div class="product-image">
@@ -265,24 +265,24 @@
                              <img src="{{asset('web/assets/images/brands/store-2.png')}}" alt=""> 
                              </a>
                           
-                          </div>
+                          </div> -->
                     <!-- /.image -->
                                         
-                  </div>
+<!--                   </div>
                   <div class="product-info">
                     <h3 class="name"><a href="#">Petscare</a></h3>
                       </div>
 
-                </div>
+                </div> -->
                 
                 <!-- /.product --> 
                 
-              </div>
+              <!-- </div> -->
               <!-- /.products --> 
-            </div>
+            <!-- </div> -->
             <!-- /.item -->
             
-            <div class="item item-carousel">
+            <!-- <div class="item item-carousel">
               <div class="products">
                 <div class="product">
                   <div class="product-image">
@@ -291,23 +291,23 @@
                              <img src="{{asset('web/assets/images/brands/store-11.png')}}" alt=""> 
                              </a>
                           
-                          </div>
+                          </div> -->
                     <!-- /.image -->
                                         
-                  </div>
+                 <!--  </div>
                   <div class="product-info">
                     <h3 class="name"><a href="#">Totaltoys</a></h3>
                       </div>
 
-                </div>
+                </div> -->
                 <!-- /.product --> 
                 
-              </div>
+              <!-- </div> -->
               <!-- /.products --> 
-            </div>
+            <!-- </div> -->
             <!-- /.item -->
             
-            <div class="item item-carousel">
+           <!--  <div class="item item-carousel">
               <div class="products">
                 <div class="product">
                   <div class="product-image">
@@ -316,26 +316,26 @@
                              <img src="{{asset('web/assets/images/brands/store-12.png')}}" alt=""> 
                              </a>
                           
-                          </div>
+                          </div> -->
                     <!-- /.image -->
                                         
-                  </div>
+                  <!-- </div>
                   <div class="product-info">
                     <h3 class="name"><a href="#">Organatic</a></h3>
                       </div>
 
-                </div>
+                </div> -->
                 <!-- /.product --> 
                 
-              </div>
+              <!-- </div> -->
               <!-- /.products --> 
-            </div>
+            <!-- </div> -->
             <!-- /.item --> 
-          </div>
+          <!-- </div> -->
 
           <!-- /.home-owl-carousel --> 
-          </div>
-        </section>
+          <!-- </div> -->
+        <!-- </section> -->
         <!-- /.section --> 
         <!-- ============================================== stores : END ============================================== -->
         
