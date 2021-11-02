@@ -106,7 +106,7 @@ class UsersController extends Controller
 
     public function setCookie($code)
     {
-        Cookie::queue('currency', $code, 99999);
+        Cookie::queue('currency', $code);
         return redirect()->back();
     }
 }
