@@ -406,14 +406,15 @@
           
           <div class="coupons-deals">
           <div class="owl-carousel home-owl-carousel1 custom-carousel owl-theme outer-top-xs">
+            @foreach($coupons as $coupon)
             <div class="item item-carousel">
               <div class="products">
                 <div class="product">
                   <div class="product-image">
                     <div class="image"> 
-                     <img class="img-responsive" src="{{asset('web/assets/images/coupons/img1.jpg')}}" alt="">
-                    <div class="brand">Flipmart</div>
-                           <h3 class="name"><a href="#">Flat 40% off on hotel bookings in 10 cities</a></h3>
+                     <img class="img-responsive" src="{{$coupon->brand->logo}}" alt="">
+                    <div class="brand">{{$coupon->brand->name}}</div>
+                           <h3 class="name"><a href="#">{{$coupon->coupon_category->category_name}}</a></h3>
                           
                           </div>
                     <!-- /.image -->
@@ -423,9 +424,9 @@
                   <!-- /.product-image -->
                   
                   <div class="product-info text-left">
-                 <div class="discount">25% <span>OFF</span></div>
-                 <div class="show-code"><a href="#" data-toggle="modal" data-target="#myModal">Show Code</a></div>
-                  <p class="exp-date"><i class="fa fa-clock-o"></i> Expires on 2019-11-16</p>  
+                 <div class="discount">{{$coupon->point}} <span>{{$coupon->Currency_code}}</span></div>
+                 <div class="show-code"><a href="#" >Buy</a></div>
+                  <p class="exp-date"><i class="fa fa-clock-o"></i> Expires on {{date('d-m-Y ', strtotime($coupon->expiry_date))}}</p>  
                   </div>
           
                 </div>
@@ -434,150 +435,11 @@
               </div>
               <!-- /.products --> 
               
-              <div class="products">
-                <div class="product">
-                  <div class="product-image">
-                    <div class="image"> 
-                     <img class="img-responsive" src="{{asset('web/assets/images/coupons/img2.jpg')}}" alt="">
-                    <div class="brand">Marazzo</div>
-                           <h3 class="name"><a href="#">Get 15% off on shopping above $ 2000 at Vanitywagon</a></h3>
-                          
-                          </div>
-                    <!-- /.image -->
-                    
-                 
-                  </div>
-                  <!-- /.product-image -->
-                  
-                  <div class="product-info text-left">
-                 <div class="discount">15% <span>OFF</span></div>
-                 <div class="show-code"><a href="#" data-toggle="modal" data-target="#myModal">Show Code</a></div>
-                  <p class="exp-date"><i class="fa fa-clock-o"></i> Expires on 2019-11-16</p>  
-                  </div>
-          
-                </div>
-                <!-- /.product --> 
-                
-              </div>
             </div>
             <!-- /.item -->
+            @endforeach
             
             
-            <div class="item item-carousel">
-              <div class="products">
-                <div class="product">
-                  <div class="product-image">
-                    <div class="image"> 
-                     <img class="img-responsive" src="{{asset('web/assets/images/coupons/img3.jpg')}}" alt="">
-                    <div class="brand">Qualis</div>
-                           <h3 class="name"><a href="#"> Monsoon Sale: Upto 10% Off on Domestic Flight Bookings </a></h3>
-                          
-                          </div>
-                    <!-- /.image -->
-                    
-                 
-                  </div>
-                  <!-- /.product-image -->
-                  
-                  <div class="product-info text-left">
-                 <div class="discount">10% <span>OFF</span></div>
-                 <div class="show-code"><a href="#" data-toggle="modal" data-target="#myModal">Show Code</a></div>
-                  <p class="exp-date"><i class="fa fa-clock-o"></i> Expires on 2019-11-16</p>  
-                  </div>
-          
-                </div>
-                <!-- /.product --> 
-                
-              </div>
-              <!-- /.products --> 
-              
-              <div class="products">
-                <div class="product">
-                  <div class="product-image">
-                    <div class="image"> 
-                     <img class="img-responsive" src="{{asset('web/assets/images/coupons/img4.jpg')}}" alt="">
-                    <div class="brand">Harrier</div>
-                           <h3 class="name"><a href="#">Flat 90% off on night dinner hotel bookings</a></h3>
-                          
-                          </div>
-                    <!-- /.image -->
-                    
-                 
-                  </div>
-                  <!-- /.product-image -->
-                  
-                  <div class="product-info text-left">
-                 <div class="discount">90% <span>OFF</span></div>
-                 <div class="show-code"><a href="#" data-toggle="modal" data-target="#myModal">Show Code</a></div>
-                  <p class="exp-date"><i class="fa fa-clock-o"></i> Expires on 2019-11-16</p>  
-                  </div>
-          
-                </div>
-                <!-- /.product --> 
-                
-              </div>
-            </div>
-            <!-- /.item -->
-            
-            <div class="item item-carousel">
-              <div class="products">
-                <div class="product">
-                  <div class="product-image">
-                    <div class="image"> 
-                     <img class="img-responsive" src="{{asset('web/assets/images/coupons/img1.jpg')}}" alt="">
-                    <div class="brand">Flipmart</div>
-                           <h3 class="name"><a href="#">Flat 40% off on hotel bookings in 10 cities</a></h3>
-                          
-                          </div>
-                    <!-- /.image -->
-                    
-                 
-                  </div>
-                  <!-- /.product-image -->
-                  
-                  <div class="product-info text-left">
-                 <div class="discount">25% <span>OFF</span></div>
-                 <div class="show-code"><a href="#"  data-toggle="modal" data-target="#myModal">Show Code</a></div>
-                  <p class="exp-date"><i class="fa fa-clock-o"></i> Expires on 2019-11-16</p>  
-                  </div>
-          
-                </div>
-                <!-- /.product --> 
-                
-              </div>
-              <!-- /.products --> 
-              <div class="products">
-                <div class="product">
-                  <div class="product-image">
-                    <div class="image"> 
-                     <img class="img-responsive" src="{{asset('web/assets/images/coupons/img1.jpg')}}" alt="">
-                    <div class="brand">Flipmart</div>
-                           <h3 class="name"><a href="#">Flat 40% off on hotel bookings in 10 cities</a></h3>
-                          
-                          </div>
-                    <!-- /.image -->
-                    
-                 
-                  </div>
-                  <!-- /.product-image -->
-                  
-                  <div class="product-info text-left">
-                 <div class="discount">25% <span>OFF</span></div>
-                 <div class="show-code"><a href="#" data-toggle="modal" data-target="#myModal">Show Code</a></div>
-                 
-                  <p class="exp-date"><i class="fa fa-clock-o"></i> Expires on 2019-11-16</p>  
-                  </div>
-          
-                </div>
-                <!-- /.product --> 
-                
-              </div>
-              <!-- /.home-owl-carousel --> 
-          
-
-
-            </div>
-            <!-- /.item -->
             
             
 
