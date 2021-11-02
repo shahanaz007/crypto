@@ -80,13 +80,13 @@
 						<li><a href="{{ route('stake_tokens.index') }}">{{ __('Stake Tokens') }}</a></li>
 					</ul>
 				</li>
-				<!-- <li class="dropdown">
+				<li class="dropdown">
 					<a href="#">Coupons</a>
 					<ul class="dropdown-menu">
 						<li><a href="{{ route('coupon_purchase.index') }}">{{ __('Coupon Purchase') }}</a></li>
 						<li><a href="{{ route('my_coupons.index') }}">{{ __('My Coupons') }}</a></li>
 					</ul>
-				</li> -->
+				</li>
 				<li class="nav-item">
 		           <a class="nav-link" href="{{ route('user.index') }}">{{ __('My Referrals') }}</a>
 		        </li>
