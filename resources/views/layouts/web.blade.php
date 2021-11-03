@@ -209,9 +209,9 @@
                             <div class="col-xs-12 col-menu">
                               <ul class="links">
                                 @if(Auth::user()->$type)
-                                  <li><a href="{{ route('admin_kyc.index') }}">KYC</a>
+                                  <li><a href="{{ route('admin_kyc.index') }}">KYC</a></li>
                                   @elseif(Auth::user()->kyc_approved != 1)
-                                    <a href="{{ route('kyc.index') }}">KYC</a>
+                                   <li> <a href="{{ route('kyc.index') }}">KYC</a>
                                   </li>
                                 @endif
                                 @if(Auth::user()->merchant != 1)  
