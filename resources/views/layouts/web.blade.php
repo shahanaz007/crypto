@@ -52,6 +52,17 @@
       <div class="header-top-inner">
         <div class="cnt-account">
           <ul class="list-unstyled">
+            <?php
+              if (Cookie::get('region_id') == null){
+                $region = App\Models\Coupon::select('location_id')->where('used','=',0)->first();
+                Cookie::queue('region_id', $region->location_id);
+              }
+
+              if (Cookie::get('currency') == null){
+                Cookie::queue('currency', 'USD');
+              }
+            ?>  
+            
             @if (Auth::user())
               <li><a href="{{url('/home')}}"><i class="fa fa-user"></i>&nbsp; My Account</a></li>
             @else

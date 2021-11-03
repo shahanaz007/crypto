@@ -17,7 +17,8 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware(['auth','verified'],['except' => ['welcome']]);
+
+        $this->middleware(['auth','verified'],['except'=>'welcome']);
     }
 
     /**
@@ -102,16 +103,6 @@ class HomeController extends Controller
     }
 
     public function welcome(){
-
-        if (Cookie::get('region_id') == null){
-            $region = Coupon::select('location_id')->where('used','=',0)->first();
-            Cookie::queue('region_id', $region);
-        }
-
-        if (Cookie::get('currency') == null){
-            Cookie::queue('currency', 'USD');
-        }
-        
 
         $coupons = Coupon::where('used','=',0)->get();
         return view('welcome',compact('coupons'));
