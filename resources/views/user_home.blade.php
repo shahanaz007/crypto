@@ -4,7 +4,7 @@
 <div style="text-align: center;color:white;font-size:40px; padding-bottom: 20px;">
 </div>
 <div style="text-align: center;font-size:20px; padding-bottom: 20px;">
-   Referral Link : <b>{{url('register').'/'.Auth::user()->myrefercode}} </b><i class="fa fa-copy"> </i>
+   Referral Link : <b><font id="ref_link">{{url('register').'/'.Auth::user()->myrefercode}} </font></b><i class="fa fa-copy"  style="cursor:pointer" onclick="ref_link()"> </i>
 </div>
  
 <div class="row col-md-12 justify-content-center" style="margin: auto;float: none;width:85%">
@@ -81,4 +81,22 @@
 
 
 </section>
+
+<script type="text/javascript">
+    function copyToClipboard(text) {
+    var sampleTextarea = document.createElement("textarea");
+    document.body.appendChild(sampleTextarea);
+    sampleTextarea.value = text; //save main text in it
+    sampleTextarea.select(); //select textarea contenrs
+    document.execCommand("copy");
+    document.body.removeChild(sampleTextarea);
+}
+
+    function ref_link()
+    {
+        var copyText = $('#ref_link').html();
+
+         copyToClipboard(copyText);
+    }
+</script>
 @endsection
