@@ -21,11 +21,11 @@ class CouponPurchaseController extends Controller
 
         $today = Carbon::now();
         $today = $today->toDateString();
-        $coupons = Coupon::select('brand_id')->where('used','=',0)
+        $coupons = Coupon::select('brand_id','category_id','point','Currency_code')->where('used','=',0)
         ->where('status','=',1)
         ->where('expiry_date','>=',$today)
         ->groupBy('brand_id');
-
+        $region = $request->region;
         if($request->region)
         {  
             $region =  $request->region;
@@ -45,7 +45,7 @@ class CouponPurchaseController extends Controller
         // ->paginate(10);
         // $categories = CouponCategory::where('disabled','=',0)->get();
         $locations = Location::where('active','=',1)->get();
-        return view('coupon_purchase.index',compact('coupons','locations'));
+        return view('coupon_purchase.index',compact('coupons','locations','region'));
     }
 
     /**
