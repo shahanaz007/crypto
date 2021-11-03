@@ -137,7 +137,7 @@
         $type= 'admin?';                      
         ?>  
         
-         <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 navmenu" style="float: right;"> 
+         <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 navmenu" style="float: right !important;"> 
       <div class="yamm navbar navbar-default" role="navigation">
         <div class="navbar-header">
        <button data-target="#mc-horizontal-menu-collapse" data-toggle="collapse" class="navbar-toggle collapsed" type="button"> 

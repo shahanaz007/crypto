@@ -60,8 +60,8 @@ input[type=number] {
 					<div class="text-center">						
 						<h2 class="page-title text-white">Coupon Purchase</h2>
 						<ol class="breadcrumb bg-transparent justify-content-center">
-							<li class="breadcrumb-item"><a href="#" class="text-white-50"><i class="mdi mdi-home-outline"></i></a></li>
-							<li class="breadcrumb-item text-white active" aria-current="page">Coupon Purchase</li>
+							<li class="breadcrumb-item"><a href="{{url('/home')}}" class="text-white-50"><i class="fa fa-home"></i></a></li>
+							<li class="breadcrumb-item text-white active" aria-current="page">Coupons / Purchase</li>
 						</ol>
 					</div>
 				</div>
@@ -80,9 +80,9 @@ input[type=number] {
 				</div> -->
 		<form action="{{route('coupon_purchase.store')}}" method="POST"> 
                     @csrf
-		<div class="row" style="padding:20px">
+		<div class="row sign-in-page" style="padding:20px">
 
-			<div class="col-md-6">
+			<div class="col-md-6 ">
 				<div class="row" >
 				    <div class="col-lg-12">
 				        <!-- <a href="{{route('coupon_purchase.index')}}"><button class="btn btn-secondary float-right">Back</button></a> -->
