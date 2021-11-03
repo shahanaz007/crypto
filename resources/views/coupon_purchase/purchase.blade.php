@@ -1,4 +1,4 @@
-@extends('layouts.user_layout')
+@extends('layouts.web')
 <style type="text/css">
 	
 
@@ -161,20 +161,23 @@ input[type=number] {
 	                     </select>
 							 </p> -->
 
-							 <p><b>Quantity:</b><br>
-						<button class="btn btn-info" onclick="event.preventDefault();decrement()">-</button>
+							 <p><b>Quantity:</b><br><br>
+						<button class="btn btn-info" onclick="event.preventDefault();decrement()" style="border-radius: 4px 0px 0px 4px; padding:3px 8px;">-</button>
 						<input class="form-control" style="text-align: center;width: 150px;display: inline-block;height: calc(1.6em + 0.75rem + 2px);
-    padding: 0.375rem 0.75rem;
+    padding: 13px 0.75rem;
     font-size: 0.9rem;
+    border-radius: 0px 4px 4px 0px;
     font-weight: 400;
     line-height: 1.6;
     color: #495057;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
+    margin-left: -3px;
+    margin-right: -4px;
     border-radius: 0.25rem;transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;"
     	 id=qty value="1"  name="quantity"  type=number min=1 max=100 style="text-align: center;">
-						<button class="btn btn-info" onclick="event.preventDefault();increment()">+</button>
+						<button class="btn btn-info" onclick="event.preventDefault();increment()" style="border-radius: 0px 4px 4px 0px; padding: 3px 8px;">+</button>
 					</p>
 						</div>
 
@@ -190,13 +193,15 @@ input[type=number] {
 	                  </p>      
 						</div> -->
 						
-
+<div class="col-md-6">
+	<button class="btn btn-success form-control" style="margin-top: 13%;">Buy Coupon</button>
+</div>
 
                     
 
                </div> 
                <div  >    
-					<button class="btn btn-success form-control">Buy Coupon</button>
+					
 					</div>
 				</div>
 			</div>

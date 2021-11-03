@@ -1,4 +1,4 @@
-@extends('layouts.user_layout')
+@extends('layouts.web')
 @section('content')
 <section class="pt-130 pb-50">
 
