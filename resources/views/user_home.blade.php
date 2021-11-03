@@ -1,4 +1,5 @@
 @extends('layouts.web')
+@section('home_select','active')
 @section('content')
 <style type="text/css">
     .home .sign-in-page{

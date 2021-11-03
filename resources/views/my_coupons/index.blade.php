@@ -1,5 +1,5 @@
 @extends('layouts.web')
-
+@section('coupon_select','active')
 @section('content')
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -119,14 +119,14 @@ body {font-family: Arial, Helvetica, sans-serif;}
           <table class="table  table-striped">
            	<thead>
            		<tr>
-             		<th>#</th>
-             		<th>Category Name</th>
-	                <th>Location</th>
-	                <th>Brand</th>
-	                <th>Code</th>
-	                <th>Point</th>
+             		<th class="text-center">#</th>
+             		<th class="text-center">Category Name</th>
+	                <th class="text-center">Location</th>
+	                <th class="text-center">Brand</th>
+	                <th class="text-center">Code</th>
+	                <th class="text-center">Point</th>
 	                <th>Currency Code</th>
-	                <th>Expiry Date</th>
+	                <th class="text-center">Expiry Date</th>
            	  </tr>
            	</thead>
            	<tbody>
@@ -134,14 +134,14 @@ body {font-family: Arial, Helvetica, sans-serif;}
              		<?php $slno=1; ?>
              		@foreach($coupons as $coupon)
                	  <tr>
-                 	<td>{{$slno}}</td>
-                    <td>{{$coupon->coupon->coupon_category->category_name}}</td>
-                    <td>{{$coupon->coupon->location->name}}</td>
-                    <td>{{$coupon->coupon->brand->name}}</td>
-                    <td><button class="btn btn-info" onclick="show('{{asset($coupon->code)}}')">Show Code</button></td>
-                    <td>{{$coupon->point}}</td>
+                 	<td class="text-center">{{$slno}}</td>
+                    <td class="text-center">{{$coupon->coupon->coupon_category->category_name}}</td>
+                    <td class="text-center">{{$coupon->coupon->location->name}}</td>
+                    <td class="text-center">{{$coupon->coupon->brand->name}}</td>
+                    <td class="text-center"><button class="btn btn-info" onclick="show('{{asset($coupon->code)}}')">Show Code</button></td>
+                    <td class="text-center">{{$coupon->point}}</td>
                     <td>{{$coupon->Currency_code}}</td>
-                    <td>{{$coupon->expiry_date}}</td>
+                    <td class="text-center">{{$coupon->expiry_date}}</td>
                      
                	  </tr>
                	  <?php $slno++; ?>

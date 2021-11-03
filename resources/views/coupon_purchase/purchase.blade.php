@@ -1,5 +1,5 @@
 @extends('layouts.web')
-
+@section('coupon_select','active')
 @section('content')
 <style type="text/css">
 	
