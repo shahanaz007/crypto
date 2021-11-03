@@ -107,7 +107,7 @@
                 <div class="product">
                   <div class="product-image">
                     <div class="image"> 
-                     <img class="img-responsive" src="assets/images/coupons/img1.jpg" alt="">
+                     <img class="img-responsive" src="{{asset($coupon->brand->logo)}}" alt="">
                     <div class="brand">Flipmart</div>
                            <h3 class="name"><a href="#">Flat 40% off on hotel bookings in 10 cities</a></h3>
                           
