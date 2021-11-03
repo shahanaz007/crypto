@@ -1,15 +1,19 @@
-@extends('layouts.default')
-
+@extends('layouts.web')
+<style type="text/css">
+    .bg-dark {
+        /*padding: ;*/
+    }
+</style>
 @section('content')
 <section class="pt-130 pb-50" style="min-height:850px">
 <div style="text-align: center;color:white;font-size:40px; padding-bottom: 20px;">
 </div>
-<div style="text-align: center;color:white;font-size:20px; padding-bottom: 20px;">
-    {{url('register').'/'.Auth::user()->myrefercode}} <i class="fa fa-copy"> </i>
+<div style="text-align: center;font-size:20px; padding-bottom: 20px;">
+   Referral Link : <b>{{url('register').'/'.Auth::user()->myrefercode}} </b><i class="fa fa-copy"> </i>
 </div>
  
-<div class="row col-md-12 justify-content-center" style="margin: auto;width:85%">
-    <div class="col-3 col-md-6 col-xl-3">
+<div class="row col-md-12 justify-content-center" style="margin: auto;float: none;width:85%">
+    <div class="col-3 col-md-3 col-xl-3 sign-in-page">
         <div class="box bg-dark box-body pull-up">
             <!-- TradingView Widget BEGIN -->
             <div class="tradingview-widget-container" style="width: 100%; height: 126px;">
@@ -25,7 +29,7 @@
             <!-- TradingView Widget END -->
         </div>          
     </div>
-        <div class="col-3 col-md-6 col-xl-3">
+        <div class="col-3 col-md-3 col-xl-3 sign-in-page">
             <div class="box bg-dark box-body pull-up">
                 <!-- TradingView Widget BEGIN -->
                 <div class="tradingview-widget-container" style="width: 100%; height: 126px;">
@@ -41,7 +45,7 @@
                 <!-- TradingView Widget END -->
             </div>          
         </div>
-        <div class="col-3 col-md-6 col-xl-3">
+        <div class="col-3 col-md-3 col-xl-3 sign-in-page">
             <div class="box bg-dark box-body pull-up">
                 <!-- TradingView Widget BEGIN -->
                 <div class="tradingview-widget-container" style="width: 100%; height: 126px;">
@@ -57,7 +61,7 @@
                 <!-- TradingView Widget END -->
             </div>          
         </div>
-        <div class="col-3 col-md-6 col-xl-3">
+        <div class="col-3 col-md-3 col-xl-3 sign-in-page">
             <div class="box bg-dark box-body pull-up">
                 <!-- TradingView Widget BEGIN -->
                 <div class="tradingview-widget-container" style="width: 100%; height: 126px;">
