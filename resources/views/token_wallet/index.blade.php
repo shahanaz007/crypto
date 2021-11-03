@@ -17,13 +17,24 @@
   </section>
 <section class="pt-130 pb-50">
 <div class="container">
+  
   <div class="row justify-content-center">
     <div class="col-md-10 sign-in-page" style="margin: auto;float: none;">
+
       <div class="card sign-in">
-        <div class="card-header"><h4>Total Tokens: {{$token_balance}} </h4></div>
+        <div class="card-header">
+          <div class="row">
+            <div class="col-md-6">
+              <h4 style="text-align: center; padding: 15px; box-shadow: 0px 0px 2px 0px;border-radius: 4px;">Total Tokens: {{$token_balance}} </h4>
+            </div>
+            <div class="col-md-6">
+              <h4 style="text-align: center; padding: 15px; box-shadow: 0px 0px 2px 0px;border-radius: 4px;">Total USDT: {{$usdt_balance}} </h4>
+            </div>
+            </div>
+          
         <div class="card-body">
           <!-- <h5 class="card-title ">Total Tokens: {{$token_balance}} </h5> -->
-          <h5 class="card-title float-right ">Total USDT: {{$usdt_balance}}</h5>
+          <!-- <h5 class="card-title float-right ">Total USDT: {{$usdt_balance}}</h5> -->
           <table class="table  table-striped">
            	<thead>
            		<tr>

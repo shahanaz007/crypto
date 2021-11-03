@@ -40,6 +40,10 @@
   .top-bar {
     background: #ec3237;
   }
+  
+  .breadcrumb-item a{
+    color:#ec3237;
+  }
 </style>
 </head>
 <body class="cnt-home">
