@@ -69,10 +69,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
   position: absolute;
   top: 15px;
   right: 35px;
-  color: #f1f1f1 !important;
+  color: white !important;
   font-size: 40px !important;
   font-weight: bold !important;
   transition: 0.3s;
+  opacity: unset !important;
 }
 
 .close:hover,
@@ -156,7 +157,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 </div>
 </section>
 <div id="myModal" class="modal">
-  <span id="close" style="" class="close" onclick="closefn()">&times;</span>
+  <span id="close" style="" class="close" onclick="closefn()" style="opacity:unset; color: white;">&times;</span>
   <img class="modal-content" id="img01">
   <div id="caption"></div>
 </div>

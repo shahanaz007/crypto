@@ -1,5 +1,13 @@
 @extends('layouts.web')
 @section('content')
+<style type="text/css">
+    .home .sign-in-page{
+        box-shadow: 0px 0px 4px -1px;
+        width: 23%;
+        margin-right: 18px;
+        padding-bottom: 0px;
+    }
+</style>
 <section class="pt-130 pb-50" style="min-height:850px">
 <div style="text-align: center;color:white;font-size:40px; padding-bottom: 20px;">
 </div>
@@ -7,7 +15,7 @@
    Referral Link : <b><font id="ref_link">{{url('register').'/'.Auth::user()->myrefercode}} </font></b><i class="fa fa-copy"  style="cursor:pointer" onclick="ref_link()"> </i>
 </div>
  
-<div class="row col-md-12 justify-content-center" style="margin: auto;float: none;width:85%">
+<div class="row col-md-12 justify-content-center home" style="margin: auto;float: none;width:85%; margin-top: 20px;">
     <div class="col-3 col-md-3 col-xl-3 sign-in-page">
         <div class="box bg-dark box-body pull-up">
             <!-- TradingView Widget BEGIN -->
