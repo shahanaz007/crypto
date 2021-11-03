@@ -1,4 +1,4 @@
-@extends('layouts.user_layout')
+@extends('layouts.web')
 
 @section('content')
 <section class="bg-img pt-100" data-overlay="7" style="background-image: url(../images/front-end-img/background/bg-8.jpg);">
