@@ -21,7 +21,7 @@ class CouponPurchaseController extends Controller
 
         $today = Carbon::now();
         $today = $today->toDateString();
-        $coupons = Coupon::select('brand_id')->where('used','=',0)
+        $coupons = Coupon::select('brand_id','category_id','point','Currency_code')->where('used','=',0)
         ->where('status','=',1)
         ->where('expiry_date','>=',$today)
         ->groupBy('brand_id');
