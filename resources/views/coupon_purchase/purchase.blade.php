@@ -162,7 +162,7 @@ input[type=number] {
 							 </p> -->
 
 							 <p><b>Quantity:</b><br><br>
-						<button class="btn btn-info" onclick="event.preventDefault();decrement()" style="border-radius: 4px 0px 0px 4px; padding:3px 8px;">-</button>
+						<button class="btn btn-info" onclick="event.preventDefault();decrement()" style="border-radius: 4px 0px 0px 4px; padding:3px 8px;background-color: #ec3237;border-color: #ec3237;">-</button>
 						<input class="form-control" style="text-align: center;width: 150px;display: inline-block;height: calc(1.6em + 0.75rem + 2px);
     padding: 13px 0.75rem;
     font-size: 0.9rem;
@@ -177,7 +177,7 @@ input[type=number] {
     margin-right: -4px;
     border-radius: 0.25rem;transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;"
     	 id=qty value="1"  name="quantity"  type=number min=1 max=100 style="text-align: center;">
-						<button class="btn btn-info" onclick="event.preventDefault();increment()" style="border-radius: 0px 4px 4px 0px; padding: 3px 8px;">+</button>
+						<button class="btn btn-info" onclick="event.preventDefault();increment()" style="border-radius: 0px 4px 4px 0px; padding: 3px 8px;background-color: #ec3237;border-color: #ec3237;">+</button>
 					</p>
 						</div>
 
