@@ -355,7 +355,7 @@
  
 
 
-
+@include('include.messages')
 @yield('content')
 
 

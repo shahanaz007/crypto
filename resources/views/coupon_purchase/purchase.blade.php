@@ -1,4 +1,6 @@
 @extends('layouts.web')
+
+@section('content')
 <style type="text/css">
 	
 
@@ -50,7 +52,7 @@ input[type=number] {
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 </style>
-@section('content')
+
 <section class="bg-img pt-150" data-overlay="7" style="background-image: url(../images/front-end-img/background/bg-8.jpg);">
 		<div class="container">
 			<div class="row">
@@ -85,8 +87,8 @@ input[type=number] {
 				    <div class="col-lg-12">
 				        <!-- <a href="{{route('coupon_purchase.index')}}"><button class="btn btn-secondary float-right">Back</button></a> -->
 				    <center>
-				    	<img src="{{asset($details->brand->logo)}}" alt="" width="70%">
-				    			    <br>	
+				    	<img src="{{asset($details->brand->logo)}}" alt="" width="50%">
+				    			    <br>	<br>
 				    	
 						<div class="radio-group">
 							<?php $cnt=1; ?>

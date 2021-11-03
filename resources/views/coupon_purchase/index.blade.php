@@ -1,4 +1,6 @@
  @extends('layouts.web')
+
+@section('content')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
 .has-search .form-control {
@@ -21,7 +23,7 @@
     box-shadow: 0px 0px 6px 0px darkgrey;
 }
 </style>
-@section('content')
+
 <section class="bg-img pt-150" data-overlay="7" style="background-image: url(../images/front-end-img/background/bg-8.jpg);">
         <div class="container">
             <div class="row">
