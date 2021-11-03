@@ -365,8 +365,15 @@
 </header>
 
 <!-- ============================================== HEADER : END ============================================== --> 
-
-<div class="body-content outer-top-ts" id="top-banner-and-menu">
+<?php
+    $path = \Request::route()->getName();
+    $cls="";
+    if($path == 'welcome')
+    {
+        $cls="outer-top-ts";
+    }
+?>
+<div class="body-content {{$cls}}" id="top-banner-and-menu">
  
 
 

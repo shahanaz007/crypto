@@ -2,7 +2,7 @@
 @section('referal_select','active')
 @section('content')
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<section class="bg-img pt-100" data-overlay="7" style="background-image: url(../images/front-end-img/background/bg-8.jpg);">
+<section class="bg-img pt-100" data-overlay="7" style="background-image: url({{asset('assets/img/banner_small.JPG')}});color: white;margin-bottom: 40px;">
     <div class="container">
       <div class="row">
         <div class="col-12">

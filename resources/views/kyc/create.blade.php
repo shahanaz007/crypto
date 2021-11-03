@@ -1,15 +1,15 @@
 @extends('layouts.web')
 @section('user_select','active')
 @section('content')
-<section class="bg-img pt-100" data-overlay="7" style="background-image: url(../images/front-end-img/background/bg-8.jpg);">
+<section class="bg-img pt-100" data-overlay="7" style="background-image: url({{asset('assets/img/banner_small.JPG')}});color: white;margin-bottom: 40px;">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="text-center">                       
-                        <h2 class="page-title text-white">KYC Request Form</h2>
+                        <h2 class="page-title text-white">KYC Form</h2>
                         <ol class="breadcrumb bg-transparent justify-content-center">
-                            <li class="breadcrumb-item"><a href="#" class="text-white-50"><i class="mdi mdi-home-outline"></i></a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">KYC Request Form</li>
+                            <li class="breadcrumb-item"><a href="#" class="text-white-50"><i class="fa fa-home"></i></a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">KYC </li>
                         </ol>
                     </div>
                 </div>
