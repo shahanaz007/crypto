@@ -123,18 +123,21 @@
         <div class="col-lg-5 col-md-4 col-sm-5 col-xs-12 top-search-holder"> 
           <!-- /.contact-row --> 
           <!-- ============================================================= SEARCH AREA ============================================================= -->
-          <div class="search-area">
+          <!-- <div class="search-area"> -->
             <!-- <form>
               <div class="control-group">
                   <input class="search-field" placeholder="Search here..." />
                 <a class="search-button" href="#" ></a> </div>
             </form> -->
-          </div>
+          <!-- </div> -->
           <!-- /.search-area --> 
           <!-- ============================================================= SEARCH AREA : END ============================================================= --> </div>
         <!-- /.top-search-holder -->
+        <?php
+        $type= 'admin?';                      
+        ?>  
         
-         <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 navmenu"> 
+         <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 navmenu"> 
       <div class="yamm navbar navbar-default" role="navigation">
         <div class="navbar-header">
        <button data-target="#mc-horizontal-menu-collapse" data-toggle="collapse" class="navbar-toggle collapsed" type="button"> 
@@ -144,13 +147,97 @@
           <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
             <div class="nav-outer">
               <ul class="nav navbar-nav">
+                @if (Auth::user())
+                  <li><a href="{{ route('home') }}">Home</a></li>
+                  <li class="dropdown"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Wallet</a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <div class="yamm-content">
+                          <div class="row">
+                            <div class="col-xs-12 col-menu">
+                              <ul class="links">
+                                <li><a href="{{ route('payment.create') }}">Deposit</a></li>
+                                <li><a href="{{route('withdraw.create') }}">Withdraw</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Token Wallet</a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <div class="yamm-content">
+                          <div class="row">
+                            <div class="col-xs-12 col-menu">
+                              <ul class="links">
+                                <li><a href="{{ route('token_wallet.index') }}">Token Wallet</a></li>
+                                <li><a href="{{route('token_wallet.create') }}">Withdraw Request</a></li>
+                                <li><a href="{{ route('stake_tokens.index') }}">Stake Tokens</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Coupons</a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <div class="yamm-content">
+                          <div class="row">
+                            <div class="col-xs-12 col-menu">
+                              <ul class="links">
+                                <li><a href="{{ route('coupon_purchase.index')}}">Coupon Purchase</a></li>
+                                <li><a href="{{ route('my_coupons.index') }}">My Coupons</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a href="{{ route('user.index') }}">My Referrals</a></li>
+                  <li><a href="{{ route('token_purchase.index') }}">Token Purchase</a></li>
+                  <li><a href="{{ route('payment.index') }}">History</a></li>
+                  <li class="dropdown"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">{{ Auth::user()->name }}</a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <div class="yamm-content">
+                          <div class="row">
+                            <div class="col-xs-12 col-menu">
+                              <ul class="links">
+                                @if(Auth::user()->$type)
+                                  <li><a href="{{ route('admin_kyc.index') }}">KYC</a>
+                                  @elseif(Auth::user()->kyc_approved != 1)
+                                    <a href="{{ route('kyc.index') }}">KYC</a>
+                                  </li>
+                                @endif
+                                @if(Auth::user()->merchant != 1)  
+                                  <li><a href="{{ url('/merchant_request') }}">Merchant Request</a></li>
+                                @endif 
+                                <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">Logout</a></li> 
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                                </form>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                @else
+                  <li><a href="{{url('/')}}">Home</a></li>
+                  <li><a href="{{url('/about')}}">About</a></li>
+                  <li><a href="#">Coupons</a></li>
+                  <li><a href="{{url('/faq')}}">FAQ</a></li>
+                  <li><a href="{{url('/terms')}}">Terms</a></li>
+                  <li><a href="{{url('/contact')}}">Contact</a></li>
+                @endif
 
-                <li><a href="{{url('/')}}">Home</a></li>
-                <li><a href="{{url('/about')}}">About</a></li>
-                <li><a href="#">Coupons</a></li>
-                <li><a href="{{url('/faq')}}">FAQ</a></li>
-                <li><a href="{{url('/terms')}}">Terms</a></li>
-                <li><a href="{{url('/contact')}}">Contact</a></li>
 
                <!--  <li class="dropdown"> <a href="#"  class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Deals</a> 
                  <ul class="dropdown-menu pages">
