@@ -27,7 +27,8 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {      $admin = 'admin?';
+    {   
+        $admin = 'admin?';
         if(Auth::user()->$admin == 1 )
         {
             return redirect('/withdraw_request/index');

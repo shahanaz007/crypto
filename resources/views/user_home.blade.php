@@ -1,9 +1,4 @@
 @extends('layouts.web')
-<style type="text/css">
-    .bg-dark {
-        /*padding: ;*/
-    }
-</style>
 @section('content')
 <section class="pt-130 pb-50" style="min-height:850px">
 <div style="text-align: center;color:white;font-size:40px; padding-bottom: 20px;">
