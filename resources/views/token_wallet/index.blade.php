@@ -7,7 +7,7 @@
           <div class="text-center">           
             <h2 class="page-title text-white">Token Wallet</h2>
             <ol class="breadcrumb bg-transparent justify-content-center">
-              <li class="breadcrumb-item"><a href="#" class="text-white-50"><i class="mdi mdi-home-outline"></i></a></li>
+              <li class="breadcrumb-item"><a href="#" class="text-white-50"><i class="fa fa-home"></i></a></li>
               <li class="breadcrumb-item text-white active" aria-current="page">Token Wallet</li>
             </ol>
           </div>
@@ -18,12 +18,12 @@
 <section class="pt-130 pb-50">
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-md-10">
-      <div class="card">
-        <div class="card-header">{{ __('Token Wallet') }}</div>
+    <div class="col-md-10 sign-in-page" style="margin: auto;float: none;">
+      <div class="card sign-in">
+        <div class="card-header"><h4>Total Tokens: {{$token_balance}} </h4></div>
         <div class="card-body">
-          <h5 class="card-title float-right ">Total Tokens: {{$token_balance}} </h5>
-          <h5 class="card-title float-right ">Total Usdt: {{$usdt_balance}}</h5>
+          <!-- <h5 class="card-title ">Total Tokens: {{$token_balance}} </h5> -->
+          <h5 class="card-title float-right ">Total USDT: {{$usdt_balance}}</h5>
           <table class="table  table-striped">
            	<thead>
            		<tr>

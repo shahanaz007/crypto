@@ -8,7 +8,7 @@
                     <div class="text-center">                       
                         <h2 class="page-title text-white">Token Withdraw Request</h2>
                         <ol class="breadcrumb bg-transparent justify-content-center">
-                            <li class="breadcrumb-item"><a href="#" class="text-white-50"><i class="mdi mdi-home-outline"></i></a></li>
+                            <li class="breadcrumb-item"><a href="#" class="text-white-50"><i class="fa fa-home"></i></a></li>
                             <li class="breadcrumb-item text-white active" aria-current="page">Token Withdraw Request</li>
                         </ol>
                     </div>
@@ -19,9 +19,9 @@
 <section class="pt-130 pb-50">
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 sign-in-page" style="margin: auto;float: none;">
             <div class="card">
-                <div class="card-header">{{ __('Token Withdraw Request') }}</div>
+                <!-- <div class="card-header">{{ __('Token Withdraw Request') }}</div> -->
 
                 <div class="card-body">
                     @if (session('status'))

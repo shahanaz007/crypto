@@ -17,17 +17,13 @@
   </section>
 <section class="pt-130 pb-50">
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-10">
+  <div class="row justify-content-center sign-in-page" style="margin: auto;float: none;">
+    <div class="col-md-10" style="margin: auto;float: none;">
       <div class="card">
-        <div class="card-header">{{ __('Stake Tokens') }}</div>
-        <div class="card-body">
-            @if (session('status'))
-              <div class="alert alert-success" role="alert">
-                {{ session('status') }}
-              </div>
-            @endif
-          <h4 style="text-align: right;"><a href="{{route('stake_tokens.create')}}">  <button class="btn btn-success">Add New</button></a></h4>
+        <!-- <div class="card-header">{{ __('Stake Tokens') }}</div> -->
+        <div class="card-body" >
+            
+          <h4 style="text-align: right;"><a href="{{route('stake_tokens.create')}}">  <button class="btn btn-success">Stake Tokens</button></a></h4>
           <table class="table  table-striped">
            	<thead>
            		<tr>

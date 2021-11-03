@@ -8,7 +8,7 @@
           <div class="text-center">           
             <h2 class="page-title text-white">Payment History</h2>
             <ol class="breadcrumb bg-transparent justify-content-center">
-              <li class="breadcrumb-item"><a href="#" class="text-white-50"><i class="mdi mdi-home-outline"></i></a></li>
+              <li class="breadcrumb-item"><a href="#" class="text-white-50"><i class="fa fa-home"></i></a></li>
               <li class="breadcrumb-item text-white active" aria-current="page">Payment History</li>
             </ol>
           </div>
@@ -19,7 +19,7 @@
 <section class="pt-100 pb-50">
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10">
+        <div class="col-md-12 sign-in-page">
             <div class="card">
                 <!-- <div class="card-header">{{ __('Payment History') }}</div> -->
 

@@ -464,10 +464,11 @@
            
           </ul>
         </div>
+      -->
         <!-- /.payment-methods --> 
       </div>
     </div>
-  </div> -->
+  </div> 
   <div class="copyright-bar">
     <div class="container">
       <div class="col-xs-12 col-sm-12 no-padding social">

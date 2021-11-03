@@ -1,7 +1,8 @@
 @extends('layouts.web')
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 @section('content')
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <section class="bg-img pt-100" data-overlay="7" style="background-image: url(../images/front-end-img/background/bg-8.jpg);">
     <div class="container">
       <div class="row">
@@ -9,7 +10,7 @@
           <div class="text-center">           
             <h2 class="page-title text-white">My Referrals</h2>
             <ol class="breadcrumb bg-transparent justify-content-center">
-              <li class="breadcrumb-item"><a href="#" class="text-white-50"><i class="mdi mdi-home-outline"></i></a></li>
+              <li class="breadcrumb-item"><a href="#" class="text-white-50"><i class="fa fa-home"></i></a></li>
               <li class="breadcrumb-item text-white active" aria-current="page">My Referrals</li>
             </ol>
           </div>
@@ -19,8 +20,8 @@
   </section>
 <section class="pt-80 pb-50">
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-10">
+  <div class="row justify-content-center" >
+    <div class="col-md-10 sign-in-page" style="margin: auto;float: none;">
       <div class="card">
         <!-- <div class="card-header">{{ __('My Referrals') }}</div> -->
         <div class="card-body">

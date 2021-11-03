@@ -8,7 +8,7 @@
                     <div class="text-center">                       
                         <h2 class="page-title text-white">Deposit</h2>
                         <ol class="breadcrumb bg-transparent justify-content-center">
-                            <li class="breadcrumb-item"><a href="#" class="text-white-50"><i class="mdi mdi-home-outline"></i></a></li>
+                            <li class="breadcrumb-item"><a href="#" class="text-white-50"><i class="fa fa-home"></i></a></li>
                             <li class="breadcrumb-item text-white active" aria-current="page">Deposit</li>
                         </ol>
                     </div>
@@ -19,9 +19,9 @@
 <section class="pt-130 pb-50">
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10">
+        <div class="col-md-10 sign-in-page" style="margin: auto;float: none;">
             <div class="card">
-                <div class="card-header">{{ __('Deposit') }}</div>
+                <!-- <div class="card-header">{{ __('Deposit') }}</div> -->
 
                 <div class="card-body">
                    
@@ -29,7 +29,7 @@
                   <center> 
                     Status : <span>{{$transaction->status_text}}</span><br>
                     <img src = "{{$transaction->qrcode_url}}"> <br>
-                    <span class="info">Send To Address: {{$transaction->address}}</span>
+                    <span class="info">Send To Address: <b>{{$transaction->address}}</b></span>
                     <hr>
                      <span class="info">Payment Id: {{$transaction->txn_id}}</span>
                      <hr>

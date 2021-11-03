@@ -8,7 +8,7 @@
 					<div class="text-center">						
 						<h2 class="page-title text-white">Withdraw Request Form</h2>
 						<ol class="breadcrumb bg-transparent justify-content-center">
-							<li class="breadcrumb-item"><a href="#" class="text-white-50"><i class="mdi mdi-home-outline"></i></a></li>
+							<li class="breadcrumb-item"><a href="#" class="text-white-50"><i class="fa fa-home"></i></a></li>
 							<li class="breadcrumb-item text-white active" aria-current="page">Withdraw Request Form</li>
 						</ol>
 					</div>
@@ -19,9 +19,9 @@
 <section class="pt-130 pb-50">
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 sign-in-page" style="margin: auto;float: none;">
             <div class="card">
-                <div class="card-header">{{ __('Withdraw Request Form') }}</div>
+                <!-- <div class="card-header">{{ __('Withdraw Request Form') }}</div> -->
 
                 <div class="card-body">
                     @if (session('status'))
