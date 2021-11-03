@@ -1,4 +1,6 @@
 @extends('layouts.web')
+
+@section('content')
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
@@ -89,7 +91,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   }
 }
 </style>
-@section('content')
+
 <section class="bg-img pt-150" data-overlay="7" style="background-image: url(../images/front-end-img/background/bg-8.jpg);">
     <div class="container">
       <div class="row">
@@ -97,7 +99,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
           <div class="text-center">           
             <h2 class="page-title text-white">My Coupons</h2>
             <ol class="breadcrumb bg-transparent justify-content-center">
-              <li class="breadcrumb-item"><a href="#" class="text-white-50"><i class="mdi mdi-home-outline"></i></a></li>
+              <li class="breadcrumb-item"><a href="#" class="text-white-50"><i class="fa fa-home"></i></a></li>
               <li class="breadcrumb-item text-white active" aria-current="page">My Coupons</li>
             </ol>
           </div>
@@ -107,8 +109,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
   </section>
 <section class="pt-130 pb-50">
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-10">
+  <div class="row justify-content-center  sign-in-page" style="margin: auto;float: none;">
+    <div class="col-md-12">
       <div class="card">
         <div class="card-header">{{ __('My Coupons') }}</div>
         <div class="card-body">

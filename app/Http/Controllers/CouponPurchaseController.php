@@ -178,7 +178,10 @@ class CouponPurchaseController extends Controller
         ->where('brand_id',$brand_id)
         ->where('location_id',$region)
         ->first();
-        
+        if(count($coupons) <=0)
+        {
+            return redirect()->back()->with('status','Please Select Region');
+        }
         return view('coupon_purchase.purchase',compact('details','coupons'));
     }
 
