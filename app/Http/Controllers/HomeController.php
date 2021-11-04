@@ -92,8 +92,8 @@ class HomeController extends Controller
         }
 
         // $bal = Auth::user()->usd_balance();
-        
-        return view('user_home',compact('datas'));
+        $coupons = Coupon::where('used','=',0)->get();
+        return view('user_home',compact('datas','coupons'));
         // return $datas;
 
     }catch(Exception $exception)
