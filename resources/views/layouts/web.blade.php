@@ -100,14 +100,14 @@
         <div class="cnt-account">
           <ul class="list-unstyled">
             <?php
-              if (Cookie::get('region_id') == null){
-                $region = App\Models\Coupon::select('location_id')->where('used','=',0)->first();
-                Cookie::queue('region_id', $region->location_id);
-              }
+              // if (Cookie::get('region_id') == null){
+              //   $region = App\Models\Coupon::select('location_id')->where('used','=',0)->first();
+              //   Cookie::queue('region_id', $region->location_id);
+              // }
 
-              if (Cookie::get('currency') == null){
-                Cookie::queue('currency', 'USD');
-              }
+              // if (Cookie::get('currency') == null){
+              //   Cookie::queue('currency', 'USD');
+              // }
             ?>  
             
             @if (Auth::user())

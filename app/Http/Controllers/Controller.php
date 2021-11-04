@@ -16,9 +16,6 @@ class Controller extends BaseController
     public function __construct()
     {
     	
-    	if (Cookie::get('region_id') == null){
-    		$region = Coupon::select('location_id')->where('used','=',0)->first();
-    		Cookie::queue('region_id', $region);
-    	}
+    	$this->middleware('Currency');
     }
 }
