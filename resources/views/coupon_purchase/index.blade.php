@@ -102,7 +102,7 @@
 
 @if(count($coupons) > 0)
 @foreach($coupons as $coupon)
-<div class="col-sm-12 col-md-6 col-lg-6 wow fadeInUp animated" style="visibility: visible;">
+<div class="col-sm-6 col-md-4 col-lg-4 wow fadeInUp animated" style="visibility: visible;">
               <div class="item">
               <div class="products">
                 <div class="product">

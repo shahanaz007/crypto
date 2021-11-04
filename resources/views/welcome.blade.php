@@ -405,14 +405,14 @@
           <h3 class="section-title">Latest Coupons</h3>
           
           <div class="coupons-deals">
-          <div class="owl-carousel home-owl-carousel1 custom-carousel owl-theme outer-top-xs">
+          <div class="owl-carousel home-owl-carousel1 custom-carousel owl-theme outer-top-xs coupon_s">
             @foreach($coupons as $coupon)
             <div class="item item-carousel">
               <div class="products">
                 <div class="product">
                   <div class="product-image">
                     <div class="image"> 
-                     <img class="img-responsive" src="{{$coupon->brand->logo}}" alt="">
+                     <img class="img-responsive" src="{{$coupon->brand->logo}}" alt="" style="width:105px">
                     <div class="brand">{{$coupon->brand->name}}</div>
                            <h3 class="name"><a href="#">{{$coupon->coupon_category->category_name}}</a></h3>
                           

@@ -87,6 +87,10 @@
   background-position: right bottom;
 }
 
+.coupon_s .owl-item {
+  width: 380px !important;
+}
+
 </style>
 </head>
 <body class="cnt-home">

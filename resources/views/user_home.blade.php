@@ -76,6 +76,10 @@
         padding-bottom: 0px;
     }
 }
+
+.owl-item {
+  width: 380px !important;
+}
 </style>
 <section class="pt-130 pb-50" >
   <div style="text-align: center;color:white;font-size:40px; padding-bottom: 20px;"></div>
