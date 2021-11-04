@@ -5,11 +5,12 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <div class="text-center">           
+          <div class="text-center">                       
             <h2 class="page-title text-white">Stake Token</h2>
             <ol class="breadcrumb bg-transparent justify-content-center">
-              <li class="breadcrumb-item"><a href="#" class="text-white-50"><i class="mdi mdi-home-outline"></i></a></li>
-              <li class="breadcrumb-item text-white active" aria-current="page">Stake Token</li>
+                <li class="breadcrumb-item"><a href="{{url('/home')}}" class="text-white-50"><i class="fa fa-home"></i></a></li>
+                <li class="breadcrumb-item text-white active" aria-current="page">Token Wallet</li>
+                <li class="breadcrumb-item text-white active" aria-current="page">Stake Token</li>
             </ol>
           </div>
         </div>
