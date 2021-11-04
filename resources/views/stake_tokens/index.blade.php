@@ -26,6 +26,7 @@
         <div class="card-body" >
             
           <h4 style="text-align: right;"><a href="{{route('stake_tokens.create')}}">  <button class="btn btn-success">Stake Tokens</button></a></h4>
+          @if(count($stake_tokens) > 0) 
           <table class="table  table-striped">
            	<thead>
            		<tr>
@@ -36,24 +37,27 @@
            	  </tr>
            	</thead>
            	<tbody>
-           		@if(count($stake_tokens) > 0) 
-             		<?php $slno=1; ?>
-             		@foreach($stake_tokens as $stake_token)
-               	  <tr>
-                 		<td>{{$slno}}</td>
-                    <td>{{$stake_token->no_of_tokens}}</td>
-                    <td>{{$stake_token->date}}</td>
-                    <td> 
-                      @if($stake_token->status == 1)
-                        <a href="{{url('stake_tokens/unstake',$stake_token->id)}}">  <button class="btn btn-success">Unstake</button></a>
-                      @endif
-                    </td>  
-               	  </tr>
-               	  <?php $slno++; ?>
-             		@endforeach
-              @endif
+           		<?php $slno=1; ?>
+           		@foreach($stake_tokens as $stake_token)
+             	  <tr>
+               		<td>{{$slno}}</td>
+                  <td>{{$stake_token->no_of_tokens}}</td>
+                  <td>{{$stake_token->date}}</td>
+                  <td> 
+                    @if($stake_token->status == 1)
+                      <a href="{{url('stake_tokens/unstake',$stake_token->id)}}">  <button class="btn btn-success">Unstake</button></a>
+                    @endif
+                  </td>  
+             	  </tr>
+             	  <?php $slno++; ?>
+           		@endforeach
            	</tbody>
           </table>
+          @else
+            <div style="text-align: center;">
+              <h4>No Records Available</h4>
+            </div>
+          @endif
           <div class="d-flex justify-content-center">
             {!! $stake_tokens->links("pagination::bootstrap-4") !!}
           </div>

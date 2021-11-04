@@ -37,6 +37,7 @@
         <div class="card-body">
           <!-- <h5 class="card-title ">Total Tokens: {{$token_balance}} </h5> -->
           <!-- <h5 class="card-title float-right ">Total USDT: {{$usdt_balance}}</h5> -->
+        @if(count($token_wallets) > 0) 
           <table class="table  table-striped">
            	<thead>
            		<tr>
@@ -47,20 +48,23 @@
            	  </tr>
            	</thead>
            	<tbody>
-           		@if(count($token_wallets) > 0) 
-             		<?php $slno=1; ?>
-             		@foreach($token_wallets as $token_wallet)
-               	  <tr>
-                 		<td>{{$slno}}</td>
-                    <td>{{$token_wallet->coin}}</td>
-                    <td>{{$token_wallet->credit}}</td>
-                    <td>{{$token_wallet->debit}}</td>
-               	  </tr>
-               	  <?php $slno++; ?>
-             		@endforeach
-              @endif
+           		<?php $slno=1; ?>
+           		@foreach($token_wallets as $token_wallet)
+             	  <tr>
+               		<td>{{$slno}}</td>
+                  <td>{{$token_wallet->coin}}</td>
+                  <td>{{$token_wallet->credit}}</td>
+                  <td>{{$token_wallet->debit}}</td>
+             	  </tr>
+             	  <?php $slno++; ?>
+           		@endforeach
            	</tbody>
           </table>
+          @else
+            <div style="text-align: center;">
+              No Transactions Available
+            </div>
+        @endif
           <div class="d-flex justify-content-center">
             {!! $token_wallets->links("pagination::bootstrap-4") !!}
           </div>

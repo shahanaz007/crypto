@@ -24,7 +24,7 @@
       <div class="card">
         <!-- <div class="card-header">{{ __('My Referrals') }}</div> -->
         <div class="card-body">
-          
+        @if(count($users) > 0)  
           <table class="table  table-striped">
            	<thead>
            		<tr>
@@ -34,7 +34,6 @@
            	  </tr>
            	</thead>
            	<tbody>
-           		@if(count($users) > 0) 
              		<?php $slno=1; ?>
              		@foreach($users as $user)
                	  <tr>
@@ -44,9 +43,13 @@
                	  </tr>
                	  <?php $slno++; ?>
              		@endforeach
-              @endif
            	</tbody>
           </table>
+          @else
+            <div style="text-align: center;">
+              <h4>No Referrals Available  </h4>  
+            </div>
+        @endif  
           <div class="d-flex justify-content-center">
             
           </div>

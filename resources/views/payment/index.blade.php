@@ -24,7 +24,7 @@
                 <!-- <div class="card-header">{{ __('Payment History') }}</div> -->
 
                 <div class="card-body">
-                   
+                  @if(count($payments) > 0) 
                    <table class="table  table-striped">
                    	<thead>
                    		<tr>
@@ -38,7 +38,7 @@
                    	</tr>
                    	</thead>
                    	<tbody>
-                   		@if(count($payments) > 0) 
+                   		 
                    		<?php $cnt=1; ?>
                    		@foreach($payments as $payment)
                    	<tr>
@@ -56,10 +56,16 @@
                    	</tr>
                    	<?php $cnt++; ?>
                    		@endforeach
-                   		@endif
+                   		
                    	</tbody>
 
                    </table>
+                   @else
+                    <div style="text-align: center;">
+                      <h4>No Payments Available  </h4>  
+                    </div>
+                  @endif
+                   
                    <div class="d-flex justify-content-center">
                    {!! $payments->links("pagination::bootstrap-4") !!}
                    <?php //echo $payments->render(); ?>

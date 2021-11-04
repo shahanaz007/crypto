@@ -116,7 +116,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
       <div class="card">
         <div class="card-header">{{ __('My Coupons') }}</div>
         <div class="card-body">
-          
+        @if(count($coupons) > 0)   
           <table class="table  table-striped">
            	<thead>
            		<tr>
@@ -131,7 +131,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
            	  </tr>
            	</thead>
            	<tbody>
-           		@if(count($coupons) > 0) 
              		<?php $slno=1; ?>
              		@foreach($coupons as $coupon)
                	  <tr>
@@ -147,9 +146,13 @@ body {font-family: Arial, Helvetica, sans-serif;}
                	  </tr>
                	  <?php $slno++; ?>
              		@endforeach
-              @endif
            	</tbody>
           </table>
+          @else
+            <div style="text-align: center;">
+              <h4>No Coupons Available</h4>
+            </div>
+        @endif
           <div class="d-flex justify-content-center">
            
           </div>
