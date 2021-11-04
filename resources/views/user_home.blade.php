@@ -4,8 +4,8 @@
 <style type="text/css">
     .home .sign-in-page{
         box-shadow: 0px 0px 4px -1px;
-        width: 23%;
-        margin-right: 18px;
+        /*width: 23%;*/
+        /*margin-right: 18px;*/
         padding-bottom: 0px;
     }
 
@@ -91,7 +91,7 @@
             <!-- TradingView Widget END -->
         </div>          
     </div>
-        <div class="col-3 col-md-3 col-xl-3 sign-in-page">
+        <div class="col-sm-3 col-md-3 col-xl-3 sign-in-page">
             <div class="box bg-dark box-body pull-up">
                 <!-- TradingView Widget BEGIN -->
                 <div class="tradingview-widget-container" style="width: 100%; height: 126px;">
