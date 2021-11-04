@@ -6,10 +6,11 @@
 			<div class="row">
 				<div class="col-12">
 					<div class="text-center">						
-						<h2 class="page-title text-white">Deposit Form</h2>
+						<h2 class="page-title text-white">Deposit </h2>
 						<ol class="breadcrumb bg-transparent justify-content-center">
-							<li class="breadcrumb-item"><a href="#" class="text-white-50"><i class="fa fa-home"></i></a></li>
-							<li class="breadcrumb-item text-white active" aria-current="page">Deposit Form</li>
+							<li class="breadcrumb-item"><a href="{{url('/home')}}" class="text-white-50"><i class="fa fa-home"></i></a></li>
+							<li class="breadcrumb-item text-white active" aria-current="page">Wallet</li>
+							<li class="breadcrumb-item text-white active" aria-current="page">Deposit</li>
 						</ol>
 					</div>
 				</div>

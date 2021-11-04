@@ -8,7 +8,7 @@
 					<div class="text-center">						
 						<h2 class="page-title text-white">Token Purchase</h2>
 						<ol class="breadcrumb bg-transparent justify-content-center">
-							<li class="breadcrumb-item"><a href="#" class="text-white-50"><i class="fa fa-home"></i></a></li>
+							<li class="breadcrumb-item"><a href="{{url('/home')}}" class="text-white-50"><i class="fa fa-home"></i></a></li>
 							<li class="breadcrumb-item text-white active" aria-current="page">Token Purchase</li>
 						</ol>
 					</div>

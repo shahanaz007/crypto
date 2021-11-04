@@ -25,20 +25,21 @@
 </style>
 
 <section class="bg-img pt-150" data-overlay="7" style="background-image: url({{asset('assets/img/banner_small.JPG')}});color: white;margin-bottom: 40px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="text-center">                       
-                        <h2 class="page-title text-white">Coupon Purchase</h2>
-                        <ol class="breadcrumb bg-transparent justify-content-center">
-                            <li class="breadcrumb-item"><a href="#" class="text-white-50"><i class="fa fa-home"></i></a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Coupon Purchase</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="text-center">                       
+          <h2 class="page-title text-white">Coupon Purchase</h2>
+          <ol class="breadcrumb bg-transparent justify-content-center">
+              <li class="breadcrumb-item"><a href="{{url('/home')}}" class="text-white-50"><i class="fa fa-home"></i></a></li>
+              <li class="breadcrumb-item text-white active" aria-current="page">Coupons</li>
+              <li class="breadcrumb-item text-white active" aria-current="page">Coupon Purchase</li>
+          </ol>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="pt-130 pb-50">
 <div class="container">
 <form action="{{url('coupons_purchase_region')}}" method="POST"> 
