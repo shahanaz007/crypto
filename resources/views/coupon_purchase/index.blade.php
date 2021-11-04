@@ -135,6 +135,11 @@
             </div>
                   </div>
 @endforeach
+@else
+  <div style="text-align: center;">
+    <h2>No Coupons Available  </h2>  
+  </div>
+  
 @endif
 <!-- foereach ends -->
 
