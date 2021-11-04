@@ -83,6 +83,10 @@
 }
 
 
+.bg-img {
+  background-position: right bottom;
+}
+
 </style>
 </head>
 <body class="cnt-home">
