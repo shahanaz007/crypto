@@ -66,13 +66,23 @@
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
+
+
+  @media only screen and (max-width: 600px) {
+  .home .sign-in-page{
+        box-shadow: 0px 0px 4px -1px;
+        width: 100%;
+        /*margin-right: 18px;*/
+        padding-bottom: 0px;
+    }
+}
 </style>
-<section class="pt-130 pb-50" style="min-height:850px">
+<section class="pt-130 pb-50" >
   <div style="text-align: center;color:white;font-size:40px; padding-bottom: 20px;"></div>
-  <div style="text-align: center;font-size:20px; padding-bottom: 20px;">
+  <div style="text-align: center;font-size:20px; padding: 30px 0px 30px 0px;">
     Referral Link : <b><font id="ref_link">{{url('register').'/'.Auth::user()->myrefercode}} </font></b><i class="fa fa-copy"  style="cursor:pointer" onclick="ref_link()"> </i>
   </div>
-  <div class="row col-md-12 justify-content-center home" style="margin: auto;float: none;width:85%; margin-top: 20px;">
+  <div class="row col-md-12 justify-content-center home" style="margin: auto;float: none;width:85%; margin-top: 20px;padding-bottom: 30px;">
     <div class="col-3 col-md-3 col-xl-3 sign-in-page">
       <div class="box bg-dark box-body pull-up">
         <!-- TradingView Widget BEGIN -->
@@ -152,7 +162,7 @@
             <div class="product">
               <div class="product-image">
                 <div class="image"> 
-                  <img class="img-responsive" src="{{$coupon->brand->logo}}" alt="">
+                  <img class="img-responsive" src="{{$coupon->brand->logo}}" alt="" style="width:105px">
                   <div class="brand">{{$coupon->brand->name}}</div>
                     <h3 class="name"><a href="#">{{$coupon->coupon_category->category_name}}</a></h3>
                 </div>

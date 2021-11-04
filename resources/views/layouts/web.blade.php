@@ -59,6 +59,34 @@
   .navbar-toggle .icon-bar {
     background-color: #ec3237 !important;
   }
+
+
+  @media only screen and (max-width: 600px) {
+  .navmenu {
+    margin-top: -16%;
+  }
+}
+
+  @media only screen and (max-width: 400px) {
+  .navmenu {
+    margin-top: -18%;
+  }
+}
+
+
+
+ 
+    @media only screen and (max-width: 340px) {
+  .navmenu {
+    margin-top: -20%;
+  }
+}
+
+
+.bg-img {
+  background-position: right bottom;
+}
+
 </style>
 </head>
 <body class="cnt-home">
