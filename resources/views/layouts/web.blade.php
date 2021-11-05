@@ -65,8 +65,19 @@
   .navmenu {
     margin-top: -16%;
   }
+
 }
 
+@media only screen and (max-width: 767px){
+
+
+.navbar-default .navbar-nav>.open>a {
+    color: black !important;
+}
+.navbar-nav .open a {
+  color: black !important;
+}
+}
   @media only screen and (max-width: 400px) {
   .navmenu {
     margin-top: -18%;
