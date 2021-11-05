@@ -128,6 +128,8 @@
             @if (Auth::user())
               <li><a href="{{url('/home')}}"><i class="fa fa-user"></i>&nbsp; My Account</a></li>
             @else
+               <li><a href="{{url('register')}}"><i class="fa fa-lock"></i>&nbsp;Register</a></li>
+
               <li><a href="{{url('login')}}"><i class="fa fa-lock"></i>&nbsp;Login</a></li>
             @endif
             <!-- <li><a href="#"><i class="icon fa fa-heart"></i>Wishlist</a></li>
