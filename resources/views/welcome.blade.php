@@ -402,12 +402,13 @@
 <!-- ============================================== Coupons  ============================================== -->
         <section class="section coupons-section">
         <div class="container">
-          <h3 class="section-title">Latest Coupons</h3>
+          <h3 class="section-title" style="margin-left: -14px;padding-bottom: 27px;">Latest Coupons</h3>
           
           <div class="coupons-deals">
-          <div class="owl-carousel home-owl-carousel1 custom-carousel owl-theme outer-top-xs coupon_s">
+          <div class="row">
             @foreach($coupons as $coupon)
-            <div class="item item-carousel">
+
+            <div class="col-lg-4">
               <div class="products">
                 <div class="product">
                   <div class="product-image">
