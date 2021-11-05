@@ -220,7 +220,7 @@
                       </li>
                     </ul>
                   </li>
-                  <li class="dropdown @yield('Tokenwallet_select')"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Token Wallet</a>
+                  <!-- <li class="dropdown @yield('Tokenwallet_select')"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Token Wallet</a>
                     <ul class="dropdown-menu">
                       <li>
                         <div class="yamm-content">
@@ -236,7 +236,7 @@
                         </div>
                       </li>
                     </ul>
-                  </li>
+                  </li> -->
                   <li class="dropdown @yield('coupon_select')"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Coupons</a>
                     <ul class="dropdown-menu">
                       <li>
@@ -254,7 +254,7 @@
                     </ul>
                   </li>
                   <li class="@yield('referal_select')"><a href="{{ route('user.index') }}">My Referrals</a></li>
-                  <li class="@yield('tokenpur_select')"><a href="{{ route('token_purchase.index') }}">Token Purchase</a></li>
+                 <!--  <li class="@yield('tokenpur_select')"><a href="{{ route('token_purchase.index') }}">Token Purchase</a></li> -->
                   <li class="@yield('history_select')"><a href="{{ route('payment.index') }}">History</a></li>
                   <li class="dropdown @yield('user_select')"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">{{ Auth::user()->name }}</a>
                     <ul class="dropdown-menu">

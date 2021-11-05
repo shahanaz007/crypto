@@ -4,8 +4,8 @@
 <style type="text/css">
     .home .sign-in-page{
         box-shadow: 0px 0px 4px -1px;
-        width: 23%;
-        margin-right: 18px;
+        /*width: 23%;*/
+        /*margin-right: 18px;*/
         padding-bottom: 0px;
     }
 
@@ -87,7 +87,8 @@
     Referral Link : <b><font id="ref_link">{{url('register').'/'.Auth::user()->myrefercode}} </font></b><i class="fa fa-copy"  style="cursor:pointer" onclick="ref_link()"> </i>
   </div>
   <div class="row col-md-12 justify-content-center home" style="margin: auto;float: none;width:85%; margin-top: 20px;padding-bottom: 30px;">
-    <div class="col-3 col-md-3 col-xl-3 sign-in-page">
+    
+    <div class="col-3 col-md-6 col-xl-6 sign-in-page">
       <div class="box bg-dark box-body pull-up">
         <!-- TradingView Widget BEGIN -->
         <div class="tradingview-widget-container" style="width: 100%; height: 126px;">
@@ -100,37 +101,35 @@
         <!-- TradingView Widget END -->
       </div>          
     </div>
-    <div class="col-3 col-md-3 col-xl-3 sign-in-page">
-      <div class="box bg-dark box-body pull-up">
-        <!-- TradingView Widget BEGIN -->
-        <div class="tradingview-widget-container" style="width: 100%; height: 126px;">
-          <!--  <iframe scrolling="no" allowtransparency="true" frameborder="0"  style="box-sizing: border-box; height: calc(94px); width: 100%;"> 99999999</iframe> -->
 
-          <!-- <img width="50px" src="{{asset('assets/img/user.png')}}"> -->
+
+   <!--  <div class="col-3 col-md-3 col-xl-3 sign-in-page">
+      <div class="box bg-dark box-body pull-up">
+        <div class="tradingview-widget-container" style="width: 100%; height: 126px;">
+         
             
           <center><h3>Token Balance</h3></center>
           <center><h3> {{Auth::user()->token_balance()}} </h3></center>
-          <!-- <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/symbols/BTCUSD/?exchange=BITSTAMP" rel="noopener" target="_blank"><span class="blue-text">BTCUSD Rates</span></a> by TradingView</div> -->
+          
         </div>
-        <!-- TradingView Widget END -->
       </div>          
-    </div>
-    <div class="col-3 col-md-3 col-xl-3 sign-in-page">
-      <div class="box bg-dark box-body pull-up">
-        <!-- TradingView Widget BEGIN -->
-        <div class="tradingview-widget-container" style="width: 100%; height: 126px;">
-         <!--  <iframe scrolling="no" allowtransparency="true" frameborder="0"  style="box-sizing: border-box; height: calc(94px); width: 100%;"> 99999999</iframe> -->
+    </div> -->
 
-         <!-- <img width="50px" src="{{asset('assets/img/user.png')}}"> -->
+
+  <!--   <div class="col-3 col-md-3 col-xl-3 sign-in-page">
+      <div class="box bg-dark box-body pull-up">
+        <div class="tradingview-widget-container" style="width: 100%; height: 126px;">
+        
             
           <center><h3>Staked Tokens</h3></center>
           <center><h3> {{Auth::user()->stake()}}  </h3></center>
-          <!-- <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/symbols/BTCUSD/?exchange=BITSTAMP" rel="noopener" target="_blank"><span class="blue-text">BTCUSD Rates</span></a> by TradingView</div> -->
+          
         </div>
-        <!-- TradingView Widget END -->
       </div>          
-    </div>
-    <div class="col-3 col-md-3 col-xl-3 sign-in-page">
+    </div> -->
+
+
+    <div class="col-3 col-md-6 col-xl-6 sign-in-page">
       <div class="box bg-dark box-body pull-up">
         <!-- TradingView Widget BEGIN -->
         <div class="tradingview-widget-container" style="width: 100%; height: 126px;">
@@ -144,6 +143,7 @@
           <!-- TradingView Widget END -->
       </div>          
     </div>
+
     <div class="form-popup" id="myForm">
       <div class="form-container">
         <center> 
