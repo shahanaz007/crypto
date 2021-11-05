@@ -66,10 +66,15 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
+        $referby = "";
+        $level = " ";
+        if(isset($data['referral_code']))
+        {
         if($data['referral_code']){
             $user    = User::where('myrefercode',$data['referral_code'])->first();
             $referby = $user->id;
             $level   = $user->level+1;
+        }
         }
         else{
             $referby = null;
@@ -88,7 +93,9 @@ class RegisterController extends Controller
 
         $id = $user->id;
         
-        if($data['referral_code']){
+        // if($data['referral_code']){
+        if(isset($data['referral_code'])){
+        
             Referral::create([
                 'referrer_user_id' => $id,
                 'referee_user_id' => $referby,

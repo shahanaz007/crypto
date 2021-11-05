@@ -113,7 +113,7 @@ class HomeController extends Controller
                 Cookie::queue('currency', 'USD');
               }
 // Cookie::queue('currency', 'USD');
-        $coupons = Coupon::where('used','=',0)->get();
+        $coupons = Coupon::where('used','=',0)->orderBy('id','DESC')->get();
         return view('welcome',compact('coupons'));
     }
 }
