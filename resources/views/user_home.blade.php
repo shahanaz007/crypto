@@ -81,7 +81,7 @@
   width: 380px !important;
 }
 </style>
-<section class="pt-130 pb-50" >
+<!-- <section class="pt-130 pb-50" >
   <div style="text-align: center;color:white;font-size:40px; padding-bottom: 20px;"></div>
   <div style="text-align: center;font-size:20px; padding: 30px 0px 30px 0px;">
     Referral Link : <b><font id="ref_link">{{url('register').'/'.Auth::user()->myrefercode}} </font></b><i class="fa fa-copy"  style="cursor:pointer" onclick="ref_link()"> </i>
@@ -89,18 +89,18 @@
   <div class="row col-md-12 justify-content-center home" style="margin: auto;float: none;width:85%; margin-top: 20px;padding-bottom: 30px;">
     
     <div class="col-3 col-md-6 col-xl-6 sign-in-page">
-      <div class="box bg-dark box-body pull-up">
+      <div class="box bg-dark box-body pull-up">-->
         <!-- TradingView Widget BEGIN -->
-        <div class="tradingview-widget-container" style="width: 100%; height: 126px;">
+        <!-- <div class="tradingview-widget-container" style="width: 100%; height: 126px;"> -->
           <!--  <iframe scrolling="no" allowtransparency="true" frameborder="0"  style="box-sizing: border-box; height: calc(94px); width: 100%;"> 99999999</iframe> -->
           <!-- <img width="50px" src="{{asset('assets/img/user.png')}}"> -->
-          <center><h3>Wallet Balance</h3></center>
-          <center><h3>  $ {{Auth::user()->usd_balance()}}  </h3></center>
+          <!-- <center><h3>Wallet Balance</h3></center> -->
+          <!-- <center><h3>  $ {{Auth::user()->usd_balance()}}  </h3></center> -->
           <!-- <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/symbols/BTCUSD/?exchange=BITSTAMP" rel="noopener" target="_blank"><span class="blue-text">BTCUSD Rates</span></a> by TradingView</div> -->
-        </div>
+        <!-- </div> -->
         <!-- TradingView Widget END -->
-      </div>          
-    </div>
+      <!-- </div>           -->
+    <!-- </div> -->
 
 
    <!--  <div class="col-3 col-md-3 col-xl-3 sign-in-page">
@@ -129,20 +129,20 @@
     </div> -->
 
 
-    <div class="col-3 col-md-6 col-xl-6 sign-in-page">
-      <div class="box bg-dark box-body pull-up">
+    <!-- <div class="col-3 col-md-6 col-xl-6 sign-in-page"> -->
+      <!-- <div class="box bg-dark box-body pull-up"> -->
         <!-- TradingView Widget BEGIN -->
-        <div class="tradingview-widget-container" style="width: 100%; height: 126px;">
+        <!-- <div class="tradingview-widget-container" style="width: 100%; height: 126px;"> -->
           <!--  <iframe scrolling="no" allowtransparency="true" frameborder="0"  style="box-sizing: border-box; height: calc(94px); width: 100%;"> 99999999</iframe> -->
 
           <!-- <img width="50px" src="{{asset('assets/img/user.png')}}"> -->
-          <center><h3>USDT Balance</h3></center>
-          <center><h3> {{Auth::user()->usdt_balance()}}  </h3></center>
+          <!-- <center><h3>USDT Balance</h3></center> -->
+          <!-- <center><h3> {{Auth::user()->usdt_balance()}}  </h3></center> -->
           <!-- <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/symbols/BTCUSD/?exchange=BITSTAMP" rel="noopener" target="_blank"><span class="blue-text">BTCUSD Rates</span></a> by TradingView</div> -->
-      </div>
+      <!-- </div> -->
           <!-- TradingView Widget END -->
-      </div>          
-    </div>
+      <!-- </div>           -->
+    <!-- </div> -->
 
     <div class="form-popup" id="myForm">
       <div class="form-container">

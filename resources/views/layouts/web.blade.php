@@ -127,6 +127,7 @@
             
             @if (Auth::user())
               <li><a href="{{url('/home')}}"><i class="fa fa-user"></i>&nbsp; My Account</a></li>
+              <li><a href="#"><img src="{{asset('assets/img/purse.png')}}" style="width: 23px;margin-top: -5px;">&nbsp; $ {{Auth::user()->usd_balance()}}</a></li>
             @else
                <li><a href="{{url('register')}}"><i class="fa fa-lock"></i>&nbsp;Register</a></li>
 
