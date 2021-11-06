@@ -17,7 +17,7 @@
   <div class="col-xs-12 col-sm-12 col-md-12 homebanner-holder"> 
   <div id="hero">
       <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
-        <div class="item" style="background-image: url({{asset('web/assets/images/sliders/banner_1.jpg')}});">
+        <div class="item" style="background-image: url({{asset('web/assets/images/sliders/new_banner.jpg')}});">
           <div class="container-fluid">
             <div class="caption bg-color vertical-center text-left">
               <!-- <div class="slider-header fadeInDown-1">Top Brands</div> -->
@@ -31,7 +31,7 @@
         </div>
         <!-- /.item -->
         
-        <div class="item" style="background-image: url({{asset('web/assets/images/sliders/banner_1.jpg')}});">
+        <div class="item" style="background-image: url({{asset('web/assets/images/sliders/new_banner.jpg')}});">
           <div class="container-fluid">
             <div class="caption bg-color vertical-center text-left">
               <!-- <div class="slider-header fadeInDown-1">Spring 2019</div> -->
@@ -425,7 +425,16 @@
                   <!-- /.product-image -->
                   
                   <div class="product-info text-left">
-                 <div class="discount">{{$coupon->point}} <span>{{$coupon->Currency_code}}</span></div>
+                
+                <?php
+
+                  $point = $coupon->point;
+                  $from_currency  = $coupon->Currency_code;
+                  $to    = Cookie::get('currency');
+                  
+                ?>
+
+                 <div class="discount">{{$coupon->convert($from_currency,$to,$point)}} <span>{{Cookie::get('currency')}}</span></div>
                  <div class="show-code"><a href="{{route('coupon_purchase.show',$coupon->brand_id)}}" >Buy</a></div>
                   <p class="exp-date"><i class="fa fa-clock-o"></i> Expires on {{date('d-m-Y ', strtotime($coupon->expiry_date))}}</p>  
                   </div>
