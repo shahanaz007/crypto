@@ -148,7 +148,7 @@ class CouponPurchaseController extends Controller
         $details->currency    = $currency;
         $details->amount      = $amount;
         $details->paid_amount = $amount;
-        $details->status      = 1;
+        $details->status      = 0;
         $details->save();
 
 
