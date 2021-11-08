@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Hexters\CoinPayment\CoinPayment;
-use App\Models\{Coupon,CouponCategory,CouponPurchase,Location};
+use App\Models\{Coupon,CouponCategory,CouponPurchase,Location,Brand};
 use Auth;
 use Cookie;
 
@@ -73,7 +73,7 @@ class CouponPurchaseController extends Controller
      */
     public function store(Request $request)
     {   
-        
+        // return $request;
         $user_id   = Auth::user()->id;
         $coupon_id = $request->coupon_id;
         $brand_id = $request->brand_id;
@@ -84,8 +84,7 @@ class CouponPurchaseController extends Controller
         $currency = 'USD';
         $region   = Cookie::get('region_id');
 
-        // return $request->amount;
-
+        
         // checks coupon stock
         $today = Carbon::now();
         $today = $today->toDateString();
@@ -148,6 +147,9 @@ class CouponPurchaseController extends Controller
         $details->currency    = $currency;
         $details->amount      = $amount;
         $details->paid_amount = $amount;
+        $details->brand_name  = $request->brand_name;
+        $details->coupon_value= $amount;
+        $details->region_name = $request->region;
         $details->status      = 0;
         $details->save();
 

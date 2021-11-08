@@ -87,13 +87,26 @@
             </span>
           </a>
         </li>
-        <li>
+        <!-- <li>
           <a href="{{URL::to('/admin_coupon/index')}}">
             <i class="icon-refresh"></i> <span>{{ __('Coupons') }}</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
           </a>
+        </li> -->
+        <li class="treeview">
+          <a href="#">
+            <i class="icon-chart"></i>
+            <span>Coupons</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{URL::to('/admin_coupon/index')}}">{{ __('Coupons') }}</a></li>
+            <li><a href="{{route('purchase_pendings.index') }}">{{ __('Coupon Purchase Pending') }}</a></li>
+          </ul>
         </li>
         <li>
           <a href="{{ route('currency.index') }}">

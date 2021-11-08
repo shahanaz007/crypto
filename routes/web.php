@@ -207,3 +207,7 @@ Route::resource('/currency','Admin\CurrencyController');
 
 //chippy test
 Route::resource('testing','TestController');
+
+
+//admin to manage pending coupons  08-11-2021
+Route::resource('purchase_pendings','Admin\CouponPurchasePendingsController');

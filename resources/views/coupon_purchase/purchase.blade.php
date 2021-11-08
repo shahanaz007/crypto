@@ -121,8 +121,8 @@ input[type=number] {
 						{{$details->remarks}}
 					</p>
 					<input type="hidden" name="brand_id" value="{{$details->brand_id}}" >
-					<!-- <input type="hidden" name="amount" value="{{$details->point}}" > -->
-
+					<input type="hidden" name="region" value="{{$details->location->name}}" >
+					<input type="hidden" name="brand_name" value="{{$details->brand->name}}" >
 					<table>
 						<tr>
 							<td><b>Region </b></td><td> : {{$details->location->name}}</td>

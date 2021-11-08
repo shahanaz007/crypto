@@ -12,4 +12,8 @@ class CouponPurchase extends Model
     public function coupon() {
         return $this->belongsTo('App\Models\Coupon','coupon_id');
     }
+
+    public function user() {
+        return $this->belongsTo('App\Models\User','user_id');
+    }
 }

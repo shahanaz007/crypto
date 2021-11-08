@@ -286,4 +286,9 @@ class User extends Authenticatable implements MustVerifyEmail
         $balance = $credit - $debit;
         return $balance;
     }
+
+    public function coupon_purchase()
+    {
+        return $this->hasMany('App\Models\CouponPurchase');
+    }
 }
