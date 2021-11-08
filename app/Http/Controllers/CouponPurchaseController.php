@@ -137,9 +137,9 @@ class CouponPurchaseController extends Controller
 
 
             //amount ends
-        $tmp_coupon = Coupon::find($coupon->id); 
-        $coupon->used = 1;
-        $coupon->save();
+        // $tmp_coupon = Coupon::find($coupon->id); 
+        // $coupon->used = 1;
+        // $coupon->save();
 
 
         $details              = new CouponPurchase;
