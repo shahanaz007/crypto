@@ -306,7 +306,7 @@
                 @else
                   <li><a href="{{url('/')}}">Home</a></li>
                   <li><a href="{{url('/about')}}">About</a></li>
-                  <li><a href="#">Coupons</a></li>
+                  <li><a href="{{ route('coupon_purchase.index')}}">Coupons</a></li>
                   <li><a href="{{url('/faq')}}">FAQ</a></li>
                   <li><a href="{{url('/terms')}}">Terms</a></li>
                   <li><a href="{{url('/contact')}}">Contact</a></li>
