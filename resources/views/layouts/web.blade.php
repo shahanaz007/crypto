@@ -149,7 +149,7 @@
         <div class="cnt-block">
           <ul class="list-unstyled list-inline">
             <li class="dropdown dropdown-small"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><span class="value">
-          {{ Cookie::get('currency') }}  </span><b class="caret"></b></a>
+          {{ session('currency') }}  </span><b class="caret"></b></a>
               @if(count($currencies) > 0)
               <ul class="dropdown-menu">
                 @foreach($currencies as $currency)

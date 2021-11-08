@@ -38,6 +38,7 @@ class CouponPurchaseController extends Controller
             $region =  $request->region;
             $coupons = $coupons->where('location_id',$region);
             Cookie::queue('region_id', $region);
+            session(['region_id' => $region]);
         }
         $coupons = $coupons->paginate(10);
 
@@ -82,8 +83,8 @@ class CouponPurchaseController extends Controller
 
 
         $currency = 'USD';
-        $region   = Cookie::get('region_id');
-
+        // $region   = Cookie::get('region_id');
+        $region   = session('region_id');
         
         // checks coupon stock
         $today = Carbon::now();

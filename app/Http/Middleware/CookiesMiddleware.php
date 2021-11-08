@@ -22,13 +22,18 @@ class CookiesMiddleware
         if (Cookie::get('region_id') == null){
                 $region = Location::first();
                 Cookie::queue('region_id', $region->id);
+                session(['region_id' => $region->id]);
               }
 
               if (Cookie::get('currency') == null){
                 Cookie::queue('currency', 'USD');
+                session(['currency' => 'USD']);
+                // return "ok";
               }
 
-
+// $value = session('key');
+// session('key', 'default');
+              // session(['key' => 'value']);
              
                 return $next($request);
               

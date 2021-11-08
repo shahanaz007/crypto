@@ -21,17 +21,17 @@ label {
 }
 
 input[type=radio]:checked + label{
-  color: #332f35;
-  background: #8c8c8c;
+  color: #fff;
+  background: #ec3237;
   
 }
 
 label + input[type=radio] + label {
-  border-left: solid 2px #8c8c8c;
+  border-left: solid 2px #ec3237;
   margin-left: -7px;
 }
 .radio-group {
-  border: solid 2px #8c8c8c;
+  border: solid 2px #ec3237;
   display: inline-block;
   /*margin: 20px;*/
   border-radius: 10px;
@@ -48,6 +48,9 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+td, th, p {
+    font-size: 16px;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
@@ -98,6 +101,7 @@ input[type=number] {
 				    			$point = $coupon->point;
 				    			$from  = $coupon->currency_code;
 				    			$to    = Cookie::get('currency');
+				    			// $to    =session('currency');
 
 				    		?>
 				    		<input type="radio" id="{{$coupon->point}}$" value="{{$coupon->point}}" name="amount" required="" @if($cnt == 1) checked="checked" @endif ><label for="{{$coupon->point}}$">{{$coupon->convert($from,$to,$point).' '.Cookie::get('currency')}}</label>
@@ -164,9 +168,9 @@ input[type=number] {
 							 </p> -->
 
 							 <p><b>Quantity:</b><br><br>
-						<button class="btn btn-info" onclick="event.preventDefault();decrement()" style="border-radius: 4px 0px 0px 4px; padding:3px 8px;background-color: #ec3237;border-color: #ec3237;">-</button>
+						<button class="btn btn-info" onclick="event.preventDefault();decrement()" style="border-radius: 4px 0px 0px 4px; padding:5px 8px;background-color: #ec3237;border-color: #ec3237;">-</button>
 						<input class="form-control" style="text-align: center;width: 150px;display: inline-block;height: calc(1.6em + 0.75rem + 2px);
-    padding: 13px 0.75rem;
+    padding: 15px 0.75rem;
     font-size: 0.9rem;
     border-radius: 0px 4px 4px 0px;
     font-weight: 400;
@@ -179,7 +183,7 @@ input[type=number] {
     margin-right: -4px;
     border-radius: 0.25rem;transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;"
     	 id=qty value="1"  name="quantity"  type=number min=1 max=100 style="text-align: center;">
-						<button class="btn btn-info" onclick="event.preventDefault();increment()" style="border-radius: 0px 4px 4px 0px; padding: 3px 8px;background-color: #ec3237;border-color: #ec3237;">+</button>
+						<button class="btn btn-info" onclick="event.preventDefault();increment()" style="border-radius: 0px 4px 4px 0px; padding: 5px 8px;background-color: #ec3237;border-color: #ec3237;">+</button>
 					</p>
 						</div>
 
@@ -196,7 +200,8 @@ input[type=number] {
 						</div> -->
 						
 <div class="col-md-6">
-	<button class="btn btn-success form-control" style="margin-top: 13%;">Buy Coupon</button>
+	<!-- <p><b>Quantity:</b> -->
+	<button class="btn btn-success form-control" style="margin-top: 16%;">Buy Coupon</button>
 </div>
 
                     
