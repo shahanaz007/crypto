@@ -105,6 +105,16 @@ class HomeController extends Controller
 
     public function welcome(){
         // return view('test.flip');
+        
+        if(Auth::check())
+        {
+            $admin = 'admin?';
+            if(Auth::user()->$admin == 1 )
+            {
+                return redirect('admin_dashboard');
+                // return view('admin.dashboard');
+            }
+        }
         if (Cookie::get('region_id') == null){
                 $region = Coupon::select('location_id')->where('used','=',0)->first();
                 Cookie::queue('region_id', $region->location_id);

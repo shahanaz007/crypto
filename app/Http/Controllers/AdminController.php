@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Withdrawal;
+use App\Models\{Withdrawal,CoinpaymentTransaction};
 
 class AdminController extends Controller
 {
@@ -28,5 +28,16 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+    public function dashboard(){
+        $btc = CoinpaymentTransaction::where('currency_code','BTC')->where('status',100)->get()->sum('receivedf');
 
+        $trx = CoinpaymentTransaction::where('currency_code','TRX')->where('status',100)->get()->sum('receivedf');
+
+        $usdt = CoinpaymentTransaction::where('currency_code','USDT.BEP2')->where('status',100)->get()->sum('receivedf');
+
+        $eth = CoinpaymentTransaction::where('currency_code','ETH')->where('status',100)->get()->sum('receivedf');
+
+        return view('admin.dashboard',compact('btc','trx','usdt','eth'));
+
+    }
 }

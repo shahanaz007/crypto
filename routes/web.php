@@ -193,7 +193,7 @@ Route::get('stake_tokens/unstake/{id}','StakeTokensController@unstake');
 Route::view('dashboard','dashboard');
 Route::view('userlayout','user_dashboard');
 
-Route::view('admin_dashboard','admin.dashboard');
+Route::get('admin_dashboard','AdminController@dashboard');
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
 
