@@ -91,6 +91,7 @@
   .navmenu {
     margin-top: -20%;
   }
+  
 }
 
 
@@ -102,6 +103,29 @@
   width: 380px !important;
 }
 
+@media (max-width: 539px)
+{
+  .mobile_menu_list{
+        margin-left: -106px !important;
+  }
+
+}
+@media (max-width: 340px)
+{
+  .mobile_menu_list{
+        margin-left: -90px !important;
+  }
+
+  }
+
+
+  @media (max-width: 280px)
+{
+  .mobile_menu_list{
+        margin-left: 0px !important;
+  }
+
+  }
 </style>
 </head>
 <body class="cnt-home">
@@ -148,7 +172,7 @@
         ?>
         <div class="cnt-block">
           <ul class="list-unstyled list-inline">
-            <li class="dropdown dropdown-small"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><span class="value">
+            <li class="dropdown dropdown-small mobile_menu_list"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><span class="value">
           {{ session('currency') }}  </span><b class="caret"></b></a>
               @if(count($currencies) > 0)
               <ul class="dropdown-menu">

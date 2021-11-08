@@ -402,7 +402,7 @@
 <!-- ============================================== Coupons  ============================================== -->
 
         <section class="section coupons-section">
-    <center> <h3 class="section-title" >Latest Coupons</h3></center>
+    <center> <h3 class="section-title" >Latest Coupons</h3> <br></center>
 
           @include('include.coupons')
 
