@@ -14,7 +14,7 @@ class AddCouponIdToCouponPurchasesTable extends Migration
     public function up()
     {
         Schema::table('coupon_purchases', function (Blueprint $table) {
-            $table->integer('coupon_id')->after('user_id')->nullable();
+            // $table->integer('coupon_id')->after('user_id')->nullable();
             $table->string('region_name')->after('paid_amount');
         });
     }

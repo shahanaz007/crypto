@@ -16,7 +16,7 @@ class CreateCouponPurchasesTable extends Migration
         Schema::create('coupon_purchases', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->integer('coupon_id');
+            $table->integer('coupon_id')->nullable();
             $table->string('currency');
             $table->integer('amount');
             $table->integer('paid_amount');

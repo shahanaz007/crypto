@@ -76,7 +76,7 @@
         </div>
     </div> -->
 </div>
-
+</form>
 
  <!--    <div class="row ">
       @if(count($coupons) > 0)
@@ -96,45 +96,12 @@
 <div class="category-product coupons-section coupons-section-inner full-width">    
 <div class="row coupons-deals">
 
-
+@include('include.coupons')
 
 <!-- foreach starts -->
 
 @if(count($coupons) > 0)
-@foreach($coupons as $coupon)
-<div class="col-sm-6 col-md-4 col-lg-4 wow fadeInUp animated" style="visibility: visible;">
-              <div class="item">
-              <div class="products">
-                <div class="product">
-                  <div class="product-image">
-                    <div class="image"> 
-                     <img class="img-responsive" src="{{asset($coupon->brand->logo)}}" alt="" style="width:105px">
-                    <div class="brand">{{$coupon->brand->name}}</div>
-                           <h3 class="name"><a href="#">{{$coupon->coupon_category->category_name}}</a></h3>
-                          
-                          </div>
-                    <!-- /.image -->
-                    
-                 
-                  </div>
-                  <!-- /.product-image -->
-                  
-                  <div class="product-info text-left">
-                 <div class="discount">{{$coupon->point}} <span>{{$coupon->Currency_code}}</span></div>
-                 <div class="show-code"><a href="{{route('coupon_purchase.show',$coupon->brand_id)}}" >Buy Coupon</a></div>
-                  <p class="exp-date"><i class="fa fa-clock-o"></i> Expires on {{date('d-m-Y ', strtotime($coupon->expiry_date))}}</p>  
-                  </div>
-          
-                </div>
-                <!-- /.product --> 
-                
-              </div>
-              <!-- /.products --> 
-              
-              
-            </div>
-                  </div>
-@endforeach
+
 @else
   <div style="text-align: center;">
     <h2>No Coupons Available  </h2>  
@@ -150,7 +117,7 @@
 
 </div>
 </section>
-</form>
+
 <script>
     function selectRegion() {
       var region  = $('#region_id').val();

@@ -400,64 +400,16 @@
         
     
 <!-- ============================================== Coupons  ============================================== -->
+
         <section class="section coupons-section">
-        <div class="container">
-          <h3 class="section-title" style="margin-left: -14px;padding-bottom: 27px;">Latest Coupons</h3>
-          
-          <div class="coupons-deals">
-          <div class="row">
-            @foreach($coupons as $coupon)
+    <center> <h3 class="section-title" >Latest Coupons</h3></center>
 
-            <div class="col-lg-4">
-              <div class="products">
-                <div class="product">
-                  <div class="product-image">
-                    <div class="image"> 
-                     <img class="img-responsive" src="{{$coupon->brand->logo}}" alt="" style="width:105px">
-                    <div class="brand">{{$coupon->brand->name}}</div>
-                           <h3 class="name"><a href="#">{{$coupon->coupon_category->category_name}}</a></h3>
-                          
-                          </div>
-                    <!-- /.image -->
-                    
-                 
-                  </div>
-                  <!-- /.product-image -->
-                  
-                  <div class="product-info text-left">
-                
-                <?php
+          @include('include.coupons')
 
-                  $point = $coupon->point;
-                  $from_currency  = $coupon->Currency_code;
-                  $to    = Cookie::get('currency');
-                  
-                ?>
 
-                 <div class="discount">{{$coupon->convert($from_currency,$to,$point)}} <span>{{Cookie::get('currency')}}</span></div>
-                 <div class="show-code"><a href="{{route('coupon_purchase.show',$coupon->brand_id)}}" >Buy</a></div>
-                  <p class="exp-date"><i class="fa fa-clock-o"></i> Expires on {{date('d-m-Y ', strtotime($coupon->expiry_date))}}</p>  
-                  </div>
-          
-                </div>
-                <!-- /.product --> 
-                
-              </div>
-              <!-- /.products --> 
-              
-            </div>
-            <!-- /.item -->
-            @endforeach
-            
-            
-            
-            
 
-          </div>
-          
-          </div>
-          
-         </div>
+
+       
         <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">

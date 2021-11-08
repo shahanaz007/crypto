@@ -126,8 +126,11 @@
             ?>  
             
             @if (Auth::user())
-              <li><a href="{{url('/home')}}"><i class="fa fa-user"></i>&nbsp; My Account</a></li>
-              <li><a href="#"><img src="{{asset('assets/img/purse.png')}}" style="width: 23px;margin-top: -5px;">&nbsp; $ {{Auth::user()->usd_balance()}}</a></li>
+            <li><a href="#"><img src="{{asset('assets/img/purse.png')}}" style="width: 23px;margin-top: -5px;">&nbsp; $ {{Auth::user()->usd_balance()}}</a></li>
+
+              <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i>&nbsp;Logout </a></li>
+              
             @else
                <li><a href="{{url('register')}}"><i class="fa fa-lock"></i>&nbsp;Register</a></li>
 
@@ -217,7 +220,7 @@
             <div class="nav-outer">
               <ul class="nav navbar-nav">
                 @if (Auth::user())
-                  <li class="@yield('home_select')"><a href="{{ route('home') }}">Home</a></li>
+                  <li class="@yield('home_select')"><a href="{{ route('welcome') }}">Home</a></li>
                   <li class="dropdown @yield('wallet_select')"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Wallet</a>
                     <ul class="dropdown-menu">
                       <li>
@@ -270,7 +273,7 @@
                   <li class="@yield('referal_select')"><a href="{{ route('user.index') }}">My Referrals</a></li>
                  <!--  <li class="@yield('tokenpur_select')"><a href="{{ route('token_purchase.index') }}">Token Purchase</a></li> -->
                   <li class="@yield('history_select')"><a href="{{ route('payment.index') }}">History</a></li>
-                  <li class="dropdown @yield('user_select')"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">{{ Auth::user()->name }}</a>
+                  <li class="dropdown @yield('user_select')"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><i class="fa fa-user"></i>&nbsp;{{ Auth::user()->name }}</a>
                     <ul class="dropdown-menu">
                       <li>
                         <div class="yamm-content">
@@ -283,9 +286,11 @@
                                    <li> <a href="{{ route('kyc.index') }}">KYC</a>
                                   </li>
                                 @endif
+
                                 @if(Auth::user()->merchant != 1)  
-                                  <li><a href="{{ url('/merchant_request') }}">Merchant Request</a></li>
+                                  <!-- <li><a href="{{ url('/merchant_request') }}">Merchant Request</a></li> -->
                                 @endif 
+
                                 <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">Logout</a></li> 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

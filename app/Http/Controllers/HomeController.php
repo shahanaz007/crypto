@@ -104,16 +104,20 @@ class HomeController extends Controller
     }
 
     public function welcome(){
+        // return view('test.flip');
         if (Cookie::get('region_id') == null){
                 $region = Coupon::select('location_id')->where('used','=',0)->first();
                 Cookie::queue('region_id', $region->location_id);
               }
 
-              if (Cookie::get('currency') == null){
-                Cookie::queue('currency', 'USD');
-              }
+              if ( Cookie::get('currency') == null ){
+                     Cookie::queue('currency', 'USD');
+                 }
 // Cookie::queue('currency', 'USD');
-        $coupons = Coupon::where('used','=',0)->orderBy('id','DESC')->get();
+        $coupons = Coupon::where('used','=',0)
+                            ->orderBy('id','DESC')
+                            ->groupBy('brand_id')
+                            ->get();
         return view('welcome',compact('coupons'));
     }
 }

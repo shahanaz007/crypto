@@ -1,7 +1,12 @@
 @extends('layouts.admin_default')
 
 @section('content')
-
+<style type="text/css">
+    
+    .col-md-6 {
+        padding-bottom: 15px;
+    }
+</style>
 <div class="content-wrapper">
 <section class="content">
 <div class="container">
@@ -17,7 +22,7 @@
                         </div>
                     @endif
 
-                    <form action="{{route('purchase_pendings.update',$coupon->id)}}" method="POST"> 
+                    <form action="{{route('purchase_pendings.update',$coupon->id)}}" id="update_form" method="POST"> 
                     @method('put')
                     @csrf
 	                	<div class="card-body row">
@@ -31,8 +36,8 @@
                                 <input type="text" class="form-control"  id="email_id"  name="email"  value="{{$coupon->user->email}}" readonly="" disabled="">
                             </div>
                             <div class="col-md-6">
-                                <label>Coupon Name</label>
-                                <input type="text" class="form-control"  id="coupon_name_id"  name="coupon_name"  value="{{$coupon->coupon->name}}" readonly="" disabled="">
+                                <label>Region</label>
+                                <input type="text" class="form-control"  id="coupon_name_id"  name="coupon_name"  value="{{$coupon->region_name}}" readonly="" disabled="">
                             </div>
                             <div class="col-md-6">
                                 <label>Brand Name</label>
@@ -43,20 +48,27 @@
                                 <input type="text" class="form-control"  id="coupon_value_id"  name="coupon_value"  value="{{$coupon->coupon_value}}" readonly="" disabled="">
                             </div>
 	                	</div>
+                        </form>
+
 
 	                		<div class="row">
 							    <div class="col-lg-12">
-                                    <!-- <a href="{{route('purchase_pendings.index') }}">
-                                    <button class="btn btn-danger float-right">Cancel</button></a> -->
-                                    <a href="{{route('purchase_pendings.update',$coupon->id)}}">
-							        <button class="btn btn-success" style="margin-left: 470px;">Completed</button></a>
+                                    
+                                    <a href="{{route('purchase_pendings.index') }}">
+                                    <button class="btn btn-danger " onclick=""><< Back</button></a>
+
+                                   
+                                    <button onclick="submit_form()" class="btn btn-success float-right" style="margin-left: 470px;">Completed</button>
+
+                                    
+                                    
                                     
 							    </div>
 
 							</div>
 						
 	                		
-                	</form>
+                	
                     
 
                 </div>
@@ -66,5 +78,11 @@
 </div>
 </section>
 </div>
+<script type="text/javascript">
+    
+    function submit_form(){
+        $('#update_form').submit();
+    }
+</script>
 
 @endsection

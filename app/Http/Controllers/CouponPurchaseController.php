@@ -28,7 +28,7 @@ class CouponPurchaseController extends Controller
 
         $today = Carbon::now();
         $today = $today->toDateString();
-        $coupons = Coupon::select('brand_id','category_id','point','Currency_code')->where('used','=',0)
+        $coupons = Coupon::select('brand_id','category_id','point','Currency_code','expiry_date')->where('used','=',0)
         ->where('status','=',1)
         ->where('expiry_date','>=',$today)
         ->groupBy('brand_id');
@@ -88,17 +88,17 @@ class CouponPurchaseController extends Controller
         // checks coupon stock
         $today = Carbon::now();
         $today = $today->toDateString();
-        $coupons = Coupon::select('id','currency_code','point')->where('used','=',0)
+        $coupon = Coupon::select('id','currency_code','point')->where('used','=',0)
         ->where('status','=',1)
         ->where('expiry_date','>=',$today)
         ->where('brand_id',$brand_id)
         ->where('location_id',$region)
         ->where('point',$request->amount)        
-        ->get()->take($quantity);
-
-        if(count($coupons) < $quantity){
-            return redirect()->back()->with('error','Requested Quanity is greater than available quantity');
-        }
+        // ->get()->take($quantity);
+        ->first();
+        // if(count($coupons) < $quantity){
+        //     return redirect()->back()->with('error','Requested Quanity is greater than available quantity');
+        // }
 
 
         
@@ -109,16 +109,13 @@ class CouponPurchaseController extends Controller
         // $coupon->used = 1;
         // $coupon->save();
 
-        foreach($coupons as $coupon)
-        {
-
             // $amount    = $request->amount * $request->quantity;
-        $amount    =  $coupon->point;   
+        $amount    =  $coupon->point * $request->quantity;   
        
-
         $from      = $coupon->currency_code;
         $to        = 'USD';
         $amount    = $coupon->convert($from,$to, $amount);
+        $single_coupon_amount = $coupon->convert($from,$to, $coupon->point);
 
         $wallet_amount = Auth::user()->usd_balance();
         
@@ -134,7 +131,10 @@ class CouponPurchaseController extends Controller
             return redirect()->back()->with($debited['status'],$debited['message']);
         }
 
+        for($i = 0; $i<$quantity; $i++)
+        {
 
+        
             //amount ends
         // $tmp_coupon = Coupon::find($coupon->id); 
         // $coupon->used = 1;
@@ -145,10 +145,10 @@ class CouponPurchaseController extends Controller
         $details->user_id     = $user_id;
         $details->coupon_id   = $coupon->id;
         $details->currency    = $currency;
-        $details->amount      = $amount;
-        $details->paid_amount = $amount;
+        $details->amount      = $single_coupon_amount;
+        $details->paid_amount = $single_coupon_amount;
         $details->brand_name  = $request->brand_name;
-        $details->coupon_value= $amount;
+        $details->coupon_value= $single_coupon_amount.' '.$currency;
         $details->region_name = $request->region;
         $details->status      = 0;
         $details->save();
