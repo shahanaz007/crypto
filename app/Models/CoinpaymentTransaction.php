@@ -84,4 +84,8 @@ class CoinpaymentTransaction extends Model {
     public function items() {
         return $this->hasMany(CoinpaymentTransactionItem::class, 'coinpayment_transaction_id', 'id');
     }
+
+    public function user() {
+        return $this->belongsTo('App\Models\User','user_id');
+    }
 }

@@ -71,16 +71,16 @@
           </li>			
 		  
           <!-- Messages -->
-          <li class="dropdown messages-menu">
+          <!-- <li class="dropdown messages-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="mdi mdi-email"></i>
             </a>
             <ul class="dropdown-menu scale-up">
               <li class="header">You have 5 messages</li>
-              <li>
+              <li> -->
                 <!-- inner menu: contains the actual data -->
-                <ul class="menu inner-content-div">
-                  <li><!-- start message -->
+                <!-- <ul class="menu inner-content-div">
+                  <li>
                     <a href="#">
                       <div class="pull-left">
                         <img src="{{asset('assets/back-end/images/user2-160x160.jpg')}}" class="rounded-circle" alt="User Image">
@@ -93,9 +93,9 @@
                          <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
                       </div>
                     </a>
-                  </li>
+                  </li> -->
                   <!-- end message -->
-                  <li>
+                  <!-- <li>
                     <a href="#">
                       <div class="pull-left">
                         <img src="{{asset('assets/back-end/images/user3-128x128.jpg')}}" class="rounded-circle" alt="User Image">
@@ -155,17 +155,17 @@
               </li>
               <li class="footer"><a href="#">See all e-Mails</a></li>
             </ul>
-          </li>
+          </li> -->
           <!-- Notifications -->
-          <li class="dropdown notifications-menu">
+          <!-- <li class="dropdown notifications-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="mdi mdi-bell"></i>
             </a>
             <ul class="dropdown-menu scale-up">
               <li class="header">You have 7 notifications</li>
-              <li>
+              <li> -->
                 <!-- inner menu: contains the actual data -->
-                <ul class="menu inner-content-div">
+                <!-- <ul class="menu inner-content-div">
                   <li>
                     <a href="#">
                       <i class="fa fa-users text-aqua"></i> Curabitur id eros quis nunc suscipit blandit.
@@ -205,18 +205,18 @@
               </li>
               <li class="footer"><a href="#">View all</a></li>
             </ul>
-          </li>
+          </li> -->
           <!-- Tasks -->
-          <li class="dropdown tasks-menu">
+          <!-- <li class="dropdown tasks-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="mdi mdi-message"></i>
             </a>
             <ul class="dropdown-menu scale-up">
               <li class="header">You have 6 tasks</li>
-              <li>
+              <li> -->
                 <!-- inner menu: contains the actual data -->
-                <ul class="menu inner-content-div">
-                  <li><!-- Task item -->
+                <!-- <ul class="menu inner-content-div">
+                  <li>
                     <a href="#">
                       <h3>
                         Lorem ipsum dolor sit amet
@@ -229,9 +229,9 @@
                         </div>
                       </div>
                     </a>
-                  </li>
+                  </li> -->
                   <!-- end task item -->
-                  <li><!-- Task item -->
+                  <!-- <li>
                     <a href="#">
                       <h3>
                         Vestibulum nec ligula
@@ -244,9 +244,9 @@
                         </div>
                       </div>
                     </a>
-                  </li>
+                  </li> -->
                   <!-- end task item -->
-                  <li><!-- Task item -->
+                  <!-- <li>
                     <a href="#">
                       <h3>
                         Donec id leo ut ipsum
@@ -259,9 +259,9 @@
                         </div>
                       </div>
                     </a>
-                  </li>
+                  </li> -->
                   <!-- end task item -->
-                  <li><!-- Task item -->
+                  <!-- <li>
                     <a href="#">
                       <h3>
                         Praesent vitae tellus
@@ -274,9 +274,9 @@
                         </div>
                       </div>
                     </a>
-                  </li>
+                  </li> -->
                   <!-- end task item -->
-                  <li><!-- Task item -->
+                  <!-- <li>
                     <a href="#">
                       <h3>
                         Nam varius sapien
@@ -289,9 +289,9 @@
                         </div>
                       </div>
                     </a>
-                  </li>
+                  </li> -->
                   <!-- end task item -->
-                  <li><!-- Task item -->
+                  <!-- <li>
                     <a href="#">
                       <h3>
                         Nunc fringilla
@@ -305,14 +305,13 @@
                       </div>
                     </a>
                   </li>
-                  <!-- end task item -->
                 </ul>
               </li>
               <li class="footer">
                 <a href="#">View all tasks</a>
               </li>
             </ul>
-          </li>
+          </li> -->
 		  <!-- User Account -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -324,9 +323,9 @@
                 <img src="{{asset('assets/back-end/images/user5-128x128.jpg')}}" class="float-left rounded-circle" alt="User Image">
 
                 <p>
-                  Romi Roy
-                  <small class="mb-5">jb@gmail.com</small>
-                  <a href="#" class="btn btn-danger btn-sm btn-rounded">View Profile</a>
+                  {{Auth::user()->name}}
+                  <small class="mb-5"> {{Auth::user()->email}}</small>
+                  <!-- <a href="#" class="btn btn-danger btn-sm btn-rounded">View Profile</a> -->
                 </p>
               </li>
               <!-- Menu Body -->
@@ -335,19 +334,24 @@
                   <div class="col-12 text-left">
                     <a href="#"><i class="ion ion-person"></i> My Profile</a>
                   </div>
-                  <div class="col-12 text-left">
+                  <!-- <div class="col-12 text-left">
                     <a href="#"><i class="ion ion-email-unread"></i> Inbox</a>
-                  </div>
-                  <div class="col-12 text-left">
+                  </div> -->
+                  <!-- <div class="col-12 text-left">
                     <a href="#"><i class="ion ion-settings"></i> Setting</a>
-                  </div>
-				<div role="separator" class="divider col-12"></div>
+                  </div> -->
+				<!-- <div role="separator" class="divider col-12"></div>
 				  <div class="col-12 text-left">
                     <a href="#"><i class="ti-settings"></i> Account Setting</a>
-                  </div>
+                  </div> -->
 				<div role="separator" class="divider col-12"></div>
 				  <div class="col-12 text-left">
-                    <a href="#"><i class="fa fa-power-off"></i> Logout</a>
+                    <!-- <a href="#"><i class="fa fa-power-off"></i> Logout</a> -->
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();"><i class="fa fa-power-off"></i>Logout</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+               </form>
                   </div>				
                 </div>
                 <!-- /.row -->

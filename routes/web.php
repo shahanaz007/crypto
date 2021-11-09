@@ -243,4 +243,7 @@ Route::middleware(['admin'])->group(function(){
 	//admin to view  rewards reports  14-10-2021
 	Route::resource('rewards_report','Admin\RewardsController');
 
+	//admin for deposites  09-11-2021
+	Route::resource('/deposites','Admin\DepositesController');
+
 });	
