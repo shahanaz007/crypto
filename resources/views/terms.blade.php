@@ -2,11 +2,38 @@
 
 @section('content')
 
-
+<style type="text/css">
+	.wide-banners .image1 img {
+		margin-top: 20px;
+	}
+</style>
 <div class="container">
     <div class="row">
 <div class="col-md-12">
-   
+   <div class="wide-banners wow fadeInUp outer-bottom-bs">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="cnt-strip">
+                <div class="image1"> <img class="img-responsive" src="{{asset('web/assets/images/banners/home-banner.jpg')}}" alt=""> </div>
+                <div class="strip strip-text">
+                  <div class="strip-inner">
+                    <h2 class="text-right">Amazing Opportunity<br>
+                      <span class="shopping-needs">Get Ready To Wonder With Us</span></h2>
+                  </div>
+                </div>
+                <div class="new-label">
+                  <div class="text">NEW</div>
+                </div>
+                <!-- /.new-label --> 
+              </div>
+              <!-- /.wide-banner --> 
+            </div>
+            <!-- /.col --> 
+            
+            
+          </div>
+          <!-- /.row --> 
+        </div>
     <div class="terms-conditions-page">
 			<div class="row">
 				<div class="col-md-12 terms-conditions">
