@@ -26,7 +26,7 @@
     position: relative;
     width: 250px;
     height: 250px;
-    margin: 0.5% -0.5% -3.5% 3.5%;
+    margin: 0.5% 1.5% -3.5% 1.5%;
     transform-style: preserve-3d;
     perspective: 1000px;
     cursor: pointer
