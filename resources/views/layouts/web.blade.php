@@ -9,7 +9,7 @@
 <meta name="keywords" content="MediaCenter, Template, eCommerce">
 <meta name="robots" content="all">
 <title>Swiz</title>
-
+ <link rel = "icon" href ="{{asset('assets/img/swiz2.png')}}"  type = "image/x-icon">
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet" href="{{asset('web/assets/css/bootstrap.min.css')}}">
 

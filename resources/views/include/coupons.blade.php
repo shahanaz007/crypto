@@ -52,15 +52,17 @@
     background: white;
     
     box-shadow: 0px 0px 10px 1px;
+     border-radius: 10px;
 }
 
 .flip .container .box .body .imgContainer img {
     position: absolute;
     /*top: 0;*/
-    left: 18%;
-    width: 70%;
+    left: 0%;
+    width: 100%;
     height: 100%;
-    object-fit: cover
+    /*object-fit: cover*/
+    border-radius: 10px;
 }
 
 .flip .container .box .body .content {

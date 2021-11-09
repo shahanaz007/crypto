@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="{{asset('assets/front-end/images/favicon.ico')}}">
+    <!-- <link rel="icon" href="{{asset('assets/img/swiz2.ico')}}"> -->
 
     <title>Swiz</title>
     

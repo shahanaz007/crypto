@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="{{asset('assets/back-end/images/favicon.ico')}}">
+    <!-- <link rel="icon" href="{{asset('assets/back-end/images/favicon.ico')}}"> -->
 
     <title>Crypto Admin</title>
     
