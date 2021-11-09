@@ -31,6 +31,15 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,700,700italic,800' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <style type="text/css">
+.footer .footer-bottom .module-heading {
+  color: white;
+  }
+  .footer .footer-bottom .module-body ul li a {
+    color: white;
+}
+.footer .footer-bottom {
+  background: black;
+  }
   .main-header {
     background: white;
   }
@@ -580,14 +589,14 @@
         <ul class="link">
           <li class="fb"><a target="_blank" rel="nofollow" href="#" title="Facebook"></a></li>
           <li class="tw"><a target="_blank" rel="nofollow" href="#" title="Twitter"></a></li>
-          <li class="googleplus"><a target="_blank" rel="nofollow" href="#" title="GooglePlus"></a></li>
-          <li class="rss"><a target="_blank" rel="nofollow" href="#" title="RSS"></a></li>
-          <li class="pintrest"><a target="_blank" rel="nofollow" href="#" title="PInterest"></a></li>
+          <!-- <li class="googleplus"><a target="_blank" rel="nofollow" href="#" title="GooglePlus"></a></li>
+          <li class="rss"><a target="_blank" rel="nofollow" href="#" title="RSS"></a></li> -->
+         <!--  <li class="pintrest"><a target="_blank" rel="nofollow" href="#" title="PInterest"></a></li> -->
           <li class="linkedin"><a target="_blank" rel="nofollow" href="#" title="Linkedin"></a></li>
-          <li class="youtube"><a target="_blank" rel="nofollow" href="#" title="Youtube"></a></li>
+          <!-- <li class="youtube"><a target="_blank" rel="nofollow" href="#" title="Youtube"></a></li> -->
         </ul>
       </div>
-      <div class="col-xs-12 col-sm-12 no-padding copyright">&copy; {{date("Y")}} Swiz. All Rights Reserved. </div>
+      <div class="col-xs-12 col-sm-12 no-padding copyright">&copy; {{date("Y")}} Swiz Mart. All Rights Reserved. </div>
       
     </div>
   </div>
