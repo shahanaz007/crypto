@@ -291,4 +291,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany('App\Models\CouponPurchase');
     }
+
+    public function coinpayment_transaction()
+    {
+        return $this->hasMany('App\Models\CoinpaymentTransaction');
+    }
 }

@@ -7,10 +7,25 @@ use App\Models\{Withdrawal,CoinpaymentTransaction};
 
 class AdminController extends Controller
 {
-    public function withdraw_request_index(){
-    	$withdraw_requests = Withdrawal::where('status','0')->paginate(10);
+    public function withdraw_request_index(Request $request)
+    {
+    	$withdraw_requests = Withdrawal::where('status','0');
+        if($request->from_date){
+            $from_date =  $request->from_date.' 00:00:00';
+        
+            $withdraw_requests = $withdraw_requests->where('created_at','>=',$from_date);
+        }
+        
+        if($request->to_date){
+            $to_date   =  $request->to_date.' 23:59:59';
+        
+            $withdraw_requests = $withdraw_requests->where('created_at','<=',$to_date);
+        }
+        $withdraw_requests = $withdraw_requests->paginate(10);
     	return view('admin.withdraw_request.index',compact('withdraw_requests'));
     }
+
+
     public function change_status($id){
 
     	$withdraw_requests = Withdrawal::find($id);

@@ -4,16 +4,16 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
 		 <div class="ulogo">
-			 <a href="index.html">
+			 <a href="#">
 			  <!-- logo for regular state and mobile devices -->
-			  <span><b>Crypto </b>Admin</span>
+			  <span><b>SWIZ </b>Admin</span>
 			</a>
 		</div>
         <div class="image">
           <img src="{{asset('assets/back-end/images/user2-160x160.jpg')}}" class="rounded-circle" alt="User Image">
         </div>
         <div class="info">
-          <p>Admin Template</p>
+          <p>{{Auth::user()->name}}</p>
 			<a href="" class="link" data-toggle="tooltip" title="" data-original-title="Settings"><i class="ion ion-gear-b"></i></a>
             <a href="" class="link" data-toggle="tooltip" title="" data-original-title="Email"><i class="ion ion-android-mail"></i></a>
             <a href="" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i class="ion ion-power"></i></a>
@@ -22,7 +22,7 @@
       <!-- sidebar menu -->
       <ul class="sidebar-menu" data-widget="tree">
 		<li class="nav-devider"></li>
-        <li class="header nav-small-cap">PERSONAL</li>
+        
         <li class="active">
           <a href="{{url('admin_dashboard')}}">
             <i class="icon-home"></i> <span>Dashboard</span>
@@ -116,7 +116,14 @@
             </span>
           </a>
         </li>
-
+        <li>
+          <a href="{{ route('deposites.index') }}">
+            <i class="icon-refresh"></i> <span>{{ __('Deposites') }}</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+        </li>
         <li class="treeview">
           <a href="#">
             <i class="icon-chart"></i>

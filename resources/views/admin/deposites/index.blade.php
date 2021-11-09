@@ -7,8 +7,8 @@
     <div class="row justify-content-center">
         <div class="col-md-15">
             <div class="card">
-                <div class="card-header">{{ __('Withdraw Requests') }}</div>
-                  <form  method="get" action="{{URL::to('/withdraw_request/index')}}">
+                <div class="card-header">{{ __('Deposites') }}</div>
+                  <form  method="get" action="{{ route('deposites.index') }}">
                   @csrf 
                     <div class="float-right" >
                       <div class="input-group">
@@ -35,32 +35,25 @@
                    		<tr>
                    		<th>#</th>
                       <th>User</th>
-                   		<th>Withdraw Id</th>
+                   		<th>Transaction Id</th>
                    		<th>Amount</th>
                    		<th>Currency Code</th>
-                      <th>Address</th>
+                      <th>Received USD</th>
                    		<th>Date</th>
-                      <th>Action</th>
                    	</tr>
                    	</thead>
                    	<tbody>
-                   		@if(count($withdraw_requests) > 0) 
+                   		@if(count($deposites) > 0) 
                    		<?php $slno=1; ?>
-                   		@foreach($withdraw_requests as $withdraw_request)
+                   		@foreach($deposites as $deposite)
                    	<tr>
                    		<td>{{$slno}}</td>
-                      <td>{{$withdraw_request->user->name}}</td>
-                   		<td>{{$withdraw_request->w_id}}</td>
-                   		<td>{{$withdraw_request->amount}}</td>
-                   		<td>{{$withdraw_request->currency_code}}</td>
-                   		<td>{{$withdraw_request->address}}</td>
-                   		<td>{{date('d-m-Y', strtotime($withdraw_request->created_at))}}</td>
-                      <td> @if($withdraw_request->status == '0')
-                              <a href="{{url('withdraw_request/change_status',$withdraw_request->id)}}">  <button class="btn btn-success">Completed</button></a>
-
-                              <a href="{{url('withdraw_request/reject',$withdraw_request->id)}}">  <button class="btn btn-danger">_Rejected_</button></a>
-                            @endif
-                      </td>  
+                      <td>{{$deposite->user->name}}</td>
+                   		<td>{{$deposite->txn_id }}</td>
+                   		<td>{{$deposite->receivedf}}</td>
+                   		<td>{{$deposite->currency_code}}</td>
+                   		<td>{{$deposite->received_usd}}</td>
+                   		<td>{{date('d-m-Y', strtotime($deposite->created_at))}}</td>
                    	</tr>
                    	<?php $slno++; ?>
                    		@endforeach
@@ -73,7 +66,7 @@
 
                    </table>
                    <div class="d-flex justify-content-center">
-                   {!! $withdraw_requests->links("pagination::bootstrap-4") !!}
+                   {!! $deposites->links("pagination::bootstrap-4") !!}
                    <?php //echo $payments->render(); ?>
                </div>
 
