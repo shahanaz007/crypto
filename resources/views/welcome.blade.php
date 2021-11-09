@@ -6,7 +6,16 @@
         <img class="img-responsive" src="{{asset('web/assets/images/banners/top-banner.png')}}" alt="">
     </div>
 </div> -->
+<style type="text/css">
+  @media (max-width: 700px)
+{
+  .flip .container .box {
+   
+    margin: 5px 0px -70px 0px !important;
+    }
 
+}
+</style>
 
 
 <div class="container">
