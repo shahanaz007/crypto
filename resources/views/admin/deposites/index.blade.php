@@ -48,7 +48,11 @@
                    		@foreach($deposites as $deposite)
                    	<tr>
                    		<td>{{$slno}}</td>
-                      <td>{{$deposite->user->name}}</td>
+                      <td>
+                        @if(isset($deposite->user->name))
+                        {{$deposite->user->name}}
+                        @endif
+                      </td>
                    		<td>{{$deposite->txn_id }}</td>
                    		<td>{{$deposite->receivedf}}</td>
                    		<td>{{$deposite->currency_code}}</td>
