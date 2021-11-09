@@ -24,9 +24,9 @@
 
 .flip .container .box {
     position: relative;
-    width: 300px;
-    height: 300px;
-    margin: 3.5% 3.5% -3.5% 3.5%;
+    width: 250px;
+    height: 250px;
+    margin: 3.5% -0.5% -3.5% 3.5%;
     transform-style: preserve-3d;
     perspective: 1000px;
     cursor: pointer
@@ -84,7 +84,7 @@
 
 .flip .container .box .body .content div {
     transform-style: preserve-3d;
-    padding: 20px;
+    padding: 10px;
     background: linear-gradient(45deg, #FE0061, #FFEB3B);
     transform: translateZ(100px)
 }
@@ -113,7 +113,7 @@
 
 <div class="container d-flex align-items-center justify-content-center flex-wrap row">
    @foreach($coupons as $coupon)
-    <div class="box col-md-4">
+    <div class="box col-md-3">
         <div class="body">
         <div class="imgContainer">
          <center>
