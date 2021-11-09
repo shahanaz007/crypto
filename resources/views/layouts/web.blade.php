@@ -252,24 +252,19 @@
           <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
             <div class="nav-outer">
               <ul class="nav navbar-nav">
+
+                 <li><a href="{{url('/')}}">Home</a></li>
+                  <li><a href="{{url('/about')}}">About</a></li>
+                  <li><a href="{{ route('coupon_purchase.index')}}">Coupons</a></li>
+                  <li><a href="{{url('/faq')}}">FAQ</a></li>
+                  <!-- <li><a href="{{url('/terms')}}">Terms</a></li> -->
+                  <li><a href="{{url('/contact')}}">Contact</a></li>
+
+
                 @if (Auth::user())
-                  <li class="@yield('home_select')"><a href="{{ route('welcome') }}">Home</a></li>
-                  <li class="dropdown @yield('wallet_select')"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Wallet</a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <div class="yamm-content">
-                          <div class="row">
-                            <div class="col-xs-12 col-menu">
-                              <ul class="links">
-                                <li><a href="{{ route('payment.create') }}">Deposit</a></li>
-                                <li><a href="{{route('withdraw.create') }}">Withdraw</a></li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
+                  <!-- <li class="@yield('home_select')"><a href="{{ route('welcome') }}">Home</a></li> -->
+
+                  
                   <!-- <li class="dropdown @yield('Tokenwallet_select')"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Token Wallet</a>
                     <ul class="dropdown-menu">
                       <li>
@@ -287,7 +282,9 @@
                       </li>
                     </ul>
                   </li> -->
-                  <li class="dropdown @yield('coupon_select')"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Coupons</a>
+
+
+                 <!--  <li class="dropdown @yield('coupon_select')"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Coupons</a>
                     <ul class="dropdown-menu">
                       <li>
                         <div class="yamm-content">
@@ -295,17 +292,24 @@
                             <div class="col-xs-12 col-menu">
                               <ul class="links">
                                 <li><a href="{{ route('coupon_purchase.index')}}">Coupon Purchase</a></li>
+
                                 <li><a href="{{ route('my_coupons.index') }}">My Coupons</a></li>
+                              
                               </ul>
                             </div>
                           </div>
                         </div>
                       </li>
                     </ul>
-                  </li>
-                  <li class="@yield('referal_select')"><a href="{{ route('user.index') }}">My Referrals</a></li>
+                  </li> -->
+
+
+                  
+
+
                  <!--  <li class="@yield('tokenpur_select')"><a href="{{ route('token_purchase.index') }}">Token Purchase</a></li> -->
-                  <li class="@yield('history_select')"><a href="{{ route('payment.index') }}">History</a></li>
+                  <!-- <li class="@yield('history_select')"><a href="{{ route('payment.index') }}">History</a></li> -->
+
                   <li class="dropdown @yield('user_select')"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><i class="fa fa-user"></i>&nbsp;{{ Auth::user()->name }}</a>
                     <ul class="dropdown-menu">
                       <li>
@@ -319,6 +323,31 @@
                                    <li> <a href="{{ route('kyc.index') }}">KYC</a>
                                   </li>
                                 @endif
+
+                                <li><a href="{{ route('payment.create') }}">Deposit</a></li>
+                                <li><a href="{{route('withdraw.create') }}">Withdraw</a></li>
+
+                                <li><a href="{{ route('my_coupons.index') }}">My Coupons</a></li>
+
+                                <li class="@yield('referal_select')"><a href="{{ route('user.index') }}">My Referrals</a></li>
+
+                                <li class="@yield('history_select')"><a href="{{ route('payment.index') }}">Deposit History</a></li>
+                                <!-- <li class="dropdown @yield('wallet_select')"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Wallet</a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <div class="yamm-content">
+                          <div class="row">
+                            <div class="col-xs-12 col-menu">
+                              <ul class="links">
+                                <li><a href="{{ route('payment.create') }}">Deposit</a></li>
+                                <li><a href="{{route('withdraw.create') }}">Withdraw</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li> -->
 
                                 @if(Auth::user()->merchant != 1)  
                                   <!-- <li><a href="{{ url('/merchant_request') }}">Merchant Request</a></li> -->
@@ -336,14 +365,11 @@
                       </li>
                     </ul>
                   </li>
-                @else
-                  <li><a href="{{url('/')}}">Home</a></li>
-                  <li><a href="{{url('/about')}}">About</a></li>
-                  <li><a href="{{ route('coupon_purchase.index')}}">Coupons</a></li>
-                  <li><a href="{{url('/faq')}}">FAQ</a></li>
-                  <li><a href="{{url('/terms')}}">Terms</a></li>
-                  <li><a href="{{url('/contact')}}">Contact</a></li>
+                
                 @endif
+
+                 
+                
 
 
                <!--  <li class="dropdown"> <a href="#"  class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Deals</a> 
@@ -495,7 +521,7 @@
           
           <div class="module-body">
             <ul class='list-unstyled'>
-              <li class="first"><a href="#" title="Contact us">Term of Use</a></li>
+              <li class="first"><a href="{{url('/terms')}}" title="Contact us">Term of Use</a></li>
               <li><a href="#" title="About us">Search Terms</a></li>
               <li><a href="#" title="faq">Store Location</a></li>
               <li><a href="#" title="Popular Searches">Orders and Returns</a></li>
@@ -514,7 +540,7 @@
             <ul class='list-unstyled'>
               <li class="first"><a href="#" title="Contact us">My Account</a></li>
               <li><a href="#" title="About us">Order History</a></li>
-              <li><a href="#" title="faq">FAQ</a></li>
+              <li><a href="{{url('/faq')}}" title="faq">FAQ</a></li>
               <li><a href="#" title="Popular Searches">Specials</a></li>
               <li class="last"><a href="#" title="Where is my order?">Help Center</a></li>
             </ul>
@@ -531,7 +557,7 @@
           
           <div class="module-body">
             <ul class='list-unstyled'>
-              <li class="first"><a title="Your Account" href="#">About us</a></li>
+              <li class="first"><a title="Your Account" href="{{url('/about')}}">About us</a></li>
               <li><a title="Information" href="#">Customer Service</a></li>
               <li><a title="Addresses" href="#">Company</a></li>
               <li><a title="Addresses" href="#">Investor Relations</a></li>
