@@ -95,7 +95,7 @@
     </div> -->
 <div class="category-product coupons-section coupons-section-inner full-width">    
 <div class="row coupons-deals">
-
+<br>
 @include('include.coupons')
 
 <!-- foreach starts -->

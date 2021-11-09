@@ -26,7 +26,7 @@
     position: relative;
     width: 250px;
     height: 250px;
-    margin: 3.5% -0.5% -3.5% 3.5%;
+    margin: 0.5% -0.5% -3.5% 3.5%;
     transform-style: preserve-3d;
     perspective: 1000px;
     cursor: pointer
@@ -100,7 +100,14 @@
 
 }
 
+  @media (max-width: 700px)
+{
+  .flip .container .box {
+   
+    margin: 20px 0px -70px 0px !important;
+    }
 
+}
 
 </style>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
