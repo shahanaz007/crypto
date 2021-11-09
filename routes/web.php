@@ -132,7 +132,6 @@ Route::get('stake_tokens/unstake/{id}','StakeTokensController@unstake');
 Route::view('dashboard','dashboard');
 Route::view('userlayout','user_dashboard');
 
-Route::get('admin_dashboard','AdminController@dashboard');
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
 
@@ -151,6 +150,8 @@ Route::resource('testing','TestController');
 
 //middleware for admin  09-11-2021
 Route::middleware(['admin'])->group(function(){
+
+	Route::get('admin_dashboard','AdminController@dashboard');
 
 	//admin to view withdraw_request 10-06-2021
 	Route::get('/withdraw_request/index','AdminController@withdraw_request_index');
