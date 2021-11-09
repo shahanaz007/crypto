@@ -118,7 +118,7 @@
         </li>
         <li>
           <a href="{{ route('deposites.index') }}">
-            <i class="icon-refresh"></i> <span>{{ __('Deposites') }}</span>
+            <i class="icon-refresh"></i> <span>{{ __('Deposits') }}</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
