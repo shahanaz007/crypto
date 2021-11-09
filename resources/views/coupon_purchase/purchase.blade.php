@@ -90,7 +90,7 @@ td, th, p {
 				    <div class="col-lg-12">
 				        <!-- <a href="{{route('coupon_purchase.index')}}"><button class="btn btn-secondary float-right">Back</button></a> -->
 				    <center>
-				    	<img src="{{asset($details->brand->logo)}}" alt="" width="50%">
+				    	<img src="{{asset($details->brand->logo)}}" alt="" style="border-radius: 10px;box-shadow: 1px 1px 7px 0px;width: 55%;height: 179px;margin-top: 10px;">
 				    			    <br>	<br>
 				    	
 						<div class="radio-group">
