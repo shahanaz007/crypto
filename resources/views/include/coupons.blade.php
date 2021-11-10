@@ -120,7 +120,7 @@
 
 <div class="container d-flex align-items-center justify-content-center flex-wrap row">
    @foreach($coupons as $coupon)
-    <div class="box col-md-3">
+    <div class="box col-md-3 col-sm-6">
         <div class="body">
         <div class="imgContainer">
          <center>

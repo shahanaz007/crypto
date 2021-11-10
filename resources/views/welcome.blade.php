@@ -7,7 +7,9 @@
     </div>
 </div> -->
 <style type="text/css">
-
+.footer {
+  margin-top: -40px;
+}
 </style>
 
 
