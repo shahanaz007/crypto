@@ -13,12 +13,25 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $user_id = Auth::user()->id;
         // $users   = User::where('referby',$user_id)->paginate(10);
 
         $users   = Auth::user()->users_list();
+
+        if($request->from_date){
+            $from_date =  $request->from_date.' 00:00:00';
+        
+            $users = $users->where('created_at','>=',$from_date);
+        }
+        
+        if($request->to_date){
+            $to_date   =  $request->to_date.' 23:59:59';
+        
+            $users = $users->where('created_at','<=',$to_date);
+        }
+        // $users = $users->paginate(10);
         
         // return $users;
         return view('my_list.index',compact('users'));
