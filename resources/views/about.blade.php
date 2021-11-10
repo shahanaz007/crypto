@@ -14,16 +14,16 @@
           <div class="row">
             <div class="col-md-12">
               <div class="cnt-strip">
-                <div class="image1"> <img class="img-responsive" src="{{asset('web/assets/images/banners/home-banner.jpg')}}" alt=""> </div>
+                <div class="image1"> <img class="img-responsive" src="{{asset('assets/img/about-banner.jpg')}}" alt=""> </div>
                 <div class="strip strip-text">
                   <div class="strip-inner">
-                    <h2 class="text-right">Amazing Opportunity<br>
-                      <span class="shopping-needs">Get Ready To Wonder With Us</span></h2>
+                    <!-- <h2 class="text-right">Amazing Opportunity<br> -->
+                      <!-- <span class="shopping-needs">Get Ready To Wonder With Us</span></h2> -->
                   </div>
                 </div>
-                <div class="new-label">
+                <!-- <div class="new-label">
                   <div class="text">NEW</div>
-                </div>
+                </div> -->
                 <!-- /.new-label --> 
               </div>
               <!-- /.wide-banner --> 

@@ -21,7 +21,7 @@
   <div class="col-xs-12 col-sm-12 col-md-12 homebanner-holder"> 
   <div id="hero">
       <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
-        <div class="item" style="background-image: url({{asset('web/assets/images/sliders/new_banner.jpg')}});">
+        <div class="item" style="background-image: url({{asset('assets/img/banner_main.jpg')}});">
           <div class="container-fluid">
             <div class="caption bg-color vertical-center text-left">
               <!-- <div class="slider-header fadeInDown-1">Top Brands</div> -->
@@ -349,7 +349,7 @@
           <div class="row">
             <div class="col-md-6 col-sm-6">
               <div class="wide-banner cnt-strip">
-                <div class="image"> <img class="img-responsive" src="{{asset('web/assets/images/banners/home-banner1.jpg')}}" alt=""> </div>
+                <div class="image"> <img class="img-responsive" src="{{asset('assets/img/banner1.jpg')}}" alt=""> </div>
               </div>
               <!-- /.wide-banner --> 
             </div>
@@ -406,7 +406,7 @@
 <!-- ============================================== Coupons  ============================================== -->
 
         <section class="section coupons-section">
-    <center> <h3 class="section-title" >Latest Coupons</h3> <br></center>
+    <center> <h3 class="section-title" ><b>Latest Coupons</b></h3> <br><br></center>
 
           @include('include.coupons')
 
