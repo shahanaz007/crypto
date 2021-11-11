@@ -83,11 +83,14 @@ class ComplaintsController extends Controller
         $complaint->status = $request->status;
         $complaint->save();
 
-        $solution               = new ComplaintSolution;
-        $solution->user_id      = $user_id;
-        $solution->complaint_id = $id;
-        $solution->solution     = $request->solution;
-        $solution->save();
+        if($request->solution)
+        {
+            $solution               = new ComplaintSolution;
+            $solution->user_id      = $user_id;
+            $solution->complaint_id = $id;
+            $solution->solution     = $request->solution;
+            $solution->save();
+        }
         return redirect('complaints')->with('status','Response added successfully');
     }
 

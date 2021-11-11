@@ -6,6 +6,14 @@
     .col-md-6 {
         padding-bottom: 15px;
     }
+
+    .no_bg {
+            border: none !important;
+            background: none !important;
+    }
+    hr {
+        border-top-color:rgb(116 119 124 / 38%);
+    }
 </style>
 <div class="content-wrapper">
 <section class="content">
@@ -29,18 +37,18 @@
 
 	                		<div class="col-md-6">
 	                			<label>Username</label>
-	                			<input type="text" class="form-control"  id="name_id"  name="name"  value="{{$complaint->user->name}}" readonly="" disabled="">
+	                			<input type="text" class="form-control no_bg"  id="name_id"  name="name"  value="{{$complaint->user->name}}" readonly="" disabled="">
 	                		</div>
                             <div class="col-md-6">
                                 <label>Subject</label>
-                                <input type="text" class="form-control"  id="subject_id"  name="subject"  value="{{$complaint->subject}}" readonly="" disabled="">
+                                <input type="text" class="form-control no_bg"  id="subject_id"  name="subject"  value="{{$complaint->subject}}" readonly="" disabled="">
                             </div>
                             <div class="col-md-12">
-                                <label>Description</label>
+                                <label><b>Description</b></label>
                                 <p>{{$complaint->complaints}}</p>
                             </div>
                             <div class="col-md-12">
-                                <hr>
+                                <b><hr></b>
                             </div>
                             @if(count($solutions) > 0) 
                                 <div class="col-md-12">
@@ -51,14 +59,25 @@
                                 <?php $slno=1; ?>
                                 @foreach($solutions as $solution)
                                     <div class="col-md-12">
-                                        <h4><label>{{$solution->user->name}}</label></h4>
+                                        <h4><label><b>{{$solution->user->name}}</b></label></h4>
                                         <p>{{$solution->solution}}</p>    
                                     </div>
                                     <?php $slno++; ?>
                                 @endforeach
 
                             @endif
-                            <div class="col-md-12">
+
+                            
+
+
+                            
+	                	</div>
+
+                        <div class="col-md-12">
+                                    
+                                    <hr>
+                                </div>
+                         <div class="col-md-12">
                                 <label style="margin-top: 10px;">Solution</label>
                                 <textarea name="solution" class="form-control" rows="6" cols="70"></textarea>
                             </div> 
@@ -72,14 +91,16 @@
                                     <option value="deffered">Deffered</option>
                                     
                                 </select>
-                            </div> 
-	                	</div>
+                            </div>
+                                        
                         <div class="row">
                             <div class="col-lg-12">
                                 <button class="btn btn-secondary float-right">Submit</button>
                             </div>
                         </div>
                         </form>
+                                
+
 	                		<div class="row">
 							    <div class="col-lg-12">
                                     
