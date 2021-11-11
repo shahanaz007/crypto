@@ -85,7 +85,9 @@
 .flip .container .box .body .content div {
     transform-style: preserve-3d;
     padding: 10px;
-    background: linear-gradient(45deg, #FE0061, #FFEB3B);
+    /*background: linear-gradient(45deg, #FE0061, #FFEB3B);*/
+    background: linear-gradient(45deg, #ec3237, #fb878a);
+
     transform: translateZ(100px)
 }
 
@@ -120,7 +122,7 @@
 
 <div class="container d-flex align-items-center justify-content-center flex-wrap row">
    @foreach($coupons as $coupon)
-    <div class="box col-md-3">
+    <div class="box col-md-3 col-sm-6">
         <div class="body">
         <div class="imgContainer">
          <center>

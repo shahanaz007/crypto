@@ -40,7 +40,7 @@ class CouponPurchaseController extends Controller
             Cookie::queue('region_id', $region);
             session(['region_id' => $region]);
         }
-        $coupons = $coupons->paginate(10);
+        $coupons = $coupons->paginate(12);
 
 
 
