@@ -21,7 +21,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Complaints\Tikets') }}</div>
+                <div class="card-header">{{ __('Complaint \ Tikets') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -44,41 +44,54 @@
                                 <input type="text" class="form-control no_bg"  id="subject_id"  name="subject"  value="{{$complaint->subject}}" readonly="" disabled="">
                             </div>
                             <div class="col-md-12">
-                                <label><b>Description</b></label>
+                                <label><u><b>Description</b></u></label>
                                 <p>{{$complaint->complaints}}</p>
                             </div>
                             <div class="col-md-12">
-                                <b><hr></b>
+                                <br>
                             </div>
+
+
+                        </div>
                             @if(count($solutions) > 0) 
                                 <div class="col-md-12">
-                                    <label><b>{{$number}} Responses</label>
+                                    <label><b> - {{$number}} Responses - </b></label>
                                     <hr>
                                 </div>
                                 
                                 <?php $slno=1; ?>
                                 @foreach($solutions as $solution)
-                                    <div class="col-md-12">
-                                        <h4><label><b>{{$solution->user->name}}</b></label></h4>
-                                        <p>{{$solution->solution}}</p>    
+                                <?php
+                                    $styles = "";
+                                    if($solution->user->id == Auth::user()->id)
+                                    {
+                                        $styles = "text-align: right;";
+                                    }
+                                ?>
+                                    <div class="col-md-12" style="{{$styles}}">
+                                        <h4 ><label><b>{{$solution->user->name}}</b></label></h4>
+                                        <p>{{$solution->solution}}</p> 
+                                        <hr>   
                                     </div>
                                     <?php $slno++; ?>
                                 @endforeach
 
+                            @else    
+                                <div class="col-md-12"> 
+                                    <hr>
+                                </div>
                             @endif
 
                             
 
 
                             
-	                	</div>
+	                	
 
-                        <div class="col-md-12">
-                                    
-                                    <hr>
-                                </div>
+                        
+
                          <div class="col-md-12">
-                                <label style="margin-top: 10px;">Solution</label>
+                                <label style="margin-top: 10px;">Respond to Compaint / Ticket</label>
                                 <textarea name="solution" class="form-control" rows="6" cols="70"></textarea>
                             </div> 
                             <div class="col-md-12">
