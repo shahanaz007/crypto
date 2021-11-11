@@ -332,6 +332,7 @@
                                 <li class="@yield('referal_select')"><a href="{{ route('user.index') }}">My Referrals</a></li>
 
                                 <li class="@yield('history_select')"><a href="{{ route('payment.index') }}">Deposit History</a></li>
+                                <li class="@yield('complaint_select')"><a href="{{ route('complaint.index') }}">Complaint/Tikets</a></li>
                                 <!-- <li class="dropdown @yield('wallet_select')"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Wallet</a>
                     <ul class="dropdown-menu">
                       <li>

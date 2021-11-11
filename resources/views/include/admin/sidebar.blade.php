@@ -124,6 +124,14 @@
             </span>
           </a>
         </li>
+        <li>
+          <a href="{{ route('complaints.index') }}">
+            <i class="icon-refresh"></i> <span>{{ __('Complaints/Tikets') }}</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+        </li>
         <li class="treeview">
           <a href="#">
             <i class="icon-chart"></i>

@@ -138,6 +138,9 @@ Route::view('userlayout','user_dashboard');
 //user to manage referres  01-11-2021
 Route::resource('user','UsersController');
 
+//user to manage complaints  11-11-2021
+Route::resource('complaint','ComplaintsController');
+
 
 
 
@@ -245,5 +248,8 @@ Route::middleware(['admin'])->group(function(){
 
 	//admin for deposites  09-11-2021
 	Route::resource('/deposites','Admin\DepositesController');
+
+	//admin for complaints manage  11-11-2021
+	Route::resource('complaints','Admin\ComplaintsController');
 
 });	
