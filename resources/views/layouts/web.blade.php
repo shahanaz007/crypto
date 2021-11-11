@@ -144,6 +144,14 @@
 .main-header{
   z-index: 1;
 }
+#navbar {
+  overflow: hidden;
+  }
+
+  .cnt-strip .new-label{
+    z-index: auto;
+  }
+
 </style>
 </head>
 <body class="cnt-home">

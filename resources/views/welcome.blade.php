@@ -23,6 +23,12 @@ cursor: pointer;
   color: #ec3237;
   cursor: pointer;
 }
+@media only screen and (max-width: 767px){
+.main-header .logo-holder {
+    margin-top: 25px;
+    line-height: 57px;
+}
+}
 </style>
 
 
@@ -391,12 +397,12 @@ cursor: pointer;
           <div class="row">
             <div class="col-md-12">
               <div class="cnt-strip">
-                <div class="image1"> <img class="img-responsive" src="{{asset('web/assets/images/banners/home-banner.jpg')}}" alt=""> </div>
+                <div class="image1"> <img class="img-responsive" src="{{asset('assets/img/homebanner.jpg')}}" alt=""> </div>
                 <div class="strip strip-text">
-                  <div class="strip-inner">
+                  <!-- <div class="strip-inner">
                     <h2 class="text-right">Amazing Opportunity<br>
                       <span class="shopping-needs">Get Ready To Wonder With Us</span></h2>
-                  </div>
+                  </div> -->
                 </div>
                 <div class="new-label">
                   <div class="text">NEW</div>
