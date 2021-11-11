@@ -14,7 +14,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="cnt-strip">
-                <div class="image1"> <img class="img-responsive" src="{{asset('assets/img/about-banner.jpg')}}" alt=""> </div>
+                <div class="image1"> <img class="img-responsive" src="{{asset('assets/img/aboutbanner.jpg')}}" alt=""> </div>
                 <div class="strip strip-text">
                   <div class="strip-inner">
                     <!-- <h2 class="text-right">Amazing Opportunity<br> -->
