@@ -134,7 +134,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
              		<?php $slno=1; ?>
              		@foreach($complaints as $complaint)
                	  <tr>
-                 	<td class="text-center">{{$slno}}</td>
+                 	  <td class="text-center">{{$slno}}</td>
                     <td class="text-center">{{$complaint->subject}}</td>
                     <td class="text-center">{{$complaint->complaints}}</td>
                     <td class="text-center">{{date('d-m-Y', strtotime($complaint->created_at))}}</td>

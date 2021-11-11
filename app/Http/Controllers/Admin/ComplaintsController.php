@@ -49,7 +49,9 @@ class ComplaintsController extends Controller
      */
     public function show($id)
     {
-        //
+        $complaint = Complaint::find($id);
+        return view('admin.complaints.view',compact('complaint'));
+
     }
 
     /**

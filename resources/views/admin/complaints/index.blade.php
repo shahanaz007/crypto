@@ -27,12 +27,12 @@
              		<?php $slno=1; ?>
              		@foreach($complaints as $complaint)
                	  <tr>
-                 		<td>{{$slno}}</td>
-                    <td>{{$complaint->users->email}}</td>
-                    <td>{{$complaint->subject}}</td>
-                    <td>{{$complaint->complaints}}</td>
-                    <td>{{date('d-m-Y', strtotime($complaint->created_at))}}</td>
-                    <td>
+                 		<td class="text-center">{{$slno}}</td>
+                    <td class="text-center">{{$complaint->user->name}}</td>
+                    <td class="text-center">{{$complaint->subject}}</td>
+                    <td class="text-center">{{$complaint->complaints}}</td>
+                    <td class="text-center">{{date('d-m-Y', strtotime($complaint->created_at))}}</td>
+                    <td class="text-center">
                       <a href="{{route('complaints.show',$complaint->id)}}">  <button class="btn btn-success">View</button></a>
                       <!-- <a href="">  <button class="btn btn-success">Delete</button></a> -->
                     </td>  
