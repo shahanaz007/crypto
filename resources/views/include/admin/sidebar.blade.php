@@ -126,7 +126,7 @@
         </li>
         <li>
           <a href="{{ route('complaints.index') }}">
-            <i class="icon-refresh"></i> <span>{{ __('Complaints/Tikets') }}</span>
+            <i class="icon-refresh"></i> <span>{{ __('Complaints/Tickets') }}</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>

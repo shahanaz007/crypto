@@ -98,7 +98,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
       <div class="row">
         <div class="col-12">
           <div class="text-center">           
-            <h2 class="page-title text-white">My Complaints/Tikets</h2>
+            <h2 class="page-title text-white">My Complaints/Tickets</h2>
             <ol class="breadcrumb bg-transparent justify-content-center">
               <li class="breadcrumb-item"><a href="{{url('/home')}}" class="text-white-50"><i class="fa fa-home"></i></a></li>
               <li class="breadcrumb-item text-white active" aria-current="page">Complaints</li>
@@ -114,10 +114,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
   <div class="row justify-content-center  sign-in-page" style="margin: auto;float: none;">
     <div class="col-md-12">
       <div class="card">
-        <div class="card-header">{{ __('My Complaints/Tikets') }}</div>
+        <div class="card-header">{{ __('My Complaints/Tickets') }}</div>
         <div class="card-body">
           <h4 style="text-align: right;">
-            <a href="{{ route('complaint.create') }}">  <button class="btn btn-success">Add New +</button></a>
+            <a href="{{ route('complaint.create') }}">  <button class="btn btn-success">Raise New Complaint \ Ticket +</button></a>
           </h4>
         @if(count($complaints) > 0)   
           <table class="table  table-striped">
@@ -141,7 +141,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                     <td class="text-center">{{date('d-m-Y', strtotime($complaint->created_at))}}</td>
                     <td class="text-center">{{$complaint->status}}</td>
                     <td class="text-center">
-                      <a href="{{route('complaint.show',$complaint->id)}}">  <button class="btn btn-success">View</button></a>
+                      <a href="{{route('complaint.show',$complaint->id)}}">  <button class="btn btn-info">View</button></a>
                     </td>
                      
                	  </tr>
@@ -151,7 +151,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
           </table>
           @else
             <div style="text-align: center;">
-              <h4>No Complaints/Tikets Available</h4>
+              <h4>No Complaints/Tickets Available</h4>
             </div>
         @endif
           <div class="d-flex justify-content-center">

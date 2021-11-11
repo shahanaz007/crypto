@@ -47,6 +47,7 @@
                                 <label><u><b>Description</b></u></label>
                                 <p>{{$complaint->complaints}}</p>
                             </div>
+                            
                             <div class="col-md-12">
                                 <br>
                             </div>
