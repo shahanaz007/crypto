@@ -108,14 +108,18 @@
   </div>
   
 @endif
+
 <!-- foereach ends -->
 
 <!-- test -->
 </div>
 </div>
 
-
+<div class="d-flex justify-content-center">
+            {!! $coupons->links("pagination::bootstrap-4") !!}
+          </div>
 </div>
+
 </section>
 
 <script>

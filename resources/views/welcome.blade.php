@@ -6,9 +6,22 @@
         <img class="img-responsive" src="{{asset('web/assets/images/banners/top-banner.png')}}" alt="">
     </div>
 </div> -->
+
 <style type="text/css">
 .footer {
   margin-top: -40px;
+}
+.head{
+margin-top: 0px;
+padding: 10px;
+font-size: 20px;
+color: black;
+padding-top: 0px;
+cursor: pointer;
+}
+.head:hover{
+  color: #ec3237;
+  cursor: pointer;
 }
 </style>
 
@@ -20,7 +33,9 @@
 
   <div class="col-xs-12 col-sm-12 col-md-12 homebanner-holder"> 
   <div id="hero">
-      <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
+      <!-- <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm"> -->
+      <div id="owl-main">
+
         <div class="item" style="background-image: url({{asset('assets/img/banner_main.jpg')}});">
           <div class="container-fluid">
             <div class="caption bg-color vertical-center text-left">
@@ -35,18 +50,18 @@
         </div>
         <!-- /.item -->
         
-        <div class="item" style="background-image: url({{asset('web/assets/images/sliders/new_banner.jpg')}});">
+        <!-- <div class="item" style="background-image: url({{asset('web/assets/images/sliders/new_banner.jpg')}});">
           <div class="container-fluid">
-            <div class="caption bg-color vertical-center text-left">
+            <div class="caption bg-color vertical-center text-left"> -->
               <!-- <div class="slider-header fadeInDown-1">Spring 2019</div> -->
               <!-- <div class="big-text fadeInDown-1"> Women Fashion </div> -->
               <!-- <div class="excerpt fadeInDown-2 hidden-xs"> <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur.</span> </div> -->
               <!-- <div class="button-holder fadeInDown-3"> <a href="index.php?page=single-product" class="btn-lg btn btn-uppercase btn-primary shop-now-button">Sign In</a> </div> -->
-            </div>
+            <!-- </div> -->
             <!-- /.caption --> 
-          </div>
+          <!-- </div> -->
           <!-- /.container-fluid --> 
-        </div>
+        <!-- </div> -->
         <!-- /.item --> 
         
       </div>
@@ -407,7 +422,19 @@
 
         <section class="section coupons-section">
     <center> <h3 class="section-title" ><b>Latest Coupons</b></h3> <br><br></center>
-
+    @if(count($coupons) >12)
+    <div class="container">
+      
+    
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <div class="text-right pr-2">
+            <a href="{{url('/coupon_purchase')}}"><h6 class="text-right head">View All&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></h6></a>
+          </div>
+        </div>
+      </div>
+</div>
+@endif
           @include('include.coupons')
 
 
