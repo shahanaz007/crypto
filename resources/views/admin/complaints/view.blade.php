@@ -22,7 +22,7 @@
                         </div>
                     @endif
 
-                    <form action="{{route('complaints.update',$complaint->id)}}" id="update_form" method="POST"> 
+                    <form action="{{route('complaints.update',$complaint->id)}}" method="POST"> 
                     @method('put')
                     @csrf
 	                	<div class="card-body row">
@@ -35,23 +35,57 @@
                                 <label>Subject</label>
                                 <input type="text" class="form-control"  id="subject_id"  name="subject"  value="{{$complaint->subject}}" readonly="" disabled="">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <label>Description</label>
-                                <input type="text" class="form-control"  id="description_id"  name="description"  value="{{$complaint->complaints}}" readonly="" disabled="">
+                                <p>{{$complaint->complaints}}</p>
                             </div>
-                            
+                            <div class="col-md-12">
+                                <hr>
+                            </div>
+                            @if(count($solutions) > 0) 
+                                <div class="col-md-12">
+                                    <label><b>{{$number}} Responses</label>
+                                    <hr>
+                                </div>
+                                
+                                <?php $slno=1; ?>
+                                @foreach($solutions as $solution)
+                                    <div class="col-md-12">
+                                        <h4><label>{{$solution->user->name}}</label></h4>
+                                        <p>{{$solution->solution}}</p>    
+                                    </div>
+                                    <?php $slno++; ?>
+                                @endforeach
+
+                            @endif
+                            <div class="col-md-12">
+                                <label style="margin-top: 10px;">Solution</label>
+                                <textarea name="solution" class="form-control" rows="6" cols="70"></textarea>
+                            </div> 
+                            <div class="col-md-12">
+                                <label class="p-2">Status</label>
+                                <select class="form-control" name="status" id="status_id" required="">
+                                    <option value="{{$complaint->status }}" <?php if($complaint->status){ echo "selected"; } ?>>{{$complaint->status }}</option>
+                                    <option value="open">Open</option>
+                                    <option value="processing">Processing</option>
+                                    <option value="closed">Closed</option>
+                                    <option value="deffered">Deffered</option>
+                                    
+                                </select>
+                            </div> 
 	                	</div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <button class="btn btn-secondary float-right">Submit</button>
+                            </div>
+                        </div>
                         </form>
-
-
 	                		<div class="row">
 							    <div class="col-lg-12">
                                     
                                     <a href="{{route('complaints.index') }}">
                                     <button class="btn btn-danger " onclick=""><< Back</button></a>
 
-                                   
-                                    <button onclick="submit_form()" class="btn btn-success float-right" style="margin-left: 470px;">Update</button>
 
                                     
                                     
@@ -71,11 +105,4 @@
 </div>
 </section>
 </div>
-<script type="text/javascript">
-    
-    function submit_form(){
-        $('#update_form').submit();
-    }
-</script>
-
 @endsection

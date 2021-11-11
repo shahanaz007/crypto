@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\{Complaint};
+use App\Models\{Complaint,ComplaintSolution};
+use Auth;
 
 
 class ComplaintsController extends Controller
@@ -16,7 +17,7 @@ class ComplaintsController extends Controller
      */
     public function index()
     {
-        $complaints = Complaint::where('status','open')->paginate(10);
+        $complaints = Complaint::paginate(10);
         return view('admin.complaints.index',compact('complaints'));
     }
 
@@ -50,7 +51,9 @@ class ComplaintsController extends Controller
     public function show($id)
     {
         $complaint = Complaint::find($id);
-        return view('admin.complaints.view',compact('complaint'));
+        $number    = ComplaintSolution::where('complaint_id',$id)->count();
+        $solutions = ComplaintSolution::where('complaint_id',$id)->get();
+        return view('admin.complaints.view',compact('complaint','number','solutions'));
 
     }
 
@@ -74,7 +77,18 @@ class ComplaintsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user_id           = Auth::user()->id;
+
+        $complaint         = Complaint::find($id);
+        $complaint->status = $request->status;
+        $complaint->save();
+
+        $solution               = new ComplaintSolution;
+        $solution->user_id      = $user_id;
+        $solution->complaint_id = $id;
+        $solution->solution     = $request->solution;
+        $solution->save();
+        return redirect('complaints')->with('status','Response added successfully');
     }
 
     /**
