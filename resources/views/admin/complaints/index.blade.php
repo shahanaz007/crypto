@@ -8,7 +8,7 @@
   <div class="row justify-content-center">
     <div class="col-md-10">
       <div class="card">
-        <div class="card-header">{{ __('Complaints\Tikets') }}</div>
+        <div class="card-header">{{ __('Complaints\Tickets') }}</div>
         <div class="card-body">
           
           <table class="table  table-striped">
