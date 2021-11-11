@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{Complaint};
+use App\Models\{Complaint,ComplaintSolution};
 use Auth;
 
 class ComplaintsController extends Controller
@@ -55,7 +55,10 @@ class ComplaintsController extends Controller
      */
     public function show($id)
     {
-        //
+        $complaint = Complaint::find($id);
+        $number    = ComplaintSolution::where('complaint_id',$id)->count();
+        $solutions = ComplaintSolution::where('complaint_id',$id)->get();
+        return view('complaints.view',compact('complaint','number','solutions'));
     }
 
     /**
@@ -78,7 +81,17 @@ class ComplaintsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user_id           = Auth::user()->id;
+
+        if($request->solution)
+        {
+            $solution               = new ComplaintSolution;
+            $solution->user_id      = $user_id;
+            $solution->complaint_id = $id;
+            $solution->solution     = $request->solution;
+            $solution->save();
+        }
+        return redirect('complaint')->with('status','Response added successfully');
     }
 
     /**

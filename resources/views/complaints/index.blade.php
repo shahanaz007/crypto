@@ -127,6 +127,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
              		<th class="text-center">Subject</th>
                 <th class="text-center">Complaints</th>
                 <th class="text-center">Date</th>
+                <th class="text-center">Status</th>
                 <th class="text-center">Action</th> 
            	  </tr>
            	</thead>
@@ -138,6 +139,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                     <td class="text-center">{{$complaint->subject}}</td>
                     <td class="text-center">{{$complaint->complaints}}</td>
                     <td class="text-center">{{date('d-m-Y', strtotime($complaint->created_at))}}</td>
+                    <td class="text-center">{{$complaint->status}}</td>
                     <td class="text-center">
                       <a href="{{route('complaint.show',$complaint->id)}}">  <button class="btn btn-success">View</button></a>
                     </td>
