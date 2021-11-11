@@ -426,7 +426,7 @@ img[src="assets/images/blank.gif"] {
                   /*background:url(../images/coupons-bg.png) repeat-x top left; */
                   background-color: #f6f6f6;
                   padding:35px 0px}
-.coupons-section .section-title {color:#ec3237;font-size: 35px;padding: 10px;}
+.coupons-section .section-title {color:black;font-size: 35px;padding: 10px;}
 .coupons-section .brand {padding:10px 25px 5px 25px; font-size:15px}
 .coupons-section .coupons-deals {margin:0px -10px;}
 .coupons-section-inner {margin-top:0; background:none; padding:0px; margin-bottom:0px}
