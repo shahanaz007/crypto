@@ -17,7 +17,16 @@ class ComplaintsController extends Controller
      */
     public function index()
     {
-        $complaints = Complaint::paginate(10);
+
+        $ids = [ 'open', 'processing', 'closed', 'deferred'];
+
+        $queryOrder = "CASE WHEN status = 'open' THEN 1 ";
+        $queryOrder .= "WHEN status = 'processing' THEN 2 ";
+        $queryOrder .= "WHEN status = 'closed' THEN 3 ";
+        $queryOrder .= "ELSE 4 END";
+        
+        $complaints = Complaint::orderByRaw($queryOrder)->paginate(10);
+        
         return view('admin.complaints.index',compact('complaints'));
     }
 
