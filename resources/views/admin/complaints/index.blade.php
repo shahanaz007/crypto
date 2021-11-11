@@ -19,6 +19,7 @@
                 <th class="text-center">Subject</th>
                 <th class="text-center">Complaints</th>
                 <th class="text-center">Date</th>
+                <th class="text-center">Status</th>
                 <th class="text-center">Action</th> 
            	  </tr>
            	</thead>
@@ -32,6 +33,7 @@
                     <td class="text-center">{{$complaint->subject}}</td>
                     <td class="text-center">{{$complaint->complaints}}</td>
                     <td class="text-center">{{date('d-m-Y', strtotime($complaint->created_at))}}</td>
+                    <td class="text-center">{{$complaint->status}}</td>
                     <td class="text-center">
                       <a href="{{route('complaints.show',$complaint->id)}}">  <button class="btn btn-success">View</button></a>
                       <!-- <a href="">  <button class="btn btn-success">Delete</button></a> -->

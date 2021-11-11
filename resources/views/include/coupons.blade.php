@@ -102,14 +102,95 @@
 
 }
 
-  @media (max-width: 700px)
+  @media (max-width: 770px)
 {
   .flip .container .box {
    
-    margin: 20px 0px -70px 0px !important;
+    margin: 0px 0px 0px 20px !important;
+    width: 150px !important;
+    height: 150px !important;
+    float: left;
+    }
+
+    .flip .container .box h3 {
+        font-size: 16px;
+        margin-top: 0px;
+    margin-bottom: 4px;
+    }
+}
+
+ @media (max-width: 415px)
+{
+    .flip .container .box {
+   
+    margin: 0px 10px -12px 37px !important;
+    width: 150px !important;
+    height: 150px !important;
+    float: left;
     }
 
 }
+
+
+ @media (max-width: 400px)
+{
+    .flip .container .box {
+   
+    margin: 0px 0px -12px 28px !important;
+    width: 150px !important;
+    height: 150px !important;
+    float: left;
+    }
+
+}
+
+ @media (max-width: 380px)
+{
+    .flip .container .box {
+   
+    margin: 0px 0px -12px 22px !important;
+    width: 150px !important;
+    height: 150px !important;
+    float: left;
+    }
+
+}
+
+
+
+ @media (max-width: 330px)
+{
+    .flip .container .box {
+   
+    margin: 0px 0px 0px 20px !important;
+    width: 132px !important;
+    height: 132px !important;
+    float: left;
+    }
+    .flip .container .box h3 {
+        font-size: 16px;
+        margin-top: 0px;
+    margin-bottom: 0px;
+    }
+    .flip .container .box p {
+            margin: 0 0 5px;
+    }
+}
+
+ @media (max-width: 280px)
+{
+    .flip .container .box {
+   
+    margin: 0px 0px -10px 10px !important;
+    width: 125px !important;
+    height: 125px !important;
+    float: left;
+    }
+
+    .flip .container .box .btn{
+    padding: 2px 8px;
+    }
+    }
 
 </style>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
