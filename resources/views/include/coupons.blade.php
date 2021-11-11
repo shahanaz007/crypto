@@ -131,6 +131,19 @@
 
 }
 
+
+ @media (max-width: 400px)
+{
+    .flip .container .box {
+   
+    margin: 0px 0px -12px 28px !important;
+    width: 150px !important;
+    height: 150px !important;
+    float: left;
+    }
+
+}
+
  @media (max-width: 380px)
 {
     .flip .container .box {
@@ -142,6 +155,8 @@
     }
 
 }
+
+
 
  @media (max-width: 330px)
 {
