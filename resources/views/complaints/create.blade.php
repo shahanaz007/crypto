@@ -34,8 +34,8 @@
                     @csrf
                         <div class="card-body row">
 
-                            <div class="col-md-8">
-                                <label>Select Subject</label>
+                            <div class="col-md-12">
+                                <label class="p-2">Select Subject</label>
                                 <select class="form-control" name="subject" id="subject_id" required="">
                                     <option value="coupon">Coupon</option>
                                     <option value="deposite">Deposite</option>
@@ -43,15 +43,15 @@
                                     <option value="other">Other</option>
                                 </select>
                             </div>
-                            <div class="col-md-6">
-                                <label>Complaint Description</label>
-                                <textarea name="complaint"></textarea>
+                            <div class="col-md-12">
+                                <label style="margin-top: 10px;">Complaint Description</label>
+                                <textarea name="complaint" class="form-control" rows="6" cols="70"></textarea>
                             </div>  
                             
                         </div>  
                         <div class="row">
                             <div class="col-lg-12">
-                                <button class="btn btn-success float-right" style="margin-left: 400px;">Submit</button>
+                                <button class="btn btn-success float-right" style="margin-top: 10px;width: 100%;">Submit</button>
                             </div>
                         </div>
                     </form>
