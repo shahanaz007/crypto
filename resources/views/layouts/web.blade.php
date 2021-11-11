@@ -136,6 +136,14 @@
   }
 
   }
+  .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.main-header{
+  z-index: 1;
+}
 </style>
 </head>
 <body class="cnt-home">
@@ -212,7 +220,7 @@
   </div>
   <!-- /.header-top --> 
   <!-- ============================================== TOP MENU : END ============================================== -->
-  <div class="main-header">
+  <div class="main-header" id="navbar">
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-lg-2 col-sm-12 col-md-3 logo-holder"> 
@@ -677,5 +685,20 @@
       var iid1 = "countbox_1";
       CountBack_slider(gsecs1, "countbox_1", 1);
     </script>
+
+    <script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
 </body>
 </html>
