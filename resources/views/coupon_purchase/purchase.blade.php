@@ -52,7 +52,60 @@ input[type=number] {
 td, th, p {
     font-size: 16px;
 }
+.brandlogo{
+	border-radius: 10px;
+	box-shadow: 1px 1px 7px 0px;
+	width: 55%;
+	height: 179px;
+	margin-top: 10px;
+}
+@media only screen and (max-device-width:425px){
+	.brandlogo{
+		width: 68%;
+		height: 137px;
+	}
+	.buybtn{
+		margin-top: 0% !important;
+	}
+	.qtybtn{
+		width: 300px !important;
 
+	}
+	}
+	@media only screen and (max-device-width:375px){
+		.qtybtn{
+			width: 254px !important;
+		}
+	}
+	@media only screen and (max-device-width:320px){
+		.qtybtn{
+			width: 200px !important;
+		}
+		.brandlogo{
+			height: 100px;
+		}
+	}
+	.buybtn{
+		margin-top: 16%;
+	}
+	.qtybtn{
+		text-align: center;width: 150px;
+		display: inline-block;
+		height: calc(1.6em + 0.75rem + 2px);
+    padding: 15px 0.75rem;
+    font-size: 0.9rem;
+    border-radius: 0px 4px 4px 0px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    margin-left: -3px;
+    margin-right: -4px;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	}
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 </style>
 
@@ -90,7 +143,7 @@ td, th, p {
 				    <div class="col-lg-12" style="padding-top: 5%;">
 				        <!-- <a href="{{route('coupon_purchase.index')}}"><button class="btn btn-secondary float-right">Back</button></a> -->
 				    <center>
-				    	<img src="{{asset($details->brand->logo)}}" alt="" style="border-radius: 10px;box-shadow: 1px 1px 7px 0px;width: 55%;height: 179px;margin-top: 10px;">
+				    	<img src="{{asset($details->brand->logo)}}" alt=""  class="brandlogo">
 				    			    <br>	<br>
 				    	
 						<div class="radio-group">
@@ -169,20 +222,7 @@ td, th, p {
 
 							 <p><b>Quantity:</b><br><br>
 						<button class="btn btn-info" onclick="event.preventDefault();decrement()" style="border-radius: 4px 0px 0px 4px; padding:5px 8px;background-color: #ec3237;border-color: #ec3237;">-</button>
-						<input class="form-control" style="text-align: center;width: 150px;display: inline-block;height: calc(1.6em + 0.75rem + 2px);
-    padding: 15px 0.75rem;
-    font-size: 0.9rem;
-    border-radius: 0px 4px 4px 0px;
-    font-weight: 400;
-    line-height: 1.6;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    margin-left: -3px;
-    margin-right: -4px;
-    border-radius: 0.25rem;transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;"
-    	 id=qty value="1"  name="quantity"  type=number min=1 max=100 style="text-align: center;">
+						<input class="form-control qtybtn" id=qty value="1"  name="quantity"  type=number min=1 max=100 style="text-align: center;">
 						<button class="btn btn-info" onclick="event.preventDefault();increment()" style="border-radius: 0px 4px 4px 0px; padding: 5px 8px;background-color: #ec3237;border-color: #ec3237;">+</button>
 					</p>
 						</div>
@@ -202,7 +242,7 @@ td, th, p {
 
      <div class="col-md-6">
 	<!-- <p><b>Quantity:</b> -->
-	<button class="btn btn-success form-control" type="button" style="margin-top: 16%;" onclick="check_data()">Buy Coupon</button>
+	<button class="btn btn-success form-control buybtn" type="button" onclick="check_data()">Buy Coupon</button>
 </div>
                     
 
