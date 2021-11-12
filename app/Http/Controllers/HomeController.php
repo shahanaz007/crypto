@@ -124,10 +124,10 @@ class HomeController extends Controller
                      Cookie::queue('currency', 'USD');
                  }
 // Cookie::queue('currency', 'USD');
-        $coupons = Coupon::take(12)->where('used','=',0)
+        $coupons = Coupon::where('used','=',0)
                             ->orderBy('id','DESC')
                             ->groupBy('brand_id')
-                            ->get();
+                            ->paginate(12);
         return view('welcome',compact('coupons'));
     }
 }

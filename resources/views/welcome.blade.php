@@ -29,6 +29,18 @@ cursor: pointer;
     line-height: 57px;
 }
 }
+.show span{
+  padding: 6px 10px;
+  border-radius: 5px;
+  color: black;
+  box-shadow: 0px 0px 6px 0px;
+}
+.show span:hover{
+  padding: 6px 10px;
+  border-radius: 5px;
+  color: #ec3237;
+  box-shadow: 0px 0px 6px 0px;
+}
 </style>
 
 
@@ -428,7 +440,7 @@ cursor: pointer;
 
         <section class="section coupons-section">
     <center> <h3 class="section-title" ><b>Latest Coupons</b></h3> <br><br></center>
-    @if(count($coupons) >12)
+    <!-- @if(count($coupons) ==4)
     <div class="container">
       
     
@@ -440,11 +452,22 @@ cursor: pointer;
         </div>
       </div>
 </div>
-@endif
+@endif -->
           @include('include.coupons')
 
-
-
+    @if(count($coupons) ==12)
+<div class="container">
+      
+    
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <div class="text-right pr-2">
+            <a href="{{url('/coupon_purchase')}}"><h6 class="text-center show"><span>Show More&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></span></h6></a>
+          </div>
+        </div>
+      </div>
+</div>
+@endif
 
        
         <!-- Modal -->
