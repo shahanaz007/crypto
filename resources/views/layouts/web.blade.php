@@ -91,11 +91,25 @@
   @media only screen and (max-width: 400px) {
   .navmenu {
     margin-top: -18%;
+    
   }
 }
 
-
-
+@media only screen and (max-width: 425px) {
+  .navmenu {
+    float: none !important;
+}
+.togglebtn{
+  margin-top: -56px;
+}
+.navbar{
+  min-height: 0px;
+}
+.navbar-default {
+  margin-bottom: 0px; 
+}
+  }
+}
  
     @media only screen and (max-width: 340px) {
   .navmenu {
@@ -144,14 +158,19 @@
 .main-header{
   z-index: 1;
 }
-#navbar {
+/*#navbar {
   overflow: hidden;
-  }
+  }*/
 
   .cnt-strip .new-label{
     z-index: auto;
   }
-
+.col-xs-12 .navmenu {
+    width: unset !important;
+  }
+  .navmenu{
+    float: right;
+  }
 </style>
 </head>
 <body class="cnt-home">
@@ -255,10 +274,10 @@
         $type= 'admin?';                      
         ?>  
         
-         <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 navmenu" style="float: right !important;"> 
+         <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 navmenu" > 
       <div class="yamm navbar navbar-default" role="navigation">
         <div class="navbar-header">
-              <button data-target="#mc-horizontal-menu-collapse" data-toggle="collapse" class="navbar-toggle collapsed" type="button"> 
+              <button data-target="#mc-horizontal-menu-collapse" data-toggle="collapse" class="navbar-toggle collapsed togglebtn" type="button"> 
                   <span class="sr-only">Toggle navigation</span> 
                   <span class="icon-bar"></span> 
                   <span class="icon-bar"></span> 

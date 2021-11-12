@@ -81,7 +81,7 @@ td, th, p {
 				    	
 				    </div>
 				</div> -->
-		<form action="{{route('coupon_purchase.store')}}" method="POST"> 
+		<form action="{{route('coupon_purchase.store')}}" method="POST" id="formId"> 
                     @csrf
 		<div class="row sign-in-page" style="padding:20px">
 
@@ -198,27 +198,54 @@ td, th, p {
 
 	                  </p>      
 						</div> -->
-						
-<div class="col-md-6">
-	<!-- <p><b>Quantity:</b> -->
-	<button class="btn btn-success form-control" style="margin-top: 16%;">Buy Coupon</button>
-</div>
+						</form>
 
+     <div class="col-md-6">
+	<!-- <p><b>Quantity:</b> -->
+	<button class="btn btn-success form-control" type="button" style="margin-top: 16%;" onclick="check_data()">Buy Coupon</button>
+</div>
                     
 
                </div> 
-               <div  >    
+
+               </div  >    
 					
 					</div>
+
+					
+
 				</div>
+				
+				
 			</div>
 			
 		</div>
-		</form>	
+			
 			
 	</div>
 </div>
+
 </section>
+<div id="confirm" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="ml-auto" style="padding: 10px;">
+										<!-- <a href="{{url('/skiplocation')}}">Skip >></a> -->
+										
+									</div>
+									<div class="modal-body popbody text-center">
+										 <span class="">Are You Sure You Want to Buy This Coupon? </span>
+										{{-- <a href="" class="btn-close float-right" style="margin-top: -20px;
+									">X</i></a> --}}
+									</div>
+									<div class="modal-footer text-center d-block" style="padding-top: 10px;text-align: center;">
+										<button type="button" class="btn btn-secondary" data-dismiss="modal" id="delete" style="color: white;border:black;background: #7b7878;padding: 5px 9px;margin-bottom: 5px;">Cancel</button>
+										<button style="color: white;border:black;background: #276194;padding: 6px 9px; border-radius:4px;" onClick='submitDetailsForm()'>Confirm</button>
+									</div>
+									
+								</div>
+							</div>
+						</div>
 <script>
 
    function increment() {
@@ -259,7 +286,20 @@ td, th, p {
 
         });
    }
+   function check_data() {
+		// var address = $('#address_id').val();
+		// var time_slot = $('#delivery_slot').val();
 
+		// if (address && time_slot) {
+			$('#confirm').modal('show');
+			// $("#checkout_id").submit();
+		} 
 	
+	
+</script>
+<script language="javascript" type="text/javascript">
+    function submitDetailsForm() {
+       $("#formId").submit();
+    }
 </script>
 @endsection
