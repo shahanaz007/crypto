@@ -68,26 +68,46 @@ td, th, p {
 		margin-top: 0% !important;
 	}
 	.qtybtn{
-		width: 300px !important;
+		width: 85% !important;
 
 	}
 	}
-	@media only screen and (max-device-width:375px){
+	@media only screen and (max-device-width:381px){
 		.qtybtn{
-			width: 254px !important;
+			width: 84% !important;
+		}
+	}
+	@media only screen and (max-device-width:361px){
+		.qtybtn{
+			width: 83% !important;
+		}
+	}
+	@media only screen and (max-device-width:341px){
+		.qtybtn{
+			width: 82% !important;
 		}
 	}
 	@media only screen and (max-device-width:320px){
 		.qtybtn{
-			width: 200px !important;
+			width: 81% !important;
 		}
+	}
+
+	@media only screen and (max-device-width:288px){
+		.qtybtn{
+			width: 78% !important;
+		}
+	}
+
+	@media only screen and (max-device-width:320px){
+		/*.qtybtn{
+			width: 200px !important;
+		}*/
 		.brandlogo{
 			height: 100px;
 		}
 	}
-	.buybtn{
-		margin-top: 16%;
-	}
+	
 	.qtybtn{
 		text-align: center;width: 150px;
 		display: inline-block;
@@ -206,9 +226,7 @@ td, th, p {
 						<input id=demoInput type=number min=1 max=100 style="text-align: center;">
 						<button onclick="increment()">+</button>
 					</p> -->
-					<div class="row" style="padding-top:10px">
-
-						<div class="col-md-6" >
+					
 							<!-- <p><b>Amount :</b>
 								<select class="form-control" name="amount" id="currency_id" required="" onchange="get_amount(this.value)">
 										<option value="">- Select Amount of Coupon -</option>
@@ -221,9 +239,13 @@ td, th, p {
 							 </p> -->
 
 							 <p><b>Quantity:</b><br><br>
+							 	<div class="row" style="padding-top:10px">
+
+						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" >
 						<button class="btn btn-info" onclick="event.preventDefault();decrement()" style="border-radius: 4px 0px 0px 4px; padding:5px 8px;background-color: #ec3237;border-color: #ec3237;">-</button>
 						<input class="form-control qtybtn" id=qty value="1"  name="quantity"  type=number min=1 max=100 style="text-align: center;">
 						<button class="btn btn-info" onclick="event.preventDefault();increment()" style="border-radius: 0px 4px 4px 0px; padding: 5px 8px;background-color: #ec3237;border-color: #ec3237;">+</button>
+					
 					</p>
 						</div>
 
@@ -240,7 +262,7 @@ td, th, p {
 						</div> -->
 						</form>
 
-     <div class="col-md-6">
+     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 	<!-- <p><b>Quantity:</b> -->
 	<button class="btn btn-success form-control buybtn" type="button" onclick="check_data()">Buy Coupon</button>
 </div>
