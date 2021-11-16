@@ -124,7 +124,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
              		<th class="text-center">Category Name</th>
 	                <th class="text-center">Location</th>
 	                <th class="text-center">Brand</th>
-	                <th class="text-center">Code</th>
+	                <!-- <th class="text-center">Code</th> -->
 	                <th class="text-center">Point</th>
 	                <th>Currency Code</th>
 	                <th class="text-center">Expiry Date</th>
@@ -138,7 +138,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
                     <td class="text-center">{{$coupon->coupon->coupon_category->category_name}}</td>
                     <td class="text-center">{{$coupon->coupon->location->name}}</td>
                     <td class="text-center">{{$coupon->coupon->brand->name}}</td>
-                    <td class="text-center"><button class="btn btn-info" onclick="show('{{asset($coupon->code)}}')">Show Code</button></td>
+
+                   <!--  <td class="text-center"><button class="btn btn-info" onclick="show('{{asset($coupon->code)}}')">Show Code</button></td> -->
+                    
                     <td class="text-center">{{$coupon->point}}</td>
                     <td>{{$coupon->Currency_code}}</td>
                     <td class="text-center">{{$coupon->expiry_date}}</td>

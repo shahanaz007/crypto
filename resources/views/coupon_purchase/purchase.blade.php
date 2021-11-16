@@ -68,13 +68,13 @@ td, th, p {
 		margin-top: 0% !important;
 	}
 	.qtybtn{
-		width: 300px !important;
+		width: 83% !important;
 
 	}
 	}
 	@media only screen and (max-device-width:375px){
 		.qtybtn{
-			width: 254px !important;
+			width: 83% !important;
 		}
 	}
 	@media only screen and (max-device-width:320px){
@@ -85,8 +85,18 @@ td, th, p {
 			height: 100px;
 		}
 	}
+
+	@media only screen and (max-device-width:280px){
+		.qtybtn{
+			width: 76% !important;
+		}
+		.brandlogo{
+			height: 100px;
+		}
+	}
+
 	.buybtn{
-		margin-top: 16%;
+		margin-top: 17%;
 	}
 	.qtybtn{
 		text-align: center;width: 150px;

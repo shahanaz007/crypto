@@ -37,7 +37,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<h2 class="heading-title">Frequently Asked Questions</h2>
-					<span class="title-tag">Last Updated on November 02, 2021</span>
+					<span class="title-tag">Last Updated on November 16, 2021</span>
 					<div class="panel-group checkout-steps" id="accordion">
 						<!-- checkout-step-01  -->
 <div class="panel panel-default checkout-step-01">
@@ -46,7 +46,7 @@
 		<div class="panel-heading">
     	<h4 class="unicase-checkout-title">
 	        <a data-toggle="collapse" class="" data-parent="#accordion" href="#collapseOne">
-	          <span>1</span>Do you Ship Internationally ?
+	          <span>1</span>What is Swizmart ?
 	        </a>
 	     </h4>
     </div>
@@ -56,7 +56,7 @@
 
 		<!-- panel-body  -->
 	    <div class="panel-body">
-	    	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis diam erat. Duis velit lectus, posuere a blandit sit amet, tempor at lorem. Donec ultricies, lorem sed ultrices interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis diam erat. Duis velit lectus, posuere a blandit sit amet, tempor at lorem. Donec ultricies, lorem sed ultrices interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis diam erat. Duis velit lectus, posuere a blandit sit amet, tempor at lorem. Donec ultricies, lorem sed ultrices interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis diam erat. Duis velit lectus, posuere a blandit sit amet, tempor at lorem.			
+	    	SwizMart is a crypto commerce platform where crypto holders can shop directly by paying in crypto.			
 		</div>
 		<!-- panel-body  -->
 
@@ -68,13 +68,13 @@
 						    <div class="panel-heading">
 						      <h4 class="unicase-checkout-title">
 						        <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseTwo">
-						          <span>2</span>Who should I to contact if I have any queries?	
+						          <span>2</span>How Do I Deposit?	
 						        </a>
 						      </h4>
 						    </div>
 						    <div id="collapseTwo" class="panel-collapse collapse">
 						      <div class="panel-body">
-						        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+						        You can click on the deposit menu (user->deposit), type the amount in Dollar, select the supported coin you want to deposit and click submit. You will get address and QR code for scanning. The amount converted in Dollar will get auto credited into your account once you succesfully deposited the coins to that address.
 						      </div>
 						    </div>
 					  	</div>
@@ -85,13 +85,13 @@
 						    <div class="panel-heading">
 						      <h4 class="unicase-checkout-title">
 						        <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseThree">
-						       		<span>3</span>How do I track my order ?
+						       		<span>3</span>How to purchase A Coupon ?
 						        </a>
 						      </h4>
 						    </div>
 						    <div id="collapseThree" class="panel-collapse collapse">
 						      <div class="panel-body">
-						        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+						        You can goto "coupons" menu and select your region. click on any coupon you want to buy. then it will lead to a page where you can buy the coupon with required quantity and amount. you can purchase coupons only if you have the amount in your wallet.
 						      </div>
 						    </div>
 					  	</div>
@@ -102,13 +102,13 @@
 						    <div class="panel-heading">
 						      <h4 class="unicase-checkout-title">
 						        <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseFour">
-						        	<span>4</span>How can I cancel or change my order ?
+						        	<span>4</span>what happens after i purchase a Coupon ?
 						        </a>
 						      </h4>
 						    </div>
 						    <div id="collapseFour" class="panel-collapse collapse">
 							    <div class="panel-body">
-							        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+							        We will send you the coupon through Email as soon as possible after the Verification. 
 							    </div>
 					    	</div>
 						</div>
@@ -119,20 +119,20 @@
 						    <div class="panel-heading">
 						      <h4 class="unicase-checkout-title">
 						        <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseFive">
-						        	<span>5</span>How can I return a product
+						        	<span>5</span>How Do i contact Admin for any complaint/ Ticket ?
 						        </a>
 						      </h4>
 						    </div>
 						    <div id="collapseFive" class="panel-collapse collapse">
 						      <div class="panel-body">
-						        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+						        You can make a complaint at any time from the "Complaints / Tickets" page. You have to select the subject and Descibe your issue with maximum details. We will respond you as soon as possible
 						      </div>
 						    </div>
 					    </div>
 					    <!-- checkout-step-05  -->
 
 						<!-- checkout-step-06  -->
-					  	<div class="panel panel-default checkout-step-06">
+					  	<!-- <div class="panel panel-default checkout-step-06">
 						    <div class="panel-heading">
 						      <h4 class="unicase-checkout-title">
 						        <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseSix">
@@ -145,11 +145,11 @@
 					        		Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
 					      		</div>
 					    	</div>
-					  	</div>
+					  	</div> -->
 					  	<!-- checkout-step-06  -->
 
 					  	<!-- checkout-step-07  -->
-					  	<div class="panel panel-default checkout-step-07">
+					  	<!-- <div class="panel panel-default checkout-step-07">
 						    <div class="panel-heading">
 						      <h4 class="unicase-checkout-title">
 						        <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseSeven">
@@ -162,42 +162,12 @@
 					        		Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
 					      		</div>
 					    	</div>
-					  	</div>
+					  	</div> -->
 					  	<!-- checkout-step-07  -->
 
-					  	<!-- checkout-step-08  -->
-					  	<div class="panel panel-default checkout-step-08">
-						    <div class="panel-heading">
-						      <h4 class="unicase-checkout-title">
-						        <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseEight">
-						        	<span>8</span>Do you provide any warranty ?
-						        </a>
-						      </h4>
-						    </div>
-					    	<div id="collapseEight" class="panel-collapse collapse">
-					      		<div class="panel-body">
-					        		Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-					      		</div>
-					    	</div>
-					  	</div>
-					  	<!-- checkout-step-08  -->
+					  	
 
-					  	<!-- checkout-step-09  -->
-					  	<div class="panel panel-default checkout-step-09">
-						    <div class="panel-heading">
-						      <h4 class="unicase-checkout-title">
-						        <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseNine">
-						        	<span>9</span>Do you have replacement guarantee ?
-						        </a>
-						      </h4>
-						    </div>
-					    	<div id="collapseNine" class="panel-collapse collapse">
-					      		<div class="panel-body">
-					        		Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-					      		</div>
-					    	</div>
-					  	</div>
-					  	<!-- checkout-step-09  -->
+					  	
 					  	
 					</div><!-- /.checkout-steps -->
 				</div>

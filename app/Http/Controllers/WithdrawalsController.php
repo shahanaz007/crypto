@@ -14,6 +14,14 @@ class WithdrawalsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+
+        $this->middleware(['auth','verified']);
+    }
+
+
     public function index()
     {
         //
@@ -64,7 +72,7 @@ class WithdrawalsController extends Controller
 
         if($amount > Auth::user()->available_tokens)
         {
-            return redirect('/home')->with('status','You dont have that much tokens in your account');
+            return redirect('/')->with('error','You dont have that much Amount in your account');
         }
 
 

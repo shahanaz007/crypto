@@ -171,6 +171,13 @@
   .navmenu{
     float: right;
   }
+
+@media (max-width: 800px)
+{
+  .card {
+    overflow: auto;
+  }
+}  
 </style>
 </head>
 <body class="cnt-home">
@@ -356,16 +363,16 @@
                                 @if(Auth::user()->$type)
                                   <li><a href="{{ route('admin_kyc.index') }}">KYC</a></li>
                                   @elseif(Auth::user()->kyc_approved != 1)
-                                   <li> <a href="{{ route('kyc.index') }}">KYC</a>
-                                  </li>
+                                   <!-- <li> <a href="{{ route('kyc.index') }}">KYC</a>
+                                  </li> -->
                                 @endif
 
                                 <li><a href="{{ route('payment.create') }}">Deposit</a></li>
-                                <li><a href="{{route('withdraw.create') }}">Withdraw</a></li>
+                                <!-- <li><a href="{{route('withdraw.create') }}">Withdraw</a></li> -->
 
                                 <li><a href="{{ route('my_coupons.index') }}">My Coupons</a></li>
 
-                                <li class="@yield('referal_select')"><a href="{{ route('user.index') }}">My Referrals</a></li>
+                                <!-- <li class="@yield('referal_select')"><a href="{{ route('user.index') }}">My Referrals</a></li> -->
 
                                 <li class="@yield('history_select')"><a href="{{ route('payment.index') }}">Deposit History</a></li>
                                 <li class="@yield('complaint_select')"><a href="{{ route('complaint.index') }}">Complaint/Tikets</a></li>
@@ -650,13 +657,13 @@
     <div class="container">
       <div class="col-xs-12 col-sm-12 no-padding social">
         <ul class="link">
-          <li class="fb"><a target="_blank" rel="nofollow" href="#" title="Facebook"></a></li>
-          <li class="tw"><a target="_blank" rel="nofollow" href="#" title="Twitter"></a></li>
+          <li class="fb"><a target="_blank" rel="nofollow" href="https://www.facebook.com/swizthelimitless" title="Facebook"></a></li>
+          <li class="tw"><a target="_blank" rel="nofollow" href="https://twitter.com/swizlimitless" title="Twitter"></a></li>
           <!-- <li class="googleplus"><a target="_blank" rel="nofollow" href="#" title="GooglePlus"></a></li>
           <li class="rss"><a target="_blank" rel="nofollow" href="#" title="RSS"></a></li> -->
          <!--  <li class="pintrest"><a target="_blank" rel="nofollow" href="#" title="PInterest"></a></li> -->
-          <li class="linkedin"><a target="_blank" rel="nofollow" href="#" title="Linkedin"></a></li>
-          <!-- <li class="youtube"><a target="_blank" rel="nofollow" href="#" title="Youtube"></a></li> -->
+          <!-- <li class="instagram"><a target="_blank" rel="nofollow" href="#" title="Instagram"></a></li> -->
+          <li class="youtube"><a target="_blank" rel="nofollow" href="https://www.youtube.com/channel/UC7p3Zxwm5LBMI0BtkIOUHRw" title="Youtube"></a></li>
         </ul>
       </div>
       <div class="col-xs-12 col-sm-12 no-padding copyright">&copy; {{date("Y")}} Swiz Mart. All Rights Reserved. </div>

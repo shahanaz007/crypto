@@ -149,6 +149,9 @@ Route::resource('complaint','ComplaintsController');
 Route::resource('testing','TestController');
 
 
+Route::get('/setcurrency/{code}','UsersController@setCookie');
+
+
 
 
 //middleware for admin  09-11-2021
@@ -214,7 +217,6 @@ Route::middleware(['admin'])->group(function(){
 	//admin to manage pending coupons  08-11-2021
 	Route::resource('purchase_pendings','Admin\CouponPurchasePendingsController');
 
-	Route::get('/setcurrency/{code}','Admin\UsersController@setCookie');
 
 	//Admin KYC   31-07-2021
 	Route::resource('/admin_kyc','Admin\KycController');

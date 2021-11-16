@@ -110,6 +110,9 @@ class CouponPurchaseController extends Controller
         // $coupon->used = 1;
         // $coupon->save();
 
+        if($request->quantity <= 0){
+            return redirect()->back()->with('error','Invalid Quantity');
+        }
             // $amount    = $request->amount * $request->quantity;
         $amount    =  $coupon->point * $request->quantity;   
        

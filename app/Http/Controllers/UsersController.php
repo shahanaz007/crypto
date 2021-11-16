@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\{User};
 use Auth;
+use Cookie;
 
 class UsersController extends Controller
 {
@@ -13,6 +14,13 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+
+        $this->middleware(['auth','verified']);
+    }
+    
     public function index(Request $request)
     {
         $user_id = Auth::user()->id;
@@ -127,5 +135,12 @@ class UsersController extends Controller
         // dd("Email is Sent, please check your inbox.");
         return redirect('contact')->with('message','Message Sent Successfully. We Will Connect You Soon. Thank You..');
 
-}
+    }
+
+    public function setCookie($code)
+    {
+        Cookie::queue('currency', $code);
+        session(['currency' => $code]);
+        return redirect()->back();
+    }
 }

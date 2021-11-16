@@ -104,10 +104,5 @@ class UsersController extends Controller
         return view('admin.users.add_token',compact('id'));
     }
 
-    public function setCookie($code)
-    {
-        Cookie::queue('currency', $code);
-        session(['currency' => $code]);
-        return redirect()->back();
-    }
+
 }
