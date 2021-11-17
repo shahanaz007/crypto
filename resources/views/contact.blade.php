@@ -12,7 +12,7 @@
       <div class="contact-page">
 			<div class="row">
 				<div class="col-md-12 contact-map outer-bottom-vs">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.0080692193424!2d80.29172299999996!3d13.098675000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526f446a1c3187%3A0x298011b0b0d14d47!2sTransvelo!5e0!3m2!1sen!2sin!4v1412844527190" width="600" height="450" style="border:0"></iframe>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317718.69332970574!2d-0.3817847344828795!3d51.5283079653113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2sin!4v1636826000363!5m2!1sen!2sin" width="600" height="450" style="border:0"></iframe>
 				</div>
 				<div class="col-md-8 contact-form">
 	<div class="col-md-12 contact-title">
@@ -83,15 +83,15 @@
 	</div>
 	<div class="clearfix address">
 		<span class="contact-i"><i class="fa fa-map-marker"></i></span>
-		<span class="contact-span">ThemesGround, 789 Main rd, Anytown, CA 12345 USA</span>
+		<span class="contact-span">London, 789 Main rd, Anytown, CA 12345 UK</span>
 	</div>
 	<div class="clearfix phone-no">
 		<span class="contact-i"><i class="fa fa-mobile"></i></span>
-		<span class="contact-span">+(888) 123-4567<br>+(888) 456-7890</span>
+		<span class="contact-span">+(888) 123-4567<br>+(888) 123-4567</span>
 	</div>
 	<div class="clearfix email">
 		<span class="contact-i"><i class="fa fa-envelope"></i></span>
-		<span class="contact-span"><a href="#">dealdots@themesground.com</a></span>
+		<span class="contact-span"><a href="#">info@swizmart.com</a></span>
 	</div>
 </div>			</div>
 </div>
