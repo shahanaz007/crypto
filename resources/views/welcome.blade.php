@@ -437,7 +437,7 @@ cursor: pointer;
         
     
 <!-- ============================================== Coupons  ============================================== -->
-
+@if(count($coupons) > 0)
         <section class="section coupons-section">
     <center> <h3 class="section-title" ><b>Latest Coupons</b></h3> <br><br></center>
     <!-- @if(count($coupons) ==4)
@@ -515,6 +515,8 @@ cursor: pointer;
   </div>
 </div>
         </section>
+@endif
+
         <!-- /.section --> 
         <!-- ============================================== FEATURED PRODUCTS : END ============================================== --> 
 
