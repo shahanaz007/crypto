@@ -558,35 +558,41 @@
     <div class="container">
       <div class="row">
      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-          <div class="module-heading">
+          
+          <!-- <div class="module-heading">
             <h4 class="module-title">Help and Support</h4>
-          </div>
+          </div> -->
+
           <!-- /.module-heading -->
           
           <div class="module-body">
-            <ul class='list-unstyled'>
+
+            <img src="{{asset('assets/img/logo_footer.png')}}" width="60%" style="padding:10px">
+            <!-- <ul class='list-unstyled'>
               <li class="first"><a href="{{url('/terms')}}" title="Contact us">Term of Use</a></li>
               <li><a href="#" title="About us">Search Terms</a></li>
               <li><a href="#" title="faq">Store Location</a></li>
               <li><a href="#" title="Popular Searches">Orders and Returns</a></li>
               <li class="last"><a href="#" title="Where is my order?">Deliveries</a></li>
-            </ul>
+            </ul> -->
+
+
           </div>
           <!-- /.module-body --> 
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
           <div class="module-heading">
-            <h4 class="module-title">Customer Service</h4>
+            <h4 class="module-title">Company</h4>
           </div>
           <!-- /.module-heading -->
           
           <div class="module-body">
             <ul class='list-unstyled'>
-              <li class="first"><a href="#" title="Contact us">My Account</a></li>
-              <li><a href="#" title="About us">Order History</a></li>
+              <li class="first"><a title="About us" href="{{url('/about')}}">About us</a></li>
               <li><a href="{{url('/faq')}}" title="faq">FAQ</a></li>
-              <li><a href="#" title="Popular Searches">Specials</a></li>
-              <li class="last"><a href="#" title="Where is my order?">Help Center</a></li>
+
+              <li><a href="#" title="Privacy Policy">Privacy Policy</a></li>
+              <li><a href="{{url('/terms')}}" title="Terms Of Use">Terms Of Use</a></li>
             </ul>
           </div>
           <!-- /.module-body --> 
@@ -595,17 +601,15 @@
         
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
           <div class="module-heading">
-            <h4 class="module-title">Corporation</h4>
+            <h4 class="module-title">Quick Links</h4>
           </div>
           <!-- /.module-heading -->
           
           <div class="module-body">
             <ul class='list-unstyled'>
-              <li class="first"><a title="Your Account" href="{{url('/about')}}">About us</a></li>
-              <li><a title="Information" href="#">Customer Service</a></li>
-              <li><a title="Addresses" href="#">Company</a></li>
-              <li><a title="Addresses" href="#">Investor Relations</a></li>
-              <li class="last"><a title="Orders History" href="#">Advanced Search</a></li>
+              <li class="first"><a title="Coupons" href="{{url('/coupon_purchase')}}">Coupons</a></li>
+              <li><a title="{{url('/complaint')}}" href="#">Support</a></li>
+              <li><a title="My Account" href="#">My Account</a></li>
             </ul>
           </div>
           <!-- /.module-body --> 
@@ -614,17 +618,15 @@
         
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
           <div class="module-heading">
-            <h4 class="module-title">Why Choose Us</h4>
+            <h4 class="module-title">Contact</h4>
           </div>
           <!-- /.module-heading -->
           
           <div class="module-body">
             <ul class='list-unstyled'>
-              <li class="first"><a href="#" title="About us">Shopping Guide</a></li>
-              <li><a href="#" title="Blog">Blog</a></li>
-              <li><a href="#" title="Company">Company</a></li>
-              <li><a href="#" title="Investor Relations">Investor Relations</a></li>
-              <li class=" last"><a href="contact-us.html" title="Suppliers">Contact Us</a></li>
+              <li class="first"><a href="#" title="About us">Swiz Mart Address</a></li>
+              <li><a href="#" title="phone">Ph : +44-1234567890</a></li>
+              <li><a href="#" title="email">info@swizmart.com</a></li>
             </ul>
           </div>
           <!-- /.module-body --> 
