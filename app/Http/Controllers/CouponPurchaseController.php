@@ -171,13 +171,13 @@ class CouponPurchaseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($brand_id)
-    {
+    { 
         
        
         $today = Carbon::now();
         $today = $today->toDateString();
-        $region   = Cookie::get('region_id');
-
+        // $region   = Cookie::get('region_id');
+           $region   =  session('region_id');
         $coupons = Coupon::select('point','currency_code')->where('used','=',0)
         ->where('status','=',1)
         ->where('expiry_date','>=',$today)
