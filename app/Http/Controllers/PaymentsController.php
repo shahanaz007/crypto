@@ -253,6 +253,12 @@ class PaymentsController extends Controller
 
 $currency = 'BTC';
         $deposit =  $this->api_call('create_transaction', $transaction);
+            // return $deposit;
+            
+        if($deposit['error'] != "ok")
+        {
+            return redirect()->back()->with('error',$deposit['error']);
+        }
 
         $info = $this->api_call('get_tx_info', ['txid' => $deposit['result']['txn_id']]);
             if($info['error'] != 'ok'){
