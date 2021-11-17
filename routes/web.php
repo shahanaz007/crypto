@@ -18,6 +18,12 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/','HomeController@welcome')->name('welcome')->middleware('Currency');
+// Route::get('/home','HomeController@welcome')->middleware('Currency');
+
+Route::get('/home', function () {
+    return Redirect::to('/');
+});
+
 
 Route::get('/about', function () {
     return view('about');
@@ -39,7 +45,7 @@ Auth::routes(['verify' => true]);
 Route::get('/register/{code}','Auth\RegisterController@withReferral');
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/home','HomeController@user_home')->name('home');
+// Route::get('/home','HomeController@user_home')->name('home');
 // Route::get('/','HomeController@user_home');
 
 

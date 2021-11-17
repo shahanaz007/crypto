@@ -67,7 +67,7 @@
                   @endif
                    
                    <div class="d-flex justify-content-center">
-                   {!! $payments->links("pagination::bootstrap-4") !!}
+                  <center> {!! $payments->links("pagination::bootstrap-4") !!} </center>
                    <?php //echo $payments->render(); ?>
                </div>
 
