@@ -176,8 +176,8 @@ class CouponPurchaseController extends Controller
        
         $today = Carbon::now();
         $today = $today->toDateString();
-        // $region   = Cookie::get('region_id');
-           $region   =  session('region_id');
+        $region   = Cookie::get('region_id');
+
         $coupons = Coupon::select('point','currency_code')->where('used','=',0)
         ->where('status','=',1)
         ->where('expiry_date','>=',$today)
