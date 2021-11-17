@@ -143,7 +143,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                     
                     <td class="text-center">{{$coupon->point}}</td>
                     <td>{{$coupon->Currency_code}}</td>
-                    <td class="text-center">{{$coupon->expiry_date}}</td>
+                    <td class="text-center">{{date('d-m-Y', strtotime($coupon->expiry_date))}}</td>
                      
                	  </tr>
                	  <?php $slno++; ?>
