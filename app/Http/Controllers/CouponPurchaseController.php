@@ -160,7 +160,7 @@ class CouponPurchaseController extends Controller
 
 
         }
-        return redirect('coupon_purchase')->with('status','Coupon Purchased Successfully');
+        return redirect('coupon_purchase')->with('status','Coupon Purchased Successfully. We will sent you the coupon soon !');
 
     }
 
