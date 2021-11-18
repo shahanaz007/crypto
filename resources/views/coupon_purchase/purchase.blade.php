@@ -198,7 +198,7 @@ td, th, p {
 
 <?php
 $comment    = $details->remarks;
-$comment = (strlen($comment) > 200)?substr($comment,0,100).'... <a href="#" data-toggle="modal" data-target="#exampleModalCenter">Read More</a>' : $comment;
+$comment = (strlen($comment) > 200)?substr($comment,0,150).'... <a href="#" data-toggle="modal" data-target="#exampleModalCenter">Read More</a>' : $comment;
 echo "<p>$comment</p>";
 ?>
 					<!-- <p>
@@ -211,12 +211,13 @@ echo "<p>$comment</p>";
     <div class="modal-content">
 
       <div class="modal-body">
-      	{{$details->remarks}}
+      	<p style="text-align: justify;padding: 4px 19px
+;">{{$details->remarks}}</p>
      
 </div>
 <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
       </div>
 </div>
 </div>
