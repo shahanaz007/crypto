@@ -209,7 +209,9 @@ echo "<p>$comment</p>";
 
     <!-- Modal content-->
     <div class="modal-content">
-
+    <div class="modal-header">
+        <h4 class="modal-title">{{$details->brand->name}}</h4>
+    </div> 
       <div class="modal-body">
       	<p style="text-align: justify;padding: 4px 19px
 ;">{{$details->remarks}}</p>
