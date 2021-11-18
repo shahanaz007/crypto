@@ -325,6 +325,7 @@ echo "<p>$comment</p>";
 									</div>
 									<div class="modal-body popbody text-center">
 										 <span class="">Are You Sure You Want to Buy This Coupon? </span>
+										 <center><b>{{$details->brand->name}} - {{$details->location->name}} </b></center>
 										{{-- <a href="" class="btn-close float-right" style="margin-top: -20px;
 									">X</i></a> --}}
 									</div>

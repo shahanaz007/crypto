@@ -191,9 +191,29 @@ class CouponPurchaseController extends Controller
         ->where('brand_id',$brand_id)
         ->where('location_id',$region)
         ->first();
+
         if(count($coupons) <=0)
-        {
-            return redirect()->back()->with('status','Please Select Region');
+        {   
+
+            $coupons = Coupon::select('point','currency_code','location_id')->where('used','=',0)
+            ->where('status','=',1)
+            ->where('expiry_date','>=',$today)
+            ->where('brand_id',$brand_id)
+            // ->where('location_id',$region)
+            ->groupBy('point')
+            ->get();
+            
+            if(count($coupons) > 0)
+            {
+            $region =$coupons[0]->location_id;
+
+            $details = Coupon::where('status','=',1)
+            ->where('expiry_date','>=',$today)
+            ->where('brand_id',$brand_id)
+            ->where('location_id',$region)
+            ->first();
+            }
+            // return redirect()->back()->with('status','Please Select Region');
         }
         return view('coupon_purchase.purchase',compact('details','coupons'));
     }
