@@ -116,10 +116,10 @@ td, th, p {
 		display: inline-block;
 		height: calc(1.6em + 0.75rem + 2px);
     padding: 15px 0.75rem;
-    font-size: 0.9rem;
+    /*font-size: 0.9rem;*/
     border-radius: 0px 4px 4px 0px;
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 2.6;
     color: #495057;
     background-color: #fff;
     background-clip: padding-box;
@@ -128,6 +128,10 @@ td, th, p {
     margin-right: -4px;
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	}
+
+	.btn {
+		     vertical-align: revert !important;
 	}
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 </style>
