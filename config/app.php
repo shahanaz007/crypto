@@ -177,6 +177,10 @@ return [
 
      //token price set for test
      'token_price' =>1,
+
+
+     //admin email
+     'admin_email' =>'shahn@techanise.com',
      
 
     // user variables ends

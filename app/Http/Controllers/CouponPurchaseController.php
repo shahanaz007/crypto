@@ -8,6 +8,7 @@ use Hexters\CoinPayment\CoinPayment;
 use App\Models\{Coupon,CouponCategory,CouponPurchase,Location,Brand};
 use Auth;
 use Cookie;
+use App\Events\CouponPurchasedEvent;
 
 class CouponPurchaseController extends Controller
 {
@@ -135,6 +136,7 @@ class CouponPurchaseController extends Controller
             return redirect()->back()->with($debited['status'],$debited['message']);
         }
 
+        $details = "";
         for($i = 0; $i<$quantity; $i++)
         {
 
@@ -157,9 +159,12 @@ class CouponPurchaseController extends Controller
         $details->status      = 0;
         $details->save();
 
+        
 
 
         }
+        //event to sent mail for admin
+        event(new CouponPurchasedEvent($details,$quantity));
         return redirect('coupon_purchase')->with('status','Coupon purchased successfully. It will be sent to your email shortly !');
 
     }
