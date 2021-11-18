@@ -85,10 +85,10 @@
 		<span class="contact-i"><i class="fa fa-map-marker"></i></span>
 		<span class="contact-span">London, 789 Main rd, Anytown, CA 12345 UK</span>
 	</div>
-	<div class="clearfix phone-no">
+	<!-- <div class="clearfix phone-no">
 		<span class="contact-i"><i class="fa fa-mobile"></i></span>
 		<span class="contact-span">+(888) 123-4567<br>+(888) 123-4567</span>
-	</div>
+	</div> -->
 	<div class="clearfix email">
 		<span class="contact-i"><i class="fa fa-envelope"></i></span>
 		<span class="contact-span"><a href="#">info@swizmart.com</a></span>

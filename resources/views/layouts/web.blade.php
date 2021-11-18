@@ -375,7 +375,7 @@
                                 <!-- <li class="@yield('referal_select')"><a href="{{ route('user.index') }}">My Referrals</a></li> -->
 
                                 <li class="@yield('history_select')"><a href="{{ route('payment.index') }}">Deposit History</a></li>
-                                <li class="@yield('complaint_select')"><a href="{{ route('complaint.index') }}">Complaint/Tikets</a></li>
+                                <li class="@yield('complaint_select')"><a href="{{ route('complaint.index') }}">Complaint/ Tickets</a></li>
                                 <!-- <li class="dropdown @yield('wallet_select')"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Wallet</a>
                     <ul class="dropdown-menu">
                       <li>
@@ -624,8 +624,8 @@
           
           <div class="module-body">
             <ul class='list-unstyled'>
-              <li class="first"><a href="#" title="About us">Swiz Mart Address</a></li>
-              <li><a href="#" title="phone">Ph : +44-1234567890</a></li>
+              <li class="first"><a href="#" title="About us">London, UK</a></li>
+              <!-- <li><a href="#" title="phone">Ph : +44-1234567890</a></li> -->
               <li><a href="#" title="email">info@swizmart.com</a></li>
             </ul>
           </div>

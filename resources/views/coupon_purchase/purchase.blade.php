@@ -116,10 +116,10 @@ td, th, p {
 		display: inline-block;
 		height: calc(1.6em + 0.75rem + 2px);
     padding: 15px 0.75rem;
-    font-size: 0.9rem;
+    /*font-size: 0.9rem;*/
     border-radius: 0px 4px 4px 0px;
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 2.6;
     color: #495057;
     background-color: #fff;
     background-clip: padding-box;
@@ -128,6 +128,10 @@ td, th, p {
     margin-right: -4px;
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	}
+
+	.btn {
+		     vertical-align: revert !important;
 	}
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 </style>
@@ -196,10 +200,35 @@ td, th, p {
 				<h1 class="text-center" > {{$details->brand->name}}</h1>
 				<div class="details">
 
+<?php
+$comment    = $details->remarks;
+$comment = (strlen($comment) > 200)?substr($comment,0,150).'... <a href="#" data-toggle="modal" data-target="#exampleModalCenter">Read More</a>' : $comment;
+echo "<p>$comment</p>";
+?>
+					<!-- <p>
+						{{$comment}}
+					</p> -->
+					<div id="exampleModalCenter" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog">
 
-					<p>
-						{{$details->remarks}}
-					</p>
+    <!-- Modal content-->
+    <div class="modal-content">
+    <div class="modal-header">
+        <h4 class="modal-title">{{$details->brand->name}}</h4>
+    </div> 
+      <div class="modal-body">
+      	<p style="text-align: justify;padding: 4px 19px
+;">{{$details->remarks}}</p>
+     
+</div>
+<div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+</div>
+</div>
+</div>
+
 					<input type="hidden" name="brand_id" value="{{$details->brand_id}}" >
 					<input type="hidden" name="region" value="{{$details->location->name}}" >
 					<input type="hidden" name="brand_name" value="{{$details->brand->name}}" >
@@ -300,6 +329,7 @@ td, th, p {
 									</div>
 									<div class="modal-body popbody text-center">
 										 <span class="">Are You Sure You Want to Buy This Coupon? </span>
+										 <center><b>{{$details->brand->name}} - {{$details->location->name}} </b></center>
 										{{-- <a href="" class="btn-close float-right" style="margin-top: -20px;
 									">X</i></a> --}}
 									</div>
