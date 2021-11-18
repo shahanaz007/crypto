@@ -196,10 +196,32 @@ td, th, p {
 				<h1 class="text-center" > {{$details->brand->name}}</h1>
 				<div class="details">
 
+<?php
+$comment    = $details->remarks;
+$comment = (strlen($comment) > 200)?substr($comment,0,100).'... <a href="#" data-toggle="modal" data-target="#exampleModalCenter">Read More</a>' : $comment;
+echo "<p>$comment</p>";
+?>
+					<!-- <p>
+						{{$comment}}
+					</p> -->
+					<div id="exampleModalCenter" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog">
 
-					<p>
-						{{$details->remarks}}
-					</p>
+    <!-- Modal content-->
+    <div class="modal-content">
+
+      <div class="modal-body">
+      	{{$details->remarks}}
+     
+</div>
+<div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+</div>
+</div>
+</div>
+
 					<input type="hidden" name="brand_id" value="{{$details->brand_id}}" >
 					<input type="hidden" name="region" value="{{$details->location->name}}" >
 					<input type="hidden" name="brand_name" value="{{$details->brand->name}}" >
