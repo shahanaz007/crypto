@@ -90,7 +90,6 @@ class CouponsController extends Controller
 
     //function to update coupon  02-07-2021
     public function coupon_update(Request $request,$id){
-
     	$category_id   = $request->category_id;
         $location_id   = $request->location_id;
         $brand_id      = $request->brand_id;
@@ -109,6 +108,12 @@ class CouponsController extends Controller
     	$coupon->expiry_date   = $expiry_date;
     	$coupon->currency_code = $currency_code;
         $coupon->remarks       = $remarks;
+        if($request->status == 1 ){
+            $coupon->status    = 1;
+        }
+        else{
+            $coupon->status    = 0;
+        }
     	$coupon->save();
     	return redirect('/admin_coupon/index')->with('status','Coupon Updated Successfully');
     }

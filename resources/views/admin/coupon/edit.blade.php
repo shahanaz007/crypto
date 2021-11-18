@@ -75,6 +75,13 @@
                                 <label>Remark</label>
                                 <input type="text" class="form-control"  id="remark_id"  name="remark" value="{{$coupons->remarks}}" required="">
                             </div>
+                            <div class="col-md-6">
+                                <label>Status</label>
+                                <select class="form-control" name="status" id="status_id" required="">
+                                    <option value="0" <?php if($coupons->status == 0){ echo "selected"; } ?>>Disable</option>
+                                    <option value="1" <?php if($coupons->status == 1){ echo "selected"; } ?>>Enable</option>
+                                </select>
+                            </div>
 
 	                	</div>
 

@@ -125,6 +125,7 @@ class HomeController extends Controller
                  }
 // Cookie::queue('currency', 'USD');
         $coupons = Coupon::where('used','=',0)
+                            ->where('status',1)
                             ->orderBy('id','DESC')
                             ->groupBy('brand_id')
                             ->paginate(12);
