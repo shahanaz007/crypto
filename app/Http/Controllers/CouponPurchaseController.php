@@ -174,7 +174,7 @@ class CouponPurchaseController extends Controller
         $today = $today->toDateString();
         $region   = Cookie::get('region_id');
 
-        $coupons = Coupon::select('point','currency_code','location_id','id','brand_id','category_id','remarks','expiry_date','name')->where('used','=',0)
+        $coupons = Coupon::select('point','currency_code','location_id','id','brand_id','category_id','remarks','expiry_date','name','validity')->where('used','=',0)
         ->where('status','=',1)
         ->where('expiry_date','>=',$today)
         ->where('brand_id',$brand_id)
@@ -191,7 +191,7 @@ class CouponPurchaseController extends Controller
         if(count($coupons) <=0)
         {   
 
-            $coupons = Coupon::select('point','currency_code','location_id','id','brand_id','category_id','remarks','expiry_date','name')->where('used','=',0)
+            $coupons = Coupon::select('point','currency_code','location_id','id','brand_id','category_id','remarks','expiry_date','name','validity')->where('used','=',0)
             ->where('status','=',1)
             ->where('expiry_date','>=',$today)
             ->where('brand_id',$brand_id)

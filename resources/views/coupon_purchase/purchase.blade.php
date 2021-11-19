@@ -244,7 +244,7 @@ echo "<p>$comment</p>";
 						</tr>
 
 						<tr>
-							<td><b>Expiry </b></td><td> : {{$details->expiry_date}}</td>
+							<td><b>Validity </b></td><td> : {{$details->validity}}</td>
 						</tr>
 
 						
@@ -278,8 +278,8 @@ echo "<p>$comment</p>";
 	                     </select>
 							 </p> -->
 
-							 <p><b>Quantity:</b><br><br>
-							 	<div class="row" style="padding-top:10px">
+							 <p><b>Quantity:</b>
+							 	<div class="row">
 
 						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" >
 						<button class="btn btn-info" onclick="event.preventDefault();decrement()" style="border-radius: 4px 0px 0px 4px; padding:5px 8px;background-color: #ec3237;border-color: #ec3237;">-</button>
