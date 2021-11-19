@@ -24,6 +24,10 @@ class EventServiceProvider extends ServiceProvider
         \App\Events\CouponPurchasedEvent::class => [
             \App\Listeners\CouponPurchasedListener::class,
         ],
+
+        \App\Events\CouponPurchasedSuccessEvent::class => [
+            \App\Listeners\CouponPurchasedSuccessListener::class,
+        ],
     ];
 
     /**
