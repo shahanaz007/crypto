@@ -83,6 +83,10 @@
                                 <input type="number" step="any" class="form-control"  id="service_charge_id"  name="service_charge"  required="" value="{{$coupons->service_charge}}">
                             </div>
                             <div class="col-md-6">
+                                <label>Validity</label>
+                                <input type="text"  class="form-control"  id="validity_id"  name="validity"  required="" value="{{$coupons->validity}}">
+                            </div>
+                            <div class="col-md-6">
                                 <label>Status</label>
                                 <select class="form-control" name="status" id="status_id" required="">
                                     <option value="0" <?php if($coupons->status == 0){ echo "selected"; } ?>>Disable</option>

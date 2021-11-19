@@ -43,6 +43,7 @@ class CouponsController extends Controller
             $name          = $request->name;
             $service_charge= $request->service_charge;
             $remarks       = $request->remark;
+            $validity      = $request->validity;
 
         foreach($code_images as $code_image){
                 
@@ -69,6 +70,7 @@ class CouponsController extends Controller
             $coupon->currency_code = $currency_code;
             $coupon->service_charge= $service_charge;
             $coupon->remarks       = $remarks;
+            $coupon->validity      = $validity;
             $coupon->save();
 
         }
@@ -103,6 +105,7 @@ class CouponsController extends Controller
         $remarks       = $request->remark;
         $name          = $request->name;
         $service_charge= $request->service_charge;
+        $validity      = $request->validity;
 
     	$coupon	   		       = Coupon::find($id);
     	$coupon->category_id   = $category_id;
@@ -115,6 +118,7 @@ class CouponsController extends Controller
     	$coupon->currency_code = $currency_code;
         $coupon->remarks       = $remarks;
         $coupon->service_charge= $service_charge;
+        $coupon->validity      = $validity;
         if($request->status == 1 ){
             $coupon->status    = 1;
         }

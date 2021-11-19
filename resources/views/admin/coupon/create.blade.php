@@ -83,6 +83,10 @@
                                 <input type="number" step="any" class="form-control"  id="service_charge_id"  name="service_charge"  required="">
                             </div>
                             <div class="col-md-6">
+                                <label>Validity</label>
+                                <input type="text"  class="form-control"  id="validity_id"  name="validity"  required="" >
+                            </div>
+                            <div class="col-md-6">
                                 <label>Select Images/Codes</label>
                                 <input type="file" class="form-control"  id="code_id"  name="code[]"  required="" multiple>
                             </div>

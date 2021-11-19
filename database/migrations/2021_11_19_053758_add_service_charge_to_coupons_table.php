@@ -16,6 +16,7 @@ class AddServiceChargeToCouponsTable extends Migration
         Schema::table('coupons', function (Blueprint $table) {
             $table->string('name')->after('brand_id')->nullable();
             $table->string('service_charge')->after('expiry_date')->default(0);
+            $table->string('validity')->after('service_charge');
 
         });
     }
@@ -30,6 +31,7 @@ class AddServiceChargeToCouponsTable extends Migration
         Schema::table('coupons', function (Blueprint $table) {
             $table->dropColumn('name');
             $table->dropColumn('service_charge');
+            $table->dropColumn('validity');
         });
     }
 }
