@@ -89,8 +89,9 @@ class CouponPurchasePendingsController extends Controller
     public function update(Request $request, $id)
     {
        // return $request->image;
-        $coupon = CouponPurchase::find($id);
-        $image  = $request->image;
+        $coupon      = CouponPurchase::find($id);
+        $expiry_date = $request->expiry_date;
+        $image       = $request->image;
 
         if($image){
             $extension_option = $image->getClientOriginalExtension();
@@ -106,6 +107,7 @@ class CouponPurchasePendingsController extends Controller
 
                     $coupon->coupon = ($request->has('image'))?$image_path:null;
                     $coupon ->status = 1;
+                    $coupon ->expiry_date = $expiry_date;
                     $coupon->save();
             }
 

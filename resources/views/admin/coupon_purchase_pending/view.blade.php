@@ -52,9 +52,14 @@
                                 <input type="text" class="form-control"  id="coupon_value_id"  name="coupon_value"  value="{{$coupon->coupon_value}}" readonly="" disabled="">
                             </div>
                             <div class="col-md-6">
+                                <label>Expiry Date</label>
+                                <input type="date"  class="form-control"  id="expiry_date_id"  name="expiry_date"  required="">
+                            </div>
+                            <div class="col-md-6">
                                 <label>Coupon Images</label>
                                 <input type="file" class="form-control"  id="coupon_id"  name="image"  required="" multiple>
                             </div>
+
 	                	</div>
                         </form>
 
