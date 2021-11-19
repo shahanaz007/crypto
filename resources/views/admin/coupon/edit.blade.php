@@ -66,10 +66,10 @@
                                 <label>Point</label>
                                 <input type="number" step="any" class="form-control"  id="point_id"  name="point" value="{{$coupons->point}}" required="">
                             </div>
-                            <div class="col-md-6">
+                            <!-- <div class="col-md-6">
                                 <label>Expiry Date</label>
                                 <input type="date"  class="form-control"  id="expiry_date_id" value="{{$coupons->expiry_date}}" name="expiry_date"  required="">
-                            </div>
+                            </div> -->
                             <div class="col-md-6">
                                 <label>Currency Code</label>
                                 <input type="text" class="form-control"  id="currency_code_id"  name="currency_code" value="{{$coupons->Currency_code}}" required="">

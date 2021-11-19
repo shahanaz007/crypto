@@ -114,7 +114,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 <th>Point</th>
                 <th>Currency Code</th>
                 <th>Service Charge</th>
-                <th>Expiry Date</th>
+                <th>Validity</th>
                 <th>Status</th>
                 <th>Action</th>
            	  </tr>
@@ -133,7 +133,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
                     <td>{{$coupon->point}}</td>
                     <td>{{$coupon->Currency_code}}</td>
                      <td>{{$coupon->service_charge}}</td>
-                    <td>{{date('d-m-Y', strtotime($coupon->expiry_date))}}</td>
+                    <!-- <td>{{date('d-m-Y', strtotime($coupon->expiry_date))}}</td> -->
+                    <td>{{$coupon->validity}}</td>
                     <td>@if($coupon->status == 1)
                         Enabled 
                         @else

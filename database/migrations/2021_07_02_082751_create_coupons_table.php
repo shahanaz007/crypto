@@ -21,7 +21,7 @@ class CreateCouponsTable extends Migration
             $table->string('Currency_code')->default('USD');
             $table->integer('used')->default('0');
             $table->integer('status')->default('1');
-            $table->date('expiry_date');
+            $table->date('expiry_date')->nullable();
             $table->timestamps();
         });
     }

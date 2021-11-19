@@ -61,10 +61,10 @@
                                     @endif
                                 </select>
                             </div>
-                            <div class="col-md-6">
+                            <!-- <div class="col-md-6">
                                 <label>Expiry Date</label>
                                 <input type="date"  class="form-control"  id="expiry_date_id"  name="expiry_date"  required="">
-                            </div>
+                            </div> -->
 	                		
                             <div class="col-md-6">
                                 <label>Point</label>

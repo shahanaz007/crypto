@@ -31,7 +31,7 @@ class CouponPurchaseController extends Controller
         $today = $today->toDateString();
         $coupons = Coupon::select('brand_id','category_id','point','Currency_code','expiry_date')->where('used','=',0)
         ->where('status','=',1)
-        ->where('expiry_date','>=',$today)
+        // ->where('expiry_date','>=',$today)
         ->groupBy('brand_id');
         $region = $request->region;
         if($request->region)
@@ -176,14 +176,14 @@ class CouponPurchaseController extends Controller
 
         $coupons = Coupon::select('point','currency_code','location_id','id','brand_id','category_id','remarks','expiry_date','name','validity')->where('used','=',0)
         ->where('status','=',1)
-        ->where('expiry_date','>=',$today)
+        // ->where('expiry_date','>=',$today)
         ->where('brand_id',$brand_id)
         ->where('location_id',$region)
         // ->groupBy('point')
         ->orderBy('point')->get();
         
         $details = Coupon::where('status','=',1)
-        ->where('expiry_date','>=',$today)
+        // ->where('expiry_date','>=',$today)
         ->where('brand_id',$brand_id)
         ->where('location_id',$region)
         ->first();
@@ -193,7 +193,7 @@ class CouponPurchaseController extends Controller
 
             $coupons = Coupon::select('point','currency_code','location_id','id','brand_id','category_id','remarks','expiry_date','name','validity')->where('used','=',0)
             ->where('status','=',1)
-            ->where('expiry_date','>=',$today)
+            // ->where('expiry_date','>=',$today)
             ->where('brand_id',$brand_id)
             // ->where('location_id',$region)
             // ->groupBy('point')
@@ -204,7 +204,7 @@ class CouponPurchaseController extends Controller
             $region =$coupons[0]->location_id;
 
             $details = Coupon::where('status','=',1)
-            ->where('expiry_date','>=',$today)
+            // ->where('expiry_date','>=',$today)
             ->where('brand_id',$brand_id)
             ->where('location_id',$region)
             ->first();

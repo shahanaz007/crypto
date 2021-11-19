@@ -116,7 +116,9 @@
 </div>
 
 <div class="d-flex justify-content-center">
+    <center>
             {!! $coupons->links("pagination::bootstrap-4") !!}
+    </center>        
           </div>
 </div>
 
