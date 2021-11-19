@@ -35,7 +35,19 @@ class CouponPurchasedListener
             'qty' => $event->qty,
             'region' => $event->details->region_name,
             ];
-        $mail_to = config('app.admin_email');    
+
+            $data1=[
+                'msg' =>"Thank you for shopping with Swiz Mart. You have successfully purchased the coupon",
+                'brand' => $event->details->brand_name,
+                'amount' => $event->details->coupon_value,
+                'qty' => $event->qty,
+                'region' => $event->details->region_name,    
+            ];
+
+
+        $mail_to = config('app.admin_email'); 
+        $user_mail =  $event->details->user->email; 
             \Mail::to($mail_to)->send(new \App\Mail\CouponPurchased($data));
+            \Mail::to($user_mail)->send(new \App\Mail\UserCouponPurchased($data1));
     }
 }
