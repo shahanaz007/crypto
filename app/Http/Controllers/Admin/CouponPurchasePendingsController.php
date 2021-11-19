@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\{CouponPurchase};
 use Illuminate\Support\Str;
 use Intervention\Image\ImageManagerStatic as Image;
+use App\Events\CouponPurchasedSuccessEvent;
 
 class CouponPurchasePendingsController extends Controller
 {
@@ -114,7 +115,8 @@ class CouponPurchasePendingsController extends Controller
         }
 
         
-        
+        //event to sent mail for user 
+        event(new CouponPurchasedSuccessEvent($coupon));
         return redirect('purchase_pendings')->with('status','Coupon Purchase Completed');
 
     }

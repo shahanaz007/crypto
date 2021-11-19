@@ -19,10 +19,12 @@ class CouponPurchasedSuccessEvent
      *
      * @return void
      */
-    public function __construct()
+    public $coupon;
+    public function __construct($coupon)
     {
-        //
+        $this->coupon = $coupon;
     }
+
 
     /**
      * Get the channels the event should broadcast on.
