@@ -180,7 +180,7 @@ return [
 
 
      //admin email
-     'admin_email' =>'jinsmobile@gmail.com',
+     'admin_email' =>'shahn@techanise.com',
 
     // user variables ends
 

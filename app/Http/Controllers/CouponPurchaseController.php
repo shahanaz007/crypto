@@ -81,7 +81,7 @@ class CouponPurchaseController extends Controller
         $brand_id = $request->brand_id;
         // $currency  = $request->currency;
         $quantity  = $request->quantity;
-
+        $coupon_id  = $request->coupon_id;
 
         $currency = 'USD';
         // $region   = Cookie::get('region_id');
@@ -90,14 +90,7 @@ class CouponPurchaseController extends Controller
         
         $today = Carbon::now();
         $today = $today->toDateString();
-        $coupon = Coupon::select('id','currency_code','point')->where('used','=',0)
-                ->where('status','=',1)
-                ->where('expiry_date','>=',$today)
-                ->where('brand_id',$brand_id)
-                ->where('location_id',$region)
-                ->where('point',$request->amount)        
-                // ->get()->take($quantity);
-                ->first();
+        $coupon = Coupon::find($coupon_id);
         if(!$coupon){
             return redirect()->back()->with('error','Something Went Wrong !. Try Again After Sometime.');
         }
@@ -117,7 +110,7 @@ class CouponPurchaseController extends Controller
             // $amount    = $request->amount * $request->quantity;
         $amount    =  $coupon->point * $request->quantity;   
        
-        $from      = $coupon->currency_code;
+        $from      = $coupon->Currency_code;
         $to        = 'USD';
         $amount    = $coupon->convert($from,$to, $amount);
         $single_coupon_amount = $coupon->convert($from,$to, $coupon->point);
@@ -181,13 +174,13 @@ class CouponPurchaseController extends Controller
         $today = $today->toDateString();
         $region   = Cookie::get('region_id');
 
-        $coupons = Coupon::select('point','currency_code')->where('used','=',0)
+        $coupons = Coupon::select('point','currency_code','location_id','id','brand_id','category_id','remarks','expiry_date','name')->where('used','=',0)
         ->where('status','=',1)
         ->where('expiry_date','>=',$today)
         ->where('brand_id',$brand_id)
         ->where('location_id',$region)
-        ->groupBy('point')
-        ->get();
+        // ->groupBy('point')
+        ->orderBy('point')->get();
         
         $details = Coupon::where('status','=',1)
         ->where('expiry_date','>=',$today)
@@ -198,13 +191,13 @@ class CouponPurchaseController extends Controller
         if(count($coupons) <=0)
         {   
 
-            $coupons = Coupon::select('point','currency_code','location_id')->where('used','=',0)
+            $coupons = Coupon::select('point','currency_code','location_id','id','brand_id','category_id','remarks','expiry_date','name')->where('used','=',0)
             ->where('status','=',1)
             ->where('expiry_date','>=',$today)
             ->where('brand_id',$brand_id)
             // ->where('location_id',$region)
-            ->groupBy('point')
-            ->get();
+            // ->groupBy('point')
+            ->orderBy('point')->get();
             
             if(count($coupons) > 0)
             {

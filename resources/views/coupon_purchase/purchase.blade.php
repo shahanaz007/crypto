@@ -151,7 +151,7 @@ td, th, p {
 			</div>
 		</div>
 	</section>
-<section class="pt-130 pb-50">
+<section class="pt-130 pb-50" >
 <div class="container">
 	<div class="card">
 		<!-- <div class="row">
@@ -184,7 +184,7 @@ td, th, p {
 				    			// $to    =session('currency');
 
 				    		?>
-				    		<input type="radio" id="{{$coupon->point}}$" value="{{$coupon->point}}" name="amount" required="" @if($cnt == 1) checked="checked" @endif ><label for="{{$coupon->point}}$">{{$coupon->convert($from,$to,$point).' '.Cookie::get('currency')}}</label>
+				    		<input type="radio" id="{{$coupon->id}}$" value="{{$coupon->id}}" name="coupon_id" required="" @if($cnt == 1) checked="checked" @endif onclick="detailsOf()"><label for="{{$coupon->id}}$">{{$coupon->convert($from,$to,$point).' '.Cookie::get('currency')}}</label>
 				    		<?php $cnt++; ?>
 				    	@endforeach
 				    	@endif
@@ -200,41 +200,41 @@ td, th, p {
 				<h1 class="text-center" > {{$details->brand->name}}</h1>
 				<div class="details">
 
+@if(count($coupons) > 0)
+@foreach($coupons as $details)
+<div id="detailsOf{{$details->id}}" class="detailsOfCoupon">
 <?php
 $comment    = $details->remarks;
-$comment = (strlen($comment) > 200)?substr($comment,0,150).'... <a href="#" data-toggle="modal" data-target="#exampleModalCenter">Read More</a>' : $comment;
+$comment = (strlen($comment) > 200)?substr($comment,0,150).'... <a href="#" data-toggle="modal" data-target="#exampleModalCenter'.$details->id.'">Read More</a>' : $comment;
 echo "<p>$comment</p>";
 ?>
 					<!-- <p>
 						{{$comment}}
 					</p> -->
-					<div id="exampleModalCenter" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog">
+	<div id="exampleModalCenter{{$details->id}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-    <div class="modal-header">
-        <h4 class="modal-title">{{$details->brand->name}}</h4>
-    </div> 
-      <div class="modal-body">
-      	<p style="text-align: justify;padding: 4px 19px
-;">{{$details->remarks}}</p>
-     
-</div>
-<div class="modal-footer">
-        
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-      </div>
-</div>
-</div>
+	<!-- Modal content-->
+	<div class="modal-content">
+	    <div class="modal-header">
+	        <h4 class="modal-title">{{$details->brand->name}}</h4>
+	    </div> 
+	      <div class="modal-body">
+			      	<p style="text-align: justify;padding: 4px 19px;">{{$details->remarks}}</p>
+		</div>
+		<div class="modal-footer">
+	    
+	    	<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+	  	</div>
+	</div>
+	</div>
 </div>
 
-					<input type="hidden" name="brand_id" value="{{$details->brand_id}}" >
-					<input type="hidden" name="region" value="{{$details->location->name}}" >
-					<input type="hidden" name="region_id" value="{{$details->location_id}}" >
-	
-					<input type="hidden" name="brand_name" value="{{$details->brand->name}}" >
+					
 					<table>
+						<tr>
+							<td><b>Coupon </b></td><td> : {{$details->name}}</td>
+						</tr>
 						<tr>
 							<td><b>Region </b></td><td> : {{$details->location->name}}</td>
 						</tr>
@@ -250,8 +250,14 @@ echo "<p>$comment</p>";
 						
 
 					</table>
+				</div>
 
-					
+@endforeach
+					<input type="hidden" name="brand_id" value="{{$details->brand_id}}" readonly="">
+					<input type="hidden" name="region" value="{{$details->location->name}}" readonly="">
+					<input type="hidden" name="region_id" value="{{$details->location_id}}" readonly="">
+	
+					<input type="hidden" name="brand_name" value="{{$details->brand->name}}" readonly="">
 					
 					
 					
@@ -300,7 +306,8 @@ echo "<p>$comment</p>";
 	<!-- <p><b>Quantity:</b> -->
 	<button class="btn btn-success form-control buybtn" type="button" onclick="check_data()">Buy Coupon</button>
 </div>
-                    
+ 
+@endif                    
 
                </div> 
 
@@ -354,6 +361,14 @@ echo "<p>$comment</p>";
       // get_amount();
    }
 
+function detailsOf()
+{
+   $('.detailsOfCoupon').hide();
+   var id = $("input[name='coupon_id']:checked").val();
+   $('#detailsOf'+id).show();
+}
+
+	//not using now , change this comment when using the bolw function
    function get_amount(){
    	var amount = $("input[name='amount']:checked").val();
    	
@@ -393,6 +408,7 @@ echo "<p>$comment</p>";
 		} 
 	
 	
+	window.onload = detailsOf;
 </script>
 <script language="javascript" type="text/javascript">
     function submitDetailsForm() {

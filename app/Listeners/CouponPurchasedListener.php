@@ -31,7 +31,7 @@ class CouponPurchasedListener
             'msg' =>"New Coupon Purchase",
             'name'=>$event->details->user->name,
             'brand' => $event->details->brand_name,
-            'amount' => $event->details->amount,
+            'amount' => $event->details->coupon_value,
             'qty' => $event->qty,
             'region' => $event->details->region_name,
             ];
