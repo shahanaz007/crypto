@@ -26,9 +26,11 @@ class CouponsController extends Controller
         $user_id    = Auth::user()->id;        
 
         $coupons    = CouponPurchase::join('coupons','coupon_purchases.coupon_id','coupons.id')
-                    ->where('coupon_purchases.user_id','=',$user_id)
-                    ->where('coupon_purchases.status','=',1)
-                    ->get();
+                        ->select('coupon_purchases.*')
+                        ->where('coupon_purchases.user_id','=',$user_id)
+                        ->where('coupon_purchases.status','=',1)
+                        ->orderBy('id','DESC')->get(); 
+                    
         return view('my_coupons.index',compact('coupons'));            
     }
 

@@ -31,6 +31,6 @@ class CouponPurchasedSuccessListener
             'name'=>$event->coupon->user->name,
             ];
         $mail_to = $event->coupon->user->email;    
-            \Mail::to($mail_to)->send(new \App\Mail\CouponPurchasedSucess($data));
+            \Mail::to($mail_to)->send(new \App\Mail\CouponPurchasedSuccess($data));
     }
 }

@@ -85,24 +85,24 @@ class CouponPurchaseController extends Controller
 
         $currency = 'USD';
         // $region   = Cookie::get('region_id');
-        $region   = session('region_id');
+        // $region   = session('region_id');
+        $region   = $request->region_id;
         
-        // checks coupon stock
         $today = Carbon::now();
         $today = $today->toDateString();
         $coupon = Coupon::select('id','currency_code','point')->where('used','=',0)
-        ->where('status','=',1)
-        ->where('expiry_date','>=',$today)
-        ->where('brand_id',$brand_id)
-        ->where('location_id',$region)
-        ->where('point',$request->amount)        
-        // ->get()->take($quantity);
-        ->first();
-        // if(count($coupons) < $quantity){
-        //     return redirect()->back()->with('error','Requested Quanity is greater than available quantity');
-        // }
+                ->where('status','=',1)
+                ->where('expiry_date','>=',$today)
+                ->where('brand_id',$brand_id)
+                ->where('location_id',$region)
+                ->where('point',$request->amount)        
+                // ->get()->take($quantity);
+                ->first();
+        if(!$coupon){
+            return redirect()->back()->with('error','Something Went Wrong !. Try Again After Sometime.');
+        }
 
-
+       
         
         
         // return $debited;
@@ -159,12 +159,10 @@ class CouponPurchaseController extends Controller
         $details->status      = 0;
         $details->save();
 
-        
-
-
         }
-        //event to sent mail for admin
+        //event Coupon Purchased
         event(new CouponPurchasedEvent($details,$quantity));
+        
         return redirect('coupon_purchase')->with('status','Coupon purchased successfully. It will be sent to your email shortly !');
 
     }

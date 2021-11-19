@@ -121,12 +121,13 @@ body {font-family: Arial, Helvetica, sans-serif;}
            	<thead>
            		<tr>
              		<th class="text-center">#</th>
-             		<th class="text-center">Category Name</th>
+             		<!-- <th class="text-center">Category Name</th> -->
 	                <th class="text-center">Location</th>
 	                <th class="text-center">Brand</th>
-	                <!-- <th class="text-center">Code</th> -->
+	                
 	                <th class="text-center">Point</th>
-	                <th>Currency Code</th>
+                  <th class="text-center">Code</th>
+	                <!-- <th>Currency Code</th> -->
 	                <th class="text-center">Expiry Date</th>
            	  </tr>
            	</thead>
@@ -135,14 +136,14 @@ body {font-family: Arial, Helvetica, sans-serif;}
              		@foreach($coupons as $coupon)
                	  <tr>
                  	<td class="text-center">{{$slno}}</td>
-                    <td class="text-center">{{$coupon->coupon->coupon_category->category_name}}</td>
-                    <td class="text-center">{{$coupon->coupon->location->name}}</td>
-                    <td class="text-center">{{$coupon->coupon->brand->name}}</td>
-
-                   <!--  <td class="text-center"><button class="btn btn-info" onclick="show('{{asset($coupon->code)}}')">Show Code</button></td> -->
                     
-                    <td class="text-center">{{$coupon->point}}</td>
-                    <td>{{$coupon->Currency_code}}</td>
+                    <td class="text-center">{{$coupon->region_name}}</td>
+                    <td class="text-center">{{$coupon->brand_name}}</td>
+
+                    <td class="text-center"><button class="btn btn-info" onclick="show('{{asset($coupon->coupon)}}')">Show Code</button></td>
+                    
+                    <td class="text-center">{{$coupon->coupon_value}}</td>
+                    <!-- <td>{{$coupon->Currency_code}}</td> -->
                     <td class="text-center">{{date('d-m-Y', strtotime($coupon->expiry_date))}}</td>
                      
                	  </tr>

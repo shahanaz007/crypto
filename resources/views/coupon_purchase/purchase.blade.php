@@ -231,6 +231,8 @@ echo "<p>$comment</p>";
 
 					<input type="hidden" name="brand_id" value="{{$details->brand_id}}" >
 					<input type="hidden" name="region" value="{{$details->location->name}}" >
+					<input type="hidden" name="region_id" value="{{$details->location_id}}" >
+	
 					<input type="hidden" name="brand_name" value="{{$details->brand->name}}" >
 					<table>
 						<tr>
