@@ -33,14 +33,15 @@ class CouponsController extends Controller
         $path ='';
         if($request->has('code')) {
 
-            $code_images = $request->code;
+            $code_images   = $request->code;
             $category_id   = $request->category_id;
             $location_id   = $request->location_id;
             $brand_id      = $request->brand_id;
-
             $point         = $request->point;
             $expiry_date   = $request->expiry_date;
             $currency_code = $request->currency_code;
+            $name          = $request->name;
+            $service_charge= $request->service_charge;
             $remarks       = $request->remark;
 
         foreach($code_images as $code_image){
@@ -61,10 +62,12 @@ class CouponsController extends Controller
             $coupon->category_id   = $category_id;
             $coupon->location_id   = $location_id;
             $coupon->brand_id      = $brand_id;
+            $coupon->name          = $name;
             $coupon->code          = $code;
             $coupon->point         = $point; 
             $coupon->expiry_date   = $expiry_date;
             $coupon->currency_code = $currency_code;
+            $coupon->service_charge= $service_charge;
             $coupon->remarks       = $remarks;
             $coupon->save();
 
@@ -98,16 +101,20 @@ class CouponsController extends Controller
     	$expiry_date   = $request->expiry_date;
     	$currency_code = $request->currency_code;
         $remarks       = $request->remark;
+        $name          = $request->name;
+        $service_charge= $request->service_charge;
 
     	$coupon	   		       = Coupon::find($id);
     	$coupon->category_id   = $category_id;
         $coupon->location_id   = $location_id;
         $coupon->brand_id      = $brand_id;
+        $coupon->name          = $name;
     	$coupon->code          = $code;
     	$coupon->point         = $point;
     	$coupon->expiry_date   = $expiry_date;
     	$coupon->currency_code = $currency_code;
         $coupon->remarks       = $remarks;
+        $coupon->service_charge= $service_charge;
         if($request->status == 1 ){
             $coupon->status    = 1;
         }

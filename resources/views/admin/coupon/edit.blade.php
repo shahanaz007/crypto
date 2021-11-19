@@ -20,7 +20,10 @@
                     <form action="{{url('/admin_coupon/update/'.$coupons->id)}}" method="POST"> 
                     @csrf
 	                	<div class="card-body row">
-
+                            <div class="col-md-6">
+                                <label>Name</label>
+                                <input type="text"  class="form-control"  id="name_id"  name="name"  required="" value="{{$coupons->name}}">
+                            </div>
                             <div class="col-md-6">
                                 <label>Select Category</label>
                                 <select class="form-control" name="category_id" id="category_id" required="">
@@ -74,6 +77,10 @@
                             <div class="col-md-6">
                                 <label>Remark</label>
                                 <input type="text" class="form-control"  id="remark_id"  name="remark" value="{{$coupons->remarks}}" required="">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Sevice Charge</label>
+                                <input type="number" step="any" class="form-control"  id="service_charge_id"  name="service_charge"  required="" value="{{$coupons->service_charge}}">
                             </div>
                             <div class="col-md-6">
                                 <label>Status</label>

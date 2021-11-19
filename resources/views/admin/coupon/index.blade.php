@@ -107,14 +107,15 @@ body {font-family: Arial, Helvetica, sans-serif;}
            	<thead>
            		<tr>
              		<th>#</th>
-             		<th>Category Name</th>
+             		<th>Name</th>
                 <th>Location</th>
                 <th>Brand</th>
                 <!-- <th>Code</th> -->
-                <th>Status</th>
                 <th>Point</th>
                 <th>Currency Code</th>
+                <th>Service Charge</th>
                 <th>Expiry Date</th>
+                <th>Status</th>
                 <th>Action</th>
            	  </tr>
            	</thead>
@@ -124,19 +125,21 @@ body {font-family: Arial, Helvetica, sans-serif;}
              		@foreach($coupons as $coupon)
                	  <tr>
                  		<td>{{$slno}}</td>
-                    <td>{{$coupon->coupon_category->category_name}}</td>
+                    <td>{{$coupon->name}}</td>
                     <td>{{$coupon->location->name}}</td>
                     <td>{{$coupon->brand->name}}</td>
                     <!-- <td><button class="btn btn-info" onclick="show('{{asset($coupon->code)}}')">Show Code</button></td> -->
+                    
+                    <td>{{$coupon->point}}</td>
+                    <td>{{$coupon->Currency_code}}</td>
+                     <td>{{$coupon->service_charge}}</td>
+                    <td>{{date('d-m-Y', strtotime($coupon->expiry_date))}}</td>
                     <td>@if($coupon->status == 1)
                         Enabled 
                         @else
                         Disabled
                         @endif  
                       </td>
-                    <td>{{$coupon->point}}</td>
-                    <td>{{$coupon->Currency_code}}</td>
-                    <td>{{$coupon->expiry_date}}</td>
                     <td>
                       <a href="{{url('admin_coupon/edit',$coupon->id)}}">  <button class="btn btn-success">Edit</button></a>
                     </td>  

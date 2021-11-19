@@ -24,7 +24,10 @@
                     <form action="{{url('/admin_coupon/store')}}" method="POST"  enctype="multipart/form-data"> 
                     @csrf
 	                	<div class="card-body row">
-
+                            <div class="col-md-6">
+                                <label>Name</label>
+                                <input type="text"  class="form-control"  id="name_id"  name="name"  required="">
+                            </div>
                             <div class="col-md-6">
                                 <label>{{ __('Select Category') }}</label>
                                 <select class="form-control" name="category_id" id="category_id" required="">
@@ -75,7 +78,10 @@
                                     @endforeach    
                                 </select>
                             </div>
-                            
+                            <div class="col-md-6">
+                                <label>Sevice Charge</label>
+                                <input type="number" step="any" class="form-control"  id="service_charge_id"  name="service_charge"  required="">
+                            </div>
                             <div class="col-md-6">
                                 <label>Select Images/Codes</label>
                                 <input type="file" class="form-control"  id="code_id"  name="code[]"  required="" multiple>
