@@ -1,10 +1,9 @@
 @component('mail::message')
 # Hello {{$data['name'] }} 
 
-  Your Coupon is added to Your Account. 
+  Thank you for shopping with Swiz Mart.Your Coupon is added to Your Account. 
 
-
-  Thank you, 
+  Thank you, <br>
   Swizmart
 
    

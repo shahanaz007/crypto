@@ -29,6 +29,7 @@ class CouponPurchasedSuccessListener
         $data=[
             'msg' =>"New Coupon Purchased Successfully",
             'name'=>$event->coupon->user->name,
+            'coupon' =>$event->coupon,
             ];
         $mail_to = $event->coupon->user->email;    
             \Mail::to($mail_to)->send(new \App\Mail\CouponPurchasedSuccess($data));
