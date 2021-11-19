@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\{CouponPurchase};
+use Illuminate\Support\Str;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class CouponPurchasePendingsController extends Controller
 {
@@ -85,10 +87,34 @@ class CouponPurchasePendingsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // return $id;
+       // return $request->image;
         $coupon = CouponPurchase::find($id);
-        $coupon ->status = 1;
-        $coupon->save();
+        $image  = $request->image;
+
+        if($image){
+            $extension_option = $image->getClientOriginalExtension();
+            if(($extension_option=='png')||($extension_option=='jpeg')||($extension_option=='jpg')||($extension_option=='PNG')||($extension_option=='JPEG')||($extension_option=='JPG')){
+                    $orginal_option_name = $image ->getClientOriginalName();
+                    $new_image = $orginal_option_name. '-' .Str::random(20). '.'. $extension_option;
+                    $image_path = '/uploads/images/coupons/'.$new_image;
+                   // --------- [ Resize Image ] ---------------
+                    $file = $image;
+                    $filename = $orginal_option_name;
+                    $img = \Image::make($file);
+                    $img->resize(158, 143)->save(public_path($image_path));
+
+                    $coupon->coupon = ($request->has('image'))?$image_path:null;
+                    $coupon ->status = 1;
+                    $coupon->save();
+            }
+
+        }
+        else{
+            return redirect()->back()->with('error','Coupon Images Missing');
+        }
+
+        
+        
         return redirect('purchase_pendings')->with('status','Coupon Purchase Completed');
 
     }

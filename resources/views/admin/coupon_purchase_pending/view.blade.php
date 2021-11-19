@@ -21,8 +21,12 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    <form action="{{route('purchase_pendings.update',$coupon->id)}}" id="update_form" method="POST"> 
+                    @if (session('error'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+                    <form action="{{route('purchase_pendings.update',$coupon->id)}}" id="update_form" method="POST" enctype="multipart/form-data"> 
                     @method('put')
                     @csrf
 	                	<div class="card-body row">
@@ -46,6 +50,10 @@
                             <div class="col-md-6">
                                 <label>Coupon Value</label>
                                 <input type="text" class="form-control"  id="coupon_value_id"  name="coupon_value"  value="{{$coupon->coupon_value}}" readonly="" disabled="">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Coupon Images</label>
+                                <input type="file" class="form-control"  id="coupon_id"  name="image"  required="" multiple>
                             </div>
 	                	</div>
                         </form>
