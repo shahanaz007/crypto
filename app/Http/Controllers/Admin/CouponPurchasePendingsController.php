@@ -93,6 +93,11 @@ class CouponPurchasePendingsController extends Controller
         $expiry_date = $request->expiry_date;
         $image       = $request->image;
 
+        if($coupon->status == 1)
+        {
+            return redirect('/')->with('error','This Coupon is already Updated. ')
+        }
+        
         if($image){
             $extension_option = $image->getClientOriginalExtension();
             if(($extension_option=='png')||($extension_option=='jpeg')||($extension_option=='jpg')||($extension_option=='PNG')||($extension_option=='JPEG')||($extension_option=='JPG')){
