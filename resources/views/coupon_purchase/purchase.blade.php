@@ -48,6 +48,8 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+  margin-bottom: -14px;
+  line-height: 0.6;
 }
 td, th, p {
     font-size: 16px;
