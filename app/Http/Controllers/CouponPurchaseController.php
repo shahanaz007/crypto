@@ -114,10 +114,13 @@ class CouponPurchaseController extends Controller
         $from      = $coupon->Currency_code;
         $to        = 'USD';
         $amount    = $coupon->convert($from,$to, $amount);
-        
+
+        // adding service charge
         $amount_with_service_charge = $coupon->with_service_charge($amount,$coupon->service_charge) ; 
-        return $amount_with_service_charge;
+        
         $single_coupon_amount = $coupon->convert($from,$to, $coupon->point);
+        // with service charge
+        $single_coupon_amount_w_s =$coupon->with_service_charge($single_coupon_amount,$coupon->service_charge) ;
 
         $wallet_amount = Auth::user()->usd_balance();
         
@@ -149,7 +152,7 @@ class CouponPurchaseController extends Controller
         $details->coupon_id   = $coupon->id;
         $details->currency    = $currency;
         $details->amount      = $single_coupon_amount;
-        $details->paid_amount = $single_coupon_amount;
+        $details->paid_amount = $single_coupon_amount_w_s;
         $details->brand_name  = $request->brand_name;
         $details->coupon_value= $single_coupon_amount.' '.$currency;
         $details->region_name = $request->region;
