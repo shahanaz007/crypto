@@ -44,7 +44,7 @@ class CouponPurchaseController extends Controller
         $coupons = $coupons->paginate(12);
 
 
-
+        $coupons->appends(['region' => $region]);
         // $today = Carbon::now();
         // $today = $today->toDateString();
         // $coupons = Coupon::select('brand_id')->where('used','=',0)
@@ -117,7 +117,7 @@ class CouponPurchaseController extends Controller
 
         // adding service charge
         $amount_with_service_charge = $coupon->with_service_charge($amount,$coupon->service_charge) ; 
-        
+
         $single_coupon_amount = $coupon->convert($from,$to, $coupon->point);
         // with service charge
         $single_coupon_amount_w_s =$coupon->with_service_charge($single_coupon_amount,$coupon->service_charge) ;
