@@ -108,7 +108,8 @@ class CouponPurchasePendingsController extends Controller
                     $file = $image;
                     $filename = $orginal_option_name;
                     $img = \Image::make($file);
-                    $img->resize(158, 143)->save(public_path($image_path));
+                    // $img->resize(158, 143)->save(public_path($image_path));
+                    $img->save(public_path($image_path));
 
                     $coupon->coupon = ($request->has('image'))?$image_path:null;
                     $coupon ->status = 1;
