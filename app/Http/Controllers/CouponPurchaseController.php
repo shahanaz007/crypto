@@ -109,19 +109,23 @@ class CouponPurchaseController extends Controller
         }
             // $amount    = $request->amount * $request->quantity;
         $amount    =  $coupon->point * $request->quantity;   
-       
+         
+
         $from      = $coupon->Currency_code;
         $to        = 'USD';
         $amount    = $coupon->convert($from,$to, $amount);
+        
+        $amount_with_service_charge = $coupon->with_service_charge($amount,$coupon->service_charge) ; 
+        return $amount_with_service_charge;
         $single_coupon_amount = $coupon->convert($from,$to, $coupon->point);
 
         $wallet_amount = Auth::user()->usd_balance();
         
-        if($amount > $wallet_amount){
+        if($amount_with_service_charge > $wallet_amount){
             return redirect()->back()->with('error','Insufficient Balance on Wallet');
         }
         
-        $debited = Auth::user()->debit_user($currency, $amount);
+        $debited = Auth::user()->debit_user($currency, $amount_with_service_charge);
 
 
         if($debited['code'] != 200)

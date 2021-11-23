@@ -40,4 +40,17 @@ class Coupon extends Model
          return $response;
     }
 
+    public function with_service_charge($amount,$s_charge)
+    {
+        $final_amount=$amount;
+
+        if($s_charge > 0)
+        {
+            $charge = ($amount*$s_charge) / 100;
+            $final_amount= $final_amount+ $charge;
+        }
+
+        return $final_amount;
+    }
+
 }
