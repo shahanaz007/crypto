@@ -25,16 +25,13 @@
 
                 <div class="card-body">
                   @if(count($payments) > 0) 
-                   <table class="table  table-striped">
+                   <table class="table  table-striped" id="tableData">
                    	<thead>
                    		<tr>
                    		<th>#</th>
-                   		<th>Txn Id</th>
-                   		<th>Coin</th>
                    		<th>Amount</th>
-                   		<th>Recieved Amount</th>
-                   		<th>Status</th>
-                        <th></th>
+                   		<th>Credit/Debit</th>
+                   		<th>Date</th>
                    	</tr>
                    	</thead>
                    	<tbody>
@@ -43,16 +40,22 @@
                    		@foreach($payments as $payment)
                    	<tr>
                    		<td>{{$cnt}}</td>
-                   		<td>{{$payment->txn_id}}</td>
-                   		<td>{{$payment->coin}}</td>
-                   		<td>{{$payment->amountf}}</td>
-                   		<td>{{$payment->receivedf}}</td>
-                   		<td>{{$payment->status_text}}</td>
-                        <td>
-                            @if($payment->status == '0')
-                              <a href="{{url('check_for_update',$payment->txn_id)}}">  <button class="btn btn-info">Check For Update</button></a>
-                            @endif
-                        </td>
+                   		<td>
+                        @if($payment->received_usd)
+                          {{$payment->received_usd}}
+                        @else
+                          {{$payment->amount}}
+                        @endif  
+                      </td>
+                   		<td>
+                        @if($payment->received_usd)
+                          Credit
+                        @else
+                          Debit
+                        @endif   
+                      </td>
+                   		<td>{{date('d-m-Y H:i: s', strtotime($payment->created_at))}}</td>
+                        
                    	</tr>
                    	<?php $cnt++; ?>
                    		@endforeach
@@ -67,8 +70,7 @@
                   @endif
                    
                    <div class="d-flex justify-content-center">
-                  <center> {!! $payments->links("pagination::bootstrap-4") !!} </center>
-                   <?php //echo $payments->render(); ?>
+                  <center> 
                </div>
 
                 </div>
@@ -77,5 +79,14 @@
     </div>
 </div>
 </section>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
 
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<script type="text/javascript" src="{{asset('assets/paging.js')}}"></script> 
+
+<script type="text/javascript">
+            $(document).ready(function() {
+                $('#tableData').paging({limit:5});
+            });
+        </script>
 @endsection
