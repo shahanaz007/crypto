@@ -155,8 +155,10 @@ Route::resource('complaint','ComplaintsController');
 Route::resource('testing','TestController');
 
 
+
 Route::get('/setcurrency/{code}','UsersController@setCookie');
 
+Route::resource('/trans','TransactionController');
 
 
 
