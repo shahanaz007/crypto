@@ -32,8 +32,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .modal-content {
   margin: auto;
   display: block;
-  width: 80%;
-  max-width: 700px;
+  width: 40%;
+    height: auto;
 }
 
 /* Caption of Modal Image */
