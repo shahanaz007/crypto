@@ -65,7 +65,7 @@
                    </table>
                    @else
                     <div style="text-align: center;">
-                      <h4>No Payments Available  </h4>  
+                      <h4>No Transactions Available  </h4>  
                     </div>
                   @endif
                    
