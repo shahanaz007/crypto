@@ -625,7 +625,7 @@
           
           <div class="module-body">
             <ul class='list-unstyled'>
-              <li class="first"><a href="#" title="About us">London, UK</a></li>
+              <li class="first"><a href="#" title="About us">23 New Drum Street, London, England, E17AY</a></li>
               <!-- <li><a href="#" title="phone">Ph : +44-1234567890</a></li> -->
               <li><a href="#" title="email">info@swizmart.com</a></li>
             </ul>
