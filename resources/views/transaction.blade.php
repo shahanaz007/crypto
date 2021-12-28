@@ -26,11 +26,11 @@
                 <div class="card-body">
                   @if(count($payments) > 0) 
                    <table class="table  table-striped" id="tableData">
-                   	<thead>
+                   	<thead style="text-align:center;">
                    		<tr>
                    		<th>#</th>
                    		<th>Amount</th>
-                   		<th>Credit/Debit</th>
+                   		<th>Operation</th>
                    		<th>Date</th>
                    	</tr>
                    	</thead>
@@ -42,16 +42,16 @@
                    		<td>{{$cnt}}</td>
                    		<td>
                         @if($payment->received_usd)
-                          {{$payment->received_usd}}
+                         <span class="alert alert-success"> + {{$payment->received_usd}} USD </span>
                         @else
-                          {{$payment->amount}}
+                         <span class="alert alert-warning"> - {{$payment->amount}} USD </span>
                         @endif  
                       </td>
                    		<td>
                         @if($payment->received_usd)
-                          Credit
+                         <span class="alert alert-success">Credit</span> 
                         @else
-                          Debit
+                          <span class="alert alert-warning">Debit</span>
                         @endif   
                       </td>
                    		<td>{{date('d-m-Y H:i: s', strtotime($payment->created_at))}}</td>
@@ -65,7 +65,7 @@
                    </table>
                    @else
                     <div style="text-align: center;">
-                      <h4>No Payments Available  </h4>  
+                      <h4>No Transactions Available  </h4>  
                     </div>
                   @endif
                    
