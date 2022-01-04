@@ -39,6 +39,12 @@
                                 <label>Email</label>
                                 <input type="text" class="form-control"  id="email_id"  name="email"  value="{{$coupon->user->email}}" readonly="" disabled="">
                             </div>
+
+                            <div class="col-md-6">
+                                <label>Purchase Id</label>
+                                <input type="text" class="form-control"  id="coupon_name_id"  name="purchase_id"  value="{{$coupon->id}}" readonly="" disabled="">
+                            </div>
+
                             <div class="col-md-6">
                                 <label>Region</label>
                                 <input type="text" class="form-control"  id="coupon_name_id"  name="coupon_name"  value="{{$coupon->region_name}}" readonly="" disabled="">

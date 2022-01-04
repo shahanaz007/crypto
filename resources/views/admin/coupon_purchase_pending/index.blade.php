@@ -44,6 +44,7 @@
            		<tr>
              		<th>#</th>
              		<th>Username</th>
+                <th>Purchase Id</th>
                 <th>Brand</th>
                 <th>Coupon Value</th>
                 <th>Date</th>
@@ -57,6 +58,7 @@
                	  <tr>
                  		<td>{{$slno}}</td>
                     <td>{{$coupon->user->name}}</td>
+                    <td>{{$coupon->id}}</td>
                     <td>{{$coupon->brand_name}}</td>
                     <td>{{$coupon->coupon_value}}</td>
                     <td>{{date('d-m-Y', strtotime($coupon->created_at))}}</td>
