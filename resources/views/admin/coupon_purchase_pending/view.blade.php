@@ -54,9 +54,14 @@
                                 <input type="text" class="form-control"  id="brand_name_id"  name="brand_name"  value="{{$coupon->brand_name}}" readonly="" disabled="">
                             </div>
                             <div class="col-md-6">
-                                <label>Coupon Value</label>
+                                <label>Coupon Value USD</label>
                                 <input type="text" class="form-control"  id="coupon_value_id"  name="coupon_value"  value="{{$coupon->coupon_value}}" readonly="" disabled="">
                             </div>
+                            <div class="col-md-6">
+                                <label>Coupon Value Real</label>
+                                <input type="text" class="form-control"  id="coupon_value_id"  name="coupon_value"  value="{{$coupon->point.' '.$coupon->Currency_code}}" readonly="" disabled="">
+                            </div>
+
                             <div class="col-md-6">
                                 <label>Expiry Date</label>
                                 <input type="date"  class="form-control"  id="expiry_date_id"  name="expiry_date"  required="">

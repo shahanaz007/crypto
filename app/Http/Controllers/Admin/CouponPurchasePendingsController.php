@@ -64,7 +64,10 @@ class CouponPurchasePendingsController extends Controller
      */
     public function show($id)
     {
-        $coupon = CouponPurchase::find($id);
+        $coupon = CouponPurchase::join('coupons','coupon_purchases.coupon_id','coupons.id')
+                    ->select('coupon_purchases.*','coupons.point','coupons.Currency_code')
+                    ->where('coupon_purchases.id',$id)
+                    ->first();
         return view('admin.coupon_purchase_pending.view',compact('coupon')); 
     }
 
